@@ -1,0 +1,743 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl/kollegium-2268.html",
+    "extractedDate": "2026-03-13",
+    "totalStaff": 59,
+    "schoolYear": "2025/2026"
+  },
+  "staff": [
+    {
+      "id": "staff-001",
+      "name": "Ulla Anton",
+      "abbreviation": "An",
+      "role": "Lehrkraft",
+      "subjects": ["Religion"],
+      "grades": [],
+      "email": "sekretariat1@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-002",
+      "name": "Anna Barska",
+      "abbreviation": "Bk",
+      "role": "Lehrkraft",
+      "subjects": ["Mathematik", "Physik", "Englisch"],
+      "grades": [],
+      "email": "a.barska@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe"
+    },
+    {
+      "id": "staff-003",
+      "name": "Coline Barteczko",
+      "abbreviation": "Br",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": ["1a"],
+      "email": "c.barteczko@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-004",
+      "name": "Rüdiger Bott",
+      "abbreviation": "Bt",
+      "role": "Schulleitung",
+      "subjects": ["Ethik", "Mathematik"],
+      "grades": [],
+      "email": "schulleitung@wbs.pl",
+      "phone": null,
+      "department": "Verwaltung"
+    },
+    {
+      "id": "staff-005",
+      "name": "Elżbieta Bziuk",
+      "abbreviation": "Bz",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": [],
+      "email": "e.bziuk@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-006",
+      "name": "Małgorzata Chmielewska",
+      "abbreviation": "Chm",
+      "role": "Lehrkraft",
+      "subjects": ["Deutsch als Fremdsprache", "Musik", "PQM"],
+      "grades": ["6c"],
+      "email": "m.chmielewska@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe"
+    },
+    {
+      "id": "staff-007",
+      "name": "Anna Christiansen",
+      "abbreviation": null,
+      "role": "Unterstützungslehrkraft",
+      "subjects": ["Unterstützung"],
+      "grades": [],
+      "email": "a.christiansen@wbs.pl",
+      "phone": null,
+      "department": "Förderung"
+    },
+    {
+      "id": "staff-008",
+      "name": "Ingrid Dahl-Głodowska",
+      "abbreviation": "Dahl",
+      "role": "Unterstützungslehrkraft",
+      "subjects": ["Unterstützung"],
+      "grades": [],
+      "email": "i.dahl-glodowska@wbs.pl",
+      "phone": null,
+      "department": "Förderung"
+    },
+    {
+      "id": "staff-009",
+      "name": "Katharina Deigendesch",
+      "abbreviation": "Dei",
+      "role": "Lehrkraft",
+      "subjects": ["Deutsch", "Mathematik", "Französisch"],
+      "grades": ["5b"],
+      "email": "k.deigendesch@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe",
+      "additionalRole": "Koordination Übergang GS-Sek I"
+    },
+    {
+      "id": "staff-010",
+      "name": "Manuela Doktor",
+      "abbreviation": "Dok",
+      "role": "Lehrkraft",
+      "subjects": ["Deutsch", "Biologie", "PQM"],
+      "grades": ["11.2"],
+      "email": "m.doktor@wbs.pl",
+      "phone": null,
+      "department": "Oberstufe"
+    },
+    {
+      "id": "staff-011",
+      "name": "Frauke Fiedler",
+      "abbreviation": "Fie",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule", "DaF", "Sport", "Ethik"],
+      "grades": ["5a"],
+      "email": "f.fiedler@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-012",
+      "name": "Jerzy Gajewski",
+      "abbreviation": "Ga",
+      "role": "Lehrkraft",
+      "subjects": ["Sport"],
+      "grades": [],
+      "email": "j.gajewski@wbs.pl",
+      "phone": null,
+      "department": "Sport"
+    },
+    {
+      "id": "staff-013",
+      "name": "Sven Glawion",
+      "abbreviation": "Gla",
+      "role": "Lehrkraft",
+      "subjects": ["Deutsch", "Geschichte", "Erdkunde"],
+      "grades": ["8a"],
+      "email": "s.glawion@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe"
+    },
+    {
+      "id": "staff-014",
+      "name": "Izabela Gniewkowska-Müller",
+      "abbreviation": "GM",
+      "role": "Lehrkraft",
+      "subjects": ["Sport", "Kunst"],
+      "grades": [],
+      "email": "i.gniewkowska-mueller@wbs.pl",
+      "phone": null,
+      "department": "Sport/Kunst"
+    },
+    {
+      "id": "staff-015",
+      "name": "Karolina Góralska",
+      "abbreviation": "Go",
+      "role": "Lehrkraft",
+      "subjects": ["Deutsch als Fremdsprache", "Sachkunde"],
+      "grades": [],
+      "email": "k.goralska@wbs.pl",
+      "phone": null,
+      "department": "DaF"
+    },
+    {
+      "id": "staff-016",
+      "name": "Iwona Górecka-Hyllus",
+      "abbreviation": "HI",
+      "role": "Unterstützungslehrkraft",
+      "subjects": ["Unterstützung"],
+      "grades": [],
+      "email": "i.hyllus@wbs.pl",
+      "phone": null,
+      "department": "Förderung"
+    },
+    {
+      "id": "staff-017",
+      "name": "Joanna Grabiec",
+      "abbreviation": "Gra",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": ["3c"],
+      "email": "j.grabiec@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-018",
+      "name": "Lena Hauenstein",
+      "abbreviation": "Ha",
+      "role": "Lehrkraft",
+      "subjects": ["Englisch", "Politik"],
+      "grades": ["6a"],
+      "email": "l.hauenstein@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe",
+      "additionalRole": "StuBo"
+    },
+    {
+      "id": "staff-019",
+      "name": "Adam Hołda",
+      "abbreviation": "Hol",
+      "role": "Lehrkraft",
+      "subjects": ["DaF"],
+      "grades": [],
+      "email": "a.holda@wbs.pl",
+      "phone": null,
+      "department": "DaF",
+      "additionalRole": "DaF-Koordinator"
+    },
+    {
+      "id": "staff-020",
+      "name": "Robert Hyllus",
+      "abbreviation": "Hy",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": ["4a"],
+      "email": "r.hyllus@wbs.pl",
+      "phone": null,
+      "department": "Grundschule",
+      "additionalRole": "Koordination Inklusion"
+    },
+    {
+      "id": "staff-021",
+      "name": "Danuta Idzikowska",
+      "abbreviation": "Id",
+      "role": "Lehrkraft",
+      "subjects": ["Englisch", "Erdkunde auf Englisch", "Erdkunde"],
+      "grades": ["8c"],
+      "email": "d.idzikowska@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe",
+      "additionalRole": "MiKo - Internationale Abteilung"
+    },
+    {
+      "id": "staff-022",
+      "name": "Liv Jakubczyk",
+      "abbreviation": "Jak",
+      "role": "Lehrkraft",
+      "subjects": ["Französisch", "Politik"],
+      "grades": ["11.1"],
+      "email": "l.jakubczyk@wbs.pl",
+      "phone": null,
+      "department": "Oberstufe"
+    },
+    {
+      "id": "staff-023",
+      "name": "Katarzyna Jasińska",
+      "abbreviation": "Jas",
+      "role": "Lehrkraft",
+      "subjects": ["Englisch", "Erdkunde auf Englisch"],
+      "grades": [],
+      "email": "k.jasinska@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe"
+    },
+    {
+      "id": "staff-024",
+      "name": "Maryla Kamińska",
+      "abbreviation": "Kam",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": ["2c"],
+      "email": "m.kaminski@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-025",
+      "name": "Carina Kerch",
+      "abbreviation": "Ke",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": ["2a"],
+      "email": "c.kerch@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-026",
+      "name": "Marek Kijowski",
+      "abbreviation": "Ki",
+      "role": "Lehrkraft",
+      "subjects": ["Sport"],
+      "grades": [],
+      "email": "m.kijowski@wbs.pl",
+      "phone": null,
+      "department": "Sport"
+    },
+    {
+      "id": "staff-027",
+      "name": "Małgorzata Kopaczyńska",
+      "abbreviation": "Kop",
+      "role": "Lehrkraft",
+      "subjects": ["DaF"],
+      "grades": [],
+      "email": "m.kopaczynska@wbs.pl",
+      "phone": null,
+      "department": "DaF"
+    },
+    {
+      "id": "staff-028",
+      "name": "Beata Kosmalska-Reda",
+      "abbreviation": "Ko",
+      "role": "Lehrkraft",
+      "subjects": ["Biologie", "Sport", "Geographie"],
+      "grades": ["5c"],
+      "email": "b.kosmalska-reda@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe"
+    },
+    {
+      "id": "staff-029",
+      "name": "Joanna Koszykowska",
+      "abbreviation": "Kos",
+      "role": "Bibliothekarin",
+      "subjects": ["Bibliothek"],
+      "grades": [],
+      "email": "biblioteka@wbs.pl",
+      "phone": null,
+      "department": "Bibliothek"
+    },
+    {
+      "id": "staff-030",
+      "name": "Karsten Kretzschmar",
+      "abbreviation": "Kr",
+      "role": "Lehrkraft",
+      "subjects": ["Physik"],
+      "grades": [],
+      "email": "stellvertretung@wbs.pl",
+      "phone": null,
+      "department": "Naturwissenschaften",
+      "additionalRole": "Stellvertretung"
+    },
+    {
+      "id": "staff-031",
+      "name": "Tina Laszewska",
+      "abbreviation": "La",
+      "role": "Lehrkraft",
+      "subjects": ["DaF"],
+      "grades": [],
+      "email": "t.laszewska@wbs.pl",
+      "phone": null,
+      "department": "DaF"
+    },
+    {
+      "id": "staff-032",
+      "name": "Marcin Lemiszewski",
+      "abbreviation": "Lemi",
+      "role": "Lehrkraft",
+      "subjects": ["Musik"],
+      "grades": [],
+      "email": "m.lemiszewski@wbs.pl",
+      "phone": null,
+      "department": "Musik"
+    },
+    {
+      "id": "staff-033",
+      "name": "Wioleta Luchowska",
+      "abbreviation": "Lu",
+      "role": "Lehrkraft",
+      "subjects": ["Geschichte Polens"],
+      "grades": [],
+      "email": "w.luchowska@wbs.pl",
+      "phone": null,
+      "department": "Geisteswissenschaften"
+    },
+    {
+      "id": "staff-034",
+      "name": "Joanna Majkusiak",
+      "abbreviation": "Maj",
+      "role": "Lehrkraft",
+      "subjects": ["Polnisch"],
+      "grades": ["7c"],
+      "email": "j.majkusiak@wbs.pl",
+      "phone": null,
+      "department": "Polnisch"
+    },
+    {
+      "id": "staff-035",
+      "name": "Katarzyna Malinowska",
+      "abbreviation": "Mal",
+      "role": "Lehrkraft",
+      "subjects": ["DaF", "Ethik"],
+      "grades": ["4c"],
+      "email": "k.malinowska@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-036",
+      "name": "Anna Mann",
+      "abbreviation": "Mn",
+      "role": "Lehrkraft",
+      "subjects": ["Englisch"],
+      "grades": [],
+      "email": "a.mann@wbs.pl",
+      "phone": null,
+      "department": "Sprachen"
+    },
+    {
+      "id": "staff-037",
+      "name": "Christian Mann",
+      "abbreviation": "CM",
+      "role": "Lehrkraft",
+      "subjects": ["Mathematik"],
+      "grades": ["10.1"],
+      "email": "c.mann@wbs.pl",
+      "phone": null,
+      "department": "Oberstufe",
+      "additionalRole": "Oberstufenkoordinator"
+    },
+    {
+      "id": "staff-038",
+      "name": "Anna Mierzejewska",
+      "abbreviation": "Mi",
+      "role": "Lehrkraft",
+      "subjects": ["Polnisch als Fremdsprache"],
+      "grades": [],
+      "email": "a.mierzejewska@wbs.pl",
+      "phone": null,
+      "department": "Polnisch"
+    },
+    {
+      "id": "staff-039",
+      "name": "Isabelle Mitura",
+      "abbreviation": "Mt",
+      "role": "Lehrkraft",
+      "subjects": ["Ethik", "Chemie"],
+      "grades": [],
+      "email": "i.mitura@wbs.pl",
+      "phone": null,
+      "department": "Naturwissenschaften"
+    },
+    {
+      "id": "staff-040",
+      "name": "Felix Opitz",
+      "abbreviation": "Op",
+      "role": "Lehrkraft",
+      "subjects": ["Biologie", "Chemie"],
+      "grades": ["12.2"],
+      "email": "f.opitz@wbs.pl",
+      "phone": null,
+      "department": "Oberstufe",
+      "additionalRole": "DFU-Koordinator"
+    },
+    {
+      "id": "staff-041",
+      "name": "Kinga Orłowska",
+      "abbreviation": "Or",
+      "role": "Lehrkraft",
+      "subjects": ["Biologie"],
+      "grades": [],
+      "email": "k.orlowska@wbs.pl",
+      "phone": null,
+      "department": "Naturwissenschaften"
+    },
+    {
+      "id": "staff-042",
+      "name": "Madlaina Pestalozzi",
+      "abbreviation": "Pe",
+      "role": "Lehrkraft",
+      "subjects": ["Deutsch", "Ethik"],
+      "grades": [],
+      "email": "m.pestalozzi@wbs.pl",
+      "phone": null,
+      "department": "Geisteswissenschaften"
+    },
+    {
+      "id": "staff-043",
+      "name": "Małgorzata Podczaska",
+      "abbreviation": "Po",
+      "role": "Lehrkraft",
+      "subjects": ["Polnisch als Fremdsprache", "Polnisch als Landessprache"],
+      "grades": [],
+      "email": "m.podczaska@wbs.pl",
+      "phone": null,
+      "department": "Polnisch"
+    },
+    {
+      "id": "staff-044",
+      "name": "Azra Preising-Kmetas",
+      "abbreviation": "Pr",
+      "role": "Lehrkraft",
+      "subjects": ["Förderung"],
+      "grades": [],
+      "email": "a.preising@wbs.pl",
+      "phone": null,
+      "department": "Förderung"
+    },
+    {
+      "id": "staff-045",
+      "name": "Katarzyna Radziwanowska",
+      "abbreviation": "Ra",
+      "role": "Unterstützungslehrkraft",
+      "subjects": ["Unterstützung"],
+      "grades": [],
+      "email": "k.radziwanowska@wbs.pl",
+      "phone": null,
+      "department": "Förderung"
+    },
+    {
+      "id": "staff-046",
+      "name": "Tobias Reeg",
+      "abbreviation": "Re",
+      "role": "Lehrkraft",
+      "subjects": ["Biologie", "ITG"],
+      "grades": ["12.1"],
+      "email": "t.reeg@wbs.pl",
+      "phone": null,
+      "department": "Oberstufe",
+      "additionalRole": "KoDiU"
+    },
+    {
+      "id": "staff-047",
+      "name": "Anna Rieff",
+      "abbreviation": "Ri",
+      "role": "Lehrkraft",
+      "subjects": ["Polnisch als Fremdsprache"],
+      "grades": [],
+      "email": "a.rieff@wbs.pl",
+      "phone": null,
+      "department": "Polnisch"
+    },
+    {
+      "id": "staff-048",
+      "name": "Johannes Rogoll",
+      "abbreviation": "Ro",
+      "role": "Lehrkraft",
+      "subjects": ["Deutsch", "Geschichte", "DaF"],
+      "grades": ["9a"],
+      "email": "j.rogoll@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe",
+      "additionalRole": "DaF-Koordinator"
+    },
+    {
+      "id": "staff-049",
+      "name": "Eleonora Rytel",
+      "abbreviation": "Ry",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": [],
+      "email": "e.rytel@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-050",
+      "name": "Julita Sarnecka",
+      "abbreviation": "Sar",
+      "role": "Schulsozialpädagogin",
+      "subjects": ["Sozialpädagogik"],
+      "grades": [],
+      "email": "j.sarnecka@wbs.pl",
+      "phone": null,
+      "department": "Sozialpädagogik"
+    },
+    {
+      "id": "staff-051",
+      "name": "Tanja Schmon",
+      "abbreviation": "Smo",
+      "role": "Lehrkraft",
+      "subjects": ["Mathematik"],
+      "grades": ["7a"],
+      "email": "t.schmon@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe",
+      "additionalRole": "MiKo - deutsche Abteilung"
+    },
+    {
+      "id": "staff-052",
+      "name": "Diana Şenman",
+      "abbreviation": "Se",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": ["3a"],
+      "email": "d.senman@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-053",
+      "name": "Katarzyna Sidor",
+      "abbreviation": "Sid",
+      "role": "Leiterin der Nachmittagsbetreuung",
+      "subjects": ["Nachmittagsbetreuung"],
+      "grades": [],
+      "email": "k.sidor@wbs.pl",
+      "phone": null,
+      "department": "Nachmittagsbetreuung"
+    },
+    {
+      "id": "staff-054",
+      "name": "Andreas Stärk",
+      "abbreviation": "St",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": [],
+      "email": "a.staerk@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-055",
+      "name": "Marzena Swirtun",
+      "abbreviation": "Sw",
+      "role": "Lehrkraft",
+      "subjects": ["Kunst"],
+      "grades": [],
+      "email": "m.swirtun@wbs.pl",
+      "phone": null,
+      "department": "Kunst"
+    },
+    {
+      "id": "staff-056",
+      "name": "Zuzanna Tomasińska-Karol",
+      "abbreviation": "To",
+      "role": "Lehrkraft",
+      "subjects": ["Englisch"],
+      "grades": ["9c"],
+      "email": "z.tomasinska-karol@wbs.pl",
+      "phone": null,
+      "department": "Sekundarstufe"
+    },
+    {
+      "id": "staff-057",
+      "name": "Agnes Toth",
+      "abbreviation": "Toth",
+      "role": "Unterstützungslehrkraft, Heilpädagogin",
+      "subjects": ["Unterstützung", "Heilpädagogik"],
+      "grades": [],
+      "email": "a.toth@wbs.pl",
+      "phone": null,
+      "department": "Förderung",
+      "additionalRole": "Verantwortliche für Dyskalkulie und Legasthenie"
+    },
+    {
+      "id": "staff-058",
+      "name": "Anna Wnuk",
+      "abbreviation": "Wn",
+      "role": "Lehrkraft",
+      "subjects": ["PaF"],
+      "grades": [],
+      "email": "a.wnuk@wbs.pl",
+      "phone": null,
+      "department": "Polnisch"
+    },
+    {
+      "id": "staff-059",
+      "name": "Ewa Wojnarska-Gogola",
+      "abbreviation": "Woj",
+      "role": "Lehrkraft",
+      "subjects": ["Grundschule"],
+      "grades": ["1c"],
+      "email": "e.wojnarska-gogola@wbs.pl",
+      "phone": null,
+      "department": "Grundschule"
+    },
+    {
+      "id": "staff-060",
+      "name": "Małgorzata Wróbel",
+      "abbreviation": "Wr",
+      "role": "Lehrkraft",
+      "subjects": ["Polnisch"],
+      "grades": [],
+      "email": "m.wrobel@wbs.pl",
+      "phone": null,
+      "department": "Polnisch"
+    },
+    {
+      "id": "staff-061",
+      "name": "Wolfgang Zehetbauer",
+      "abbreviation": "Ze",
+      "role": "Lehrkraft",
+      "subjects": ["Deutsch", "Geschichte"],
+      "grades": ["11.1"],
+      "email": "w.zehetbauer@wbs.pl",
+      "phone": null,
+      "department": "Oberstufe"
+    }
+  ],
+  "departments": [
+    {
+      "id": "grundschule",
+      "name": {
+        "pl": "Szkoła Podstawowa",
+        "de": "Grundschule",
+        "en": "Primary School"
+      }
+    },
+    {
+      "id": "sekundarstufe",
+      "name": {
+        "pl": "Szkoła Średnia",
+        "de": "Sekundarstufe",
+        "en": "Secondary School"
+      }
+    },
+    {
+      "id": "oberstufe",
+      "name": {
+        "pl": "Klasy Starsze",
+        "de": "Oberstufe",
+        "en": "Upper Secondary"
+      }
+    },
+    {
+      "id": "daf",
+      "name": {
+        "pl": "Niemiecki jako Obcy",
+        "de": "Deutsch als Fremdsprache",
+        "en": "German as Foreign Language"
+      }
+    },
+    {
+      "id": "sport",
+      "name": {
+        "pl": "Sport",
+        "de": "Sport",
+        "en": "Sports"
+      }
+    },
+    {
+      "id": "forderung",
+      "name": {
+        "pl": "Wsparcie",
+        "de": "Förderung",
+        "en": "Support"
+      }
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl",
+    "extractedDate": "2026-03-13",
+    "version": "1.0"
+  },
+  "school": {
+    "name": {
+      "pl": "Polsko-Niemiecka Szkoła Spotkań i Dialogu im. Willy'ego Brandta w Warszawie",
+      "de": "Deutsch-Polnische Begegnungsschule Willy-Brandt-Schule Warschau",
+      "en": "Polish-German School of Meetings and Dialogue named after Willy Brandt in Warsaw"
+    },
+    "shortName": {
+      "pl": "WBS",
+      "de": "WBS",
+      "en": "WBS"
+    },
+    "type": {
+      "pl": "Szkoła międzynarodowa",
+      "de": "Deutsche Auslandsschule",
+      "en": "International School"
+    },
+    "founded": 1978,
+    "patron": {
+      "name": {
+        "pl": "Willy Brandt",
+        "de": "Willy Brandt",
+        "en": "Willy Brandt"
+      },
+      "description": {
+        "pl": "Były kanclerz Niemiec, laureat Pokojowej Nagrody Nobla",
+        "de": "Ehemaliger deutscher Bundeskanzler, Friedensnobelpreisträger",
+        "en": "Former German Chancellor, Nobel Peace Prize laureate"
+      }
+    }
+  },
+  "campuses": [
+    {
+      "id": "main",
+      "name": {
+        "pl": "Kampus Główny (Klasy 1-12)",
+        "de": "Hauptcampus (Klassen 1-12)",
+        "en": "Main Campus (Grades 1-12)"
+      },
+      "address": {
+        "street": "ul. Św. Urszuli Ledóchowskiej 3",
+        "city": "Warszawa",
+        "postalCode": "02-972",
+        "country": "Polska",
+        "coordinates": {
+          "latitude": 52.1575,
+          "longitude": 21.0692
+        }
+      }
+    },
+    {
+      "id": "kindergarten",
+      "name": {
+        "pl": "Przedszkole",
+        "de": "Kindergarten",
+        "en": "Kindergarten"
+      },
+      "address": {
+        "street": "ul. Chłapowskiego 1",
+        "city": "Warszawa",
+        "postalCode": "02-787",
+        "country": "Polska",
+        "coordinates": {
+          "latitude": 52.1456,
+          "longitude": 21.0523
+        }
+      }
+    }
+  ],
+  "contact": {
+    "phone": "+48 22 642 27 05",
+    "fax": "+48 22 395 86 51",
+    "mobile": "+48 512 072 576",
+    "email": {
+      "grades1-4": "sekretariat2@wbs.pl",
+      "grades5-12": "sekretariat1@wbs.pl",
+      "administration": "schulleitung@wbs.pl",
+      "substitute": "stellvertretung@wbs.pl",
+      "library": "biblioteka@wbs.pl"
+    },
+    "website": "https://wbs.pl",
+    "socialMedia": {
+      "facebook": "https://facebook.com/wbswarschau",
+      "instagram": null,
+      "youtube": null,
+      "linkedin": null
+    }
+  },
+  "grades": {
+    "levels": [
+      {
+        "id": "grundschule",
+        "name": {
+          "pl": "Szkoła Podstawowa",
+          "de": "Grundschule",
+          "en": "Primary School"
+        },
+        "grades": "1-4",
+        "ages": "6-10"
+      },
+      {
+        "id": "sekundarstufe",
+        "name": {
+          "pl": "Szkoła Średnia I",
+          "de": "Sekundarstufe I",
+          "en": "Secondary School I"
+        },
+        "grades": "5-10",
+        "ages": "10-16"
+      },
+      {
+        "id": "oberstufe",
+        "name": {
+          "pl": "Szkoła Średnia II",
+          "de": "Oberstufe",
+          "en": "Upper Secondary"
+        },
+        "grades": "11-12",
+        "ages": "16-19"
+      }
+    ]
+  },
+  "programs": [
+    {
+      "id": "football-academy",
+      "name": {
+        "pl": "Akademia Piłkarska WBS",
+        "de": "WBS Fußballakademie",
+        "en": "WBS Football Academy"
+      },
+      "director": "Wojciech Wieczorkiewicz",
+      "contact": {
+        "phone": "+48 733 572 514",
+        "email": "akademia.pilkarska@wbs.pl"
+      },
+      "description": {
+        "pl": "Profesjonalny trening piłki nożnej dla uczniów",
+        "de": "Professionelles Fußballtraining für Schüler",
+        "en": "Professional football training for students"
+      }
+    },
+    {
+      "id": "music-academy",
+      "name": {
+        "pl": "Akademia Muzyczna WBS",
+        "de": "WBS Musikakademie",
+        "en": "WBS Music Academy"
+      },
+      "description": {
+        "pl": "Zajęcia muzyczne i instrumentalne",
+        "de": "Musik- und Instrumentalunterricht",
+        "en": "Music and instrumental lessons"
+      }
+    },
+    {
+      "id": "choir",
+      "name": {
+        "pl": "Chór SchELF",
+        "de": "SchELF Chor",
+        "en": "SchELF Choir"
+      },
+      "description": {
+        "pl": "Szkolny chór dla uczniów",
+        "de": "Schulchor für Schüler",
+        "en": "School choir for students"
+      }
+    },
+    {
+      "id": "library",
+      "name": {
+        "pl": "Biblioteka",
+        "de": "Bibliothek",
+        "en": "Library"
+      },
+      "description": {
+        "pl": "Biblioteka szkolna z zasobami polskimi i niemieckimi",
+        "de": "Schulbibliothek mit polnischen und deutschen Beständen",
+        "en": "School library with Polish and German resources"
+      }
+    }
+  },
+  "services": [
+    {
+      "id": "canteen",
+      "name": {
+        "pl": "Stołówka szkolna",
+        "de": "Schulkantine",
+        "en": "School Canteen"
+      },
+      "description": {
+        "pl": "Codzienne obiady dla uczniów",
+        "de": "Tägliches Mittagessen für Schüler",
+        "en": "Daily lunches for students"
+      }
+    },
+    {
+      "id": "aftercare",
+      "name": {
+        "pl": "Opieka popołudniowa",
+        "de": "Nachmittagsbetreuung",
+        "en": "Afternoon Care"
+      },
+      "description": {
+        "pl": "Opieka po lekcjach dla uczniów",
+        "de": "Betreuung nach dem Unterricht",
+        "en": "After-school care for students"
+      }
+    },
+    {
+      "id": "transport",
+      "name": {
+        "pl": "Karta ucznia ZTM",
+        "de": "ZTM-Schülerkarte",
+        "en": "ZTM Student Card"
+      },
+      "description": {
+        "pl": "Ulgowe przejazdy komunikacją miejską",
+        "de": "Ermäßigte Nutzung des öffentlichen Nahverkehrs",
+        "en": "Discounted public transport"
+      }
+    }
+  ],
+  "statistics": {
+    "students": 300,
+    "teachers": 59,
+    "founded": 1978,
+    "campuses": 2,
+    "grades": "1-12"
+  }
+}

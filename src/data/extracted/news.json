@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl",
+    "extractedDate": "2026-03-13",
+    "totalArticles": 4,
+    "language": "pl"
+  },
+  "news": [
+    {
+      "id": "news-001",
+      "title": {
+        "pl": "🐾 „KOTY Z PROMYKA" – POMAGAMY I UCZYMY SIĘ Z SERCEM",
+        "de": "🐾 „KATZEN VON PROMYKA" – WIR HELFEN UND LERNEN MIT HERZ",
+        "en": "🐾 „CATS FROM PROMYKA" – HELPING AND LEARNING WITH HEART"
+      },
+      "date": "2026-02-11",
+      "category": "aktualne-wydarzenia",
+      "summary": {
+        "pl": "Projekt charytatywno-edukacyjny uczniów",
+        "de": "Wohltätigkeits- und Bildungsprojekt der Schüler",
+        "en": "Charity and educational project by students"
+      },
+      "url": "https://wbs.pl/aktualnosci",
+      "imageUrl": "/assets/images/news/koty-z-promyka.jpg",
+      "status": "published"
+    },
+    {
+      "id": "news-002",
+      "title": {
+        "pl": "SUKCES UCZNIÓW WBS W KONKURSIE CHEMICZNYM „CHEMIE – DIE STIMMT!\"",
+        "de": "ERFOLG DER WBS-SCHÜLER BEIM CHEMIEWETTBEWERB „CHEMIE – DIE STIMMT!\"",
+        "en": "WBS STUDENTS' SUCCESS IN CHEMISTRY COMPETITION „CHEMIE – DIE STIMMT!\""
+      },
+      "date": "2026-02-10",
+      "category": "osiagniecia",
+      "summary": {
+        "pl": "Uczniowie WBS odnieśli sukces w konkursie chemicznym",
+        "de": "WBS-Schüler waren beim Chemiewettbewerb erfolgreich",
+        "en": "WBS students succeeded in chemistry competition"
+      },
+      "url": "https://wbs.pl/aktualnosci",
+      "imageUrl": "/assets/images/news/chemie-die-stimmt.jpg",
+      "status": "published"
+    },
+    {
+      "id": "news-003",
+      "title": {
+        "pl": "KOLEJNA RADIOWA PRZYGODA NASZYCH UCZNIÓW",
+        "de": "WEITERES RADIOABENTEUER UNSERER SCHÜLER",
+        "en": "ANOTHER RADIO ADVENTURE OF OUR STUDENTS"
+      },
+      "date": "2026-02-09",
+      "category": "aktualne-wydarzenia",
+      "summary": {
+        "pl": "Uczniowie uczestniczyli w projekcie radiowym",
+        "de": "Schüler nahmen an einem Radioprojekt teil",
+        "en": "Students participated in a radio project"
+      },
+      "url": "https://wbs.pl/aktualnosci",
+      "imageUrl": "/assets/images/news/radio-przygoda.jpg",
+      "status": "published"
+    },
+    {
+      "id": "news-004",
+      "title": {
+        "pl": "WBS - POLSKO-NIEMIECKA SZKOŁA",
+        "de": "WBS - DEUTSCH-POLNISCHE SCHULE",
+        "en": "WBS - POLISH-GERMAN SCHOOL"
+      },
+      "date": null,
+      "category": "ogolne",
+      "summary": {
+        "pl": "Polsko-Niemiecka Szkoła Spotkań i Dialogu im. Willy'ego Brandta",
+        "de": "Deutsch-Polnische Begegnungsschule Willy-Brandt-Schule",
+        "en": "Polish-German School of Meetings and Dialogue named after Willy Brandt"
+      },
+      "url": "https://wbs.pl/strona_glowna-1298.html",
+      "imageUrl": "/assets/images/news/wbs-school.jpg",
+      "status": "published"
+    }
+  ],
+  "categories": [
+    {
+      "id": "aktualne-wydarzenia",
+      "name": {
+        "pl": "Aktualne wydarzenia",
+        "de": "Aktuelle Veranstaltungen",
+        "en": "Current Events"
+      }
+    },
+    {
+      "id": "nadchodzace-wydarzenia",
+      "name": {
+        "pl": "Nadchodzące wydarzenia",
+        "de": "Kommende Veranstaltungen",
+        "en": "Upcoming Events"
+      }
+    },
+    {
+      "id": "ogloszenia",
+      "name": {
+        "pl": "Ogłoszenia/Zapytania ofertowe",
+        "de": "Bekanntmachungen/Ausschreibungen",
+        "en": "Announcements/Tenders"
+      }
+    },
+    {
+      "id": "archiwum",
+      "name": {
+        "pl": "Archiwum",
+        "de": "Archiv",
+        "en": "Archive"
+      }
+    },
+    {
+      "id": "osiagniecia",
+      "name": {
+        "pl": "Osiągnięcia",
+        "de": "Errungenschaften",
+        "en": "Achievements"
+      }
+    }
+  ]
+}

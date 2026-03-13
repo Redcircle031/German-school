@@ -1,0 +1,546 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl",
+    "extractedDate": "2026-03-13",
+    "languages": ["pl", "de", "en"]
+  },
+  "navigation": {
+    "header": [
+      {
+        "id": "home",
+        "icon": "home",
+        "label": {
+          "pl": "Strona główna",
+          "de": "Startseite",
+          "en": "Home"
+        },
+        "url": "/",
+        "children": []
+      },
+      {
+        "id": "news",
+        "icon": "newspaper",
+        "label": {
+          "pl": "Aktualności",
+          "de": "Aktuelles",
+          "en": "News"
+        },
+        "url": "/news",
+        "children": [
+          {
+            "label": {
+              "pl": "Aktualne wydarzenia",
+              "de": "Aktuelle Veranstaltungen",
+              "en": "Current Events"
+            },
+            "url": "/news/current"
+          },
+          {
+            "label": {
+              "pl": "Nadchodzące wydarzenia",
+              "de": "Kommende Veranstaltungen",
+              "en": "Upcoming Events"
+            },
+            "url": "/news/upcoming"
+          },
+          {
+            "label": {
+              "pl": "Flash News Zarządu NTS",
+              "de": "Flash News des NTS-Vorstands",
+              "en": "NTS Board Flash News"
+            },
+            "url": "/news/flash"
+          },
+          {
+            "label": {
+              "pl": "Archiwum",
+              "de": "Archiv",
+              "en": "Archive"
+            },
+            "url": "/news/archive"
+          },
+          {
+            "label": {
+              "pl": "Ogłoszenia/Zapytania ofertowe",
+              "de": "Bekanntmachungen/Ausschreibungen",
+              "en": "Announcements/Tenders"
+            },
+            "url": "/news/announcements"
+          }
+        ]
+      },
+      {
+        "id": "about",
+        "icon": "info",
+        "label": {
+          "pl": "O nas",
+          "de": "Über uns",
+          "en": "About Us"
+        },
+        "url": "/about",
+        "children": [
+          {
+            "label": {
+              "pl": "Szkoła WBS",
+              "de": "WBS Schule",
+              "en": "WBS School"
+            },
+            "url": "/about/school"
+          },
+          {
+            "label": {
+              "pl": "Zespół",
+              "de": "Team",
+              "en": "Team"
+            },
+            "url": "/about/staff"
+          },
+          {
+            "label": {
+              "pl": "Misja",
+              "de": "Mission",
+              "en": "Mission"
+            },
+            "url": "/about/mission"
+          },
+          {
+            "label": {
+              "pl": "Dokumenty",
+              "de": "Dokumente",
+              "en": "Documents"
+            },
+            "url": "/about/documents"
+          },
+          {
+            "label": {
+              "pl": "Organ prowadzący",
+              "de": "Trägerverein",
+              "en": "Governing Body"
+            },
+            "url": "/about/governing-body"
+          },
+          {
+            "label": {
+              "pl": "Patron szkoły",
+              "de": "Schutzpatron",
+              "en": "School Patron"
+            },
+            "url": "/about/patron"
+          },
+          {
+            "label": {
+              "pl": "Nasi Partnerzy i Sponsorzy",
+              "de": "Unsere Partner und Sponsoren",
+              "en": "Our Partners & Sponsors"
+            },
+            "url": "/about/partners"
+          },
+          {
+            "label": {
+              "pl": "Oferty pracy i praktyk",
+              "de": "Stellen- und Praktikumsangebote",
+              "en": "Job & Internship Offers"
+            },
+            "url": "/about/careers"
+          },
+          {
+            "label": {
+              "pl": "Nasze certyfikaty",
+              "de": "Unsere Zertifikate",
+              "en": "Our Certificates"
+            },
+            "url": "/about/certificates"
+          }
+        ]
+      },
+      {
+        "id": "parent-zone",
+        "icon": "users",
+        "label": {
+          "pl": "Strefa rodzica",
+          "de": "Elternbereich",
+          "en": "Parent Zone"
+        },
+        "url": "/parents",
+        "children": [
+          {
+            "label": {
+              "pl": "Rekrutacja",
+              "de": "Rekrutierung",
+              "en": "Recruitment"
+            },
+            "url": "/parents/recruitment"
+          },
+          {
+            "label": {
+              "pl": "Formularze do pobrania",
+              "de": "Formulare zum Download",
+              "en": "Downloadable Forms"
+            },
+            "url": "/parents/forms"
+          },
+          {
+            "label": {
+              "pl": "Regulaminy",
+              "de": "Ordnungen",
+              "en": "Regulations"
+            },
+            "url": "/parents/regulations"
+          },
+          {
+            "label": {
+              "pl": "Stołówka szkolna",
+              "de": "Schulkantine",
+              "en": "School Canteen"
+            },
+            "url": "/parents/canteen"
+          },
+          {
+            "label": {
+              "pl": "Opieka popołudniowa",
+              "de": "Nachmittagsbetreuung",
+              "en": "Afternoon Care"
+            },
+            "url": "/parents/aftercare"
+          },
+          {
+            "label": {
+              "pl": "Rada Rodziców",
+              "de": "Elternbeirat",
+              "en": "Parent Council"
+            },
+            "url": "/parents/council"
+          },
+          {
+            "label": {
+              "pl": "Plan ferii 2025/26",
+              "de": "Ferienplan 2025/26",
+              "en": "Holiday Plan 2025/26"
+            },
+            "url": "/parents/holidays-2025-26"
+          },
+          {
+            "label": {
+              "pl": "Plan ferii 2026/27",
+              "de": "Ferienplan 2026/27",
+              "en": "Holiday Plan 2026/27"
+            },
+            "url": "/parents/holidays-2026-27"
+          },
+          {
+            "label": {
+              "pl": "Dzwonki",
+              "de": "Klingelzeiten",
+              "en": "School Bells Schedule"
+            },
+            "url": "/parents/bell-schedule"
+          },
+          {
+            "label": {
+              "pl": "Chór SchELF",
+              "de": "SchELF Chor",
+              "en": "SchELF Choir"
+            },
+            "url": "/parents/choir"
+          },
+          {
+            "label": {
+              "pl": "Karta ucznia ZTM",
+              "de": "ZTM-Schülerkarte",
+              "en": "ZTM Student Card"
+            },
+            "url": "/parents/ztm-card"
+          },
+          {
+            "label": {
+              "pl": "E-legitymacja",
+              "de": "E-Ausweis",
+              "en": "E-ID Card"
+            },
+            "url": "/parents/e-id"
+          },
+          {
+            "label": {
+              "pl": "mLegitymacja",
+              "de": "m-Ausweis",
+              "en": "Mobile ID Card"
+            },
+            "url": "/parents/mobile-id"
+          }
+        ]
+      },
+      {
+        "id": "student-zone",
+        "icon": "academic",
+        "label": {
+          "pl": "Strefa ucznia",
+          "de": "Schülerbereich",
+          "en": "Student Zone"
+        },
+        "url": "/students",
+        "children": [
+          {
+            "label": {
+              "pl": "Projekty",
+              "de": "Projekte",
+              "en": "Projects"
+            },
+            "url": "/students/projects"
+          },
+          {
+            "label": {
+              "pl": "Akademia Piłkarska WBS",
+              "de": "WBS Fußballakademie",
+              "en": "WBS Football Academy"
+            },
+            "url": "/students/football-academy"
+          },
+          {
+            "label": {
+              "pl": "Akademia Muzyczna WBS",
+              "de": "WBS Musikakademie",
+              "en": "WBS Music Academy"
+            },
+            "url": "/students/music-academy"
+          },
+          {
+            "label": {
+              "pl": "Biblioteka",
+              "de": "Bibliothek",
+              "en": "Library"
+            },
+            "url": "/students/library"
+          },
+          {
+            "label": {
+              "pl": "Nauczyciel zaufania",
+              "de": "Vertrauenslehrer",
+              "en": "Trusted Teacher"
+            },
+            "url": "/students/trusted-teacher"
+          },
+          {
+            "label": {
+              "pl": "Nasze osiągnięcia",
+              "de": "Unsere Errungenschaften",
+              "en": "Our Achievements"
+            },
+            "url": "/students/achievements"
+          },
+          {
+            "label": {
+              "pl": "Samorząd uczniowski",
+              "de": "Schülervertretung",
+              "en": "Student Council"
+            },
+            "url": "/students/student-council"
+          }
+        ]
+      },
+      {
+        "id": "impressum",
+        "icon": "document",
+        "label": {
+          "pl": "Impressum",
+          "de": "Impressum",
+          "en": "Imprint"
+        },
+        "url": "/impressum",
+        "children": []
+      },
+      {
+        "id": "contact",
+        "icon": "mail",
+        "label": {
+          "pl": "Kontakt",
+          "de": "Kontakt",
+          "en": "Contact"
+        },
+        "url": "/contact",
+        "children": []
+      }
+    ],
+    "footer": {
+      "columns": [
+        {
+          "title": {
+            "pl": "Nawigacja",
+            "de": "Navigation",
+            "en": "Navigation"
+          },
+          "links": [
+            {
+              "label": {
+                "pl": "Strona główna",
+                "de": "Startseite",
+                "en": "Home"
+              },
+              "url": "/"
+            },
+            {
+              "label": {
+                "pl": "Aktualności",
+                "de": "Aktuelles",
+                "en": "News"
+              },
+              "url": "/news"
+            },
+            {
+              "label": {
+                "pl": "O nas",
+                "de": "Über uns",
+                "en": "About Us"
+              },
+              "url": "/about"
+            },
+            {
+              "label": {
+                "pl": "Kontakt",
+                "de": "Kontakt",
+                "en": "Contact"
+              },
+              "url": "/contact"
+            }
+          ]
+        },
+        {
+          "title": {
+            "pl": "Strefa rodzica",
+            "de": "Elternbereich",
+            "en": "Parent Zone"
+          },
+          "links": [
+            {
+              "label": {
+                "pl": "Rekrutacja",
+                "de": "Rekrutierung",
+                "en": "Recruitment"
+              },
+              "url": "/parents/recruitment"
+            },
+            {
+              "label": {
+                "pl": "Formularze",
+                "de": "Formulare",
+                "en": "Forms"
+              },
+              "url": "/parents/forms"
+            },
+            {
+              "label": {
+                "pl": "Stołówka",
+                "de": "Kantine",
+                "en": "Canteen"
+              },
+              "url": "/parents/canteen"
+            }
+          ]
+        },
+        {
+          "title": {
+            "pl": "Strefa ucznia",
+            "de": "Schülerbereich",
+            "en": "Student Zone"
+          },
+          "links": [
+            {
+              "label": {
+                "pl": "Projekty",
+                "de": "Projekte",
+                "en": "Projects"
+              },
+              "url": "/students/projects"
+            },
+            {
+              "label": {
+                "pl": "Akademie",
+                "de": "Akademien",
+                "en": "Academies"
+              },
+              "url": "/students/academies"
+            },
+            {
+              "label": {
+                "pl": "Biblioteka",
+                "de": "Bibliothek",
+                "en": "Library"
+              },
+              "url": "/students/library"
+            }
+          ]
+        },
+        {
+          "title": {
+            "pl": "Dokumenty",
+            "de": "Dokumente",
+            "en": "Documents"
+          },
+          "links": [
+            {
+              "label": {
+                "pl": "Polityka prywatności",
+                "de": "Datenschutzerklärung",
+                "en": "Privacy Policy"
+              },
+              "url": "/privacy"
+            },
+            {
+              "label": {
+                "pl": "Polityka cookies",
+                "de": "Cookie-Richtlinie",
+                "en": "Cookie Policy"
+              },
+              "url": "/cookies"
+            },
+            {
+              "label": {
+                "pl": "Deklaracja dostępności",
+                "de": "Erklärung zur Barrierefreiheit",
+                "en": "Accessibility Statement"
+              },
+              "url": "/accessibility"
+            }
+          ]
+        }
+      ]
+    },
+    "quickLinks": [
+      {
+        "label": {
+          "pl": "Rekrutacja",
+          "de": "Rekrutierung",
+          "en": "Recruitment"
+        },
+        "url": "/parents/recruitment",
+        "icon": "user-plus"
+      },
+      {
+        "label": {
+          "pl": "Portal rodzica",
+          "de": "Elternportal",
+          "en": "Parent Portal"
+        },
+        "url": "/portal/parent",
+        "icon": "lock"
+      },
+      {
+        "label": {
+          "pl": "Portal ucznia",
+          "de": "Schülerportal",
+          "en": "Student Portal"
+        },
+        "url": "/portal/student",
+        "icon": "lock"
+      },
+      {
+        "label": {
+          "pl": "Kalendarz",
+          "de": "Kalender",
+          "en": "Calendar"
+        },
+        "url": "/events",
+        "icon": "calendar"
+      }
+    ]
+  }
+}

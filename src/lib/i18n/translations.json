@@ -1,0 +1,620 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-03-13"
+  },
+  "pl": {
+    "common": {
+      "skipToContent": "Przejdź do treści",
+      "loading": "Ładowanie...",
+      "error": "Błąd",
+      "success": "Sukces",
+      "close": "Zamknij",
+      "open": "Otwórz",
+      "menu": "Menu",
+      "search": "Szukaj",
+      "searchPlaceholder": "Wpisz szukaną frazę...",
+      "noResults": "Brak wyników",
+      "viewAll": "Zobacz wszystkie",
+      "readMore": "Czytaj więcej",
+      "showMore": "Pokaż więcej",
+      "showLess": "Pokaż mniej",
+      "back": "Wróć",
+      "next": "Dalej",
+      "previous": "Poprzedni",
+      "cancel": "Anuluj",
+      "confirm": "Potwierdź",
+      "save": "Zapisz",
+      "delete": "Usuń",
+      "edit": "Edytuj",
+      "add": "Dodaj",
+      "required": "Wymagane",
+      "optional": "Opcjonalne"
+    },
+    "navigation": {
+      "home": "Strona główna",
+      "news": "Aktualności",
+      "about": "O nas",
+      "parentZone": "Strefa rodzica",
+      "studentZone": "Strefa ucznia",
+      "impressum": "Impressum",
+      "contact": "Kontakt"
+    },
+    "header": {
+      "language": "Język",
+      "toggleMenu": "Przełącz menu",
+      "quickLinks": "Szybkie linki"
+    },
+    "footer": {
+      "contactUs": "Kontakt",
+      "followUs": "Śledź nas",
+      "legalLinks": {
+        "privacy": "Polityka prywatności",
+        "cookies": "Polityka cookies",
+        "accessibility": "Deklaracja dostępności",
+        "impressum": "Impressum"
+      },
+      "copyright": "© {year} WBS Szkoła. Wszelkie prawa zastrzeżone."
+    },
+    "homepage": {
+      "hero": {
+        "title": "Polsko-Niemiecka Szkoła Spotkań i Dialogu",
+        "subtitle": "im. Willy'ego Brandta w Warszawie",
+        "description": "Edukacja łącząca kultury. Dwujęzyczna szkoła z tradycjami od 1978 roku.",
+        "primaryCta": "Zapisz się",
+        "secondaryCta": "Zobacz ofertę"
+      },
+      "quickLinks": {
+        "title": "Szybkie linki",
+        "calendar": "Kalendarz",
+        "parentPortal": "Portal rodzica",
+        "studentPortal": "Portal ucznia",
+        "canteen": "Stołówka"
+      },
+      "about": {
+        "title": "O szkole WBS",
+        "description": "Jesteśmy międzynarodową szkołą z polskim i niemieckim językiem nauczania. Naszą misją jest kształcenie uczniów w duchu porozumienia i współpracy polsko-niemieckiej.",
+        "stats": {
+          "students": "Uczniów",
+          "teachers": "Nauczycieli",
+          "founded": "Rok założenia",
+          "campuses": "Kampusy"
+        },
+        "cta": "Poznaj nas lepiej"
+      },
+      "news": {
+        "title": "Aktualności",
+        "subtitle": "Najnowsze wiadomości ze szkoły",
+        "cta": "Zobacz wszystkie aktualności"
+      },
+      "events": {
+        "title": "Wydarzenia",
+        "subtitle": "Nadchodzące wydarzenia",
+        "cta": "Zobacz kalendarz",
+        "noUpcoming": "Brak nadchodzących wydarzeń"
+      },
+      "programs": {
+        "title": "Nasze programy",
+        "subtitle": "Poznaj nasze akademie i zajęcia dodatkowe",
+        "football": "Akademia Piłkarska",
+        "music": "Akademia Muzyczna",
+        "choir": "Chór SchELF",
+        "library": "Biblioteka",
+        "cta": "Zobacz wszystkie programy"
+      },
+      "values": {
+        "title": "Dlaczego WBS?",
+        "subtitle": "Wartości, które nas wyróżniają",
+        "bilingual": {
+          "title": "Edukacja dwujęzyczna",
+          "description": "Nauka w języku polskim i niemieckim od pierwszych dni"
+        },
+        "international": {
+          "title": "Międzynarodowy program",
+          "description": "Program nauczania uznawany międzynarodowo"
+        },
+        "teachers": {
+          "title": "Doświadczona kadra",
+          "description": "Wykwalifikowani nauczyciele z polskiego i niemieckiego"
+        },
+        "facilities": {
+          "title": "Nowoczesne zaplecze",
+          "description": "Sale lekcyjne, sale sportowe i pracownie"
+        },
+        "community": {
+          "title": "Społeczność",
+          "description": "Przyjazna atmosfera i integracja środowiska"
+        },
+        "excellence": {
+          "title": "Wysoki poziom",
+          "description": "Doskonałe wyniki egzaminów i osiągnięcia uczniów"
+        }
+      },
+      "testimonials": {
+        "title": "Opinie",
+        "subtitle": "Co mówią rodzice i uczniowie"
+      },
+      "cta": {
+        "title": "Zapisz swoje dziecko do WBS",
+        "description": "Dołącz do społeczności naszej szkoły",
+        "primary": "Umów wizytę",
+        "secondary": "Pobierz prospekt"
+      }
+    },
+    "news": {
+      "title": "Aktualności",
+      "categories": {
+        "all": "Wszystkie",
+        "currentEvents": "Aktualne wydarzenia",
+        "upcomingEvents": "Nadchodzące wydarzenia",
+        "achievements": "Osiągnięcia",
+        "announcements": "Ogłoszenia"
+      },
+      "filter": "Filtruj",
+      "sortBy": "Sortuj według",
+      "datePublished": "Data publikacji",
+      "author": "Autor",
+      "share": "Udostępnij",
+      "relatedNews": "Powiązane artykuły"
+    },
+    "events": {
+      "title": "Kalendarz wydarzeń",
+      "subtitle": "Sprawdź nadchodzące wydarzenia szkolne",
+      "view": {
+        "month": "Miesiąc",
+        "week": "Tydzień",
+        "day": "Dzień",
+        "list": "Lista"
+      },
+      "register": "Zapisz się",
+      "details": "Szczegóły",
+      "location": "Miejsce",
+      "time": "Czas",
+      "addToCalendar": "Dodaj do kalendarza",
+      "noEvents": "Brak wydarzeń w tym terminie"
+    },
+    "staff": {
+      "title": "Zespół nauczycielski",
+      "subtitle": "Poznaj naszą kadrę",
+      "search": "Szukaj nauczyciela",
+      "filter": "Filtruj według przedmiotu",
+      "email": "Email",
+      "subjects": "Przedmioty",
+      "grades": "Klasy",
+      "role": "Funkcja"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Skontaktuj się z nami",
+      "address": "Adres",
+      "phone": "Telefon",
+      "fax": "Fax",
+      "email": "Email",
+      "hours": "Godziny pracy sekretariatu",
+      "form": {
+        "title": "Formularz kontaktowy",
+        "name": "Imię i nazwisko",
+        "email": "Adres email",
+        "phone": "Numer telefonu",
+        "subject": "Temat",
+        "message": "Wiadomość",
+        "consent": "Wyrażam zgodę na przetwarzanie danych osobowych",
+        "submit": "Wyślij wiadomość",
+        "success": "Wiadomość została wysłana",
+        "error": "Wystąpił błąd podczas wysyłania"
+      },
+      "map": "Mapa dojazdu"
+    },
+    "cookieConsent": {
+      "title": "Ustawienia cookies",
+      "description": "Używamy plików cookies, aby zapewnić najlepsze wrażenia na naszej stronie. Wybierz, które cookies chcesz zaakceptować.",
+      "acceptAll": "Akceptuj wszystkie",
+      "rejectAll": "Odrzuć wszystkie",
+      "customize": "Dostosuj",
+      "saveSettings": "Zapisz ustawienia",
+      "categories": {
+        "necessary": {
+          "title": "Niezbędne",
+          "description": "Cookies wymagane do działania strony. Nie można ich wyłączyć.",
+          "alwaysActive": "Zawsze aktywne"
+        },
+        "statistics": {
+          "title": "Statystyki",
+          "description": "Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony."
+        },
+        "marketing": {
+          "title": "Marketing",
+          "description": "Używane do wyświetlania spersonalizowanych reklam."
+        },
+        "social": {
+          "title": "Media społecznościowe",
+          "description": "Umożliwiają udostępnianie treści w mediach społecznościowych."
+        }
+      },
+      "learnMore": "Dowiedz się więcej w naszej polityce cookies",
+      "withdrawConsent": "Wycofaj zgodę"
+    },
+    "accessibility": {
+      "title": "Ułatwienia dostępności",
+      "fontSize": "Rozmiar czcionki",
+      "contrast": "Kontrast",
+      "normal": "Normalny",
+      "large": "Duży",
+      "extraLarge": "Bardzo duży",
+      "highContrast": "Wysoki kontrast",
+      "reduceMotion": "Ogranicz animacje",
+      "reset": "Resetuj ustawienia"
+    },
+    "admissions": {
+      "title": "Rekrutacja",
+      "subtitle": "Zapisz swoje dziecko do WBS",
+      "process": {
+        "title": "Proces rekrutacji",
+        "step1": {
+          "title": "Złóż wniosek",
+          "description": "Wypełnij formularz zgłoszeniowy online"
+        },
+        "step2": {
+          "title": "Spotkanie",
+          "description": "Umów się na wizytę w szkole"
+        },
+        "step3": {
+          "title": "Ocena",
+          "description": "Uczestnictwo w zajęciach adaptacyjnych"
+        },
+        "step4": {
+          "title": "Decyzja",
+          "description": "Otrzymasz decyzję w ciągu 14 dni"
+        }
+      },
+      "requirements": "Wymagania",
+      "documents": "Wymagane dokumenty",
+      "deadlines": "Terminy",
+      "fees": "Czesne i opłaty",
+      "faq": "Najczęstsze pytania",
+      "cta": "Złóż wniosek online"
+    },
+    "legal": {
+      "lastUpdated": "Ostatnia aktualizacja",
+      "contactDPO": "Kontakt z Inspektorem Ochrony Danych",
+      "rights": "Twoje prawa",
+      "complaint": "Prawo do wniesienia skargi do UODO"
+    }
+  },
+  "de": {
+    "common": {
+      "skipToContent": "Zum Inhalt springen",
+      "loading": "Laden...",
+      "error": "Fehler",
+      "success": "Erfolg",
+      "close": "Schließen",
+      "open": "Öffnen",
+      "menu": "Menü",
+      "search": "Suchen",
+      "searchPlaceholder": "Suchbegriff eingeben...",
+      "noResults": "Keine Ergebnisse",
+      "viewAll": "Alle anzeigen",
+      "readMore": "Mehr lesen",
+      "showMore": "Mehr anzeigen",
+      "showLess": "Weniger anzeigen",
+      "back": "Zurück",
+      "next": "Weiter",
+      "previous": "Zurück",
+      "cancel": "Abbrechen",
+      "confirm": "Bestätigen",
+      "save": "Speichern",
+      "delete": "Löschen",
+      "edit": "Bearbeiten",
+      "add": "Hinzufügen",
+      "required": "Erforderlich",
+      "optional": "Optional"
+    },
+    "navigation": {
+      "home": "Startseite",
+      "news": "Aktuelles",
+      "about": "Über uns",
+      "parentZone": "Elternbereich",
+      "studentZone": "Schülerbereich",
+      "impressum": "Impressum",
+      "contact": "Kontakt"
+    },
+    "header": {
+      "language": "Sprache",
+      "toggleMenu": "Menü umschalten",
+      "quickLinks": "Schnelllinks"
+    },
+    "footer": {
+      "contactUs": "Kontakt",
+      "followUs": "Folgen Sie uns",
+      "legalLinks": {
+        "privacy": "Datenschutz",
+        "cookies": "Cookie-Richtlinie",
+        "accessibility": "Barrierefreiheit",
+        "impressum": "Impressum"
+      },
+      "copyright": "© {year} WBS Schule. Alle Rechte vorbehalten."
+    },
+    "homepage": {
+      "hero": {
+        "title": "Deutsch-Polnische Begegnungsschule",
+        "subtitle": "Willy-Brandt-Schule Warschau",
+        "description": "Bildung, die Kulturen verbindet. Zweisprachige Schule mit Tradition seit 1978.",
+        "primaryCta": "Jetzt anmelden",
+        "secondaryCta": "Angebot ansehen"
+      },
+      "quickLinks": {
+        "title": "Schnelllinks",
+        "calendar": "Kalender",
+        "parentPortal": "Elternportal",
+        "studentPortal": "Schülerportal",
+        "canteen": "Kantine"
+      },
+      "about": {
+        "title": "Über WBS",
+        "description": "Wir sind eine internationale Schule mit polnischer und deutscher Unterrichtssprache. Unsere Mission ist die Erziehung im Geiste der polnisch-deutschen Verständigung.",
+        "stats": {
+          "students": "Schüler",
+          "teachers": "Lehrkräfte",
+          "founded": "Gegründet",
+          "campuses": "Campusse"
+        },
+        "cta": "Mehr erfahren"
+      },
+      "news": {
+        "title": "Aktuelles",
+        "subtitle": "Neueste Nachrichten aus der Schule",
+        "cta": "Alle Nachrichten anzeigen"
+      },
+      "events": {
+        "title": "Veranstaltungen",
+        "subtitle": "Kommende Veranstaltungen",
+        "cta": "Kalender anzeigen",
+        "noUpcoming": "Keine anstehenden Veranstaltungen"
+      },
+      "programs": {
+        "title": "Unsere Programme",
+        "subtitle": "Entdecken Sie unsere Akademien und AGs",
+        "football": "Fußballakademie",
+        "music": "Musikakademie",
+        "choir": "SchELF Chor",
+        "library": "Bibliothek",
+        "cta": "Alle Programme anzeigen"
+      },
+      "values": {
+        "title": "Warum WBS?",
+        "subtitle": "Werte, die uns auszeichnen",
+        "bilingual": {
+          "title": "Zweisprachige Bildung",
+          "description": "Unterricht auf Polnisch und Deutsch von Anfang an"
+        },
+        "international": {
+          "title": "Internationales Programm",
+          "description": "International anerkannter Lehrplan"
+        },
+        "teachers": {
+          "title": "Erfahrenes Lehrpersonal",
+          "description": "Qualifizierte Lehrkräfte aus Polen und Deutschland"
+        },
+        "facilities": {
+          "title": "Moderne Ausstattung",
+          "description": "Klassenzimmer, Sporthallen und Fachräume"
+        },
+        "community": {
+          "title": "Gemeinschaft",
+          "description": "Freundliche Atmosphäre und Integration"
+        },
+        "excellence": {
+          "title": "Hohe Qualität",
+          "description": "Ausgezeichnete Prüfungsergebnisse und Leistungen"
+        }
+      },
+      "testimonials": {
+        "title": "Stimmen",
+        "subtitle": "Was Eltern und Schüler sagen"
+      },
+      "cta": {
+        "title": "Melden Sie Ihr Kind an der WBS an",
+        "description": "Werden Sie Teil unserer Schulgemeinschaft",
+        "primary": "Besuch vereinbaren",
+        "secondary": "Prospekt herunterladen"
+      }
+    },
+    "cookieConsent": {
+      "title": "Cookie-Einstellungen",
+      "description": "Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Wählen Sie, welche Cookies Sie akzeptieren möchten.",
+      "acceptAll": "Alle akzeptieren",
+      "rejectAll": "Alle ablehnen",
+      "customize": "Anpassen",
+      "saveSettings": "Einstellungen speichern",
+      "categories": {
+        "necessary": {
+          "title": "Erforderlich",
+          "description": "Cookies, die für das Funktionieren der Website erforderlich sind.",
+          "alwaysActive": "Immer aktiv"
+        },
+        "statistics": {
+          "title": "Statistiken",
+          "description": "Helfen uns zu verstehen, wie Besucher die Website nutzen."
+        },
+        "marketing": {
+          "title": "Marketing",
+          "description": "Wird verwendet, um personalisierte Werbung anzuzeigen."
+        },
+        "social": {
+          "title": "Soziale Medien",
+          "description": "Ermöglicht das Teilen von Inhalten in sozialen Medien."
+        }
+      },
+      "learnMore": "Mehr erfahren in unserer Cookie-Richtlinie",
+      "withdrawConsent": "Einwilligung widerrufen"
+    }
+  },
+  "en": {
+    "common": {
+      "skipToContent": "Skip to content",
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "close": "Close",
+      "open": "Open",
+      "menu": "Menu",
+      "search": "Search",
+      "searchPlaceholder": "Type to search...",
+      "noResults": "No results",
+      "viewAll": "View all",
+      "readMore": "Read more",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "add": "Add",
+      "required": "Required",
+      "optional": "Optional"
+    },
+    "navigation": {
+      "home": "Home",
+      "news": "News",
+      "about": "About Us",
+      "parentZone": "Parent Zone",
+      "studentZone": "Student Zone",
+      "impressum": "Imprint",
+      "contact": "Contact"
+    },
+    "header": {
+      "language": "Language",
+      "toggleMenu": "Toggle menu",
+      "quickLinks": "Quick links"
+    },
+    "footer": {
+      "contactUs": "Contact Us",
+      "followUs": "Follow Us",
+      "legalLinks": {
+        "privacy": "Privacy Policy",
+        "cookies": "Cookie Policy",
+        "accessibility": "Accessibility Statement",
+        "impressum": "Imprint"
+      },
+      "copyright": "© {year} WBS School. All rights reserved."
+    },
+    "homepage": {
+      "hero": {
+        "title": "Polish-German School of Meetings and Dialogue",
+        "subtitle": "Willy Brandt School Warsaw",
+        "description": "Education that connects cultures. Bilingual school with tradition since 1978.",
+        "primaryCta": "Apply Now",
+        "secondaryCta": "View Offerings"
+      },
+      "quickLinks": {
+        "title": "Quick Links",
+        "calendar": "Calendar",
+        "parentPortal": "Parent Portal",
+        "studentPortal": "Student Portal",
+        "canteen": "Canteen"
+      },
+      "about": {
+        "title": "About WBS",
+        "description": "We are an international school with Polish and German language of instruction. Our mission is education in the spirit of Polish-German understanding.",
+        "stats": {
+          "students": "Students",
+          "teachers": "Teachers",
+          "founded": "Founded",
+          "campuses": "Campuses"
+        },
+        "cta": "Learn More"
+      },
+      "news": {
+        "title": "News",
+        "subtitle": "Latest news from school",
+        "cta": "View all news"
+      },
+      "events": {
+        "title": "Events",
+        "subtitle": "Upcoming events",
+        "cta": "View calendar",
+        "noUpcoming": "No upcoming events"
+      },
+      "programs": {
+        "title": "Our Programs",
+        "subtitle": "Discover our academies and extracurricular activities",
+        "football": "Football Academy",
+        "music": "Music Academy",
+        "choir": "SchELF Choir",
+        "library": "Library",
+        "cta": "View all programs"
+      },
+      "values": {
+        "title": "Why WBS?",
+        "subtitle": "Values that distinguish us",
+        "bilingual": {
+          "title": "Bilingual Education",
+          "description": "Instruction in Polish and German from day one"
+        },
+        "international": {
+          "title": "International Curriculum",
+          "description": "Internationally recognized curriculum"
+        },
+        "teachers": {
+          "title": "Experienced Faculty",
+          "description": "Qualified teachers from Poland and Germany"
+        },
+        "facilities": {
+          "title": "Modern Facilities",
+          "description": "Classrooms, sports halls and specialized rooms"
+        },
+        "community": {
+          "title": "Community",
+          "description": "Friendly atmosphere and integration"
+        },
+        "excellence": {
+          "title": "High Standards",
+          "description": "Excellent exam results and student achievements"
+        }
+      },
+      "testimonials": {
+        "title": "Testimonials",
+        "subtitle": "What parents and students say"
+      },
+      "cta": {
+        "title": "Enroll Your Child at WBS",
+        "description": "Join our school community",
+        "primary": "Schedule a Visit",
+        "secondary": "Download Prospectus"
+      }
+    },
+    "cookieConsent": {
+      "title": "Cookie Settings",
+      "description": "We use cookies to provide you with the best experience on our website. Select which cookies you want to accept.",
+      "acceptAll": "Accept All",
+      "rejectAll": "Reject All",
+      "customize": "Customize",
+      "saveSettings": "Save Settings",
+      "categories": {
+        "necessary": {
+          "title": "Necessary",
+          "description": "Cookies required for the website to function. Cannot be disabled.",
+          "alwaysActive": "Always Active"
+        },
+        "statistics": {
+          "title": "Statistics",
+          "description": "Help us understand how visitors use the website."
+        },
+        "marketing": {
+          "title": "Marketing",
+          "description": "Used to display personalized advertisements."
+        },
+        "social": {
+          "title": "Social Media",
+          "description": "Enable sharing content on social media."
+        }
+      },
+      "learnMore": "Learn more in our Cookie Policy",
+      "withdrawConsent": "Withdraw Consent"
+    }
+  }
+}

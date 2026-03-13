@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl",
+    "extractedDate": "2026-03-13"
+  },
+  "events": [
+    {
+      "id": "event-001",
+      "title": {
+        "pl": "🐾 „KOTY Z PROMYKA" – Pomagamy i uczymy się z sercem",
+        "de": "🐾 „KATZEN VON PROMYKA" – Wir helfen und lernen mit Herz",
+        "en": "🐾 „CATS FROM PROMYKA" – Helping and learning with heart"
+      },
+      "date": "2026-02-11",
+      "endDate": null,
+      "type": "charity",
+      "category": {
+        "pl": "Wydarzenie charytatywne",
+        "de": "Wohltätigkeitsveranstaltung",
+        "en": "Charity Event"
+      },
+      "description": {
+        "pl": "Projekt charytatywno-edukacyjny zaangażowany w pomoc zwierzętom",
+        "de": "Wohltätigkeits- und Bildungsprojekt zur Unterstützung von Tieren",
+        "en": "Charity and educational project supporting animals"
+      },
+      "location": {
+        "pl": "Szkoła WBS",
+        "de": "WBS Schule",
+        "en": "WBS School"
+      },
+      "imageUrl": "/assets/images/events/koty-z-promyka.jpg",
+      "status": "completed"
+    },
+    {
+      "id": "event-002",
+      "title": {
+        "pl": "Konkurs chemiczny „CHEMIE – DIE STIMMT!\"",
+        "de": "Chemiewettbewerb „CHEMIE – DIE STIMMT!\"",
+        "en": "Chemistry Competition „CHEMIE – DIE STIMMT!\""
+      },
+      "date": "2026-02-10",
+      "endDate": null,
+      "type": "competition",
+      "category": {
+        "pl": "Konkurs",
+        "de": "Wettbewerb",
+        "en": "Competition"
+      },
+      "description": {
+        "pl": "Konkurs chemiczny dla uczniów szkół ponadpodstawowych",
+        "de": "Chemiewettbewerb für Oberstufenschüler",
+        "en": "Chemistry competition for secondary school students"
+      },
+      "location": {
+        "pl": "Szkoła WBS",
+        "de": "WBS Schule",
+        "en": "WBS School"
+      },
+      "imageUrl": "/assets/images/events/chemie-die-stimmt.jpg",
+      "status": "completed"
+    },
+    {
+      "id": "event-003",
+      "title": {
+        "pl": "Radiowa przygoda uczniów",
+        "de": "Radioabenteuer der Schüler",
+        "en": "Radio adventure of students"
+      },
+      "date": "2026-02-09",
+      "endDate": null,
+      "type": "project",
+      "category": {
+        "pl": "Projekt edukacyjny",
+        "de": "Bildungsprojekt",
+        "en": "Educational Project"
+      },
+      "description": {
+        "pl": "Projekt radiowy z udziałem uczniów WBS",
+        "de": "Radioprojekt mit WBS-Schülern",
+        "en": "Radio project with WBS students"
+      },
+      "location": {
+        "pl": "Studio radiowe",
+        "de": "Radiostudio",
+        "en": "Radio Studio"
+      },
+      "imageUrl": "/assets/images/events/radio-project.jpg",
+      "status": "completed"
+    }
+  ],
+  "upcomingEvents": [
+    {
+      "id": "event-upcoming-001",
+      "title": {
+        "pl": "Dzień Otwarty",
+        "de": "Tag der offenen Tür",
+        "en": "Open Day"
+      },
+      "date": "2026-04-15",
+      "endDate": "2026-04-15",
+      "time": "10:00-16:00",
+      "type": "open-house",
+      "category": {
+        "pl": "Dzień otwarty",
+        "de": "Tag der offenen Tür",
+        "en": "Open House"
+      },
+      "description": {
+        "pl": "Zapraszamy do odwiedzenia naszej szkoły i poznania oferty edukacyjnej",
+        "de": "Besuchen Sie unsere Schule und lernen Sie unser Bildungsangebot kennen",
+        "en": "Visit our school and learn about our educational offerings"
+      },
+      "location": {
+        "pl": "Szkoła WBS, ul. Św. Urszuli Ledóchowskiej 3",
+        "de": "WBS Schule, ul. Św. Urszuli Ledóchowskiej 3",
+        "en": "WBS School, ul. Św. Urszuli Ledóchowskiej 3"
+      },
+      "registrationUrl": "/events/open-day/register",
+      "status": "upcoming"
+    },
+    {
+      "id": "event-upcoming-002",
+      "title": {
+        "pl": "Koncert szkolny",
+        "de": "Schulkonzert",
+        "en": "School Concert"
+      },
+      "date": "2026-05-20",
+      "endDate": "2026-05-20",
+      "time": "18:00",
+      "type": "concert",
+      "category": {
+        "pl": "Koncert",
+        "de": "Konzert",
+        "en": "Concert"
+      },
+      "description": {
+        "pl": "Koncert w wykonaniu uczniów Akademii Muzycznej i chóru SchELF",
+        "de": "Konzert der Schüler der Musikakademie und des SchELF-Chors",
+        "en": "Concert by Music Academy students and SchELF Choir"
+      },
+      "location": {
+        "pl": "Aula szkolna",
+        "de": "Schulaula",
+        "en": "School Auditorium"
+      },
+      "status": "upcoming"
+    },
+    {
+      "id": "event-upcoming-003",
+      "title": {
+        "pl": "Turniej piłki nożnej",
+        "de": "Fußballturnier",
+        "en": "Football Tournament"
+      },
+      "date": "2026-06-10",
+      "endDate": "2026-06-12",
+      "time": "09:00-17:00",
+      "type": "sports",
+      "category": {
+        "pl": "Zawody sportowe",
+        "de": "Sportwettbewerb",
+        "en": "Sports Competition"
+      },
+      "description": {
+        "pl": "Międzyszkolny turniej piłki nożnej organizowany przez Akademię Piłkarską WBS",
+        "de": "Interschulisches Fußballturnier der WBS-Fußballakademie",
+        "en": "Inter-school football tournament organized by WBS Football Academy"
+      },
+      "location": {
+        "pl": "Boisko szkolne",
+        "de": "Schulsportplatz",
+        "en": "School Sports Field"
+      },
+      "status": "upcoming"
+    }
+  ],
+  "holidays": {
+    "2025-2026": {
+      "autumnBreak": {
+        "start": "2025-10-27",
+        "end": "2025-10-31"
+      },
+      "christmasBreak": {
+        "start": "2025-12-22",
+        "end": "2026-01-02"
+      },
+      "winterBreak": {
+        "start": "2026-02-16",
+        "end": "2026-02-27"
+      },
+      "easterBreak": {
+        "start": "2026-04-02",
+        "end": "2026-04-10"
+      },
+      "summerBreak": {
+        "start": "2026-06-20",
+        "end": "2026-08-31"
+      }
+    },
+    "2026-2027": {
+      "autumnBreak": {
+        "start": "2026-10-26",
+        "end": "2026-10-30"
+      },
+      "christmasBreak": {
+        "start": "2026-12-21",
+        "end": "2027-01-04"
+      },
+      "winterBreak": {
+        "start": "2027-02-15",
+        "end": "2027-02-26"
+      },
+      "easterBreak": {
+        "start": "2027-03-25",
+        "end": "2027-04-02"
+      },
+      "summerBreak": {
+        "start": "2027-06-19",
+        "end": "2027-08-31"
+      }
+    }
+  }
+}

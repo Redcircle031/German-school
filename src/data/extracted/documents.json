@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl",
+    "extractedDate": "2026-03-13"
+  },
+  "documents": [
+    {
+      "id": "doc-001",
+      "category": "forms",
+      "title": {
+        "pl": "Wniosek o przyjęcie do szkoły",
+        "de": "Aufnahmeantrag",
+        "en": "School Admission Application"
+      },
+      "url": "/assets/documents/forms/admission-application.pdf",
+      "fileType": "pdf",
+      "size": "245 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-002",
+      "category": "forms",
+      "title": {
+        "pl": "Zgoda na przetwarzanie danych",
+        "de": "Einwilligung zur Datenverarbeitung",
+        "en": "Data Processing Consent"
+      },
+      "url": "/assets/documents/forms/data-consent.pdf",
+      "fileType": "pdf",
+      "size": "120 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-003",
+      "category": "forms",
+      "title": {
+        "pl": "Zgoda na wyjście grupowe",
+        "de": "Einwilligung für Gruppenausflug",
+        "en": "Group Trip Permission"
+      },
+      "url": "/assets/documents/forms/group-trip-consent.pdf",
+      "fileType": "pdf",
+      "size": "95 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-004",
+      "category": "regulations",
+      "title": {
+        "pl": "Regulamin płatności",
+        "de": "Zahlungsordnung",
+        "en": "Payment Regulations"
+      },
+      "url": "/assets/documents/regulations/payment-regulations.pdf",
+      "fileType": "pdf",
+      "size": "180 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-005",
+      "category": "regulations",
+      "title": {
+        "pl": "Statut szkoły",
+        "de": "Schulsatzung",
+        "en": "School Statute"
+      },
+      "url": "/assets/documents/regulations/school-statute.pdf",
+      "fileType": "pdf",
+      "size": "520 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-006",
+      "category": "regulations",
+      "title": {
+        "pl": "Regulamin stołówki",
+        "de": "Kantinenordnung",
+        "en": "Canteen Regulations"
+      },
+      "url": "/assets/documents/regulations/canteen-regulations.pdf",
+      "fileType": "pdf",
+      "size": "145 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-007",
+      "category": "holidays",
+      "title": {
+        "pl": "Plan ferii 2025/26",
+        "de": "Ferienplan 2025/26",
+        "en": "Holiday Plan 2025/26"
+      },
+      "url": "/assets/documents/holidays/holiday-plan-2025-26.pdf",
+      "fileType": "pdf",
+      "size": "85 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-008",
+      "category": "holidays",
+      "title": {
+        "pl": "Plan ferii 2026/27",
+        "de": "Ferienplan 2026/27",
+        "en": "Holiday Plan 2026/27"
+      },
+      "url": "/assets/documents/holidays/holiday-plan-2026-27.pdf",
+      "fileType": "pdf",
+      "size": "85 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-009",
+      "category": "forms",
+      "title": {
+        "pl": "Wniosek o legitymację szkolną",
+        "de": "Antrag auf Schulausweis",
+        "en": "Student ID Application"
+      },
+      "url": "/assets/documents/forms/student-id-application.pdf",
+      "fileType": "pdf",
+      "size": "110 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-010",
+      "category": "forms",
+      "title": {
+        "pl": "Zgoda na udział w Akademii Piłkarskiej",
+        "de": "Einwilligung für Fußballakademie",
+        "en": "Football Academy Consent"
+      },
+      "url": "/assets/documents/forms/football-academy-consent.pdf",
+      "fileType": "pdf",
+      "size": "135 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-011",
+      "category": "forms",
+      "title": {
+        "pl": "Zgoda na udział w Akademii Muzycznej",
+        "de": "Einwilligung für Musikakademie",
+        "en": "Music Academy Consent"
+      },
+      "url": "/assets/documents/forms/music-academy-consent.pdf",
+      "fileType": "pdf",
+      "size": "130 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-012",
+      "category": "regulations",
+      "title": {
+        "pl": "Regulamin opieki popołudniowej",
+        "de": "Ordnung der Nachmittagsbetreuung",
+        "en": "Aftercare Regulations"
+      },
+      "url": "/assets/documents/regulations/aftercare-regulations.pdf",
+      "fileType": "pdf",
+      "size": "165 KB",
+      "language": ["pl", "de"]
+    },
+    {
+      "id": "doc-013",
+      "category": "legal",
+      "title": {
+        "pl": "Polityka prywatności",
+        "de": "Datenschutzerklärung",
+        "en": "Privacy Policy"
+      },
+      "url": "/assets/documents/legal/privacy-policy.pdf",
+      "fileType": "pdf",
+      "size": "290 KB",
+      "language": ["pl", "de", "en"]
+    },
+    {
+      "id": "doc-014",
+      "category": "legal",
+      "title": {
+        "pl": "Polityka cookies",
+        "de": "Cookie-Richtlinie",
+        "en": "Cookie Policy"
+      },
+      "url": "/assets/documents/legal/cookie-policy.pdf",
+      "fileType": "pdf",
+      "size": "175 KB",
+      "language": ["pl", "de", "en"]
+    },
+    {
+      "id": "doc-015",
+      "category": "legal",
+      "title": {
+        "pl": "Deklaracja dostępności",
+        "de": "Erklärung zur Barrierefreiheit",
+        "en": "Accessibility Statement"
+      },
+      "url": "/assets/documents/legal/accessibility-statement.pdf",
+      "fileType": "pdf",
+      "size": "145 KB",
+      "language": ["pl", "de", "en"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "forms",
+      "name": {
+        "pl": "Formularze",
+        "de": "Formulare",
+        "en": "Forms"
+      },
+      "count": 7
+    },
+    {
+      "id": "regulations",
+      "name": {
+        "pl": "Regulaminy",
+        "de": "Ordnungen",
+        "en": "Regulations"
+      },
+      "count": 4
+    },
+    {
+      "id": "holidays",
+      "name": {
+        "pl": "Plany ferii",
+        "de": "Ferienpläne",
+        "en": "Holiday Plans"
+      },
+      "count": 2
+    },
+    {
+      "id": "legal",
+      "name": {
+        "pl": "Dokumenty prawne",
+        "de": "Rechtsdokumente",
+        "en": "Legal Documents"
+      },
+      "count": 3
+    }
+  ]
+}
