@@ -1,0 +1,2250 @@
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async redirects() {
+    return [
+  {
+    "source": "/strona_glowna-1298.html",
+    "destination": "/pl",
+    "permanent": true
+  },
+  {
+    "source": "/strona_glowna-1388.html",
+    "destination": "/pl",
+    "permanent": true
+  },
+  {
+    "source": "/aktualnosci-1338.html",
+    "destination": "/pl/aktualnosci",
+    "permanent": true
+  },
+  {
+    "source": "/aktualnosci-1393.html",
+    "destination": "/pl/aktualnosci",
+    "permanent": true
+  },
+  {
+    "source": "/aktualne_wydarzenia-1339.html",
+    "destination": "/pl/aktualnosci",
+    "permanent": true
+  },
+  {
+    "source": "/o_nas-1397.html",
+    "destination": "/pl/o-szkole",
+    "permanent": true
+  },
+  {
+    "source": "/o_nas-1346.html",
+    "destination": "/pl/o-szkole",
+    "permanent": true
+  },
+  {
+    "source": "/szkola_wbs-1421.html",
+    "destination": "/pl/o-szkole",
+    "permanent": true
+  },
+  {
+    "source": "/szkola_wbs-2098.html",
+    "destination": "/pl/o-szkole",
+    "permanent": true
+  },
+  {
+    "source": "/zespol-1399.html",
+    "destination": "/pl/kadra",
+    "permanent": true
+  },
+  {
+    "source": "/zespol-1348.html",
+    "destination": "/pl/kadra",
+    "permanent": true
+  },
+  {
+    "source": "/misja-1398.html",
+    "destination": "/pl/o-szkole/misja",
+    "permanent": true
+  },
+  {
+    "source": "/misja-1347.html",
+    "destination": "/pl/o-szkole/misja",
+    "permanent": true
+  },
+  {
+    "source": "/dokumenty-2099.html",
+    "destination": "/pl/dla-rodzicow/dokumenty",
+    "permanent": true
+  },
+  {
+    "source": "/dokumenty-1446.html",
+    "destination": "/pl/dla-rodzicow/dokumenty",
+    "permanent": true
+  },
+  {
+    "source": "/strefa_rodzica-1401.html",
+    "destination": "/pl/dla-rodzicow",
+    "permanent": true
+  },
+  {
+    "source": "/strefa_rodzica-1356.html",
+    "destination": "/pl/dla-rodzicow",
+    "permanent": true
+  },
+  {
+    "source": "/rekrutacja-1402.html",
+    "destination": "/pl/rekrutacja",
+    "permanent": true
+  },
+  {
+    "source": "/rekrutacja-1357.html",
+    "destination": "/pl/rekrutacja",
+    "permanent": true
+  },
+  {
+    "source": "/rekrutacja-3859.html",
+    "destination": "/pl/rekrutacja",
+    "permanent": true
+  },
+  {
+    "source": "/formularze_do_pobrania-1408.html",
+    "destination": "/pl/dla-rodzicow/formularze",
+    "permanent": true
+  },
+  {
+    "source": "/formularze_do_pobrania-1358.html",
+    "destination": "/pl/dla-rodzicow/formularze",
+    "permanent": true
+  },
+  {
+    "source": "/regulaminy-1360.html",
+    "destination": "/pl/dla-rodzicow/regulaminy",
+    "permanent": true
+  },
+  {
+    "source": "/regulamin-1410.html",
+    "destination": "/pl/dla-rodzicow/regulaminy",
+    "permanent": true
+  },
+  {
+    "source": "/stolowka_szkolna-1422.html",
+    "destination": "/pl/dla-rodzicow/stolowka",
+    "permanent": true
+  },
+  {
+    "source": "/stolowka_szkolna_-2104.html",
+    "destination": "/pl/dla-rodzicow/stolowka",
+    "permanent": true
+  },
+  {
+    "source": "/opieka_popoludniowa-1364.html",
+    "destination": "/pl/dla-rodzicow/swietlica",
+    "permanent": true
+  },
+  {
+    "source": "/opieka_popoludniowa-1414.html",
+    "destination": "/pl/dla-rodzicow/swietlica",
+    "permanent": true
+  },
+  {
+    "source": "/rada_rodzicow-2423.html",
+    "destination": "/pl/dla-rodzicow/rada-rodzicow",
+    "permanent": true
+  },
+  {
+    "source": "/rada_rodzicow_-2105.html",
+    "destination": "/pl/dla-rodzicow/rada-rodzicow",
+    "permanent": true
+  },
+  {
+    "source": "/strefa_ucznia-2111.html",
+    "destination": "/pl/dla-uczniow",
+    "permanent": true
+  },
+  {
+    "source": "/strefa_ucznia-1369.html",
+    "destination": "/pl/dla-uczniow",
+    "permanent": true
+  },
+  {
+    "source": "/projekty-1417.html",
+    "destination": "/pl/dla-uczniow/projekty",
+    "permanent": true
+  },
+  {
+    "source": "/projekty-1371.html",
+    "destination": "/pl/dla-uczniow/projekty",
+    "permanent": true
+  },
+  {
+    "source": "/biblioteka-1433.html",
+    "destination": "/pl/dla-uczniow/biblioteka",
+    "permanent": true
+  },
+  {
+    "source": "/biblioteka-2113.html",
+    "destination": "/pl/dla-uczniow/biblioteka",
+    "permanent": true
+  },
+  {
+    "source": "/kontakt-1385.html",
+    "destination": "/pl/kontakt",
+    "permanent": true
+  },
+  {
+    "source": "/kontakt-1420.html",
+    "destination": "/pl/kontakt",
+    "permanent": true
+  },
+  {
+    "source": "/archiwum-2097.html",
+    "destination": "/pl/archiwum",
+    "permanent": true
+  },
+  {
+    "source": "/archiwum-1589.html",
+    "destination": "/pl/archiwum",
+    "permanent": true
+  },
+  {
+    "source": "/impressum-2760.html",
+    "destination": "/pl/impressum",
+    "permanent": true
+  },
+  {
+    "source": "/mapa_strony-1434.html",
+    "destination": "/pl/mapa-strony",
+    "permanent": true
+  },
+  {
+    "source": "/zajecia_online_w_wbs-3627.html",
+    "destination": "/pl/aktualnosci/zajecia-online-w-wbs-3627",
+    "permanent": true
+  },
+  {
+    "source": "/zajecia_online_w_wbs-3627",
+    "destination": "/pl/aktualnosci/zajecia-online-w-wbs-3627",
+    "permanent": true
+  },
+  {
+    "source": "/karnawal_w_szkole_podstawowej_wbs-3886.html",
+    "destination": "/pl/aktualnosci/karnawal-w-szkole-podstawowej-wbs-3886",
+    "permanent": true
+  },
+  {
+    "source": "/karnawal_w_szkole_podstawowej_wbs-3886",
+    "destination": "/pl/aktualnosci/karnawal-w-szkole-podstawowej-wbs-3886",
+    "permanent": true
+  },
+  {
+    "source": "/_konkurs__europazjednoczona_w_roznorodnosci-3967.html",
+    "destination": "/pl/sukcesy/konkurs-europazjednoczona-w-roznorodnosci-3967",
+    "permanent": true
+  },
+  {
+    "source": "/_konkurs__europazjednoczona_w_roznorodnosci-3967",
+    "destination": "/pl/sukcesy/konkurs-europazjednoczona-w-roznorodnosci-3967",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_iv_etap_znoszenia_ograniczen-3672.html",
+    "destination": "/pl/aktualnosci/koronawirus-iv-etap-znoszenia-ograniczen-3672",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_iv_etap_znoszenia_ograniczen-3672",
+    "destination": "/pl/aktualnosci/koronawirus-iv-etap-znoszenia-ograniczen-3672",
+    "permanent": true
+  },
+  {
+    "source": "/bieg_sponsorowanywyniki-3366.html",
+    "destination": "/pl/aktualnosci/bieg-sponsorowanywyniki-3366",
+    "permanent": true
+  },
+  {
+    "source": "/bieg_sponsorowanywyniki-3366",
+    "destination": "/pl/aktualnosci/bieg-sponsorowanywyniki-3366",
+    "permanent": true
+  },
+  {
+    "source": "/kolejna_radiowa_przygoda_naszych_uczniow-5205.html",
+    "destination": "/pl/aktualnosci/kolejna-radiowa-przygoda-naszych-uczniow-5205",
+    "permanent": true
+  },
+  {
+    "source": "/kolejna_radiowa_przygoda_naszych_uczniow-5205",
+    "destination": "/pl/aktualnosci/kolejna-radiowa-przygoda-naszych-uczniow-5205",
+    "permanent": true
+  },
+  {
+    "source": "/gymnastikshowpokaz_jazdy_na_monocyklachvideo-3536.html",
+    "destination": "/pl/aktualnosci/gymnastikshowpokaz-jazdy-na-monocyklachvideo-3536",
+    "permanent": true
+  },
+  {
+    "source": "/gymnastikshowpokaz_jazdy_na_monocyklachvideo-3536",
+    "destination": "/pl/aktualnosci/gymnastikshowpokaz-jazdy-na-monocyklachvideo-3536",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pisarzem_grzegorzem_kasdepke-4006.html",
+    "destination": "/pl/wydarzenia/spotkanie-z-pisarzem-grzegorzem-kasdepke-4006",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pisarzem_grzegorzem_kasdepke-4006",
+    "destination": "/pl/wydarzenia/spotkanie-z-pisarzem-grzegorzem-kasdepke-4006",
+    "permanent": true
+  },
+  {
+    "source": "/krippenspiel_kl_3c-3504.html",
+    "destination": "/pl/aktualnosci/krippenspiel-kl-3c-3504",
+    "permanent": true
+  },
+  {
+    "source": "/krippenspiel_kl_3c-3504",
+    "destination": "/pl/aktualnosci/krippenspiel-kl-3c-3504",
+    "permanent": true
+  },
+  {
+    "source": "/gymnastikshow_kl_16-3534.html",
+    "destination": "/pl/aktualnosci/gymnastikshow-kl-16-3534",
+    "permanent": true
+  },
+  {
+    "source": "/gymnastikshow_kl_16-3534",
+    "destination": "/pl/aktualnosci/gymnastikshow-kl-16-3534",
+    "permanent": true
+  },
+  {
+    "source": "/konkurs_na_logo_campusu_im_willyego_brandta-3363.html",
+    "destination": "/pl/sukcesy/konkurs-na-logo-campusu-im-willyego-brandta-3363",
+    "permanent": true
+  },
+  {
+    "source": "/konkurs_na_logo_campusu_im_willyego_brandta-3363",
+    "destination": "/pl/sukcesy/konkurs-na-logo-campusu-im-willyego-brandta-3363",
+    "permanent": true
+  },
+  {
+    "source": "/__sukces_naszych_uczniow_w_mistrzostwach_wilanowa_w_tenisie_stolowym-5194.html",
+    "destination": "/pl/sukcesy/sukces-naszych-uczniow-w-mistrzostwach-wilanowa-w-tenisie-stolowym-5194",
+    "permanent": true
+  },
+  {
+    "source": "/__sukces_naszych_uczniow_w_mistrzostwach_wilanowa_w_tenisie_stolowym-5194",
+    "destination": "/pl/sukcesy/sukces-naszych-uczniow-w-mistrzostwach-wilanowa-w-tenisie-stolowym-5194",
+    "permanent": true
+  },
+  {
+    "source": "/wspieramy_akcje_sloiki_z_wilanowa_dla_frania-3435.html",
+    "destination": "/pl/aktualnosci/wspieramy-akcje-sloiki-z-wilanowa-dla-frania-3435",
+    "permanent": true
+  },
+  {
+    "source": "/wspieramy_akcje_sloiki_z_wilanowa_dla_frania-3435",
+    "destination": "/pl/aktualnosci/wspieramy-akcje-sloiki-z-wilanowa-dla-frania-3435",
+    "permanent": true
+  },
+  {
+    "source": "/flohmarkt-2880.html",
+    "destination": "/pl/aktualnosci/flohmarkt-2880",
+    "permanent": true
+  },
+  {
+    "source": "/flohmarkt-2880",
+    "destination": "/pl/aktualnosci/flohmarkt-2880",
+    "permanent": true
+  },
+  {
+    "source": "/powrot__do_szkoly_klas_13-3870.html",
+    "destination": "/pl/aktualnosci/powrot-do-szkoly-klas-13-3870",
+    "permanent": true
+  },
+  {
+    "source": "/powrot__do_szkoly_klas_13-3870",
+    "destination": "/pl/aktualnosci/powrot-do-szkoly-klas-13-3870",
+    "permanent": true
+  },
+  {
+    "source": "/klip_z_festynu_letniego_2019_-3247.html",
+    "destination": "/pl/wydarzenia/klip-z-festynu-letniego-2019-3247",
+    "permanent": true
+  },
+  {
+    "source": "/klip_z_festynu_letniego_2019_-3247",
+    "destination": "/pl/wydarzenia/klip-z-festynu-letniego-2019-3247",
+    "permanent": true
+  },
+  {
+    "source": "/swiatowy_dzien_ksiazki_i_praw_autorskich_w_wbs-3961.html",
+    "destination": "/pl/aktualnosci/swiatowy-dzien-ksiazki-i-praw-autorskich-w-wbs-3961",
+    "permanent": true
+  },
+  {
+    "source": "/swiatowy_dzien_ksiazki_i_praw_autorskich_w_wbs-3961",
+    "destination": "/pl/aktualnosci/swiatowy-dzien-ksiazki-i-praw-autorskich-w-wbs-3961",
+    "permanent": true
+  },
+  {
+    "source": "/jesienne_zmiany_i__prezenty_w_campusie_im_willy_ego_brandta_w_warszawie-3797.html",
+    "destination": "/pl/aktualnosci/jesienne-zmiany-i-prezenty-w-campusie-im-willy-ego-brandta-w-warszawie-3797",
+    "permanent": true
+  },
+  {
+    "source": "/jesienne_zmiany_i__prezenty_w_campusie_im_willy_ego_brandta_w_warszawie-3797",
+    "destination": "/pl/aktualnosci/jesienne-zmiany-i-prezenty-w-campusie-im-willy-ego-brandta-w-warszawie-3797",
+    "permanent": true
+  },
+  {
+    "source": "/nasza_nauczycielka_historii_i_geografiim_glinka_o_polskoniemieckim_podreczniku_do_historii-3514.html",
+    "destination": "/pl/aktualnosci/nasza-nauczycielka-historii-i-geografiim-glinka-o-polskoniemieckim-podreczniku-do-historii-3514",
+    "permanent": true
+  },
+  {
+    "source": "/nasza_nauczycielka_historii_i_geografiim_glinka_o_polskoniemieckim_podreczniku_do_historii-3514",
+    "destination": "/pl/aktualnosci/nasza-nauczycielka-historii-i-geografiim-glinka-o-polskoniemieckim-podreczniku-do-historii-3514",
+    "permanent": true
+  },
+  {
+    "source": "/wesolych_swiat_bozego_narodzenia-3854.html",
+    "destination": "/pl/aktualnosci/wesolych-swiat-bozego-narodzenia-3854",
+    "permanent": true
+  },
+  {
+    "source": "/wesolych_swiat_bozego_narodzenia-3854",
+    "destination": "/pl/aktualnosci/wesolych-swiat-bozego-narodzenia-3854",
+    "permanent": true
+  },
+  {
+    "source": "/konkurs_czytelniczy_w_wbs-3473.html",
+    "destination": "/pl/sukcesy/konkurs-czytelniczy-w-wbs-3473",
+    "permanent": true
+  },
+  {
+    "source": "/konkurs_czytelniczy_w_wbs-3473",
+    "destination": "/pl/sukcesy/konkurs-czytelniczy-w-wbs-3473",
+    "permanent": true
+  },
+  {
+    "source": "/tydzien_antymobbingowy_9091209-3327.html",
+    "destination": "/pl/aktualnosci/tydzien-antymobbingowy-9091209-3327",
+    "permanent": true
+  },
+  {
+    "source": "/tydzien_antymobbingowy_9091209-3327",
+    "destination": "/pl/aktualnosci/tydzien-antymobbingowy-9091209-3327",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_wystawa_plakatow_2a-3678.html",
+    "destination": "/pl/aktualnosci/kreatywnie-przeciw-koronawirusowi-wystawa-plakatow-2a-3678",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_wystawa_plakatow_2a-3678",
+    "destination": "/pl/aktualnosci/kreatywnie-przeciw-koronawirusowi-wystawa-plakatow-2a-3678",
+    "permanent": true
+  },
+  {
+    "source": "/kochane_dzieci_wszystkiego_najlepszego_w_dniu_waszego_swieta-3676.html",
+    "destination": "/pl/aktualnosci/kochane-dzieci-wszystkiego-najlepszego-w-dniu-waszego-swieta-3676",
+    "permanent": true
+  },
+  {
+    "source": "/kochane_dzieci_wszystkiego_najlepszego_w_dniu_waszego_swieta-3676",
+    "destination": "/pl/aktualnosci/kochane-dzieci-wszystkiego-najlepszego-w-dniu-waszego-swieta-3676",
+    "permanent": true
+  },
+  {
+    "source": "/uroczyste_pozegnanie_maturzystow_i_rozdanie_swiadectw_dojrzalosci-4009.html",
+    "destination": "/pl/aktualnosci/uroczyste-pozegnanie-maturzystow-i-rozdanie-swiadectw-dojrzalosci-4009",
+    "permanent": true
+  },
+  {
+    "source": "/uroczyste_pozegnanie_maturzystow_i_rozdanie_swiadectw_dojrzalosci-4009",
+    "destination": "/pl/aktualnosci/uroczyste-pozegnanie-maturzystow-i-rozdanie-swiadectw-dojrzalosci-4009",
+    "permanent": true
+  },
+  {
+    "source": "/wspominamy_haline_szpilman-3647.html",
+    "destination": "/pl/aktualnosci/wspominamy-haline-szpilman-3647",
+    "permanent": true
+  },
+  {
+    "source": "/wspominamy_haline_szpilman-3647",
+    "destination": "/pl/aktualnosci/wspominamy-haline-szpilman-3647",
+    "permanent": true
+  },
+  {
+    "source": "/migracja_i_integracja_w_europie_podsumowanie_projektu_w_ramach_programu_erasmus_plus-3996.html",
+    "destination": "/pl/wydarzenia/migracja-i-integracja-w-europie-podsumowanie-projektu-w-ramach-programu-erasmus-plus-3996",
+    "permanent": true
+  },
+  {
+    "source": "/migracja_i_integracja_w_europie_podsumowanie_projektu_w_ramach_programu_erasmus_plus-3996",
+    "destination": "/pl/wydarzenia/migracja-i-integracja-w-europie-podsumowanie-projektu-w-ramach-programu-erasmus-plus-3996",
+    "permanent": true
+  },
+  {
+    "source": "/maski_dla_medykow_podziekowanie-3649.html",
+    "destination": "/pl/aktualnosci/maski-dla-medykow-podziekowanie-3649",
+    "permanent": true
+  },
+  {
+    "source": "/maski_dla_medykow_podziekowanie-3649",
+    "destination": "/pl/aktualnosci/maski-dla-medykow-podziekowanie-3649",
+    "permanent": true
+  },
+  {
+    "source": "/koktajl_powitalny_dla_rodzicow_nowych_uczniow_wbs-3317.html",
+    "destination": "/pl/aktualnosci/koktajl-powitalny-dla-rodzicow-nowych-uczniow-wbs-3317",
+    "permanent": true
+  },
+  {
+    "source": "/koktajl_powitalny_dla_rodzicow_nowych_uczniow_wbs-3317",
+    "destination": "/pl/aktualnosci/koktajl-powitalny-dla-rodzicow-nowych-uczniow-wbs-3317",
+    "permanent": true
+  },
+  {
+    "source": "/sladami_fryderyka_chopina_wycieczka_klasy_6c-3915.html",
+    "destination": "/pl/wydarzenia/sladami-fryderyka-chopina-wycieczka-klasy-6c-3915",
+    "permanent": true
+  },
+  {
+    "source": "/sladami_fryderyka_chopina_wycieczka_klasy_6c-3915",
+    "destination": "/pl/wydarzenia/sladami-fryderyka-chopina-wycieczka-klasy-6c-3915",
+    "permanent": true
+  },
+  {
+    "source": "/summer_camp_akademii_pilkarskiej_wbs_warszawa-3993.html",
+    "destination": "/pl/aktualnosci/summer-camp-akademii-pilkarskiej-wbs-warszawa-3993",
+    "permanent": true
+  },
+  {
+    "source": "/summer_camp_akademii_pilkarskiej_wbs_warszawa-3993",
+    "destination": "/pl/aktualnosci/summer-camp-akademii-pilkarskiej-wbs-warszawa-3993",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_jednosci_niemiec-2829.html",
+    "destination": "/pl/aktualnosci/dzien-jednosci-niemiec-2829",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_jednosci_niemiec-2829",
+    "destination": "/pl/aktualnosci/dzien-jednosci-niemiec-2829",
+    "permanent": true
+  },
+  {
+    "source": "/bieg_sponsorowany-2823.html",
+    "destination": "/pl/aktualnosci/bieg-sponsorowany-2823",
+    "permanent": true
+  },
+  {
+    "source": "/bieg_sponsorowany-2823",
+    "destination": "/pl/aktualnosci/bieg-sponsorowany-2823",
+    "permanent": true
+  },
+  {
+    "source": "/wda__europatagung_2018_-2883.html",
+    "destination": "/pl/aktualnosci/wda-europatagung-2018-2883",
+    "permanent": true
+  },
+  {
+    "source": "/wda__europatagung_2018_-2883",
+    "destination": "/pl/aktualnosci/wda-europatagung-2018-2883",
+    "permanent": true
+  },
+  {
+    "source": "/zyczenia_wielkanocne-3607.html",
+    "destination": "/pl/aktualnosci/zyczenia-wielkanocne-3607",
+    "permanent": true
+  },
+  {
+    "source": "/zyczenia_wielkanocne-3607",
+    "destination": "/pl/aktualnosci/zyczenia-wielkanocne-3607",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_laureaci_pokojowej_nagrody_nobla_klasa_7a-3821.html",
+    "destination": "/pl/wydarzenia/projekt-laureaci-pokojowej-nagrody-nobla-klasa-7a-3821",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_laureaci_pokojowej_nagrody_nobla_klasa_7a-3821",
+    "destination": "/pl/wydarzenia/projekt-laureaci-pokojowej-nagrody-nobla-klasa-7a-3821",
+    "permanent": true
+  },
+  {
+    "source": "/mistrzostwa_wilanowa_w_siatkowce-3564.html",
+    "destination": "/pl/sukcesy/mistrzostwa-wilanowa-w-siatkowce-3564",
+    "permanent": true
+  },
+  {
+    "source": "/mistrzostwa_wilanowa_w_siatkowce-3564",
+    "destination": "/pl/sukcesy/mistrzostwa-wilanowa-w-siatkowce-3564",
+    "permanent": true
+  },
+  {
+    "source": "/nauczanie_zdalne_po_feriach_jesiennych_kl_412-3780.html",
+    "destination": "/pl/aktualnosci/nauczanie-zdalne-po-feriach-jesiennych-kl-412-3780",
+    "permanent": true
+  },
+  {
+    "source": "/nauczanie_zdalne_po_feriach_jesiennych_kl_412-3780",
+    "destination": "/pl/aktualnosci/nauczanie-zdalne-po-feriach-jesiennych-kl-412-3780",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_obowiazek_noszenia_masek-3623.html",
+    "destination": "/pl/aktualnosci/koronawirus-obowiazek-noszenia-masek-3623",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_obowiazek_noszenia_masek-3623",
+    "destination": "/pl/aktualnosci/koronawirus-obowiazek-noszenia-masek-3623",
+    "permanent": true
+  },
+  {
+    "source": "/jugend_musiziert__etap_i_regionalny-3869.html",
+    "destination": "/pl/aktualnosci/jugend-musiziert-etap-i-regionalny-3869",
+    "permanent": true
+  },
+  {
+    "source": "/jugend_musiziert__etap_i_regionalny-3869",
+    "destination": "/pl/aktualnosci/jugend-musiziert-etap-i-regionalny-3869",
+    "permanent": true
+  },
+  {
+    "source": "/fahrradprojekt_-4003.html",
+    "destination": "/pl/wydarzenia/fahrradprojekt-4003",
+    "permanent": true
+  },
+  {
+    "source": "/fahrradprojekt_-4003",
+    "destination": "/pl/wydarzenia/fahrradprojekt-4003",
+    "permanent": true
+  },
+  {
+    "source": "/dodatkowe_materialy_edukacyjne_dla_chetnych-3601.html",
+    "destination": "/pl/aktualnosci/dodatkowe-materialy-edukacyjne-dla-chetnych-3601",
+    "permanent": true
+  },
+  {
+    "source": "/dodatkowe_materialy_edukacyjne_dla_chetnych-3601",
+    "destination": "/pl/aktualnosci/dodatkowe-materialy-edukacyjne-dla-chetnych-3601",
+    "permanent": true
+  },
+  {
+    "source": "/wyniki_ankiety_dotyczacej_elearning_w_szkole_wbs-3616.html",
+    "destination": "/pl/aktualnosci/wyniki-ankiety-dotyczacej-elearning-w-szkole-wbs-3616",
+    "permanent": true
+  },
+  {
+    "source": "/wyniki_ankiety_dotyczacej_elearning_w_szkole_wbs-3616",
+    "destination": "/pl/aktualnosci/wyniki-ankiety-dotyczacej-elearning-w-szkole-wbs-3616",
+    "permanent": true
+  },
+  {
+    "source": "/dynia_czy_kartofeldzien_2-3377.html",
+    "destination": "/pl/aktualnosci/dynia-czy-kartofeldzien-2-3377",
+    "permanent": true
+  },
+  {
+    "source": "/dynia_czy_kartofeldzien_2-3377",
+    "destination": "/pl/aktualnosci/dynia-czy-kartofeldzien-2-3377",
+    "permanent": true
+  },
+  {
+    "source": "/zapytanie_ofertowe_kuchnia_wbs-3477.html",
+    "destination": "/pl/aktualnosci/zapytanie-ofertowe-kuchnia-wbs-3477",
+    "permanent": true
+  },
+  {
+    "source": "/zapytanie_ofertowe_kuchnia_wbs-3477",
+    "destination": "/pl/aktualnosci/zapytanie-ofertowe-kuchnia-wbs-3477",
+    "permanent": true
+  },
+  {
+    "source": "/wybaczenie_konkurs_fotograficznofilmowy_dla_szkol_organizowany_przez_ambasade_niemiec-3498.html",
+    "destination": "/pl/sukcesy/wybaczenie-konkurs-fotograficznofilmowy-dla-szkol-organizowany-przez-ambasade-niemiec-3498",
+    "permanent": true
+  },
+  {
+    "source": "/wybaczenie_konkurs_fotograficznofilmowy_dla_szkol_organizowany_przez_ambasade_niemiec-3498",
+    "destination": "/pl/sukcesy/wybaczenie-konkurs-fotograficznofilmowy-dla-szkol-organizowany-przez-ambasade-niemiec-3498",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_rezyserem_jean__christophem_caronem-3424.html",
+    "destination": "/pl/wydarzenia/spotkanie-z-rezyserem-jean-christophem-caronem-3424",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_rezyserem_jean__christophem_caronem-3424",
+    "destination": "/pl/wydarzenia/spotkanie-z-rezyserem-jean-christophem-caronem-3424",
+    "permanent": true
+  },
+  {
+    "source": "/obchody_80_rocznicy_wybuchu_ii_wojny_swiatowej-3326.html",
+    "destination": "/pl/aktualnosci/obchody-80-rocznicy-wybuchu-ii-wojny-swiatowej-3326",
+    "permanent": true
+  },
+  {
+    "source": "/obchody_80_rocznicy_wybuchu_ii_wojny_swiatowej-3326",
+    "destination": "/pl/aktualnosci/obchody-80-rocznicy-wybuchu-ii-wojny-swiatowej-3326",
+    "permanent": true
+  },
+  {
+    "source": "/pokonalismy_polio-3783.html",
+    "destination": "/pl/aktualnosci/pokonalismy-polio-3783",
+    "permanent": true
+  },
+  {
+    "source": "/pokonalismy_polio-3783",
+    "destination": "/pl/aktualnosci/pokonalismy-polio-3783",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_jak_prawidlowo_uzywac_maseczki_i_rekawiczek_filmik_instruktazowy_-3632.html",
+    "destination": "/pl/aktualnosci/koronawirus-jak-prawidlowo-uzywac-maseczki-i-rekawiczek-filmik-instruktazowy-3632",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_jak_prawidlowo_uzywac_maseczki_i_rekawiczek_filmik_instruktazowy_-3632",
+    "destination": "/pl/aktualnosci/koronawirus-jak-prawidlowo-uzywac-maseczki-i-rekawiczek-filmik-instruktazowy-3632",
+    "permanent": true
+  },
+  {
+    "source": "/_study_in_germany__online_information_sessions_europe_2020-3571.html",
+    "destination": "/pl/aktualnosci/study-in-germany-online-information-sessions-europe-2020-3571",
+    "permanent": true
+  },
+  {
+    "source": "/_study_in_germany__online_information_sessions_europe_2020-3571",
+    "destination": "/pl/aktualnosci/study-in-germany-online-information-sessions-europe-2020-3571",
+    "permanent": true
+  },
+  {
+    "source": "/zawody_w_badmintona-3509.html",
+    "destination": "/pl/aktualnosci/zawody-w-badmintona-3509",
+    "permanent": true
+  },
+  {
+    "source": "/zawody_w_badmintona-3509",
+    "destination": "/pl/aktualnosci/zawody-w-badmintona-3509",
+    "permanent": true
+  },
+  {
+    "source": "/dezynfekcja_budynku_szkoly-3605.html",
+    "destination": "/pl/aktualnosci/dezynfekcja-budynku-szkoly-3605",
+    "permanent": true
+  },
+  {
+    "source": "/dezynfekcja_budynku_szkoly-3605",
+    "destination": "/pl/aktualnosci/dezynfekcja-budynku-szkoly-3605",
+    "permanent": true
+  },
+  {
+    "source": "/rozpoczecie_roku_szkolnego-3304.html",
+    "destination": "/pl/aktualnosci/rozpoczecie-roku-szkolnego-3304",
+    "permanent": true
+  },
+  {
+    "source": "/rozpoczecie_roku_szkolnego-3304",
+    "destination": "/pl/aktualnosci/rozpoczecie-roku-szkolnego-3304",
+    "permanent": true
+  },
+  {
+    "source": "/webinarium__pandemia_covid19__z_dr_med_pawlem_grzesiowskim-3778.html",
+    "destination": "/pl/aktualnosci/webinarium-pandemia-covid19-z-dr-med-pawlem-grzesiowskim-3778",
+    "permanent": true
+  },
+  {
+    "source": "/webinarium__pandemia_covid19__z_dr_med_pawlem_grzesiowskim-3778",
+    "destination": "/pl/aktualnosci/webinarium-pandemia-covid19-z-dr-med-pawlem-grzesiowskim-3778",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_muzyczny_online-3651.html",
+    "destination": "/pl/wydarzenia/projekt-muzyczny-online-3651",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_muzyczny_online-3651",
+    "destination": "/pl/wydarzenia/projekt-muzyczny-online-3651",
+    "permanent": true
+  },
+  {
+    "source": "/wirtualny_spacer_po_wystawie__willy_brandt_1913___1992_zycie_dla_wolnosci_pokoju_i_pojednania_miedzy_narodami-4004.html",
+    "destination": "/pl/aktualnosci/wirtualny-spacer-po-wystawie-willy-brandt-1913-1992-zycie-dla-wolnosci-pokoju-i-pojednania-miedzy-narodami-4004",
+    "permanent": true
+  },
+  {
+    "source": "/wirtualny_spacer_po_wystawie__willy_brandt_1913___1992_zycie_dla_wolnosci_pokoju_i_pojednania_miedzy_narodami-4004",
+    "destination": "/pl/aktualnosci/wirtualny-spacer-po-wystawie-willy-brandt-1913-1992-zycie-dla-wolnosci-pokoju-i-pojednania-miedzy-narodami-4004",
+    "permanent": true
+  },
+  {
+    "source": "/powitanie_pierwszych_klas-3713.html",
+    "destination": "/pl/aktualnosci/powitanie-pierwszych-klas-3713",
+    "permanent": true
+  },
+  {
+    "source": "/powitanie_pierwszych_klas-3713",
+    "destination": "/pl/aktualnosci/powitanie-pierwszych-klas-3713",
+    "permanent": true
+  },
+  {
+    "source": "/dachllieder__nasze_uczennice_w_finale-3594.html",
+    "destination": "/pl/aktualnosci/dachllieder-nasze-uczennice-w-finale-3594",
+    "permanent": true
+  },
+  {
+    "source": "/dachllieder__nasze_uczennice_w_finale-3594",
+    "destination": "/pl/aktualnosci/dachllieder-nasze-uczennice-w-finale-3594",
+    "permanent": true
+  },
+  {
+    "source": "/serdeczne_zyczenia_dla_mam-3670.html",
+    "destination": "/pl/aktualnosci/serdeczne-zyczenia-dla-mam-3670",
+    "permanent": true
+  },
+  {
+    "source": "/serdeczne_zyczenia_dla_mam-3670",
+    "destination": "/pl/aktualnosci/serdeczne-zyczenia-dla-mam-3670",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_ii_etap_znoszenia_ograniczen-3641.html",
+    "destination": "/pl/aktualnosci/koronawirus-ii-etap-znoszenia-ograniczen-3641",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_ii_etap_znoszenia_ograniczen-3641",
+    "destination": "/pl/aktualnosci/koronawirus-ii-etap-znoszenia-ograniczen-3641",
+    "permanent": true
+  },
+  {
+    "source": "/warsztaty_z_osoba_niewidoma-3469.html",
+    "destination": "/pl/aktualnosci/warsztaty-z-osoba-niewidoma-3469",
+    "permanent": true
+  },
+  {
+    "source": "/warsztaty_z_osoba_niewidoma-3469",
+    "destination": "/pl/aktualnosci/warsztaty-z-osoba-niewidoma-3469",
+    "permanent": true
+  },
+  {
+    "source": "/wizyta_eksperta_w_wbs_dr_florian_reil_z_giz_opowiada_o_zrownowazonej_uprawie_bawelny-3973.html",
+    "destination": "/pl/aktualnosci/wizyta-eksperta-w-wbs-dr-florian-reil-z-giz-opowiada-o-zrownowazonej-uprawie-bawelny-3973",
+    "permanent": true
+  },
+  {
+    "source": "/wizyta_eksperta_w_wbs_dr_florian_reil_z_giz_opowiada_o_zrownowazonej_uprawie_bawelny-3973",
+    "destination": "/pl/aktualnosci/wizyta-eksperta-w-wbs-dr-florian-reil-z-giz-opowiada-o-zrownowazonej-uprawie-bawelny-3973",
+    "permanent": true
+  },
+  {
+    "source": "/aktualizacja_wytyczne_dotyczace_nauczania_stacjonarnego_i_zdalnego_w_wbs-3702.html",
+    "destination": "/pl/aktualnosci/aktualizacja-wytyczne-dotyczace-nauczania-stacjonarnego-i-zdalnego-w-wbs-3702",
+    "permanent": true
+  },
+  {
+    "source": "/aktualizacja_wytyczne_dotyczace_nauczania_stacjonarnego_i_zdalnego_w_wbs-3702",
+    "destination": "/pl/aktualnosci/aktualizacja-wytyczne-dotyczace-nauczania-stacjonarnego-i-zdalnego-w-wbs-3702",
+    "permanent": true
+  },
+  {
+    "source": "/wystepy_naszych_uczniow_w_pierwszej_piatce-3408.html",
+    "destination": "/pl/wydarzenia/wystepy-naszych-uczniow-w-pierwszej-piatce-3408",
+    "permanent": true
+  },
+  {
+    "source": "/wystepy_naszych_uczniow_w_pierwszej_piatce-3408",
+    "destination": "/pl/wydarzenia/wystepy-naszych-uczniow-w-pierwszej-piatce-3408",
+    "permanent": true
+  },
+  {
+    "source": "/muzyczna_kartka_swiateczna_od_szkolnego_choru_schelf-3839.html",
+    "destination": "/pl/aktualnosci/muzyczna-kartka-swiateczna-od-szkolnego-choru-schelf-3839",
+    "permanent": true
+  },
+  {
+    "source": "/muzyczna_kartka_swiateczna_od_szkolnego_choru_schelf-3839",
+    "destination": "/pl/aktualnosci/muzyczna-kartka-swiateczna-od-szkolnego-choru-schelf-3839",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_muzyczny_online_try_everything_akademii_muzycznej_wbs_i_wbs-3692.html",
+    "destination": "/pl/wydarzenia/projekt-muzyczny-online-try-everything-akademii-muzycznej-wbs-i-wbs-3692",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_muzyczny_online_try_everything_akademii_muzycznej_wbs_i_wbs-3692",
+    "destination": "/pl/wydarzenia/projekt-muzyczny-online-try-everything-akademii-muzycznej-wbs-i-wbs-3692",
+    "permanent": true
+  },
+  {
+    "source": "/wbsbleibtzuhause_do_2405_-3637.html",
+    "destination": "/pl/aktualnosci/wbsbleibtzuhause-do-2405-3637",
+    "permanent": true
+  },
+  {
+    "source": "/wbsbleibtzuhause_do_2405_-3637",
+    "destination": "/pl/aktualnosci/wbsbleibtzuhause-do-2405-3637",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_wirtualna_wycieczka_do_francji-3683.html",
+    "destination": "/pl/wydarzenia/kreatywnie-przeciw-koronawirusowi-wirtualna-wycieczka-do-francji-3683",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_wirtualna_wycieczka_do_francji-3683",
+    "destination": "/pl/wydarzenia/kreatywnie-przeciw-koronawirusowi-wirtualna-wycieczka-do-francji-3683",
+    "permanent": true
+  },
+  {
+    "source": "/zakonczenie_miedzynarodowego_projektu__mauern_zum_sprechen_bringen____bygone_nearby__z_udzialem_uczennic_i_uczniow_wbs-3813.html",
+    "destination": "/pl/wydarzenia/zakonczenie-miedzynarodowego-projektu-mauern-zum-sprechen-bringen-bygone-nearby-z-udzialem-uczennic-i-uczniow-wbs-3813",
+    "permanent": true
+  },
+  {
+    "source": "/zakonczenie_miedzynarodowego_projektu__mauern_zum_sprechen_bringen____bygone_nearby__z_udzialem_uczennic_i_uczniow_wbs-3813",
+    "destination": "/pl/wydarzenia/zakonczenie-miedzynarodowego-projektu-mauern-zum-sprechen-bringen-bygone-nearby-z-udzialem-uczennic-i-uczniow-wbs-3813",
+    "permanent": true
+  },
+  {
+    "source": "/etap_regionalny_konkursu_jugend_musiziert_2026-5198.html",
+    "destination": "/pl/sukcesy/etap-regionalny-konkursu-jugend-musiziert-2026-5198",
+    "permanent": true
+  },
+  {
+    "source": "/etap_regionalny_konkursu_jugend_musiziert_2026-5198",
+    "destination": "/pl/sukcesy/etap-regionalny-konkursu-jugend-musiziert-2026-5198",
+    "permanent": true
+  },
+  {
+    "source": "/mielismy_szczescie__konkurs_czytelniczy_odbyl_sie_ostatniego_dnia_przed_zamknieciem_szkol-3811.html",
+    "destination": "/pl/sukcesy/mielismy-szczescie-konkurs-czytelniczy-odbyl-sie-ostatniego-dnia-przed-zamknieciem-szkol-3811",
+    "permanent": true
+  },
+  {
+    "source": "/mielismy_szczescie__konkurs_czytelniczy_odbyl_sie_ostatniego_dnia_przed_zamknieciem_szkol-3811",
+    "destination": "/pl/sukcesy/mielismy-szczescie-konkurs-czytelniczy-odbyl-sie-ostatniego-dnia-przed-zamknieciem-szkol-3811",
+    "permanent": true
+  },
+  {
+    "source": "/przedswiateczna_akcja_dobroczynna_-3847.html",
+    "destination": "/pl/aktualnosci/przedswiateczna-akcja-dobroczynna-3847",
+    "permanent": true
+  },
+  {
+    "source": "/przedswiateczna_akcja_dobroczynna_-3847",
+    "destination": "/pl/aktualnosci/przedswiateczna-akcja-dobroczynna-3847",
+    "permanent": true
+  },
+  {
+    "source": "/ankieta_dotyczaca_nauki_zdalnej-3584.html",
+    "destination": "/pl/aktualnosci/ankieta-dotyczaca-nauki-zdalnej-3584",
+    "permanent": true
+  },
+  {
+    "source": "/ankieta_dotyczaca_nauki_zdalnej-3584",
+    "destination": "/pl/aktualnosci/ankieta-dotyczaca-nauki-zdalnej-3584",
+    "permanent": true
+  },
+  {
+    "source": "/adwent_w_bibliotece-3495.html",
+    "destination": "/pl/aktualnosci/adwent-w-bibliotece-3495",
+    "permanent": true
+  },
+  {
+    "source": "/adwent_w_bibliotece-3495",
+    "destination": "/pl/aktualnosci/adwent-w-bibliotece-3495",
+    "permanent": true
+  },
+  {
+    "source": "/nasi_uczniowie_jurorami_w_miedzynarodowym_festiwalu_filmowym_w_chemniz-3372.html",
+    "destination": "/pl/aktualnosci/nasi-uczniowie-jurorami-w-miedzynarodowym-festiwalu-filmowym-w-chemniz-3372",
+    "permanent": true
+  },
+  {
+    "source": "/nasi_uczniowie_jurorami_w_miedzynarodowym_festiwalu_filmowym_w_chemniz-3372",
+    "destination": "/pl/aktualnosci/nasi-uczniowie-jurorami-w-miedzynarodowym-festiwalu-filmowym-w-chemniz-3372",
+    "permanent": true
+  },
+  {
+    "source": "/zwyciestwo_w_mistrzostwach_wilanowa_w_badmintonie__liceum-5188.html",
+    "destination": "/pl/sukcesy/zwyciestwo-w-mistrzostwach-wilanowa-w-badmintonie-liceum-5188",
+    "permanent": true
+  },
+  {
+    "source": "/zwyciestwo_w_mistrzostwach_wilanowa_w_badmintonie__liceum-5188",
+    "destination": "/pl/sukcesy/zwyciestwo-w-mistrzostwach-wilanowa-w-badmintonie-liceum-5188",
+    "permanent": true
+  },
+  {
+    "source": "/nowa_czesc_rekreacyjna_dla_uczniow_wbs-3746.html",
+    "destination": "/pl/aktualnosci/nowa-czesc-rekreacyjna-dla-uczniow-wbs-3746",
+    "permanent": true
+  },
+  {
+    "source": "/nowa_czesc_rekreacyjna_dla_uczniow_wbs-3746",
+    "destination": "/pl/aktualnosci/nowa-czesc-rekreacyjna-dla-uczniow-wbs-3746",
+    "permanent": true
+  },
+  {
+    "source": "/kronika_szkolna__jahrbuch_2020_21-4018.html",
+    "destination": "/pl/aktualnosci/kronika-szkolna-jahrbuch-2020-21-4018",
+    "permanent": true
+  },
+  {
+    "source": "/kronika_szkolna__jahrbuch_2020_21-4018",
+    "destination": "/pl/aktualnosci/kronika-szkolna-jahrbuch-2020-21-4018",
+    "permanent": true
+  },
+  {
+    "source": "/swiatowy_dzien_ksiazki_i_praw_autorskich-3628.html",
+    "destination": "/pl/aktualnosci/swiatowy-dzien-ksiazki-i-praw-autorskich-3628",
+    "permanent": true
+  },
+  {
+    "source": "/swiatowy_dzien_ksiazki_i_praw_autorskich-3628",
+    "destination": "/pl/aktualnosci/swiatowy-dzien-ksiazki-i-praw-autorskich-3628",
+    "permanent": true
+  },
+  {
+    "source": "/30_lat_po_zjednoczeniu_niemiec_wizyta_ambasadora_niemiec_w_wbs-3777.html",
+    "destination": "/pl/aktualnosci/30-lat-po-zjednoczeniu-niemiec-wizyta-ambasadora-niemiec-w-wbs-3777",
+    "permanent": true
+  },
+  {
+    "source": "/30_lat_po_zjednoczeniu_niemiec_wizyta_ambasadora_niemiec_w_wbs-3777",
+    "destination": "/pl/aktualnosci/30-lat-po-zjednoczeniu-niemiec-wizyta-ambasadora-niemiec-w-wbs-3777",
+    "permanent": true
+  },
+  {
+    "source": "/serdeczne_zyczenia_dla_ojcow-3685.html",
+    "destination": "/pl/aktualnosci/serdeczne-zyczenia-dla-ojcow-3685",
+    "permanent": true
+  },
+  {
+    "source": "/serdeczne_zyczenia_dla_ojcow-3685",
+    "destination": "/pl/aktualnosci/serdeczne-zyczenia-dla-ojcow-3685",
+    "permanent": true
+  },
+  {
+    "source": "/pozegnanie_maturzystow_i_absolwentow_realschule_-3687.html",
+    "destination": "/pl/aktualnosci/pozegnanie-maturzystow-i-absolwentow-realschule-3687",
+    "permanent": true
+  },
+  {
+    "source": "/pozegnanie_maturzystow_i_absolwentow_realschule_-3687",
+    "destination": "/pl/aktualnosci/pozegnanie-maturzystow-i-absolwentow-realschule-3687",
+    "permanent": true
+  },
+  {
+    "source": "/wytyczne_dotyczace_nauczanie_stacjonarnego_i_zdalnego_w_wbs-3784.html",
+    "destination": "/pl/aktualnosci/wytyczne-dotyczace-nauczanie-stacjonarnego-i-zdalnego-w-wbs-3784",
+    "permanent": true
+  },
+  {
+    "source": "/wytyczne_dotyczace_nauczanie_stacjonarnego_i_zdalnego_w_wbs-3784",
+    "destination": "/pl/aktualnosci/wytyczne-dotyczace-nauczanie-stacjonarnego-i-zdalnego-w-wbs-3784",
+    "permanent": true
+  },
+  {
+    "source": "/konsultacje_dla_rodzicow-3715.html",
+    "destination": "/pl/aktualnosci/konsultacje-dla-rodzicow-3715",
+    "permanent": true
+  },
+  {
+    "source": "/konsultacje_dla_rodzicow-3715",
+    "destination": "/pl/aktualnosci/konsultacje-dla-rodzicow-3715",
+    "permanent": true
+  },
+  {
+    "source": "/maski_ochronne_dla_medykow__zbiorka_organizowana_przez_naszego_ucznia-3631.html",
+    "destination": "/pl/aktualnosci/maski-ochronne-dla-medykow-zbiorka-organizowana-przez-naszego-ucznia-3631",
+    "permanent": true
+  },
+  {
+    "source": "/maski_ochronne_dla_medykow__zbiorka_organizowana_przez_naszego_ucznia-3631",
+    "destination": "/pl/aktualnosci/maski-ochronne-dla-medykow-zbiorka-organizowana-przez-naszego-ucznia-3631",
+    "permanent": true
+  },
+  {
+    "source": "/wizyta_dr_stephana_holthoffpf_rtnera_-2859.html",
+    "destination": "/pl/aktualnosci/wizyta-dr-stephana-holthoffpf-rtnera-2859",
+    "permanent": true
+  },
+  {
+    "source": "/wizyta_dr_stephana_holthoffpf_rtnera_-2859",
+    "destination": "/pl/aktualnosci/wizyta-dr-stephana-holthoffpf-rtnera-2859",
+    "permanent": true
+  },
+  {
+    "source": "/wymiana_uczniowska_soest-3491.html",
+    "destination": "/pl/aktualnosci/wymiana-uczniowska-soest-3491",
+    "permanent": true
+  },
+  {
+    "source": "/wymiana_uczniowska_soest-3491",
+    "destination": "/pl/aktualnosci/wymiana-uczniowska-soest-3491",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_wydluzenie_czasu_zamkniecia_placowek_oswiatowych-3575.html",
+    "destination": "/pl/aktualnosci/koronawirus-wydluzenie-czasu-zamkniecia-placowek-oswiatowych-3575",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_wydluzenie_czasu_zamkniecia_placowek_oswiatowych-3575",
+    "destination": "/pl/aktualnosci/koronawirus-wydluzenie-czasu-zamkniecia-placowek-oswiatowych-3575",
+    "permanent": true
+  },
+  {
+    "source": "/odwolanie_lekcji-3566.html",
+    "destination": "/pl/aktualnosci/odwolanie-lekcji-3566",
+    "permanent": true
+  },
+  {
+    "source": "/odwolanie_lekcji-3566",
+    "destination": "/pl/aktualnosci/odwolanie-lekcji-3566",
+    "permanent": true
+  },
+  {
+    "source": "/nauczanie_zdalne_od_120421-3947.html",
+    "destination": "/pl/aktualnosci/nauczanie-zdalne-od-120421-3947",
+    "permanent": true
+  },
+  {
+    "source": "/nauczanie_zdalne_od_120421-3947",
+    "destination": "/pl/aktualnosci/nauczanie-zdalne-od-120421-3947",
+    "permanent": true
+  },
+  {
+    "source": "/50_rocznica_uklekniecia_willyego_brandta_przed_pomnikiem_bohaterow_getta_artystyczne_portrety_naszego_patrona-3819.html",
+    "destination": "/pl/aktualnosci/50-rocznica-uklekniecia-willyego-brandta-przed-pomnikiem-bohaterow-getta-artystyczne-portrety-naszego-patrona-3819",
+    "permanent": true
+  },
+  {
+    "source": "/50_rocznica_uklekniecia_willyego_brandta_przed_pomnikiem_bohaterow_getta_artystyczne_portrety_naszego_patrona-3819",
+    "destination": "/pl/aktualnosci/50-rocznica-uklekniecia-willyego-brandta-przed-pomnikiem-bohaterow-getta-artystyczne-portrety-naszego-patrona-3819",
+    "permanent": true
+  },
+  {
+    "source": "/jaselka_-5190.html",
+    "destination": "/pl/aktualnosci/jaselka-5190",
+    "permanent": true
+  },
+  {
+    "source": "/jaselka_-5190",
+    "destination": "/pl/aktualnosci/jaselka-5190",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_dziecka_w_kampusie_im_willyego_brandta_w_warszawie-3991.html",
+    "destination": "/pl/aktualnosci/dzien-dziecka-w-kampusie-im-willyego-brandta-w-warszawie-3991",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_dziecka_w_kampusie_im_willyego_brandta_w_warszawie-3991",
+    "destination": "/pl/aktualnosci/dzien-dziecka-w-kampusie-im-willyego-brandta-w-warszawie-3991",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_gazetka_szkolna_klasy_1c-3666.html",
+    "destination": "/pl/aktualnosci/kreatywnie-przeciw-koronawirusowi-gazetka-szkolna-klasy-1c-3666",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_gazetka_szkolna_klasy_1c-3666",
+    "destination": "/pl/aktualnosci/kreatywnie-przeciw-koronawirusowi-gazetka-szkolna-klasy-1c-3666",
+    "permanent": true
+  },
+  {
+    "source": "/zdrowe_sniadanie-3390.html",
+    "destination": "/pl/aktualnosci/zdrowe-sniadanie-3390",
+    "permanent": true
+  },
+  {
+    "source": "/zdrowe_sniadanie-3390",
+    "destination": "/pl/aktualnosci/zdrowe-sniadanie-3390",
+    "permanent": true
+  },
+  {
+    "source": "/7_grudnia_2020__szczegolnie_pamietny_dzien_dla_wbs-3830.html",
+    "destination": "/pl/aktualnosci/7-grudnia-2020-szczegolnie-pamietny-dzien-dla-wbs-3830",
+    "permanent": true
+  },
+  {
+    "source": "/7_grudnia_2020__szczegolnie_pamietny_dzien_dla_wbs-3830",
+    "destination": "/pl/aktualnosci/7-grudnia-2020-szczegolnie-pamietny-dzien-dla-wbs-3830",
+    "permanent": true
+  },
+  {
+    "source": "/trwa_rekrutacja_2021_22-3922.html",
+    "destination": "/pl/aktualnosci/trwa-rekrutacja-2021-22-3922",
+    "permanent": true
+  },
+  {
+    "source": "/trwa_rekrutacja_2021_22-3922",
+    "destination": "/pl/aktualnosci/trwa-rekrutacja-2021-22-3922",
+    "permanent": true
+  },
+  {
+    "source": "/zakonczenie_roku_szkolnego_20_21-4085.html",
+    "destination": "/pl/aktualnosci/zakonczenie-roku-szkolnego-20-21-4085",
+    "permanent": true
+  },
+  {
+    "source": "/zakonczenie_roku_szkolnego_20_21-4085",
+    "destination": "/pl/aktualnosci/zakonczenie-roku-szkolnego-20-21-4085",
+    "permanent": true
+  },
+  {
+    "source": "/nagrania_do_podrecznikow_wydawnictwa_klettnasi_uczniowie_w_studiu-3547.html",
+    "destination": "/pl/aktualnosci/nagrania-do-podrecznikow-wydawnictwa-klettnasi-uczniowie-w-studiu-3547",
+    "permanent": true
+  },
+  {
+    "source": "/nagrania_do_podrecznikow_wydawnictwa_klettnasi_uczniowie_w_studiu-3547",
+    "destination": "/pl/aktualnosci/nagrania-do-podrecznikow-wydawnictwa-klettnasi-uczniowie-w-studiu-3547",
+    "permanent": true
+  },
+  {
+    "source": "/egzamin_abrsm_z_teorii_muzyki-3908.html",
+    "destination": "/pl/aktualnosci/egzamin-abrsm-z-teorii-muzyki-3908",
+    "permanent": true
+  },
+  {
+    "source": "/egzamin_abrsm_z_teorii_muzyki-3908",
+    "destination": "/pl/aktualnosci/egzamin-abrsm-z-teorii-muzyki-3908",
+    "permanent": true
+  },
+  {
+    "source": "/maj_ericha_kastnera_w_interpretacji_naszej_uczennicy_6a-3675.html",
+    "destination": "/pl/aktualnosci/maj-ericha-kastnera-w-interpretacji-naszej-uczennicy-6a-3675",
+    "permanent": true
+  },
+  {
+    "source": "/maj_ericha_kastnera_w_interpretacji_naszej_uczennicy_6a-3675",
+    "destination": "/pl/aktualnosci/maj-ericha-kastnera-w-interpretacji-naszej-uczennicy-6a-3675",
+    "permanent": true
+  },
+  {
+    "source": "/tydzien_doradztwa_zawodowego_i_targi_pracy_w_wbs-3965.html",
+    "destination": "/pl/aktualnosci/tydzien-doradztwa-zawodowego-i-targi-pracy-w-wbs-3965",
+    "permanent": true
+  },
+  {
+    "source": "/tydzien_doradztwa_zawodowego_i_targi_pracy_w_wbs-3965",
+    "destination": "/pl/aktualnosci/tydzien-doradztwa-zawodowego-i-targi-pracy-w-wbs-3965",
+    "permanent": true
+  },
+  {
+    "source": "/swiateczny_projekt_muzyczny_online_akademii_muzycznej_wbs_i_wbs-3845.html",
+    "destination": "/pl/wydarzenia/swiateczny-projekt-muzyczny-online-akademii-muzycznej-wbs-i-wbs-3845",
+    "permanent": true
+  },
+  {
+    "source": "/swiateczny_projekt_muzyczny_online_akademii_muzycznej_wbs_i_wbs-3845",
+    "destination": "/pl/wydarzenia/swiateczny-projekt-muzyczny-online-akademii-muzycznej-wbs-i-wbs-3845",
+    "permanent": true
+  },
+  {
+    "source": "/zdrowe_sniadanie-2844.html",
+    "destination": "/pl/aktualnosci/zdrowe-sniadanie-2844",
+    "permanent": true
+  },
+  {
+    "source": "/zdrowe_sniadanie-2844",
+    "destination": "/pl/aktualnosci/zdrowe-sniadanie-2844",
+    "permanent": true
+  },
+  {
+    "source": "/rozpoczecie_roku_szkolnego_20_21-3710.html",
+    "destination": "/pl/aktualnosci/rozpoczecie-roku-szkolnego-20-21-3710",
+    "permanent": true
+  },
+  {
+    "source": "/rozpoczecie_roku_szkolnego_20_21-3710",
+    "destination": "/pl/aktualnosci/rozpoczecie-roku-szkolnego-20-21-3710",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_nauczyciela_w_wbs-3373.html",
+    "destination": "/pl/aktualnosci/dzien-nauczyciela-w-wbs-3373",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_nauczyciela_w_wbs-3373",
+    "destination": "/pl/aktualnosci/dzien-nauczyciela-w-wbs-3373",
+    "permanent": true
+  },
+  {
+    "source": "/3_miejsce_dziewczyn_w_mistrzostwach_wilanowa-5184.html",
+    "destination": "/pl/sukcesy/3-miejsce-dziewczyn-w-mistrzostwach-wilanowa-5184",
+    "permanent": true
+  },
+  {
+    "source": "/3_miejsce_dziewczyn_w_mistrzostwach_wilanowa-5184",
+    "destination": "/pl/sukcesy/3-miejsce-dziewczyn-w-mistrzostwach-wilanowa-5184",
+    "permanent": true
+  },
+  {
+    "source": "/wizyta_powstanca_warszawskiego-3357.html",
+    "destination": "/pl/aktualnosci/wizyta-powstanca-warszawskiego-3357",
+    "permanent": true
+  },
+  {
+    "source": "/wizyta_powstanca_warszawskiego-3357",
+    "destination": "/pl/aktualnosci/wizyta-powstanca-warszawskiego-3357",
+    "permanent": true
+  },
+  {
+    "source": "/wlasnie_tak_wygladaja_zwyciezcy_podziekowanie_dla_lukasza_sarbiewskiego-3329.html",
+    "destination": "/pl/aktualnosci/wlasnie-tak-wygladaja-zwyciezcy-podziekowanie-dla-lukasza-sarbiewskiego-3329",
+    "permanent": true
+  },
+  {
+    "source": "/wlasnie_tak_wygladaja_zwyciezcy_podziekowanie_dla_lukasza_sarbiewskiego-3329",
+    "destination": "/pl/aktualnosci/wlasnie-tak-wygladaja-zwyciezcy-podziekowanie-dla-lukasza-sarbiewskiego-3329",
+    "permanent": true
+  },
+  {
+    "source": "/mistrzostwa_wilanowa_w_tenisie_stolowym_-3512.html",
+    "destination": "/pl/sukcesy/mistrzostwa-wilanowa-w-tenisie-stolowym-3512",
+    "permanent": true
+  },
+  {
+    "source": "/mistrzostwa_wilanowa_w_tenisie_stolowym_-3512",
+    "destination": "/pl/sukcesy/mistrzostwa-wilanowa-w-tenisie-stolowym-3512",
+    "permanent": true
+  },
+  {
+    "source": "/kreativ_gegen_corona_druciane_postaci_w_ruchu_-4014.html",
+    "destination": "/pl/aktualnosci/kreativ-gegen-corona-druciane-postaci-w-ruchu-4014",
+    "permanent": true
+  },
+  {
+    "source": "/kreativ_gegen_corona_druciane_postaci_w_ruchu_-4014",
+    "destination": "/pl/aktualnosci/kreativ-gegen-corona-druciane-postaci-w-ruchu-4014",
+    "permanent": true
+  },
+  {
+    "source": "/ferie_jesienne-2855.html",
+    "destination": "/pl/aktualnosci/ferie-jesienne-2855",
+    "permanent": true
+  },
+  {
+    "source": "/ferie_jesienne-2855",
+    "destination": "/pl/aktualnosci/ferie-jesienne-2855",
+    "permanent": true
+  },
+  {
+    "source": "/liveetap_krajowy_konkursu_jugend_musiziert_kopenhaga_2021-3919.html",
+    "destination": "/pl/sukcesy/liveetap-krajowy-konkursu-jugend-musiziert-kopenhaga-2021-3919",
+    "permanent": true
+  },
+  {
+    "source": "/liveetap_krajowy_konkursu_jugend_musiziert_kopenhaga_2021-3919",
+    "destination": "/pl/sukcesy/liveetap-krajowy-konkursu-jugend-musiziert-kopenhaga-2021-3919",
+    "permanent": true
+  },
+  {
+    "source": "/dynia_czy_kartofeldzien_3-3380.html",
+    "destination": "/pl/aktualnosci/dynia-czy-kartofeldzien-3-3380",
+    "permanent": true
+  },
+  {
+    "source": "/dynia_czy_kartofeldzien_3-3380",
+    "destination": "/pl/aktualnosci/dynia-czy-kartofeldzien-3-3380",
+    "permanent": true
+  },
+  {
+    "source": "/miedzynarodowy_dzien_praw_dziecka_w_wbs-3459.html",
+    "destination": "/pl/aktualnosci/miedzynarodowy-dzien-praw-dziecka-w-wbs-3459",
+    "permanent": true
+  },
+  {
+    "source": "/miedzynarodowy_dzien_praw_dziecka_w_wbs-3459",
+    "destination": "/pl/aktualnosci/miedzynarodowy-dzien-praw-dziecka-w-wbs-3459",
+    "permanent": true
+  },
+  {
+    "source": "/zakonczenie_roku_szkolnego_2019_20-3700.html",
+    "destination": "/pl/aktualnosci/zakonczenie-roku-szkolnego-2019-20-3700",
+    "permanent": true
+  },
+  {
+    "source": "/zakonczenie_roku_szkolnego_2019_20-3700",
+    "destination": "/pl/aktualnosci/zakonczenie-roku-szkolnego-2019-20-3700",
+    "permanent": true
+  },
+  {
+    "source": "/duze_wyzwanie_nowe_mozliwosci_przechodzimy_na_nauczanie_cyfrowe_-3572.html",
+    "destination": "/pl/aktualnosci/duze-wyzwanie-nowe-mozliwosci-przechodzimy-na-nauczanie-cyfrowe-3572",
+    "permanent": true
+  },
+  {
+    "source": "/duze_wyzwanie_nowe_mozliwosci_przechodzimy_na_nauczanie_cyfrowe_-3572",
+    "destination": "/pl/aktualnosci/duze-wyzwanie-nowe-mozliwosci-przechodzimy-na-nauczanie-cyfrowe-3572",
+    "permanent": true
+  },
+  {
+    "source": "/uroczyste_pozegnanie_maturzystow_wbs-3690.html",
+    "destination": "/pl/aktualnosci/uroczyste-pozegnanie-maturzystow-wbs-3690",
+    "permanent": true
+  },
+  {
+    "source": "/uroczyste_pozegnanie_maturzystow_wbs-3690",
+    "destination": "/pl/aktualnosci/uroczyste-pozegnanie-maturzystow-wbs-3690",
+    "permanent": true
+  },
+  {
+    "source": "/wbsbleibtzuhause-3597.html",
+    "destination": "/pl/aktualnosci/wbsbleibtzuhause-3597",
+    "permanent": true
+  },
+  {
+    "source": "/wbsbleibtzuhause-3597",
+    "destination": "/pl/aktualnosci/wbsbleibtzuhause-3597",
+    "permanent": true
+  },
+  {
+    "source": "/willy_brandt_projekt_klasy_3a_i_3c-3862.html",
+    "destination": "/pl/wydarzenia/willy-brandt-projekt-klasy-3a-i-3c-3862",
+    "permanent": true
+  },
+  {
+    "source": "/willy_brandt_projekt_klasy_3a_i_3c-3862",
+    "destination": "/pl/wydarzenia/willy-brandt-projekt-klasy-3a-i-3c-3862",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_laureaci_pokojowej_nagrody_nobla_klasa_7c_i_8a-3825.html",
+    "destination": "/pl/wydarzenia/projekt-laureaci-pokojowej-nagrody-nobla-klasa-7c-i-8a-3825",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_laureaci_pokojowej_nagrody_nobla_klasa_7c_i_8a-3825",
+    "destination": "/pl/wydarzenia/projekt-laureaci-pokojowej-nagrody-nobla-klasa-7c-i-8a-3825",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_kolejne_kroki_w_walce_z_pandemia-3582.html",
+    "destination": "/pl/aktualnosci/koronawirus-kolejne-kroki-w-walce-z-pandemia-3582",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_kolejne_kroki_w_walce_z_pandemia-3582",
+    "destination": "/pl/aktualnosci/koronawirus-kolejne-kroki-w-walce-z-pandemia-3582",
+    "permanent": true
+  },
+  {
+    "source": "/most_szkolny_w_weimarze_2019-3362.html",
+    "destination": "/pl/aktualnosci/most-szkolny-w-weimarze-2019-3362",
+    "permanent": true
+  },
+  {
+    "source": "/most_szkolny_w_weimarze_2019-3362",
+    "destination": "/pl/aktualnosci/most-szkolny-w-weimarze-2019-3362",
+    "permanent": true
+  },
+  {
+    "source": "/konsultacje_psychologiczne_online-3577.html",
+    "destination": "/pl/aktualnosci/konsultacje-psychologiczne-online-3577",
+    "permanent": true
+  },
+  {
+    "source": "/konsultacje_psychologiczne_online-3577",
+    "destination": "/pl/aktualnosci/konsultacje-psychologiczne-online-3577",
+    "permanent": true
+  },
+  {
+    "source": "/polfinal_mistrzostw_warszawy_w_badmintonie_po_zwyciestwie_w_mistrzostwach_wilanowa-5186.html",
+    "destination": "/pl/sukcesy/polfinal-mistrzostw-warszawy-w-badmintonie-po-zwyciestwie-w-mistrzostwach-wilanowa-5186",
+    "permanent": true
+  },
+  {
+    "source": "/polfinal_mistrzostw_warszawy_w_badmintonie_po_zwyciestwie_w_mistrzostwach_wilanowa-5186",
+    "destination": "/pl/sukcesy/polfinal-mistrzostw-warszawy-w-badmintonie-po-zwyciestwie-w-mistrzostwach-wilanowa-5186",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_mamy_w_wbs_-3989.html",
+    "destination": "/pl/aktualnosci/dzien-mamy-w-wbs-3989",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_mamy_w_wbs_-3989",
+    "destination": "/pl/aktualnosci/dzien-mamy-w-wbs-3989",
+    "permanent": true
+  },
+  {
+    "source": "/koncert_mikolajkowy_akademii_muzycznej_wbs-3474.html",
+    "destination": "/pl/wydarzenia/koncert-mikolajkowy-akademii-muzycznej-wbs-3474",
+    "permanent": true
+  },
+  {
+    "source": "/koncert_mikolajkowy_akademii_muzycznej_wbs-3474",
+    "destination": "/pl/wydarzenia/koncert-mikolajkowy-akademii-muzycznej-wbs-3474",
+    "permanent": true
+  },
+  {
+    "source": "/szkola_w_malawi_dziekuje_za_pomoc-3452.html",
+    "destination": "/pl/aktualnosci/szkola-w-malawi-dziekuje-za-pomoc-3452",
+    "permanent": true
+  },
+  {
+    "source": "/szkola_w_malawi_dziekuje_za_pomoc-3452",
+    "destination": "/pl/aktualnosci/szkola-w-malawi-dziekuje-za-pomoc-3452",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_taty_w_wbs-4011.html",
+    "destination": "/pl/aktualnosci/dzien-taty-w-wbs-4011",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_taty_w_wbs-4011",
+    "destination": "/pl/aktualnosci/dzien-taty-w-wbs-4011",
+    "permanent": true
+  },
+  {
+    "source": "/wyroznienie_dla_pani_dyrektor_mechthild_hinsbergerboguski_i_pana_norberta_st_we-3873.html",
+    "destination": "/pl/aktualnosci/wyroznienie-dla-pani-dyrektor-mechthild-hinsbergerboguski-i-pana-norberta-st-we-3873",
+    "permanent": true
+  },
+  {
+    "source": "/wyroznienie_dla_pani_dyrektor_mechthild_hinsbergerboguski_i_pana_norberta_st_we-3873",
+    "destination": "/pl/aktualnosci/wyroznienie-dla-pani-dyrektor-mechthild-hinsbergerboguski-i-pana-norberta-st-we-3873",
+    "permanent": true
+  },
+  {
+    "source": "/pochod_swmarcina-3438.html",
+    "destination": "/pl/aktualnosci/pochod-swmarcina-3438",
+    "permanent": true
+  },
+  {
+    "source": "/pochod_swmarcina-3438",
+    "destination": "/pl/aktualnosci/pochod-swmarcina-3438",
+    "permanent": true
+  },
+  {
+    "source": "/homeschooling_homeoffice_5_rad_jak_przetrwac_domowa_kwarantanne-3580.html",
+    "destination": "/pl/aktualnosci/homeschooling-homeoffice-5-rad-jak-przetrwac-domowa-kwarantanne-3580",
+    "permanent": true
+  },
+  {
+    "source": "/homeschooling_homeoffice_5_rad_jak_przetrwac_domowa_kwarantanne-3580",
+    "destination": "/pl/aktualnosci/homeschooling-homeoffice-5-rad-jak-przetrwac-domowa-kwarantanne-3580",
+    "permanent": true
+  },
+  {
+    "source": "/jugend_musiziert__nagrania_do_etapu_krajowego_-3903.html",
+    "destination": "/pl/aktualnosci/jugend-musiziert-nagrania-do-etapu-krajowego-3903",
+    "permanent": true
+  },
+  {
+    "source": "/jugend_musiziert__nagrania_do_etapu_krajowego_-3903",
+    "destination": "/pl/aktualnosci/jugend-musiziert-nagrania-do-etapu-krajowego-3903",
+    "permanent": true
+  },
+  {
+    "source": "/mediatorzy_na_podworku_szkolnym-3383.html",
+    "destination": "/pl/aktualnosci/mediatorzy-na-podworku-szkolnym-3383",
+    "permanent": true
+  },
+  {
+    "source": "/mediatorzy_na_podworku_szkolnym-3383",
+    "destination": "/pl/aktualnosci/mediatorzy-na-podworku-szkolnym-3383",
+    "permanent": true
+  },
+  {
+    "source": "/gymnastikshowvideo-3535.html",
+    "destination": "/pl/aktualnosci/gymnastikshowvideo-3535",
+    "permanent": true
+  },
+  {
+    "source": "/gymnastikshowvideo-3535",
+    "destination": "/pl/aktualnosci/gymnastikshowvideo-3535",
+    "permanent": true
+  },
+  {
+    "source": "/zajecia_z_mapa-3791.html",
+    "destination": "/pl/aktualnosci/zajecia-z-mapa-3791",
+    "permanent": true
+  },
+  {
+    "source": "/zajecia_z_mapa-3791",
+    "destination": "/pl/aktualnosci/zajecia-z-mapa-3791",
+    "permanent": true
+  },
+  {
+    "source": "/___koty_z_promyka____pomagamy_i_uczymy_sie_z_sercem-5209.html",
+    "destination": "/pl/aktualnosci/koty-z-promyka-pomagamy-i-uczymy-sie-z-sercem-5209",
+    "permanent": true
+  },
+  {
+    "source": "/___koty_z_promyka____pomagamy_i_uczymy_sie_z_sercem-5209",
+    "destination": "/pl/aktualnosci/koty-z-promyka-pomagamy-i-uczymy-sie-z-sercem-5209",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_iii_etap_znoszenia_ograniczen-3655.html",
+    "destination": "/pl/aktualnosci/koronawirus-iii-etap-znoszenia-ograniczen-3655",
+    "permanent": true
+  },
+  {
+    "source": "/koronawirus_iii_etap_znoszenia_ograniczen-3655",
+    "destination": "/pl/aktualnosci/koronawirus-iii-etap-znoszenia-ograniczen-3655",
+    "permanent": true
+  },
+  {
+    "source": "/podziekowania_od_rotary_polska-3411.html",
+    "destination": "/pl/aktualnosci/podziekowania-od-rotary-polska-3411",
+    "permanent": true
+  },
+  {
+    "source": "/podziekowania_od_rotary_polska-3411",
+    "destination": "/pl/aktualnosci/podziekowania-od-rotary-polska-3411",
+    "permanent": true
+  },
+  {
+    "source": "/nasz_nauczyciel_muzyki_i_dyrektor_akademii_muzycznej_wbs_marcin_lemiszewski_w__telewizyjnych_lekcjach_muzyki-3652.html",
+    "destination": "/pl/aktualnosci/nasz-nauczyciel-muzyki-i-dyrektor-akademii-muzycznej-wbs-marcin-lemiszewski-w-telewizyjnych-lekcjach-muzyki-3652",
+    "permanent": true
+  },
+  {
+    "source": "/nasz_nauczyciel_muzyki_i_dyrektor_akademii_muzycznej_wbs_marcin_lemiszewski_w__telewizyjnych_lekcjach_muzyki-3652",
+    "destination": "/pl/aktualnosci/nasz-nauczyciel-muzyki-i-dyrektor-akademii-muzycznej-wbs-marcin-lemiszewski-w-telewizyjnych-lekcjach-muzyki-3652",
+    "permanent": true
+  },
+  {
+    "source": "/odwolanie_wydarzeniajugend_musiziertlandeswettbewerb_warschau_2020-3554.html",
+    "destination": "/pl/aktualnosci/odwolanie-wydarzeniajugend-musiziertlandeswettbewerb-warschau-2020-3554",
+    "permanent": true
+  },
+  {
+    "source": "/odwolanie_wydarzeniajugend_musiziertlandeswettbewerb_warschau_2020-3554",
+    "destination": "/pl/aktualnosci/odwolanie-wydarzeniajugend-musiziertlandeswettbewerb-warschau-2020-3554",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pisarzem_mikolajem_golachowskim-3337.html",
+    "destination": "/pl/wydarzenia/spotkanie-z-pisarzem-mikolajem-golachowskim-3337",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pisarzem_mikolajem_golachowskim-3337",
+    "destination": "/pl/wydarzenia/spotkanie-z-pisarzem-mikolajem-golachowskim-3337",
+    "permanent": true
+  },
+  {
+    "source": "/wycieczka_do_kampinosu_kl_4a_4c_i_6c-3735.html",
+    "destination": "/pl/wydarzenia/wycieczka-do-kampinosu-kl-4a-4c-i-6c-3735",
+    "permanent": true
+  },
+  {
+    "source": "/wycieczka_do_kampinosu_kl_4a_4c_i_6c-3735",
+    "destination": "/pl/wydarzenia/wycieczka-do-kampinosu-kl-4a-4c-i-6c-3735",
+    "permanent": true
+  },
+  {
+    "source": "/pierwsze_miejsce_na_wilanowie___komplet_zwyciestw_i_awans_do_finalow_warszawskich-5182.html",
+    "destination": "/pl/aktualnosci/pierwsze-miejsce-na-wilanowie-komplet-zwyciestw-i-awans-do-finalow-warszawskich-5182",
+    "permanent": true
+  },
+  {
+    "source": "/pierwsze_miejsce_na_wilanowie___komplet_zwyciestw_i_awans_do_finalow_warszawskich-5182",
+    "destination": "/pl/aktualnosci/pierwsze-miejsce-na-wilanowie-komplet-zwyciestw-i-awans-do-finalow-warszawskich-5182",
+    "permanent": true
+  },
+  {
+    "source": "/nasi_uczniowie_jurorami_w_25_mlodziezowym_festiwalu_filmowym_schlingel-3770.html",
+    "destination": "/pl/aktualnosci/nasi-uczniowie-jurorami-w-25-mlodziezowym-festiwalu-filmowym-schlingel-3770",
+    "permanent": true
+  },
+  {
+    "source": "/nasi_uczniowie_jurorami_w_25_mlodziezowym_festiwalu_filmowym_schlingel-3770",
+    "destination": "/pl/aktualnosci/nasi-uczniowie-jurorami-w-25-mlodziezowym-festiwalu-filmowym-schlingel-3770",
+    "permanent": true
+  },
+  {
+    "source": "/wytyczne_dotyczace_nauczania_stacjonarnego_i_zdalnego_w_wbs-3722.html",
+    "destination": "/pl/aktualnosci/wytyczne-dotyczace-nauczania-stacjonarnego-i-zdalnego-w-wbs-3722",
+    "permanent": true
+  },
+  {
+    "source": "/wytyczne_dotyczace_nauczania_stacjonarnego_i_zdalnego_w_wbs-3722",
+    "destination": "/pl/aktualnosci/wytyczne-dotyczace-nauczania-stacjonarnego-i-zdalnego-w-wbs-3722",
+    "permanent": true
+  },
+  {
+    "source": "/mlodziez_z_wbs_we_francji_w_ramach_programu_erasmus_plus-3456.html",
+    "destination": "/pl/aktualnosci/mlodziez-z-wbs-we-francji-w-ramach-programu-erasmus-plus-3456",
+    "permanent": true
+  },
+  {
+    "source": "/mlodziez_z_wbs_we_francji_w_ramach_programu_erasmus_plus-3456",
+    "destination": "/pl/aktualnosci/mlodziez-z-wbs-we-francji-w-ramach-programu-erasmus-plus-3456",
+    "permanent": true
+  },
+  {
+    "source": "/miedzynarodowy_dzien_kropki-2817.html",
+    "destination": "/pl/aktualnosci/miedzynarodowy-dzien-kropki-2817",
+    "permanent": true
+  },
+  {
+    "source": "/miedzynarodowy_dzien_kropki-2817",
+    "destination": "/pl/aktualnosci/miedzynarodowy-dzien-kropki-2817",
+    "permanent": true
+  },
+  {
+    "source": "/sportowa_jesien_w_wbs-3389.html",
+    "destination": "/pl/aktualnosci/sportowa-jesien-w-wbs-3389",
+    "permanent": true
+  },
+  {
+    "source": "/sportowa_jesien_w_wbs-3389",
+    "destination": "/pl/aktualnosci/sportowa-jesien-w-wbs-3389",
+    "permanent": true
+  },
+  {
+    "source": "/bieg_sponsorowany-3338.html",
+    "destination": "/pl/aktualnosci/bieg-sponsorowany-3338",
+    "permanent": true
+  },
+  {
+    "source": "/bieg_sponsorowany-3338",
+    "destination": "/pl/aktualnosci/bieg-sponsorowany-3338",
+    "permanent": true
+  },
+  {
+    "source": "/sportowa_jesien_w_wbs-2852.html",
+    "destination": "/pl/aktualnosci/sportowa-jesien-w-wbs-2852",
+    "permanent": true
+  },
+  {
+    "source": "/sportowa_jesien_w_wbs-2852",
+    "destination": "/pl/aktualnosci/sportowa-jesien-w-wbs-2852",
+    "permanent": true
+  },
+  {
+    "source": "/archiwalne_nagrania_z_7_grudnia_1970-3835.html",
+    "destination": "/pl/aktualnosci/archiwalne-nagrania-z-7-grudnia-1970-3835",
+    "permanent": true
+  },
+  {
+    "source": "/archiwalne_nagrania_z_7_grudnia_1970-3835",
+    "destination": "/pl/aktualnosci/archiwalne-nagrania-z-7-grudnia-1970-3835",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pania_kayser_poswiecone_upamietnieniu_ofiar_obozu_w_oswiecimiu-3542.html",
+    "destination": "/pl/wydarzenia/spotkanie-z-pania-kayser-poswiecone-upamietnieniu-ofiar-obozu-w-oswiecimiu-3542",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pania_kayser_poswiecone_upamietnieniu_ofiar_obozu_w_oswiecimiu-3542",
+    "destination": "/pl/wydarzenia/spotkanie-z-pania-kayser-poswiecone-upamietnieniu-ofiar-obozu-w-oswiecimiu-3542",
+    "permanent": true
+  },
+  {
+    "source": "/wazne_informacje_dotyczace_nauczania_hybrydowego-3980.html",
+    "destination": "/pl/aktualnosci/wazne-informacje-dotyczace-nauczania-hybrydowego-3980",
+    "permanent": true
+  },
+  {
+    "source": "/wazne_informacje_dotyczace_nauczania_hybrydowego-3980",
+    "destination": "/pl/aktualnosci/wazne-informacje-dotyczace-nauczania-hybrydowego-3980",
+    "permanent": true
+  },
+  {
+    "source": "/wytyczne_dotyczace_nauczania_stacjonarnego_i_zdalnego_w_wbs-3982.html",
+    "destination": "/pl/aktualnosci/wytyczne-dotyczace-nauczania-stacjonarnego-i-zdalnego-w-wbs-3982",
+    "permanent": true
+  },
+  {
+    "source": "/wytyczne_dotyczace_nauczania_stacjonarnego_i_zdalnego_w_wbs-3982",
+    "destination": "/pl/aktualnosci/wytyczne-dotyczace-nauczania-stacjonarnego-i-zdalnego-w-wbs-3982",
+    "permanent": true
+  },
+  {
+    "source": "/akademia_muzyczna_wbs_podczas_finalu_akcji_charytatywnej_-3463.html",
+    "destination": "/pl/aktualnosci/akademia-muzyczna-wbs-podczas-finalu-akcji-charytatywnej-3463",
+    "permanent": true
+  },
+  {
+    "source": "/akademia_muzyczna_wbs_podczas_finalu_akcji_charytatywnej_-3463",
+    "destination": "/pl/aktualnosci/akademia-muzyczna-wbs-podczas-finalu-akcji-charytatywnej-3463",
+    "permanent": true
+  },
+  {
+    "source": "/covid19_aktualne_informacje_i_zalecenia____warszawa_z_czerwonej_strefie-3775.html",
+    "destination": "/pl/aktualnosci/covid19-aktualne-informacje-i-zalecenia-warszawa-z-czerwonej-strefie-3775",
+    "permanent": true
+  },
+  {
+    "source": "/covid19_aktualne_informacje_i_zalecenia____warszawa_z_czerwonej_strefie-3775",
+    "destination": "/pl/aktualnosci/covid19-aktualne-informacje-i-zalecenia-warszawa-z-czerwonej-strefie-3775",
+    "permanent": true
+  },
+  {
+    "source": "/koncerty_uczniow_akademii_muzycznej_wbs-5201.html",
+    "destination": "/pl/wydarzenia/koncerty-uczniow-akademii-muzycznej-wbs-5201",
+    "permanent": true
+  },
+  {
+    "source": "/koncerty_uczniow_akademii_muzycznej_wbs-5201",
+    "destination": "/pl/wydarzenia/koncerty-uczniow-akademii-muzycznej-wbs-5201",
+    "permanent": true
+  },
+  {
+    "source": "/powitanie_pierwszych_klas-3316.html",
+    "destination": "/pl/aktualnosci/powitanie-pierwszych-klas-3316",
+    "permanent": true
+  },
+  {
+    "source": "/powitanie_pierwszych_klas-3316",
+    "destination": "/pl/aktualnosci/powitanie-pierwszych-klas-3316",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_komiksowy_historyczny_gest_willyego_brandta-3828.html",
+    "destination": "/pl/wydarzenia/projekt-komiksowy-historyczny-gest-willyego-brandta-3828",
+    "permanent": true
+  },
+  {
+    "source": "/projekt_komiksowy_historyczny_gest_willyego_brandta-3828",
+    "destination": "/pl/wydarzenia/projekt-komiksowy-historyczny-gest-willyego-brandta-3828",
+    "permanent": true
+  },
+  {
+    "source": "/wielkanocne_prace_klasy_2_i_3-3944.html",
+    "destination": "/pl/aktualnosci/wielkanocne-prace-klasy-2-i-3-3944",
+    "permanent": true
+  },
+  {
+    "source": "/wielkanocne_prace_klasy_2_i_3-3944",
+    "destination": "/pl/aktualnosci/wielkanocne-prace-klasy-2-i-3-3944",
+    "permanent": true
+  },
+  {
+    "source": "/swiatowy_dzien_ksiazki_i_praw_autorskichzdjecia-3639.html",
+    "destination": "/pl/aktualnosci/swiatowy-dzien-ksiazki-i-praw-autorskichzdjecia-3639",
+    "permanent": true
+  },
+  {
+    "source": "/swiatowy_dzien_ksiazki_i_praw_autorskichzdjecia-3639",
+    "destination": "/pl/aktualnosci/swiatowy-dzien-ksiazki-i-praw-autorskichzdjecia-3639",
+    "permanent": true
+  },
+  {
+    "source": "/konkurs_piosenki_niemieckojezycznej_dachll-3912.html",
+    "destination": "/pl/sukcesy/konkurs-piosenki-niemieckojezycznej-dachll-3912",
+    "permanent": true
+  },
+  {
+    "source": "/konkurs_piosenki_niemieckojezycznej_dachll-3912",
+    "destination": "/pl/sukcesy/konkurs-piosenki-niemieckojezycznej-dachll-3912",
+    "permanent": true
+  },
+  {
+    "source": "/podroz_do_berlina-3461.html",
+    "destination": "/pl/aktualnosci/podroz-do-berlina-3461",
+    "permanent": true
+  },
+  {
+    "source": "/podroz_do_berlina-3461",
+    "destination": "/pl/aktualnosci/podroz-do-berlina-3461",
+    "permanent": true
+  },
+  {
+    "source": "/wracamy_na_boisko-3958.html",
+    "destination": "/pl/aktualnosci/wracamy-na-boisko-3958",
+    "permanent": true
+  },
+  {
+    "source": "/wracamy_na_boisko-3958",
+    "destination": "/pl/aktualnosci/wracamy-na-boisko-3958",
+    "permanent": true
+  },
+  {
+    "source": "/dostalismy_dyplom_z_unicefu-3544.html",
+    "destination": "/pl/aktualnosci/dostalismy-dyplom-z-unicefu-3544",
+    "permanent": true
+  },
+  {
+    "source": "/dostalismy_dyplom_z_unicefu-3544",
+    "destination": "/pl/aktualnosci/dostalismy-dyplom-z-unicefu-3544",
+    "permanent": true
+  },
+  {
+    "source": "/instagram_story_project_dla_goethe_institut_warschau-3513.html",
+    "destination": "/pl/aktualnosci/instagram-story-project-dla-goethe-institut-warschau-3513",
+    "permanent": true
+  },
+  {
+    "source": "/instagram_story_project_dla_goethe_institut_warschau-3513",
+    "destination": "/pl/aktualnosci/instagram-story-project-dla-goethe-institut-warschau-3513",
+    "permanent": true
+  },
+  {
+    "source": "/uroczystosc_inauguracji_roku_szkolnego-2805.html",
+    "destination": "/pl/aktualnosci/uroczystosc-inauguracji-roku-szkolnego-2805",
+    "permanent": true
+  },
+  {
+    "source": "/uroczystosc_inauguracji_roku_szkolnego-2805",
+    "destination": "/pl/aktualnosci/uroczystosc-inauguracji-roku-szkolnego-2805",
+    "permanent": true
+  },
+  {
+    "source": "/nigdy_nie_jest_za_pozno_mistrzostwa_wilanowa_w_siatkowce-3661.html",
+    "destination": "/pl/sukcesy/nigdy-nie-jest-za-pozno-mistrzostwa-wilanowa-w-siatkowce-3661",
+    "permanent": true
+  },
+  {
+    "source": "/nigdy_nie_jest_za_pozno_mistrzostwa_wilanowa_w_siatkowce-3661",
+    "destination": "/pl/sukcesy/nigdy-nie-jest-za-pozno-mistrzostwa-wilanowa-w-siatkowce-3661",
+    "permanent": true
+  },
+  {
+    "source": "/dynia_czy_kartofeldzien_1-3376.html",
+    "destination": "/pl/aktualnosci/dynia-czy-kartofeldzien-1-3376",
+    "permanent": true
+  },
+  {
+    "source": "/dynia_czy_kartofeldzien_1-3376",
+    "destination": "/pl/aktualnosci/dynia-czy-kartofeldzien-1-3376",
+    "permanent": true
+  },
+  {
+    "source": "/uroczyste_wreczenie_swiadectw_maturalnych-4001.html",
+    "destination": "/pl/aktualnosci/uroczyste-wreczenie-swiadectw-maturalnych-4001",
+    "permanent": true
+  },
+  {
+    "source": "/uroczyste_wreczenie_swiadectw_maturalnych-4001",
+    "destination": "/pl/aktualnosci/uroczyste-wreczenie-swiadectw-maturalnych-4001",
+    "permanent": true
+  },
+  {
+    "source": "/powitanie_pierwszych_klas-2807.html",
+    "destination": "/pl/aktualnosci/powitanie-pierwszych-klas-2807",
+    "permanent": true
+  },
+  {
+    "source": "/powitanie_pierwszych_klas-2807",
+    "destination": "/pl/aktualnosci/powitanie-pierwszych-klas-2807",
+    "permanent": true
+  },
+  {
+    "source": "/jugend_debattiert-4016.html",
+    "destination": "/pl/aktualnosci/jugend-debattiert-4016",
+    "permanent": true
+  },
+  {
+    "source": "/jugend_debattiert-4016",
+    "destination": "/pl/aktualnosci/jugend-debattiert-4016",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_prace_uczniow_wbs-4019.html",
+    "destination": "/pl/aktualnosci/kreatywnie-przeciw-koronawirusowi-prace-uczniow-wbs-4019",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_prace_uczniow_wbs-4019",
+    "destination": "/pl/aktualnosci/kreatywnie-przeciw-koronawirusowi-prace-uczniow-wbs-4019",
+    "permanent": true
+  },
+  {
+    "source": "/zyczenia_ambasady_republiki_federalnej_niemiec_z_okazji_100_rocznicy_odzyskania_niepodleglosci_przez_polske-2866.html",
+    "destination": "/pl/aktualnosci/zyczenia-ambasady-republiki-federalnej-niemiec-z-okazji-100-rocznicy-odzyskania-niepodleglosci-przez-polske-2866",
+    "permanent": true
+  },
+  {
+    "source": "/zyczenia_ambasady_republiki_federalnej_niemiec_z_okazji_100_rocznicy_odzyskania_niepodleglosci_przez_polske-2866",
+    "destination": "/pl/aktualnosci/zyczenia-ambasady-republiki-federalnej-niemiec-z-okazji-100-rocznicy-odzyskania-niepodleglosci-przez-polske-2866",
+    "permanent": true
+  },
+  {
+    "source": "/z_wizyta_w_ksiegarni-3385.html",
+    "destination": "/pl/aktualnosci/z-wizyta-w-ksiegarni-3385",
+    "permanent": true
+  },
+  {
+    "source": "/z_wizyta_w_ksiegarni-3385",
+    "destination": "/pl/aktualnosci/z-wizyta-w-ksiegarni-3385",
+    "permanent": true
+  },
+  {
+    "source": "/akademia_muzyczna_wbs_online__lekcje_gry_na_instrumencie-3599.html",
+    "destination": "/pl/aktualnosci/akademia-muzyczna-wbs-online-lekcje-gry-na-instrumencie-3599",
+    "permanent": true
+  },
+  {
+    "source": "/akademia_muzyczna_wbs_online__lekcje_gry_na_instrumencie-3599",
+    "destination": "/pl/aktualnosci/akademia-muzyczna-wbs-online-lekcje-gry-na-instrumencie-3599",
+    "permanent": true
+  },
+  {
+    "source": "/nigdy_nie_jest_za_poznoogolnopolski_konkurs_jezyka_niemieckiego_deutschfreund-3662.html",
+    "destination": "/pl/sukcesy/nigdy-nie-jest-za-poznoogolnopolski-konkurs-jezyka-niemieckiego-deutschfreund-3662",
+    "permanent": true
+  },
+  {
+    "source": "/nigdy_nie_jest_za_poznoogolnopolski_konkurs_jezyka_niemieckiego_deutschfreund-3662",
+    "destination": "/pl/sukcesy/nigdy-nie-jest-za-poznoogolnopolski-konkurs-jezyka-niemieckiego-deutschfreund-3662",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_kropki-3336.html",
+    "destination": "/pl/aktualnosci/dzien-kropki-3336",
+    "permanent": true
+  },
+  {
+    "source": "/dzien_kropki-3336",
+    "destination": "/pl/aktualnosci/dzien-kropki-3336",
+    "permanent": true
+  },
+  {
+    "source": "/mimo_pandemii_muzyka_gra_online_dalej-3645.html",
+    "destination": "/pl/aktualnosci/mimo-pandemii-muzyka-gra-online-dalej-3645",
+    "permanent": true
+  },
+  {
+    "source": "/mimo_pandemii_muzyka_gra_online_dalej-3645",
+    "destination": "/pl/aktualnosci/mimo-pandemii-muzyka-gra-online-dalej-3645",
+    "permanent": true
+  },
+  {
+    "source": "/spokojnych_swiat_wielkanocnych-3946.html",
+    "destination": "/pl/aktualnosci/spokojnych-swiat-wielkanocnych-3946",
+    "permanent": true
+  },
+  {
+    "source": "/spokojnych_swiat_wielkanocnych-3946",
+    "destination": "/pl/aktualnosci/spokojnych-swiat-wielkanocnych-3946",
+    "permanent": true
+  },
+  {
+    "source": "/most_szkolny_w_weimarze_2020-3750.html",
+    "destination": "/pl/aktualnosci/most-szkolny-w-weimarze-2020-3750",
+    "permanent": true
+  },
+  {
+    "source": "/most_szkolny_w_weimarze_2020-3750",
+    "destination": "/pl/aktualnosci/most-szkolny-w-weimarze-2020-3750",
+    "permanent": true
+  },
+  {
+    "source": "/rozstrzygniecie_konkursu_na_logo_campusu_im_willyego_brandta-3502.html",
+    "destination": "/pl/sukcesy/rozstrzygniecie-konkursu-na-logo-campusu-im-willyego-brandta-3502",
+    "permanent": true
+  },
+  {
+    "source": "/rozstrzygniecie_konkursu_na_logo_campusu_im_willyego_brandta-3502",
+    "destination": "/pl/sukcesy/rozstrzygniecie-konkursu-na-logo-campusu-im-willyego-brandta-3502",
+    "permanent": true
+  },
+  {
+    "source": "/jugend_musiziert___regionalwettbewerb-3526.html",
+    "destination": "/pl/aktualnosci/jugend-musiziert-regionalwettbewerb-3526",
+    "permanent": true
+  },
+  {
+    "source": "/jugend_musiziert___regionalwettbewerb-3526",
+    "destination": "/pl/aktualnosci/jugend-musiziert-regionalwettbewerb-3526",
+    "permanent": true
+  },
+  {
+    "source": "/wspanialy_swiat_organizmow_jednokomorkowych_projekt_klas_7a_i_7c-3925.html",
+    "destination": "/pl/wydarzenia/wspanialy-swiat-organizmow-jednokomorkowych-projekt-klas-7a-i-7c-3925",
+    "permanent": true
+  },
+  {
+    "source": "/wspanialy_swiat_organizmow_jednokomorkowych_projekt_klas_7a_i_7c-3925",
+    "destination": "/pl/wydarzenia/wspanialy-swiat-organizmow-jednokomorkowych-projekt-klas-7a-i-7c-3925",
+    "permanent": true
+  },
+  {
+    "source": "/nabozenstwo_ekumeniczne-3587.html",
+    "destination": "/pl/aktualnosci/nabozenstwo-ekumeniczne-3587",
+    "permanent": true
+  },
+  {
+    "source": "/nabozenstwo_ekumeniczne-3587",
+    "destination": "/pl/aktualnosci/nabozenstwo-ekumeniczne-3587",
+    "permanent": true
+  },
+  {
+    "source": "/online_zajecia_w_akademii_muzycznej-3624.html",
+    "destination": "/pl/aktualnosci/online-zajecia-w-akademii-muzycznej-3624",
+    "permanent": true
+  },
+  {
+    "source": "/online_zajecia_w_akademii_muzycznej-3624",
+    "destination": "/pl/aktualnosci/online-zajecia-w-akademii-muzycznej-3624",
+    "permanent": true
+  },
+  {
+    "source": "/rnt___konferencja_w_pradze_10_12102019-3401.html",
+    "destination": "/pl/aktualnosci/rnt-konferencja-w-pradze-10-12102019-3401",
+    "permanent": true
+  },
+  {
+    "source": "/rnt___konferencja_w_pradze_10_12102019-3401",
+    "destination": "/pl/aktualnosci/rnt-konferencja-w-pradze-10-12102019-3401",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pisarka_joanna_rudnianska-3768.html",
+    "destination": "/pl/wydarzenia/spotkanie-z-pisarka-joanna-rudnianska-3768",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pisarka_joanna_rudnianska-3768",
+    "destination": "/pl/wydarzenia/spotkanie-z-pisarka-joanna-rudnianska-3768",
+    "permanent": true
+  },
+  {
+    "source": "/kalendarz_adwentowy_wbs-3817.html",
+    "destination": "/pl/aktualnosci/kalendarz-adwentowy-wbs-3817",
+    "permanent": true
+  },
+  {
+    "source": "/kalendarz_adwentowy_wbs-3817",
+    "destination": "/pl/aktualnosci/kalendarz-adwentowy-wbs-3817",
+    "permanent": true
+  },
+  {
+    "source": "/akademia_pilkarska_wbs_warszawa_trenuje_online_-3603.html",
+    "destination": "/pl/aktualnosci/akademia-pilkarska-wbs-warszawa-trenuje-online-3603",
+    "permanent": true
+  },
+  {
+    "source": "/akademia_pilkarska_wbs_warszawa_trenuje_online_-3603",
+    "destination": "/pl/aktualnosci/akademia-pilkarska-wbs-warszawa-trenuje-online-3603",
+    "permanent": true
+  },
+  {
+    "source": "/ponowne_otwarcie_szkoly-3664.html",
+    "destination": "/pl/aktualnosci/ponowne-otwarcie-szkoly-3664",
+    "permanent": true
+  },
+  {
+    "source": "/ponowne_otwarcie_szkoly-3664",
+    "destination": "/pl/aktualnosci/ponowne-otwarcie-szkoly-3664",
+    "permanent": true
+  },
+  {
+    "source": "/bazar_adwentowy_turniej_i_koncert_bozonarodzeniowy_w_campusie_willyego_brandta-3493.html",
+    "destination": "/pl/wydarzenia/bazar-adwentowy-turniej-i-koncert-bozonarodzeniowy-w-campusie-willyego-brandta-3493",
+    "permanent": true
+  },
+  {
+    "source": "/bazar_adwentowy_turniej_i_koncert_bozonarodzeniowy_w_campusie_willyego_brandta-3493",
+    "destination": "/pl/wydarzenia/bazar-adwentowy-turniej-i-koncert-bozonarodzeniowy-w-campusie-willyego-brandta-3493",
+    "permanent": true
+  },
+  {
+    "source": "/ferie_zimowe_z_programem_oto_szczesliwi_geniusze-3906.html",
+    "destination": "/pl/aktualnosci/ferie-zimowe-z-programem-oto-szczesliwi-geniusze-3906",
+    "permanent": true
+  },
+  {
+    "source": "/ferie_zimowe_z_programem_oto_szczesliwi_geniusze-3906",
+    "destination": "/pl/aktualnosci/ferie-zimowe-z-programem-oto-szczesliwi-geniusze-3906",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_muzeum_moich_marzen_klasy_1a-3681.html",
+    "destination": "/pl/aktualnosci/kreatywnie-przeciw-koronawirusowi-muzeum-moich-marzen-klasy-1a-3681",
+    "permanent": true
+  },
+  {
+    "source": "/kreatywnie_przeciw_koronawirusowi_muzeum_moich_marzen_klasy_1a-3681",
+    "destination": "/pl/aktualnosci/kreatywnie-przeciw-koronawirusowi-muzeum-moich-marzen-klasy-1a-3681",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pszczolami-3793.html",
+    "destination": "/pl/wydarzenia/spotkanie-z-pszczolami-3793",
+    "permanent": true
+  },
+  {
+    "source": "/spotkanie_z_pszczolami-3793",
+    "destination": "/pl/wydarzenia/spotkanie-z-pszczolami-3793",
+    "permanent": true
+  },
+  {
+    "source": "/nagrania_do_podrecznikow_wydawnictwa_lektorklett-3809.html",
+    "destination": "/pl/aktualnosci/nagrania-do-podrecznikow-wydawnictwa-lektorklett-3809",
+    "permanent": true
+  },
+  {
+    "source": "/nagrania_do_podrecznikow_wydawnictwa_lektorklett-3809",
+    "destination": "/pl/aktualnosci/nagrania-do-podrecznikow-wydawnictwa-lektorklett-3809",
+    "permanent": true
+  },
+  {
+    "source": "/miedzynarodowy_dzien_kropki_w_wbs-3733.html",
+    "destination": "/pl/aktualnosci/miedzynarodowy-dzien-kropki-w-wbs-3733",
+    "permanent": true
+  },
+  {
+    "source": "/miedzynarodowy_dzien_kropki_w_wbs-3733",
+    "destination": "/pl/aktualnosci/miedzynarodowy-dzien-kropki-w-wbs-3733",
+    "permanent": true
+  },
+  {
+    "source": "/akademia_pilkarska_wbs_warszawa_z_certyfikatem_pzpn-3496.html",
+    "destination": "/pl/aktualnosci/akademia-pilkarska-wbs-warszawa-z-certyfikatem-pzpn-3496",
+    "permanent": true
+  },
+  {
+    "source": "/akademia_pilkarska_wbs_warszawa_z_certyfikatem_pzpn-3496",
+    "destination": "/pl/aktualnosci/akademia-pilkarska-wbs-warszawa-z-certyfikatem-pzpn-3496",
+    "permanent": true
+  },
+  {
+    "source": "/nasza_uczennica_debatuje_w_budapeszcie-3369.html",
+    "destination": "/pl/aktualnosci/nasza-uczennica-debatuje-w-budapeszcie-3369",
+    "permanent": true
+  },
+  {
+    "source": "/nasza_uczennica_debatuje_w_budapeszcie-3369",
+    "destination": "/pl/aktualnosci/nasza-uczennica-debatuje-w-budapeszcie-3369",
+    "permanent": true
+  },
+  {
+    "source": "/wreczenie_pucharowbieg_sponsorowany-2828.html",
+    "destination": "/pl/aktualnosci/wreczenie-pucharowbieg-sponsorowany-2828",
+    "permanent": true
+  },
+  {
+    "source": "/wreczenie_pucharowbieg_sponsorowany-2828",
+    "destination": "/pl/aktualnosci/wreczenie-pucharowbieg-sponsorowany-2828",
+    "permanent": true
+  },
+  {
+    "source": "/szczesliwych_swiat_bozego_narodzenia-3505.html",
+    "destination": "/pl/aktualnosci/szczesliwych-swiat-bozego-narodzenia-3505",
+    "permanent": true
+  },
+  {
+    "source": "/szczesliwych_swiat_bozego_narodzenia-3505",
+    "destination": "/pl/aktualnosci/szczesliwych-swiat-bozego-narodzenia-3505",
+    "permanent": true
+  }
+];
+  },
+};
+
+module.exports = nextConfig;

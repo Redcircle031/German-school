@@ -1,0 +1,606 @@
+{
+  "updatedAt": "2026-03-14T15:38:53.356Z",
+  "totalArticles": 50,
+  "articles": [
+    {
+      "slug": "zajecia_online_w_wbs-3627",
+      "title": "Zajęcia ONLINE w WBS",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/zajecia_online_w_wbs-3627/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "karnawal_w_szkole_podstawowej_wbs-3886",
+      "title": "Karnawał w Szkole Podstawowej WBS",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/karnawal_w_szkole_podstawowej_wbs-3886/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "_konkurs__europazjednoczona_w_roznorodnosci-3967",
+      "title": "Konkurs - Europa-zjednoczona w różnorodności",
+      "date": "2026-03-14",
+      "category": "achievements",
+      "featuredImage": "/images/articles/_konkurs__europazjednoczona_w_roznorodnosci-3967/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "koronawirus_iv_etap_znoszenia_ograniczen-3672",
+      "title": "Koronawirus. IV etap znoszenia ograniczeń.",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": null,
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "bieg_sponsorowanywyniki-3366",
+      "title": "Bieg sponsorowany-wyniki",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/bieg_sponsorowanywyniki-3366/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "kolejna_radiowa_przygoda_naszych_uczniow-5205",
+      "title": "Kolejna radiowa przygoda naszych uczniów",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/kolejna_radiowa_przygoda_naszych_uczniow-5205/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "gymnastikshowpokaz_jazdy_na_monocyklachvideo-3536",
+      "title": "Gymnastikshow-Pokaz jazdy na monocyklach-video",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/gymnastikshowpokaz_jazdy_na_monocyklachvideo-3536/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "spotkanie_z_pisarzem_grzegorzem_kasdepke-4006",
+      "title": "Spotkanie z pisarzem Grzegorzem Kasdepke",
+      "date": "2026-03-14",
+      "category": "events",
+      "featuredImage": "/images/articles/spotkanie_z_pisarzem_grzegorzem_kasdepke-4006/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "krippenspiel_kl_3c-3504",
+      "title": "Krippenspiel Kl. 3c",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/krippenspiel_kl_3c-3504/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "gymnastikshow_kl_16-3534",
+      "title": "Gymnastikshow (kl. 1-6)",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/gymnastikshow_kl_16-3534/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "konkurs_na_logo_campusu_im_willyego_brandta-3363",
+      "title": "Konkurs na logo Campusu im. Willy'ego Brandta",
+      "date": "2026-03-14",
+      "category": "achievements",
+      "featuredImage": "/images/articles/konkurs_na_logo_campusu_im_willyego_brandta-3363/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "__sukces_naszych_uczniow_w_mistrzostwach_wilanowa_w_tenisie_stolowym-5194",
+      "title": "🥈 Sukces naszych uczniów w Mistrzostwach Wilanowa w tenisie stołowym",
+      "date": "2026-03-14",
+      "category": "achievements",
+      "featuredImage": "/images/articles/__sukces_naszych_uczniow_w_mistrzostwach_wilanowa_w_tenisie_stolowym-5194/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "wspieramy_akcje_sloiki_z_wilanowa_dla_frania-3435",
+      "title": "Wspieramy akcję \"Słoiki z Wilanowa dla Frania\"",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/wspieramy_akcje_sloiki_z_wilanowa_dla_frania-3435/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "flohmarkt-2880",
+      "title": "Flohmarkt",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": null,
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "powrot__do_szkoly_klas_13-3870",
+      "title": "Powrót  do szkoły klas 1-3",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/powrot__do_szkoly_klas_13-3870/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "klip_z_festynu_letniego_2019_-3247",
+      "title": "Klip z Festynu Letniego 2019",
+      "date": "2026-03-14",
+      "category": "events",
+      "featuredImage": "/images/articles/klip_z_festynu_letniego_2019_-3247/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "swiatowy_dzien_ksiazki_i_praw_autorskich_w_wbs-3961",
+      "title": "Światowy Dzień Książki i Praw Autorskich w WBS",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/swiatowy_dzien_ksiazki_i_praw_autorskich_w_wbs-3961/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "jesienne_zmiany_i__prezenty_w_campusie_im_willy_ego_brandta_w_warszawie-3797",
+      "title": "Jesienne zmiany i …prezenty w Campusie im. Willy’ego Brandta w Warszawie",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/jesienne_zmiany_i__prezenty_w_campusie_im_willy_ego_brandta_w_warszawie-3797/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "nasza_nauczycielka_historii_i_geografiim_glinka_o_polskoniemieckim_podreczniku_do_historii-3514",
+      "title": "Nasza nauczycielka historii i geografii-M. Glinka o polsko-niemieckim podręczniku do historii",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/nasza_nauczycielka_historii_i_geografiim_glinka_o_polskoniemieckim_podreczniku_do_historii-3514/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "wesolych_swiat_bozego_narodzenia-3854",
+      "title": "Wesołych Świąt Bożego Narodzenia",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/wesolych_swiat_bozego_narodzenia-3854/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "konkurs_czytelniczy_w_wbs-3473",
+      "title": "Konkurs czytelniczy w WBS",
+      "date": "2026-03-14",
+      "category": "achievements",
+      "featuredImage": "/images/articles/konkurs_czytelniczy_w_wbs-3473/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "tydzien_antymobbingowy_9091209-3327",
+      "title": "Tydzień antymobbingowy (9.09-12.09)",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/tydzien_antymobbingowy_9091209-3327/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "kreatywnie_przeciw_koronawirusowi_wystawa_plakatow_2a-3678",
+      "title": "Kreatywnie przeciw koronawirusowi. Wystawa plakatów 2A",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": null,
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "kochane_dzieci_wszystkiego_najlepszego_w_dniu_waszego_swieta-3676",
+      "title": "Kochane Dzieci, wszystkiego najlepszego w dniu Waszego święta!",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": null,
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "uroczyste_pozegnanie_maturzystow_i_rozdanie_swiadectw_dojrzalosci-4009",
+      "title": "Uroczyste pożegnanie maturzystów i rozdanie świadectw dojrzałości",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/uroczyste_pozegnanie_maturzystow_i_rozdanie_swiadectw_dojrzalosci-4009/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "wspominamy_haline_szpilman-3647",
+      "title": "Wspominamy Halinę Szpilman...",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/wspominamy_haline_szpilman-3647/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "migracja_i_integracja_w_europie_podsumowanie_projektu_w_ramach_programu_erasmus_plus-3996",
+      "title": "Migracja i integracja w Europie. Podsumowanie projektu w ramach programu Erasmus plus",
+      "date": "2026-03-14",
+      "category": "events",
+      "featuredImage": "/images/articles/migracja_i_integracja_w_europie_podsumowanie_projektu_w_ramach_programu_erasmus_plus-3996/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "maski_dla_medykow_podziekowanie-3649",
+      "title": "Maski dla medyków- podziękowanie",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/maski_dla_medykow_podziekowanie-3649/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "koktajl_powitalny_dla_rodzicow_nowych_uczniow_wbs-3317",
+      "title": "Koktajl powitalny dla rodziców nowych uczniów WBS",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/koktajl_powitalny_dla_rodzicow_nowych_uczniow_wbs-3317/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "sladami_fryderyka_chopina_wycieczka_klasy_6c-3915",
+      "title": "Śladami Fryderyka Chopina. Wycieczka klasy 6c",
+      "date": "2026-03-14",
+      "category": "events",
+      "featuredImage": "/images/articles/sladami_fryderyka_chopina_wycieczka_klasy_6c-3915/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "summer_camp_akademii_pilkarskiej_wbs_warszawa-3993",
+      "title": "Summer Camp Akademii Piłkarskiej WBS Warszawa",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/summer_camp_akademii_pilkarskiej_wbs_warszawa-3993/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "dzien_jednosci_niemiec-2829",
+      "title": "Dzień Jedności Niemiec",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": null,
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "bieg_sponsorowany-2823",
+      "title": "Bieg sponsorowany",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": null,
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "wda__europatagung_2018_-2883",
+      "title": "WDA - Europatagung 2018",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": null,
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "zyczenia_wielkanocne-3607",
+      "title": "Życzenia Wielkanocne",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/zyczenia_wielkanocne-3607/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "projekt_laureaci_pokojowej_nagrody_nobla_klasa_7a-3821",
+      "title": "Projekt: Laureaci Pokojowej Nagrody Nobla (Klasa 7a)",
+      "date": "2026-03-14",
+      "category": "events",
+      "featuredImage": "/images/articles/projekt_laureaci_pokojowej_nagrody_nobla_klasa_7a-3821/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "mistrzostwa_wilanowa_w_siatkowce-3564",
+      "title": "Mistrzostwa Wilanowa w siatkówce",
+      "date": "2026-03-14",
+      "category": "achievements",
+      "featuredImage": "/images/articles/mistrzostwa_wilanowa_w_siatkowce-3564/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "nauczanie_zdalne_po_feriach_jesiennych_kl_412-3780",
+      "title": "Nauczanie zdalne po feriach jesiennych (kl. 4-12)",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/nauczanie_zdalne_po_feriach_jesiennych_kl_412-3780/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "koronawirus_obowiazek_noszenia_masek-3623",
+      "title": "Koronawirus. Obowiązek noszenia masek.",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/koronawirus_obowiazek_noszenia_masek-3623/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "jugend_musiziert__etap_i_regionalny-3869",
+      "title": "Jugend musiziert - Etap I regionalny",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/jugend_musiziert__etap_i_regionalny-3869/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "fahrradprojekt_-4003",
+      "title": "Fahrrad-Projekt",
+      "date": "2026-03-14",
+      "category": "events",
+      "featuredImage": "/images/articles/fahrradprojekt_-4003/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "dodatkowe_materialy_edukacyjne_dla_chetnych-3601",
+      "title": "Dodatkowe materiały edukacyjne dla chętnych",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/dodatkowe_materialy_edukacyjne_dla_chetnych-3601/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "wyniki_ankiety_dotyczacej_elearning_w_szkole_wbs-3616",
+      "title": "Wyniki ankiety dotyczącej E-Learning w szkole WBS",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/wyniki_ankiety_dotyczacej_elearning_w_szkole_wbs-3616/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "dynia_czy_kartofeldzien_2-3377",
+      "title": "Dynia czy kartofel-Dzień 2",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/dynia_czy_kartofeldzien_2-3377/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "zapytanie_ofertowe_kuchnia_wbs-3477",
+      "title": "Zapytanie ofertowe Kuchnia WBS",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/zapytanie_ofertowe_kuchnia_wbs-3477/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "wybaczenie_konkurs_fotograficznofilmowy_dla_szkol_organizowany_przez_ambasade_niemiec-3498",
+      "title": "\"Wybaczenie\" konkurs fotograficzno-filmowy dla szkół organizowany przez Ambasadę Niemiec",
+      "date": "2026-03-14",
+      "category": "achievements",
+      "featuredImage": "/images/articles/wybaczenie_konkurs_fotograficznofilmowy_dla_szkol_organizowany_przez_ambasade_niemiec-3498/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "spotkanie_z_rezyserem_jean__christophem_caronem-3424",
+      "title": "Spotkanie z reżyserem Jean - Christophem Caronem",
+      "date": "2026-03-14",
+      "category": "events",
+      "featuredImage": "/images/articles/spotkanie_z_rezyserem_jean__christophem_caronem-3424/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "obchody_80_rocznicy_wybuchu_ii_wojny_swiatowej-3326",
+      "title": "Obchody 80. rocznicy wybuchu II wojny światowej",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/obchody_80_rocznicy_wybuchu_ii_wojny_swiatowej-3326/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "pokonalismy_polio-3783",
+      "title": "Pokonaliśmy polio!",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/pokonalismy_polio-3783/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    },
+    {
+      "slug": "koronawirus_jak_prawidlowo_uzywac_maseczki_i_rekawiczek_filmik_instruktazowy_-3632",
+      "title": "Koronawirus. Jak prawidłowo używać maseczki i rękawiczek- filmik instruktażowy",
+      "date": "2026-03-14",
+      "category": "other",
+      "featuredImage": "/images/articles/koronawirus_jak_prawidlowo_uzywac_maseczki_i_rekawiczek_filmik_instruktazowy_-3632/wbs-logo-white.png",
+      "languages": [
+        "pl",
+        "de",
+        "en"
+      ]
+    }
+  ]
+}

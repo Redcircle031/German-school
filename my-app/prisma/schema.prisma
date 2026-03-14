@@ -1,0 +1,276 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime? @map("email_verified")
+  image         String?
+  password      String?   @db.Text
+  role          UserRole  @default(EDITOR)
+  isActive      Boolean   @default(true) @map("is_active")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  lastLogin     DateTime? @map("last_login")
+
+  accounts      Account[]
+  sessions      Session[]
+  articles      Article[] @relation("ArticleAuthor")
+  articlesCreated Article[] @relation("ArticleCreatedBy")
+  articlesUpdated Article[] @relation("ArticleUpdatedBy")
+  media         Media[]
+
+  @@map("users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+  CONTRIBUTOR
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  namePl      String   @map("name_pl")
+  nameDe      String?  @map("name_de")
+  nameEn      String?  @map("name_en")
+  descriptionPl String? @map("description_pl") @db.Text
+  descriptionDe String? @map("description_de") @db.Text
+  descriptionEn String? @map("description_en") @db.Text
+  color       String?
+  icon        String?
+  sortOrder   Int      @default(0) @map("sort_order")
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  articles Article[]
+
+  @@map("categories")
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  titlePl     String   @map("title_pl")
+  titleDe     String?  @map("title_de")
+  titleEn     String?  @map("title_en")
+  excerptPl   String?  @map("excerpt_pl") @db.Text
+  excerptDe   String?  @map("excerpt_de") @db.Text
+  excerptEn   String?  @map("excerpt_en") @db.Text
+  contentPl   String   @map("content_pl") @db.Text
+  contentDe   String?  @map("content_de") @db.Text
+  contentEn   String?  @map("content_en") @db.Text
+  
+  categoryId  String   @map("category_id")
+  category    Category @relation(fields: [categoryId], references: [id])
+  
+  authorId    String?  @map("author_id")
+  author      User?    @relation("ArticleAuthor", fields: [authorId], references: [id])
+  
+  featuredImageId String? @map("featured_image_id")
+  featuredImage   Media?  @relation("FeaturedImage", fields: [featuredImageId], references: [id])
+  
+  status      ArticleStatus @default(DRAFT)
+  publishedAt DateTime? @map("published_at")
+  eventDate   DateTime? @map("event_date")
+  eventEndDate DateTime? @map("event_end_date")
+  isFeatured  Boolean   @default(false) @map("is_featured")
+  isSticky    Boolean   @default(false) @map("is_sticky")
+  viewCount   Int       @default(0) @map("view_count")
+  
+  seoTitlePl   String?  @map("seo_title_pl")
+  seoTitleDe   String?  @map("seo_title_de")
+  seoTitleEn   String?  @map("seo_title_en")
+  seoDescPl    String?  @map("seo_desc_pl")
+  seoDescDe    String?  @map("seo_desc_de")
+  seoDescEn    String?  @map("seo_desc_en")
+  keywords     String?
+  oldUrl       String?  @map("old_url")
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  createdById String?  @map("created_by_id")
+  createdBy   User?    @relation("ArticleCreatedBy", fields: [createdById], references: [id])
+  updatedById String?  @map("updated_by_id")
+  updatedBy   User?    @relation("ArticleUpdatedBy", fields: [updatedById], references: [id])
+
+  images      ArticleMedia[]
+  pdfs        ArticlePdf[]
+
+  @@index([status, publishedAt])
+  @@index([categoryId])
+  @@index([slug])
+  @@map("articles")
+}
+
+enum ArticleStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model Media {
+  id               String   @id @default(cuid())
+  filename         String
+  originalFilename String   @map("original_filename")
+  filePath         String   @map("file_path")
+  fileSize         Int      @map("file_size")
+  mimeType         String   @map("mime_type")
+  width            Int?
+  height           Int?
+  altTextPl        String?  @map("alt_text_pl")
+  altTextDe        String?  @map("alt_text_de")
+  altTextEn        String?  @map("alt_text_en")
+  captionPl        String?  @map("caption_pl")
+  captionDe        String?  @map("caption_de")
+  captionEn        String?  @map("caption_en")
+  type             MediaType
+  isPublic         Boolean  @default(true) @map("is_public")
+  
+  uploadedById     String?  @map("uploaded_by_id")
+  uploadedBy       User?    @relation(fields: [uploadedById], references: [id])
+  
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  articleImages    ArticleMedia[]
+  articlePdfs      ArticlePdf[]
+  featuredInArticles Article[] @relation("FeaturedImage")
+
+  @@map("media")
+}
+
+enum MediaType {
+  IMAGE
+  PDF
+  DOCUMENT
+  VIDEO
+}
+
+model ArticleMedia {
+  id        String   @id @default(cuid())
+  articleId String   @map("article_id")
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  mediaId   String   @map("media_id")
+  media     Media    @relation(fields: [mediaId], references: [id], onDelete: Cascade)
+  sortOrder Int      @default(0) @map("sort_order")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([articleId, mediaId])
+  @@map("article_media")
+}
+
+model ArticlePdf {
+  id        String   @id @default(cuid())
+  articleId String   @map("article_id")
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  mediaId   String   @map("media_id")
+  media     Media    @relation(fields: [mediaId], references: [id], onDelete: Cascade)
+  titlePl   String?  @map("title_pl")
+  titleDe   String?  @map("title_de")
+  titleEn   String?  @map("title_en")
+  sortOrder Int      @default(0) @map("sort_order")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([articleId, mediaId])
+  @@map("article_pdfs")
+}
+
+model NavigationItem {
+  id        String   @id @default(cuid())
+  parentId  String?  @map("parent_id")
+  parent    NavigationItem? @relation("NavigationChildren", fields: [parentId], references: [id])
+  children  NavigationItem[] @relation("NavigationChildren")
+  
+  labelPl   String   @map("label_pl")
+  labelDe   String?  @map("label_de")
+  labelEn   String?  @map("label_en")
+  url       String
+  type      NavigationType @default(LINK)
+  position  NavigationPosition @default(HEADER)
+  sortOrder Int      @default(0) @map("sort_order")
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([position, isActive])
+  @@map("navigation_items")
+}
+
+enum NavigationType {
+  LINK
+  PAGE
+  CATEGORY
+}
+
+enum NavigationPosition {
+  HEADER
+  FOOTER
+  SIDEBAR
+}
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String   @db.Text
+  type      SettingType @default(STRING)
+  description String?
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}
+
+enum SettingType {
+  STRING
+  NUMBER
+  BOOLEAN
+  JSON
+}

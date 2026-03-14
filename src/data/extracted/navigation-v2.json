@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl",
+    "extractedDate": "2026-03-13",
+    "languages": ["pl", "de", "en"],
+    "version": "2.0"
+  },
+  "navigation": {
+    "header": [
+      {
+        "id": "about",
+        "icon": "info",
+        "label": {
+          "pl": "O szkole",
+          "de": "Über die Schule",
+          "en": "About School"
+        },
+        "url": "/about",
+        "children": [
+          {
+            "label": { "pl": "O WBS", "de": "Über WBS", "en": "About WBS" },
+            "url": "/about"
+          },
+          {
+            "label": { "pl": "Nasz zespół", "de": "Unser Team", "en": "Our Team" },
+            "url": "/about/staff"
+          },
+          {
+            "label": { "pl": "Misja i wartości", "de": "Mission und Werte", "en": "Mission & Values" },
+            "url": "/about/mission"
+          },
+          {
+            "label": { "pl": "Patron szkoły", "de": "Schutzpatron", "en": "School Patron" },
+            "url": "/about/patron"
+          },
+          {
+            "label": { "pl": "Partnerzy i sponsorzy", "de": "Partner und Sponsoren", "en": "Partners & Sponsors" },
+            "url": "/about/partners"
+          },
+          {
+            "label": { "pl": "Certyfikaty", "de": "Zertifikate", "en": "Certificates" },
+            "url": "/about/certificates"
+          },
+          {
+            "label": { "pl": "Dokumenty", "de": "Dokumente", "en": "Documents" },
+            "url": "/about/documents"
+          }
+        ]
+      },
+      {
+        "id": "admissions",
+        "icon": "graduation-cap",
+        "label": {
+          "pl": "Rekrutacja",
+          "de": "Aufnahme",
+          "en": "Admissions"
+        },
+        "url": "/admissions",
+        "children": [
+          {
+            "label": { "pl": "O rekrutacji", "de": "Über die Aufnahme", "en": "About Admissions" },
+            "url": "/admissions"
+          },
+          {
+            "label": { "pl": "Proces rekrutacji", "de": "Aufnahmeprozess", "en": "Admission Process" },
+            "url": "/admissions/process"
+          },
+          {
+            "label": { "pl": "Wymagania", "de": "Anforderungen", "en": "Requirements" },
+            "url": "/admissions/requirements"
+          },
+          {
+            "label": { "pl": "Czesne", "de": "Schulgeld", "en": "Tuition & Fees" },
+            "url": "/admissions/tuition"
+          },
+          {
+            "label": { "pl": "Dzień otwarty", "de": "Tag der offenen Tür", "en": "Open Days" },
+            "url": "/admissions/visit"
+          },
+          {
+            "label": { "pl": "Częste pytania", "de": "Häufige Fragen", "en": "FAQ" },
+            "url": "/admissions/faq"
+          },
+          {
+            "label": { "pl": "Zapisz dziecko", "de": "Anmeldung", "en": "Apply Now" },
+            "url": "/admissions/apply",
+            "highlight": true
+          }
+        ]
+      },
+      {
+        "id": "parents",
+        "icon": "users",
+        "label": {
+          "pl": "Dla rodziców",
+          "de": "Für Eltern",
+          "en": "For Parents"
+        },
+        "url": "/parents",
+        "children": [
+          {
+            "label": { "pl": "Formularze", "de": "Formulare", "en": "Forms" },
+            "url": "/parents/forms"
+          },
+          {
+            "label": { "pl": "Regulaminy", "de": "Ordnungen", "en": "Regulations" },
+            "url": "/parents/regulations"
+          },
+          {
+            "label": { "pl": "Kalendarz szkolny", "de": "Schulkalender", "en": "School Calendar" },
+            "url": "/parents/calendar"
+          },
+          {
+            "label": { "pl": "Życie szkoły", "de": "Schulalltag", "en": "Daily Life" },
+            "url": "/parents/daily-life",
+            "children": [
+              { "label": { "pl": "Dzwonki", "de": "Klingelzeiten", "en": "Bell Schedule" }, "url": "/parents/daily-life/bell-schedule" },
+              { "label": { "pl": "Stołówka", "de": "Kantine", "en": "Canteen" }, "url": "/parents/daily-life/canteen" },
+              { "label": { "pl": "Świetlica", "de": "Nachmittagsbetreuung", "en": "Aftercare" }, "url": "/parents/daily-life/aftercare" }
+            ]
+          },
+          {
+            "label": { "pl": "Legitymacje szkolne", "de": "Schülerausweise", "en": "Student IDs" },
+            "url": "/parents/student-ids"
+          },
+          {
+            "label": { "pl": "Rada Rodziców", "de": "Elternbeirat", "en": "Parent Council" },
+            "url": "/parents/council"
+          }
+        ]
+      },
+      {
+        "id": "students",
+        "icon": "book-open",
+        "label": {
+          "pl": "Dla uczniów",
+          "de": "Für Schüler",
+          "en": "For Students"
+        },
+        "url": "/students",
+        "children": [
+          {
+            "label": { "pl": "Projekty", "de": "Projekte", "en": "Projects" },
+            "url": "/students/projects"
+          },
+          {
+            "label": { "pl": "Zajęcia dodatkowe", "de": "Zusatzangebote", "en": "Extracurricular" },
+            "url": "/students/extracurricular",
+            "children": [
+              { "label": { "pl": "Akademia Piłkarska", "de": "Fußballakademie", "en": "Football Academy" }, "url": "/students/extracurricular/football-academy" },
+              { "label": { "pl": "Akademia Muzyczna", "de": "Musikakademie", "en": "Music Academy" }, "url": "/students/extracurricular/music-academy" },
+              { "label": { "pl": "Chór SchELF", "de": "SchELF Chor", "en": "SchELF Choir" }, "url": "/students/extracurricular/choir" },
+              { "label": { "pl": "Samorząd uczniowski", "de": "Schülervertretung", "en": "Student Council" }, "url": "/students/extracurricular/student-council" }
+            ]
+          },
+          {
+            "label": { "pl": "Biblioteka", "de": "Bibliothek", "en": "Library" },
+            "url": "/students/library"
+          },
+          {
+            "label": { "pl": "Nasze osiągnięcia", "de": "Unsere Erfolge", "en": "Our Achievements" },
+            "url": "/students/achievements"
+          },
+          {
+            "label": { "pl": "Nauczyciel zaufania", "de": "Vertrauenslehrer", "en": "Trusted Teacher" },
+            "url": "/students/trusted-teacher"
+          }
+        ]
+      },
+      {
+        "id": "news",
+        "icon": "newspaper",
+        "label": {
+          "pl": "Aktualności",
+          "de": "Aktuelles",
+          "en": "News"
+        },
+        "url": "/news",
+        "children": [
+          {
+            "label": { "pl": "Wszystkie aktualności", "de": "Alle Nachrichten", "en": "All News" },
+            "url": "/news"
+          },
+          {
+            "label": { "pl": "Wydarzenia", "de": "Veranstaltungen", "en": "Events" },
+            "url": "/news/events"
+          },
+          {
+            "label": { "pl": "Ogłoszenia", "de": "Bekanntmachungen", "en": "Announcements" },
+            "url": "/news/announcements"
+          },
+          {
+            "label": { "pl": "Archiwum", "de": "Archiv", "en": "Archive" },
+            "url": "/news/archive"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "icon": "mail",
+        "label": {
+          "pl": "Kontakt",
+          "de": "Kontakt",
+          "en": "Contact"
+        },
+        "url": "/contact",
+        "children": []
+      }
+    ],
+    "footer": {
+      "columns": [
+        {
+          "title": { "pl": "O nas", "de": "Über uns", "en": "About Us" },
+          "links": [
+            { "label": { "pl": "O szkole", "de": "Über die Schule", "en": "About School" }, "url": "/about" },
+            { "label": { "pl": "Zespół", "de": "Team", "en": "Team" }, "url": "/about/staff" },
+            { "label": { "pl": "Kontakt", "de": "Kontakt", "en": "Contact" }, "url": "/contact" },
+            { "label": { "pl": "Aktualności", "de": "Aktuelles", "en": "News" }, "url": "/news" },
+            { "label": { "pl": "FAQ", "de": "FAQ", "en": "FAQ" }, "url": "/faq" }
+          ]
+        },
+        {
+          "title": { "pl": "Dla nowych rodziców", "de": "Für neue Eltern", "en": "For New Families" },
+          "links": [
+            { "label": { "pl": "Rekrutacja", "de": "Aufnahme", "en": "Admissions" }, "url": "/admissions" },
+            { "label": { "pl": "Proces rekrutacji", "de": "Aufnahmeprozess", "en": "Admission Process" }, "url": "/admissions/process" },
+            { "label": { "pl": "Czesne", "de": "Schulgeld", "en": "Tuition" }, "url": "/admissions/tuition" },
+            { "label": { "pl": "Dzień otwarty", "de": "Tag der offenen Tür", "en": "Open Day" }, "url": "/admissions/visit" },
+            { "label": { "pl": "Zapisz dziecko", "de": "Anmeldung", "en": "Apply Now" }, "url": "/admissions/apply" }
+          ]
+        },
+        {
+          "title": { "pl": "Dla rodziców", "de": "Für Eltern", "en": "For Parents" },
+          "links": [
+            { "label": { "pl": "Formularze", "de": "Formulare", "en": "Forms" }, "url": "/parents/forms" },
+            { "label": { "pl": "Regulaminy", "de": "Ordnungen", "en": "Regulations" }, "url": "/parents/regulations" },
+            { "label": { "pl": "Kalendarz", "de": "Kalender", "en": "Calendar" }, "url": "/parents/calendar" },
+            { "label": { "pl": "Stołówka", "de": "Kantine", "en": "Canteen" }, "url": "/parents/daily-life/canteen" },
+            { "label": { "pl": "Portal rodzica", "de": "Elternportal", "en": "Parent Portal" }, "url": "/portal/parent" }
+          ]
+        },
+        {
+          "title": { "pl": "Dla uczniów", "de": "Für Schüler", "en": "For Students" },
+          "links": [
+            { "label": { "pl": "Projekty", "de": "Projekte", "en": "Projects" }, "url": "/students/projects" },
+            { "label": { "pl": "Zajęcia dodatkowe", "de": "AGs", "en": "Activities" }, "url": "/students/extracurricular" },
+            { "label": { "pl": "Biblioteka", "de": "Bibliothek", "en": "Library" }, "url": "/students/library" },
+            { "label": { "pl": "Samorząd", "de": "SV", "en": "Student Council" }, "url": "/students/extracurricular/student-council" },
+            { "label": { "pl": "Portal ucznia", "de": "Schülerportal", "en": "Student Portal" }, "url": "/portal/student" }
+          ]
+        },
+        {
+          "title": { "pl": "Informacje prawne", "de": "Rechtliches", "en": "Legal" },
+          "links": [
+            { "label": { "pl": "Polityka prywatności", "de": "Datenschutz", "en": "Privacy" }, "url": "/privacy" },
+            { "label": { "pl": "Polityka cookies", "de": "Cookies", "en": "Cookies" }, "url": "/cookies" },
+            { "label": { "pl": "Dostępność", "de": "Barrierefreiheit", "en": "Accessibility" }, "url": "/accessibility" },
+            { "label": { "pl": "Impressum", "de": "Impressum", "en": "Imprint" }, "url": "/impressum" }
+          ]
+        }
+      ]
+    },
+    "quickLinks": [
+      {
+        "label": { "pl": "Rekrutacja 2025/26", "de": "Aufnahme 2025/26", "en": "Admissions 2025/26" },
+        "url": "/admissions",
+        "icon": "graduation-cap",
+        "variant": "primary"
+      },
+      {
+        "label": { "pl": "Portal rodzica", "de": "Elternportal", "en": "Parent Portal" },
+        "url": "/portal/parent",
+        "icon": "users",
+        "variant": "outline"
+      },
+      {
+        "label": { "pl": "Portal ucznia", "de": "Schülerportal", "en": "Student Portal" },
+        "url": "/portal/student",
+        "icon": "book-open",
+        "variant": "outline"
+      },
+      {
+        "label": { "pl": "Kalendarz szkolny", "de": "Schulkalender", "en": "School Calendar" },
+        "url": "/parents/calendar",
+        "icon": "calendar",
+        "variant": "outline"
+      }
+    ]
+  }
+}

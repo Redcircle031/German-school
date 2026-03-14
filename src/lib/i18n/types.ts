@@ -1,4 +1,4 @@
-import { translations } from './translations.json';
+import translations from './translations.json';
 
 export type TranslationKey = keyof typeof translations.pl;
 export type Locale = 'pl' | 'de' | 'en';

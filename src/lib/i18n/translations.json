@@ -245,6 +245,12 @@
       "reduceMotion": "Ogranicz animacje",
       "reset": "Resetuj ustawienia"
     },
+    "about": {
+      "meta": {
+        "title": "O Nas | WBS School",
+        "description": "Poznaj Polsko-Niemiecką Szkołę Spotkań i Dialogu im. Willy'ego Brandta w Warszawie"
+      }
+    },
     "admissions": {
       "title": "Rekrutacja",
       "subtitle": "Zapisz swoje dziecko do WBS",
@@ -282,6 +288,12 @@
     }
   },
   "de": {
+    "about": {
+      "meta": {
+        "title": "Über Uns | WBS School",
+        "description": "Lernen Sie die Deutsch-Polnische Begegnungsschule Willy-Brandt-Schule in Warschau kennen"
+      }
+    },
     "common": {
       "skipToContent": "Zum Inhalt springen",
       "loading": "Laden...",
@@ -450,6 +462,12 @@
     }
   },
   "en": {
+    "about": {
+      "meta": {
+        "title": "About Us | WBS School",
+        "description": "Discover the Polish-German School of Meetings and Dialogue named after Willy Brandt in Warsaw"
+      }
+    },
     "common": {
       "skipToContent": "Skip to content",
       "loading": "Loading...",

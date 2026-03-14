@@ -1,0 +1,272 @@
+{
+  "updatedAt": "2026-03-14T15:38:53.358Z",
+  "totalPdfs": 37,
+  "categories": [
+    "forms",
+    "regulations",
+    "schedules",
+    "programs",
+    "other"
+  ],
+  "pdfs": [
+    {
+      "filename": "11._hausordnung_regulamin_budynku.pdf",
+      "title": "11. hausordnung regulamin budynku",
+      "category": "regulations",
+      "url": "/pdfs/11._hausordnung_regulamin_budynku.pdf",
+      "size": 471518
+    },
+    {
+      "filename": "12._ferienordnung_regulamin_ferii.pdf",
+      "title": "12. ferienordnung regulamin ferii",
+      "category": "regulations",
+      "url": "/pdfs/12._ferienordnung_regulamin_ferii.pdf",
+      "size": 329511
+    },
+    {
+      "filename": "13._elternvertordnung_reg_rady_rodzicow.pdf",
+      "title": "13. elternvertordnung reg rady rodzicow",
+      "category": "regulations",
+      "url": "/pdfs/13._elternvertordnung_reg_rady_rodzicow.pdf",
+      "size": 441198
+    },
+    {
+      "filename": "5._schulordnung____regulamin_szkoly.pdf",
+      "title": "5. schulordnung    regulamin szkoly",
+      "category": "regulations",
+      "url": "/pdfs/5._schulordnung____regulamin_szkoly.pdf",
+      "size": 782405
+    },
+    {
+      "filename": "7._versetzungsordnung_regulamin_promowania_uczniow.pdf",
+      "title": "7. versetzungsordnung regulamin promowania uczniow",
+      "category": "regulations",
+      "url": "/pdfs/7._versetzungsordnung_regulamin_promowania_uczniow.pdf",
+      "size": 420735
+    },
+    {
+      "filename": "antrag_auf_wechsel_vom_kindergarten_in_die_wbs_wniosek_przeniesienia_z_kiga_do_wbs.pdf",
+      "title": "antrag auf wechsel vom kindergarten in die wbs wniosek przeniesienia z kiga do wbs",
+      "category": "forms",
+      "url": "/pdfs/antrag_auf_wechsel_vom_kindergarten_in_die_wbs_wniosek_przeniesienia_z_kiga_do_wbs.pdf",
+      "size": 514498
+    },
+    {
+      "filename": "deklaracja_przystapienia_do_akademii_muzycznej_wbs_21_22.pdf",
+      "title": "deklaracja przystapienia do akademii muzycznej wbs 21 22",
+      "category": "other",
+      "url": "/pdfs/deklaracja_przystapienia_do_akademii_muzycznej_wbs_21_22.pdf",
+      "size": 464202
+    },
+    {
+      "filename": "do_11._regulamin_opieki_popoludniowej_wbs.pdf",
+      "title": "do 11. regulamin opieki popoludniowej wbs",
+      "category": "regulations",
+      "url": "/pdfs/do_11._regulamin_opieki_popoludniowej_wbs.pdf",
+      "size": 289818
+    },
+    {
+      "filename": "drogi_komunikacji.pdf",
+      "title": "drogi komunikacji",
+      "category": "other",
+      "url": "/pdfs/drogi_komunikacji.pdf",
+      "size": 269
+    },
+    {
+      "filename": "events_in_der_aula.pdf",
+      "title": "events in der aula",
+      "category": "other",
+      "url": "/pdfs/events_in_der_aula.pdf",
+      "size": 150981
+    },
+    {
+      "filename": "faqs_rodzice_tablety.pdf",
+      "title": "faqs rodzice tablety",
+      "category": "other",
+      "url": "/pdfs/faqs_rodzice_tablety.pdf",
+      "size": 452569
+    },
+    {
+      "filename": "ferienplan_2025_26.pdf",
+      "title": "ferienplan 2025 26",
+      "category": "schedules",
+      "url": "/pdfs/ferienplan_2025_26.pdf",
+      "size": 224915
+    },
+    {
+      "filename": "ferienplan_2026_27.pdf",
+      "title": "ferienplan 2026 27",
+      "category": "schedules",
+      "url": "/pdfs/ferienplan_2026_27.pdf",
+      "size": 224620
+    },
+    {
+      "filename": "in_die_schule_und_zur%C3%BCck_2025_26.pdf",
+      "title": "in die schule und zur%C3%BCck 2025 26",
+      "category": "other",
+      "url": "/pdfs/in_die_schule_und_zur%C3%BCck_2025_26.pdf",
+      "size": 161191
+    },
+    {
+      "filename": "in_die_schule_und_zurück_2025_26.pdf",
+      "title": "in die schule und zurück 2025 26",
+      "category": "other",
+      "url": "/pdfs/in_die_schule_und_zurück_2025_26.pdf",
+      "size": 161191
+    },
+    {
+      "filename": "informacja_dla_rodzicow_-_katarzyna_matusiewicz_catering_-wbs_szkola_polsko_niemiecka.pdf",
+      "title": "informacja dla rodzicow - katarzyna matusiewicz catering -wbs szkola polsko niemiecka",
+      "category": "other",
+      "url": "/pdfs/informacja_dla_rodzicow_-_katarzyna_matusiewicz_catering_-wbs_szkola_polsko_niemiecka.pdf",
+      "size": 223259
+    },
+    {
+      "filename": "katarzyna_matusiewicz_catering_pl.pdf",
+      "title": "katarzyna matusiewicz catering pl",
+      "category": "other",
+      "url": "/pdfs/katarzyna_matusiewicz_catering_pl.pdf",
+      "size": 50664
+    },
+    {
+      "filename": "koncepcja_cyfryzacji_wbs.pdf",
+      "title": "koncepcja cyfryzacji wbs",
+      "category": "other",
+      "url": "/pdfs/koncepcja_cyfryzacji_wbs.pdf",
+      "size": 269
+    },
+    {
+      "filename": "koncept_interwencji_w_sytuacji_mobingu.pdf",
+      "title": "koncept interwencji w sytuacji mobingu",
+      "category": "other",
+      "url": "/pdfs/koncept_interwencji_w_sytuacji_mobingu.pdf",
+      "size": 269
+    },
+    {
+      "filename": "laufzettel_karta_obiegowa.pdf",
+      "title": "laufzettel karta obiegowa",
+      "category": "other",
+      "url": "/pdfs/laufzettel_karta_obiegowa.pdf",
+      "size": 496755
+    },
+    {
+      "filename": "medizinischer_fragebogen_ankieta_zdrowotna_2021.pdf",
+      "title": "medizinischer fragebogen ankieta zdrowotna 2021",
+      "category": "other",
+      "url": "/pdfs/medizinischer_fragebogen_ankieta_zdrowotna_2021.pdf",
+      "size": 257493
+    },
+    {
+      "filename": "nb_anmeldung_1_hbj_25_26__deklaracja_swietlica_1_polrocze_25_26.pdf",
+      "title": "nb anmeldung 1 hbj 25 26  deklaracja swietlica 1 polrocze 25 26",
+      "category": "other",
+      "url": "/pdfs/nb_anmeldung_1_hbj_25_26__deklaracja_swietlica_1_polrocze_25_26.pdf",
+      "size": 203509
+    },
+    {
+      "filename": "netzwerkordnung_wbs_d-pl_01.pdf",
+      "title": "netzwerkordnung wbs d-pl 01",
+      "category": "regulations",
+      "url": "/pdfs/netzwerkordnung_wbs_d-pl_01.pdf",
+      "size": 81843
+    },
+    {
+      "filename": "nts_mitgliedsantrag_2021.pdf",
+      "title": "nts mitgliedsantrag 2021",
+      "category": "forms",
+      "url": "/pdfs/nts_mitgliedsantrag_2021.pdf",
+      "size": 500382
+    },
+    {
+      "filename": "nts_rodo_information_2019_(1).pdf",
+      "title": "nts rodo information 2019 (1)",
+      "category": "other",
+      "url": "/pdfs/nts_rodo_information_2019_(1).pdf",
+      "size": 331603
+    },
+    {
+      "filename": "nts_rodo_information_2019_wbs.pdf",
+      "title": "nts rodo information 2019 wbs",
+      "category": "other",
+      "url": "/pdfs/nts_rodo_information_2019_wbs.pdf",
+      "size": 424189
+    },
+    {
+      "filename": "pakiety_sponsorskie__sponsorenpakete.pdf",
+      "title": "pakiety sponsorskie  sponsorenpakete",
+      "category": "other",
+      "url": "/pdfs/pakiety_sponsorskie__sponsorenpakete.pdf",
+      "size": 7921741
+    },
+    {
+      "filename": "pion_polskojezyczny.pdf",
+      "title": "pion polskojezyczny",
+      "category": "other",
+      "url": "/pdfs/pion_polskojezyczny.pdf",
+      "size": 1177375
+    },
+    {
+      "filename": "program_szkoly_wbs.pdf",
+      "title": "program szkoly wbs",
+      "category": "programs",
+      "url": "/pdfs/program_szkoly_wbs.pdf",
+      "size": 578175
+    },
+    {
+      "filename": "regulamin_akademii_muzycznej_wbs_24_25.pdf",
+      "title": "regulamin akademii muzycznej wbs 24 25",
+      "category": "regulations",
+      "url": "/pdfs/regulamin_akademii_muzycznej_wbs_24_25.pdf",
+      "size": 570961
+    },
+    {
+      "filename": "regulamin_platnosci_szkola_2025_2026_19.09.25.pdf",
+      "title": "regulamin platnosci szkola 2025 2026 19.09.25",
+      "category": "regulations",
+      "url": "/pdfs/regulamin_platnosci_szkola_2025_2026_19.09.25.pdf",
+      "size": 342051
+    },
+    {
+      "filename": "standardy_ochrony_maloletnich.pdf",
+      "title": "standardy ochrony maloletnich",
+      "category": "other",
+      "url": "/pdfs/standardy_ochrony_maloletnich.pdf",
+      "size": 269
+    },
+    {
+      "filename": "studen-_und_pausenzeiten_wbs.pdf",
+      "title": "studen- und pausenzeiten wbs",
+      "category": "other",
+      "url": "/pdfs/studen-_und_pausenzeiten_wbs.pdf",
+      "size": 196000
+    },
+    {
+      "filename": "tablet_regulamin_uzyczenia_pl_de.pdf",
+      "title": "tablet regulamin uzyczenia pl de",
+      "category": "regulations",
+      "url": "/pdfs/tablet_regulamin_uzyczenia_pl_de.pdf",
+      "size": 251267
+    },
+    {
+      "filename": "tablet_umowa_uzyczenia_pl_de.pdf",
+      "title": "tablet umowa uzyczenia pl de",
+      "category": "other",
+      "url": "/pdfs/tablet_umowa_uzyczenia_pl_de.pdf",
+      "size": 289132
+    },
+    {
+      "filename": "tabletyzasady_korzystania_sp_kl._3_4.pdf",
+      "title": "tabletyzasady korzystania sp kl. 3 4",
+      "category": "other",
+      "url": "/pdfs/tabletyzasady_korzystania_sp_kl._3_4.pdf",
+      "size": 400360
+    },
+    {
+      "filename": "wbs-anmeldeformular__formularz_zgloszenia_do_wbs.pdf",
+      "title": "wbs-anmeldeformular  formularz zgloszenia do wbs",
+      "category": "forms",
+      "url": "/pdfs/wbs-anmeldeformular__formularz_zgloszenia_do_wbs.pdf",
+      "size": 511020
+    }
+  ]
+}

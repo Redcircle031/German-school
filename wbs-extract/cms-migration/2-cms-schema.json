@@ -1,0 +1,251 @@
+{
+  "_comment": "WBS Custom CMS Database Schema - PostgreSQL",
+  "version": "1.0.0",
+  "database": {
+    "type": "PostgreSQL",
+    "encoding": "UTF-8"
+  },
+  
+  "tables": {
+    "users": {
+      "description": "CMS users and administrators",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "email": { "type": "VARCHAR(255)", "unique": true, "nullable": false },
+        "password_hash": { "type": "VARCHAR(255)", "nullable": false },
+        "first_name": { "type": "VARCHAR(100)", "nullable": false },
+        "last_name": { "type": "VARCHAR(100)", "nullable": false },
+        "role": { 
+          "type": "VARCHAR(20)", 
+          "default": "editor",
+          "enum": ["admin", "editor", "contributor"]
+        },
+        "avatar": { "type": "VARCHAR(500)", "nullable": true },
+        "is_active": { "type": "BOOLEAN", "default": true },
+        "last_login": { "type": "TIMESTAMP", "nullable": true },
+        "created_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" },
+        "updated_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" }
+      }
+    },
+    
+    "categories": {
+      "description": "Content categories for articles",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "slug": { "type": "VARCHAR(100)", "unique": true, "nullable": false },
+        "name_pl": { "type": "VARCHAR(100)", "nullable": false },
+        "name_de": { "type": "VARCHAR(100)", "nullable": false },
+        "name_en": { "type": "VARCHAR(100)", "nullable": false },
+        "description_pl": { "type": "TEXT", "nullable": true },
+        "description_de": { "type": "TEXT", "nullable": true },
+        "description_en": { "type": "TEXT", "nullable": true },
+        "color": { "type": "VARCHAR(7)", "nullable": true, "comment": "Hex color for UI" },
+        "icon": { "type": "VARCHAR(50)", "nullable": true },
+        "sort_order": { "type": "INTEGER", "default": 0 },
+        "is_active": { "type": "BOOLEAN", "default": true },
+        "created_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" }
+      }
+    },
+    
+    "articles": {
+      "description": "Main content - news, events, announcements",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "slug": { "type": "VARCHAR(200)", "unique": true, "nullable": false },
+        
+        "title_pl": { "type": "VARCHAR(255)", "nullable": false },
+        "title_de": { "type": "VARCHAR(255)", "nullable": true },
+        "title_en": { "type": "VARCHAR(255)", "nullable": true },
+        
+        "excerpt_pl": { "type": "TEXT", "nullable": true, "comment": "Short preview text" },
+        "excerpt_de": { "type": "TEXT", "nullable": true },
+        "excerpt_en": { "type": "TEXT", "nullable": true },
+        
+        "content_pl": { "type": "TEXT", "nullable": false, "comment": "HTML or Markdown content" },
+        "content_de": { "type": "TEXT", "nullable": true },
+        "content_en": { "type": "TEXT", "nullable": true },
+        
+        "category_id": { 
+          "type": "UUID", 
+          "nullable": false, 
+          "references": "categories(id)",
+          "onDelete": "CASCADE"
+        },
+        
+        "author_id": { 
+          "type": "UUID", 
+          "nullable": true, 
+          "references": "users(id)",
+          "onDelete": "SET NULL"
+        },
+        
+        "featured_image_id": { 
+          "type": "UUID", 
+          "nullable": true, 
+          "references": "media(id)",
+          "onDelete": "SET NULL"
+        },
+        
+        "status": { 
+          "type": "VARCHAR(20)", 
+          "default": "draft",
+          "enum": ["draft", "published", "archived"]
+        },
+        
+        "published_at": { "type": "TIMESTAMP", "nullable": true },
+        "event_date": { "type": "DATE", "nullable": true, "comment": "For events" },
+        "event_end_date": { "type": "DATE", "nullable": true },
+        
+        "is_featured": { "type": "BOOLEAN", "default": false },
+        "is_sticky": { "type": "BOOLEAN", "default": false, "comment": "Pin to top" },
+        
+        "view_count": { "type": "INTEGER", "default": 0 },
+        
+        "meta_title_pl": { "type": "VARCHAR(255)", "nullable": true },
+        "meta_title_de": { "type": "VARCHAR(255)", "nullable": true },
+        "meta_title_en": { "type": "VARCHAR(255)", "nullable": true },
+        
+        "meta_description_pl": { "type": "VARCHAR(500)", "nullable": true },
+        "meta_description_de": { "type": "VARCHAR(500)", "nullable": true },
+        "meta_description_en": { "type": "VARCHAR(500)", "nullable": true },
+        
+        "old_url": { "type": "VARCHAR(500)", "nullable": true, "comment": "For redirects" },
+        
+        "created_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" },
+        "updated_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" },
+        "created_by": { "type": "UUID", "references": "users(id)", "onDelete": "SET NULL" },
+        "updated_by": { "type": "UUID", "references": "users(id)", "onDelete": "SET NULL" }
+      },
+      "indexes": [
+        { "columns": ["slug"], "unique": true },
+        { "columns": ["status", "published_at"] },
+        { "columns": ["category_id", "status"] },
+        { "columns": ["is_featured"] },
+        { "columns": ["published_at"] }
+      ]
+    },
+    
+    "media": {
+      "description": "Images, PDFs, and other files",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "filename": { "type": "VARCHAR(255)", "nullable": false },
+        "original_filename": { "type": "VARCHAR(255)", "nullable": false },
+        "file_path": { "type": "VARCHAR(500)", "nullable": false },
+        "file_size": { "type": "INTEGER", "nullable": false, "comment": "Bytes" },
+        "mime_type": { "type": "VARCHAR(100)", "nullable": false },
+        "width": { "type": "INTEGER", "nullable": true, "comment": "For images" },
+        "height": { "type": "INTEGER", "nullable": true },
+        
+        "alt_text_pl": { "type": "VARCHAR(255)", "nullable": true },
+        "alt_text_de": { "type": "VARCHAR(255)", "nullable": true },
+        "alt_text_en": { "type": "VARCHAR(255)", "nullable": true },
+        
+        "caption_pl": { "type": "TEXT", "nullable": true },
+        "caption_de": { "type": "TEXT", "nullable": true },
+        "caption_en": { "type": "TEXT", "nullable": true },
+        
+        "type": { 
+          "type": "VARCHAR(20)", 
+          "default": "image",
+          "enum": ["image", "pdf", "document", "video"]
+        },
+        
+        "is_public": { "type": "BOOLEAN", "default": true },
+        
+        "uploaded_by": { "type": "UUID", "references": "users(id)", "onDelete": "SET NULL" },
+        "created_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" }
+      }
+    },
+    
+    "article_media": {
+      "description": "Junction table - articles to media (many-to-many)",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "article_id": { "type": "UUID", "references": "articles(id)", "onDelete": "CASCADE" },
+        "media_id": { "type": "UUID", "references": "media(id)", "onDelete": "CASCADE" },
+        "sort_order": { "type": "INTEGER", "default": 0 },
+        "created_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" }
+      },
+      "unique": ["article_id", "media_id"]
+    },
+    
+    "tags": {
+      "description": "Article tags for filtering",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "slug": { "type": "VARCHAR(100)", "unique": true },
+        "name_pl": { "type": "VARCHAR(100)", "nullable": false },
+        "name_de": { "type": "VARCHAR(100)", "nullable": true },
+        "name_en": { "type": "VARCHAR(100)", "nullable": true },
+        "created_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" }
+      }
+    },
+    
+    "article_tags": {
+      "description": "Junction table - articles to tags",
+      "columns": {
+        "article_id": { "type": "UUID", "references": "articles(id)", "onDelete": "CASCADE" },
+        "tag_id": { "type": "UUID", "references": "tags(id)", "onDelete": "CASCADE" }
+      },
+      "primary": ["article_id", "tag_id"]
+    },
+    
+    "pages": {
+      "description": "Static pages (About, Contact, etc.)",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "slug": { "type": "VARCHAR(100)", "unique": true },
+        "title_pl": { "type": "VARCHAR(255)" },
+        "title_de": { "type": "VARCHAR(255)", "nullable": true },
+        "title_en": { "type": "VARCHAR(255)", "nullable": true },
+        "content_pl": { "type": "TEXT" },
+        "content_de": { "type": "TEXT", "nullable": true },
+        "content_en": { "type": "TEXT", "nullable": true },
+        "template": { "type": "VARCHAR(50)", "default": "default" },
+        "is_published": { "type": "BOOLEAN", "default": true },
+        "sort_order": { "type": "INTEGER", "default": 0 },
+        "created_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" },
+        "updated_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" }
+      }
+    },
+    
+    "navigation": {
+      "description": "Menu structure",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "parent_id": { "type": "UUID", "references": "navigation(id)", "nullable": true },
+        "label_pl": { "type": "VARCHAR(100)" },
+        "label_de": { "type": "VARCHAR(100)", "nullable": true },
+        "label_en": { "type": "VARCHAR(100)", "nullable": true },
+        "url": { "type": "VARCHAR(500)" },
+        "type": { "type": "VARCHAR(20)", "enum": ["link", "page", "category"] },
+        "position": { "type": "VARCHAR(20)", "enum": ["header", "footer", "sidebar"] },
+        "sort_order": { "type": "INTEGER", "default": 0 },
+        "is_active": { "type": "BOOLEAN", "default": true },
+        "created_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" }
+      }
+    },
+    
+    "settings": {
+      "description": "CMS configuration",
+      "columns": {
+        "id": { "type": "UUID", "primary": true, "default": "gen_random_uuid()" },
+        "key": { "type": "VARCHAR(100)", "unique": true },
+        "value": { "type": "TEXT" },
+        "type": { "type": "VARCHAR(20)", "enum": ["string", "number", "boolean", "json"] },
+        "updated_at": { "type": "TIMESTAMP", "default": "CURRENT_TIMESTAMP" }
+      }
+    }
+  },
+  
+  "seed_data": {
+    "categories": [
+      { "slug": "aktualnosci", "name_pl": "Aktualności", "name_de": "Aktuelles", "name_en": "News", "color": "#3B82F6", "icon": "newspaper" },
+      { "slug": "wydarzenia", "name_pl": "Wydarzenia", "name_de": "Veranstaltungen", "name_en": "Events", "color": "#8B5CF6", "icon": "calendar" },
+      { "slug": "sukcesy", "name_pl": "Sukcesy", "name_de": "Erfolge", "name_en": "Achievements", "color": "#F59E0B", "icon": "trophy" },
+      { "slug": "ogloszenia", "name_pl": "Ogłoszenia", "name_de": "Mitteilungen", "name_en": "Announcements", "color": "#10B981", "icon": "megaphone" },
+      { "slug": "projekty", "name_pl": "Projekty", "name_de": "Projekte", "name_en": "Projects", "color": "#EC4899", "icon": "folder" }
+    ]
+  }
+}

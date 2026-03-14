@@ -1,0 +1,14 @@
+# WBS School Website Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wbs.pl/sitemap-index.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin/private areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/

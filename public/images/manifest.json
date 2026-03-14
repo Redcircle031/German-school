@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-03-13T22:31:30.408Z",
+  "totalImages": 1305,
+  "byCategory": {
+    "news": 758,
+    "events": 180,
+    "programs": 162,
+    "campus": 62,
+    "sports": 56,
+    "logos": 24,
+    "music": 21,
+    "people": 21,
+    "trips": 14,
+    "achievements": 7
+  },
+  "version": "2.0-improved"
+}

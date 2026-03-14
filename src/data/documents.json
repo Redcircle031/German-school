@@ -1,0 +1,567 @@
+{
+  "generatedAt": "2026-03-13T22:40:48.082Z",
+  "totalDocuments": 37,
+  "byCategory": {
+    "regulations": 10,
+    "forms": 3,
+    "other": 22,
+    "programs": 2
+  },
+  "documents": [
+    {
+      "id": "doc-1773441647960-ejlm64r4q",
+      "filename": "antrag_auf_wechsel_vom_kindergarten_in_die_wbs_wniosek_przeniesienia_z_kiga_do_wbs.pdf",
+      "title": {
+        "pl": "antrag auf wechsel vom kindergarten in die wbs wniosek przeniesienia z kiga do wbs",
+        "de": "",
+        "en": ""
+      },
+      "category": "forms",
+      "language": "pl",
+      "pages": 0,
+      "size": 514498,
+      "uploadedAt": "2026-03-13T22:40:47.960Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647990-pset3cx4i",
+      "filename": "nts_mitgliedsantrag_2021.pdf",
+      "title": {
+        "pl": "nts mitgliedsantrag",
+        "de": "",
+        "en": ""
+      },
+      "category": "forms",
+      "language": "pl",
+      "pages": 0,
+      "size": 500382,
+      "uploadedAt": "2026-03-13T22:40:47.990Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648060-f8k2eibj7",
+      "filename": "wbs-anmeldeformular__formularz_zgloszenia_do_wbs.pdf",
+      "title": {
+        "pl": "wbs-anmeldeformular  formularz zgloszenia do wbs",
+        "de": "",
+        "en": ""
+      },
+      "category": "forms",
+      "language": "pl",
+      "pages": 0,
+      "size": 511020,
+      "uploadedAt": "2026-03-13T22:40:48.060Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647962-t3rkuqqtu",
+      "filename": "deklaracja_przystapienia_do_akademii_muzycznej_wbs_21_22.pdf",
+      "title": {
+        "pl": "deklaracja przystapienia do akademii muzycznej wbs 21",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 464202,
+      "uploadedAt": "2026-03-13T22:40:47.962Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647966-oubdfwj31",
+      "filename": "drogi_komunikacji.pdf",
+      "title": {
+        "pl": "drogi komunikacji",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 269,
+      "uploadedAt": "2026-03-13T22:40:47.966Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647968-0fyrs1bph",
+      "filename": "events_in_der_aula.pdf",
+      "title": {
+        "pl": "events in der aula",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 150981,
+      "uploadedAt": "2026-03-13T22:40:47.968Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647970-419n2ubfm",
+      "filename": "faqs_rodzice_tablety.pdf",
+      "title": {
+        "pl": "faqs rodzice tablety",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 452569,
+      "uploadedAt": "2026-03-13T22:40:47.970Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647973-o1zpl3mwi",
+      "filename": "ferienplan_2025_26.pdf",
+      "title": {
+        "pl": "ferienplan 2025",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 224915,
+      "uploadedAt": "2026-03-13T22:40:47.973Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647976-2ve5gkyo8",
+      "filename": "ferienplan_2026_27.pdf",
+      "title": {
+        "pl": "ferienplan 2026",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 224620,
+      "uploadedAt": "2026-03-13T22:40:47.976Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647977-agae0u7ab",
+      "filename": "in_die_schule_und_zur%C3%BCck_2025_26.pdf",
+      "title": {
+        "pl": "in die schule und zur%C3%BCck 2025",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 161191,
+      "uploadedAt": "2026-03-13T22:40:47.977Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647978-ef49nkepk",
+      "filename": "in_die_schule_und_zurück_2025_26.pdf",
+      "title": {
+        "pl": "in die schule und zurück 2025",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 161191,
+      "uploadedAt": "2026-03-13T22:40:47.978Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647980-g3moxp59x",
+      "filename": "informacja_dla_rodzicow_-_katarzyna_matusiewicz_catering_-wbs_szkola_polsko_niemiecka.pdf",
+      "title": {
+        "pl": "informacja dla rodzicow - katarzyna matusiewicz catering -wbs szkola polsko niemiecka",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 223259,
+      "uploadedAt": "2026-03-13T22:40:47.980Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647981-cxy2cdooz",
+      "filename": "katarzyna_matusiewicz_catering_pl.pdf",
+      "title": {
+        "pl": "katarzyna matusiewicz catering pl",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 50664,
+      "uploadedAt": "2026-03-13T22:40:47.981Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647982-tel6rnzcz",
+      "filename": "koncepcja_cyfryzacji_wbs.pdf",
+      "title": {
+        "pl": "koncepcja cyfryzacji wbs",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 269,
+      "uploadedAt": "2026-03-13T22:40:47.982Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647982-rxmk0flqj",
+      "filename": "koncept_interwencji_w_sytuacji_mobingu.pdf",
+      "title": {
+        "pl": "koncept interwencji w sytuacji mobingu",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 269,
+      "uploadedAt": "2026-03-13T22:40:47.982Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647983-oag1civo1",
+      "filename": "laufzettel_karta_obiegowa.pdf",
+      "title": {
+        "pl": "laufzettel karta obiegowa",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 496755,
+      "uploadedAt": "2026-03-13T22:40:47.983Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647984-0or6vef79",
+      "filename": "medizinischer_fragebogen_ankieta_zdrowotna_2021.pdf",
+      "title": {
+        "pl": "medizinischer fragebogen ankieta zdrowotna",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 257493,
+      "uploadedAt": "2026-03-13T22:40:47.984Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647986-ht3vhr5yn",
+      "filename": "nb_anmeldung_1_hbj_25_26__deklaracja_swietlica_1_polrocze_25_26.pdf",
+      "title": {
+        "pl": "nb anmeldung 1 hbj 25 26  deklaracja swietlica 1 polrocze 25",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 203509,
+      "uploadedAt": "2026-03-13T22:40:47.986Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647998-k71squrvl",
+      "filename": "nts_rodo_information_2019_(1).pdf",
+      "title": {
+        "pl": "nts rodo information 2019 (1)",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 331603,
+      "uploadedAt": "2026-03-13T22:40:47.998Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648000-bkkjsomt1",
+      "filename": "nts_rodo_information_2019_wbs.pdf",
+      "title": {
+        "pl": "nts rodo information 2019 wbs",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 424189,
+      "uploadedAt": "2026-03-13T22:40:48.000Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648005-jph2q0pzz",
+      "filename": "pakiety_sponsorskie__sponsorenpakete.pdf",
+      "title": {
+        "pl": "pakiety sponsorskie  sponsorenpakete",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 7921741,
+      "uploadedAt": "2026-03-13T22:40:48.005Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648035-0ctxq8lp9",
+      "filename": "pion_polskojezyczny.pdf",
+      "title": {
+        "pl": "pion polskojezyczny",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 1177375,
+      "uploadedAt": "2026-03-13T22:40:48.035Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648051-tdwfgvxwq",
+      "filename": "studen-_und_pausenzeiten_wbs.pdf",
+      "title": {
+        "pl": "studen- und pausenzeiten wbs",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 196000,
+      "uploadedAt": "2026-03-13T22:40:48.051Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648053-gmdl8ubxa",
+      "filename": "tablet_umowa_uzyczenia_pl_de.pdf",
+      "title": {
+        "pl": "tablet umowa uzyczenia pl de",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 289132,
+      "uploadedAt": "2026-03-13T22:40:48.053Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648055-tumxsyck4",
+      "filename": "tabletyzasady_korzystania_sp_kl._3_4.pdf",
+      "title": {
+        "pl": "tabletyzasady korzystania sp kl. 3",
+        "de": "",
+        "en": ""
+      },
+      "category": "other",
+      "language": "pl",
+      "pages": 0,
+      "size": 400360,
+      "uploadedAt": "2026-03-13T22:40:48.055Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648042-7a7hfaeb2",
+      "filename": "program_szkoly_wbs.pdf",
+      "title": {
+        "pl": "program szkoly wbs",
+        "de": "",
+        "en": ""
+      },
+      "category": "programs",
+      "language": "pl",
+      "pages": 0,
+      "size": 578175,
+      "uploadedAt": "2026-03-13T22:40:48.042Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648050-ascsm3evh",
+      "filename": "standardy_ochrony_maloletnich.pdf",
+      "title": {
+        "pl": "standardy ochrony maloletnich",
+        "de": "",
+        "en": ""
+      },
+      "category": "programs",
+      "language": "pl",
+      "pages": 0,
+      "size": 269,
+      "uploadedAt": "2026-03-13T22:40:48.050Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647963-izhux6yeu",
+      "filename": "do_11._regulamin_opieki_popoludniowej_wbs.pdf",
+      "title": {
+        "pl": "do 11. regulamin opieki popoludniowej wbs",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 289818,
+      "uploadedAt": "2026-03-13T22:40:47.963Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647953-2cmhb9fnu",
+      "filename": "13._elternvertordnung_reg_rady_rodzicow.pdf",
+      "title": {
+        "pl": "elternvertordnung reg rady rodzicow",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 441198,
+      "uploadedAt": "2026-03-13T22:40:47.953Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647951-w5h4z3lac",
+      "filename": "12._ferienordnung_regulamin_ferii.pdf",
+      "title": {
+        "pl": "ferienordnung regulamin ferii",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 329511,
+      "uploadedAt": "2026-03-13T22:40:47.951Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647946-whumxpr5t",
+      "filename": "11._hausordnung_regulamin_budynku.pdf",
+      "title": {
+        "pl": "hausordnung regulamin budynku",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 471518,
+      "uploadedAt": "2026-03-13T22:40:47.946Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647989-ri8ttbxm1",
+      "filename": "netzwerkordnung_wbs_d-pl_01.pdf",
+      "title": {
+        "pl": "netzwerkordnung wbs d-pl",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 81843,
+      "uploadedAt": "2026-03-13T22:40:47.989Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648046-vr34ug35x",
+      "filename": "regulamin_akademii_muzycznej_wbs_24_25.pdf",
+      "title": {
+        "pl": "regulamin akademii muzycznej wbs 24",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 570961,
+      "uploadedAt": "2026-03-13T22:40:48.046Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648049-3r350msnj",
+      "filename": "regulamin_platnosci_szkola_2025_2026_19.09.25.pdf",
+      "title": {
+        "pl": "regulamin platnosci szkola 2025 2026 19.09.25",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 342051,
+      "uploadedAt": "2026-03-13T22:40:48.049Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647954-90ht2ak9b",
+      "filename": "5._schulordnung____regulamin_szkoly.pdf",
+      "title": {
+        "pl": "schulordnung    regulamin szkoly",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 782405,
+      "uploadedAt": "2026-03-13T22:40:47.954Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441648052-928kn63gz",
+      "filename": "tablet_regulamin_uzyczenia_pl_de.pdf",
+      "title": {
+        "pl": "tablet regulamin uzyczenia pl de",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 251267,
+      "uploadedAt": "2026-03-13T22:40:48.052Z",
+      "searchableText": ""
+    },
+    {
+      "id": "doc-1773441647957-68c6f3ela",
+      "filename": "7._versetzungsordnung_regulamin_promowania_uczniow.pdf",
+      "title": {
+        "pl": "versetzungsordnung regulamin promowania uczniow",
+        "de": "",
+        "en": ""
+      },
+      "category": "regulations",
+      "language": "pl",
+      "pages": 0,
+      "size": 420735,
+      "uploadedAt": "2026-03-13T22:40:47.957Z",
+      "searchableText": ""
+    }
+  ]
+}
