@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl/ferienplan_2025_26-3003.html",
+    "extractedDate": "2026-03-15"
+  },
+  "schoolYears": {
+    "2025-26": {
+      "semesters": [
+        { "semester": 1, "start": "2025-09-01", "end": "2026-01-30" },
+        { "semester": 2, "start": "2026-02-02", "end": "2026-06-26" }
+      ],
+      "holidays": [
+        {
+          "name": { "pl": "Ferie letnie 2025", "de": "Sommerferien 2025", "en": "Summer Holidays 2025" },
+          "start": "2025-07-05",
+          "end": "2025-08-24"
+        },
+        {
+          "name": { "pl": "Dzień Jedności Niemiec", "de": "Tag der Deutschen Einheit", "en": "German Unity Day" },
+          "start": "2025-10-03",
+          "end": "2025-10-03"
+        },
+        {
+          "name": { "pl": "Ferie jesienne", "de": "Herbstferien", "en": "Autumn Break" },
+          "start": "2025-10-20",
+          "end": "2025-10-31"
+        },
+        {
+          "name": { "pl": "Dzień Niepodległości (most)", "de": "Unabhängigkeitstag (Brückentag)", "en": "Independence Day (bridge day)" },
+          "start": "2025-11-10",
+          "end": "2025-11-11"
+        },
+        {
+          "name": { "pl": "Ferie świąteczne", "de": "Weihnachtsferien", "en": "Christmas Break" },
+          "start": "2025-12-22",
+          "end": "2026-01-06"
+        },
+        {
+          "name": { "pl": "Dzień pedagogiczny", "de": "Pädagogischer Tag", "en": "Pedagogical Day" },
+          "start": "2026-01-30",
+          "end": "2026-01-30"
+        },
+        {
+          "name": { "pl": "Ferie zimowe", "de": "Winterferien", "en": "Winter Break" },
+          "start": "2026-02-16",
+          "end": "2026-02-20"
+        },
+        {
+          "name": { "pl": "Ferie wielkanocne", "de": "Osterferien", "en": "Easter Break" },
+          "start": "2026-03-30",
+          "end": "2026-04-10"
+        },
+        {
+          "name": { "pl": "Święto Pracy", "de": "Tag der Arbeit", "en": "Labour Day" },
+          "start": "2026-05-01",
+          "end": "2026-05-01"
+        },
+        {
+          "name": { "pl": "Boże Ciało (most)", "de": "Fronleichnam (Brückentag)", "en": "Corpus Christi (bridge day)" },
+          "start": "2026-06-04",
+          "end": "2026-06-05"
+        },
+        {
+          "name": { "pl": "Ferie letnie 2026", "de": "Sommerferien 2026", "en": "Summer Holidays 2026" },
+          "start": "2026-07-06",
+          "end": "2026-08-21"
+        }
+      ]
+    },
+    "2026-27": {
+      "semesters": [
+        { "semester": 1, "start": "2026-09-01", "end": "2027-01-29" },
+        { "semester": 2, "start": "2027-02-01", "end": "2027-06-25" }
+      ],
+      "holidays": [
+        {
+          "name": { "pl": "Ferie letnie 2026", "de": "Sommerferien 2026", "en": "Summer Holidays 2026" },
+          "start": "2026-07-06",
+          "end": "2026-08-21"
+        },
+        {
+          "name": { "pl": "Dzień Jedności Niemiec", "de": "Tag der Deutschen Einheit", "en": "German Unity Day" },
+          "start": "2026-10-03",
+          "end": "2026-10-03"
+        },
+        {
+          "name": { "pl": "Ferie jesienne", "de": "Herbstferien", "en": "Autumn Break" },
+          "start": "2026-10-19",
+          "end": "2026-10-30"
+        },
+        {
+          "name": { "pl": "Dzień Niepodległości", "de": "Unabhängigkeitstag", "en": "Independence Day" },
+          "start": "2026-11-11",
+          "end": "2026-11-11"
+        },
+        {
+          "name": { "pl": "Ferie świąteczne", "de": "Weihnachtsferien", "en": "Christmas Break" },
+          "start": "2026-12-21",
+          "end": "2027-01-06"
+        },
+        {
+          "name": { "pl": "Ferie zimowe", "de": "Winterferien", "en": "Winter Break" },
+          "start": "2027-02-08",
+          "end": "2027-02-12"
+        },
+        {
+          "name": { "pl": "Ferie wielkanocne", "de": "Osterferien", "en": "Easter Break" },
+          "start": "2027-03-22",
+          "end": "2027-04-02"
+        },
+        {
+          "name": { "pl": "Święto Pracy", "de": "Tag der Arbeit", "en": "Labour Day" },
+          "start": "2027-05-01",
+          "end": "2027-05-01"
+        },
+        {
+          "name": { "pl": "Boże Ciało", "de": "Fronleichnam", "en": "Corpus Christi" },
+          "start": "2027-05-27",
+          "end": "2027-05-27"
+        },
+        {
+          "name": { "pl": "Ferie letnie 2027", "de": "Sommerferien 2027", "en": "Summer Holidays 2027" },
+          "start": "2027-07-05",
+          "end": "2027-08-20"
+        }
+      ]
+    }
+  }
+}

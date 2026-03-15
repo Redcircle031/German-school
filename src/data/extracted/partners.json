@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl/partner_und_sponsoren_wbs-3258.html",
+    "extractedDate": "2026-03-15"
+  },
+  "institutional": [
+    {
+      "id": "german-embassy",
+      "name": { "pl": "Ambasada Republiki Federalnej Niemiec", "de": "Botschaft der Bundesrepublik Deutschland", "en": "Embassy of the Federal Republic of Germany" },
+      "logo": "/images/logos/standalone-ambasada-logo.png",
+      "url": "https://polen.diplo.de",
+      "description": {
+        "pl": "Oficjalny partner wspierający dwujęzyczną edukację i wymianę kulturową.",
+        "de": "Offizieller Partner, der zweisprachige Bildung und kulturellen Austausch unterstützt.",
+        "en": "Official partner supporting bilingual education and cultural exchange."
+      }
+    },
+    {
+      "id": "zfa",
+      "name": { "pl": "ZfA — Centrala ds. Szkolnictwa Zagranicznego", "de": "ZfA — Zentralstelle für das Auslandsschulwesen", "en": "ZfA — Central Agency for Schools Abroad" },
+      "logo": null,
+      "url": "https://www.auslandsschulwesen.de",
+      "description": {
+        "pl": "Agencja rządowa RFN nadzorująca niemieckie szkoły za granicą, w tym WBS.",
+        "de": "Deutsche Regierungsbehörde, die deutsche Schulen im Ausland betreut, darunter die WBS.",
+        "en": "German government agency overseeing German schools abroad, including WBS."
+      }
+    },
+    {
+      "id": "goethe-institut",
+      "name": { "pl": "Goethe-Institut", "de": "Goethe-Institut", "en": "Goethe-Institut" },
+      "logo": null,
+      "url": "https://www.goethe.de",
+      "description": {
+        "pl": "Instytut kultury i języka niemieckiego wspierający programy DaF.",
+        "de": "Kulturinstitut zur Förderung der deutschen Sprache und Kultur, unterstützt DaF-Programme.",
+        "en": "German cultural institute supporting German language (DaF) programmes."
+      }
+    },
+    {
+      "id": "dpjw",
+      "name": { "pl": "PNWM — Polsko-Niemiecka Współpraca Młodzieży", "de": "DPJW — Deutsch-Polnisches Jugendwerk", "en": "GYPW — German-Polish Youth Cooperation" },
+      "logo": null,
+      "url": "https://www.dpjw.org",
+      "description": {
+        "pl": "Organizacja wspierająca wymianę młodzieżową polsko-niemiecką.",
+        "de": "Organisation zur Förderung des deutsch-polnischen Jugendaustauschs.",
+        "en": "Organization supporting German-Polish youth exchange."
+      }
+    },
+    {
+      "id": "city-of-warsaw",
+      "name": { "pl": "Urząd m.st. Warszawy", "de": "Stadtverwaltung Warschau", "en": "City of Warsaw" },
+      "logo": null,
+      "url": "https://um.warszawa.pl",
+      "description": {
+        "pl": "Miasto stołeczne Warszawa jako partner wspierający edukację międzykulturową.",
+        "de": "Die Hauptstadt Warschau als Partner zur Förderung interkultureller Bildung.",
+        "en": "The capital city of Warsaw as partner supporting intercultural education."
+      }
+    }
+  ],
+  "sponsors": [
+    {
+      "id": "allianz",
+      "name": "Allianz",
+      "logo": "/images/logos/allianz.png",
+      "url": "https://www.allianz.pl",
+      "tier": "gold"
+    },
+    {
+      "id": "lidl",
+      "name": "Lidl",
+      "logo": "/images/logos/standalone-lidl_logo_4c_ol_small.jpg",
+      "url": "https://www.lidl.pl",
+      "tier": "gold"
+    },
+    {
+      "id": "westminster",
+      "name": "Westminster",
+      "logo": "/images/logos/standalone-logo_westminster_unternehme.jpg",
+      "url": null,
+      "tier": "silver"
+    },
+    {
+      "id": "promedica24",
+      "name": "ProMedica24",
+      "logo": "/images/logos/standalone-promedica24_logo.jpg",
+      "url": "https://www.promedica24.pl",
+      "tier": "silver"
+    },
+    {
+      "id": "datev",
+      "name": "DATEV",
+      "logo": "/images/logos/datev.jpg",
+      "url": "https://www.datev.de",
+      "tier": "silver"
+    },
+    {
+      "id": "sprachcaffe",
+      "name": "Sprachcaffe",
+      "logo": "/images/logos/sprachcaffe.jpg",
+      "url": "https://www.sprachcaffe.com",
+      "tier": "partner"
+    },
+    {
+      "id": "intereuropol",
+      "name": "InterEuropol",
+      "logo": "/images/logos/intereuropol.jpg",
+      "url": null,
+      "tier": "partner"
+    },
+    {
+      "id": "ags",
+      "name": "AGS Movers",
+      "logo": "/images/logos/ags.jpg",
+      "url": "https://www.agsmovers.com",
+      "tier": "partner"
+    },
+    {
+      "id": "xo-dental",
+      "name": "XO Dental Clinic",
+      "logo": "/images/logos/xo-dental.jpg",
+      "url": null,
+      "tier": "partner"
+    },
+    {
+      "id": "ckw",
+      "name": "Centrum Kultury Wilanów",
+      "logo": "/images/logos/standalone-logockw_jpg_copy_hp.png",
+      "url": null,
+      "tier": "partner"
+    },
+    {
+      "id": "k-kwadrat",
+      "name": "K Kwadrat",
+      "logo": "/images/logos/k-kwadrat.jpg",
+      "url": null,
+      "tier": "partner"
+    },
+    {
+      "id": "ece",
+      "name": "ECE",
+      "logo": "/images/logos/standalone-ece_logo_www.jpg",
+      "url": null,
+      "tier": "partner"
+    },
+    {
+      "id": "messer",
+      "name": "Messer",
+      "logo": null,
+      "url": null,
+      "tier": "partner"
+    },
+    {
+      "id": "deutsche-bahn",
+      "name": "Deutsche Bahn",
+      "logo": null,
+      "url": "https://www.deutschebahn.com",
+      "tier": "partner"
+    }
+  ]
+}

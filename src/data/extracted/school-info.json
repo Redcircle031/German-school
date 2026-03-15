@@ -142,6 +142,11 @@
         "pl": "Akademia Muzyczna WBS",
         "de": "WBS Musikakademie",
         "en": "WBS Music Academy"
+      },
+      "director": "Marcin Lemiszewski",
+      "contact": {
+        "phone": "+48 795 801 234",
+        "email": "akademiamuzyczna@wbs.pl"
       }
     },
     {
@@ -162,10 +167,22 @@
     }
   ],
   "statistics": {
-    "students": 300,
-    "teachers": 59,
+    "students": 400,
+    "teachers": 60,
+    "kindergartenChildren": 80,
+    "educators": 20,
     "founded": 1978,
     "campuses": 2,
     "grades": "1-12"
+  },
+  "legal": {
+    "krs": "0000150334",
+    "nip": "PL9512099288",
+    "regon": "011823389",
+    "operator": {
+      "pl": "Polsko-Niemieckie Towarzystwo Szkolne w Warszawie (NTS)",
+      "de": "Deutsch-Polnische Schulgesellschaft in Warschau (NTS)",
+      "en": "Polish-German School Society in Warsaw (NTS)"
+    }
   }
 }

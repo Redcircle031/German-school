@@ -1,8 +1,9 @@
 {
   "metadata": {
     "source": "https://wbs.pl/kollegium-2268.html",
-    "extractedDate": "2026-03-13",
-    "totalStaff": 59,
+    "extractedDate": "2026-03-15",
+    "totalStaff": 62,
+    "totalAdmin": 10,
     "schoolYear": "2025/2026"
   },
   "staff": [
@@ -47,6 +48,7 @@
       "subjects": ["Ethik", "Mathematik"],
       "grades": [],
       "email": "schulleitung@wbs.pl",
+      "photo": "/images/people/ruediger-bott.jpg",
       "phone": null,
       "department": "Verwaltung"
     },
@@ -334,10 +336,11 @@
       "id": "staff-030",
       "name": "Karsten Kretzschmar",
       "abbreviation": "Kr",
-      "role": "Lehrkraft",
+      "role": "Stellvertretung",
       "subjects": ["Physik"],
       "grades": [],
       "email": "stellvertretung@wbs.pl",
+      "photo": "/images/people/karsten-kretzschmar.jpg",
       "phone": null,
       "department": "Naturwissenschaften",
       "additionalRole": "Stellvertretung"
@@ -671,10 +674,11 @@
       "id": "staff-060",
       "name": "Małgorzata Wróbel",
       "abbreviation": "Wr",
-      "role": "Lehrkraft",
+      "role": "Abteilungsleitung",
       "subjects": ["Polnisch"],
       "grades": [],
       "email": "m.wrobel@wbs.pl",
+      "photo": "/images/people/malgorzata-wrobel.jpg",
       "phone": null,
       "department": "Polnisch"
     },
@@ -738,6 +742,78 @@
         "de": "Förderung",
         "en": "Support"
       }
+    }
+  ],
+  "admin": [
+    {
+      "id": "admin-001",
+      "name": "Marta Łysecka",
+      "role": { "pl": "Sekretariat (klasy 1-4)", "de": "Sekretariat (Klassen 1-4)", "en": "Secretary (Grades 1-4)" },
+      "email": "sekretariat2@wbs.pl",
+      "photo": "/images/people/marta-lysecka.jpg"
+    },
+    {
+      "id": "admin-002",
+      "name": "Katarzyna Kraśniewska",
+      "role": { "pl": "Sekretariat (klasy 5-12)", "de": "Sekretariat (Klassen 5-12)", "en": "Secretary (Grades 5-12)" },
+      "email": "sekretariat1@wbs.pl",
+      "photo": "/images/people/katarzyna-krasniewska.jpg"
+    },
+    {
+      "id": "admin-003",
+      "name": "Aneta Wasiluk",
+      "role": { "pl": "Kadry", "de": "Personalwesen", "en": "Human Resources" },
+      "email": null,
+      "photo": "/images/people/aneta-wasiluk.jpg"
+    },
+    {
+      "id": "admin-004",
+      "name": "Andrzej Woźniak",
+      "role": { "pl": "Punkt informacyjny", "de": "Infopunkt", "en": "Info Point" },
+      "email": null,
+      "photo": "/images/people/andrzej-wozniak.jpg"
+    },
+    {
+      "id": "admin-005",
+      "name": "Nel Schada von Borzyskowski",
+      "role": { "pl": "Marketing i PR", "de": "Marketing & PR", "en": "Marketing & PR" },
+      "email": null,
+      "photo": "/images/people/nel-schada.jpg"
+    },
+    {
+      "id": "admin-006",
+      "name": "Agnieszka Szustakowska",
+      "role": { "pl": "Administracja", "de": "Verwaltung", "en": "Administration" },
+      "email": null,
+      "photo": "/images/people/agnieszka-szustakowska.jpg"
+    },
+    {
+      "id": "admin-007",
+      "name": "Karolina Smolańczuk",
+      "role": { "pl": "Administracja", "de": "Verwaltung", "en": "Administration" },
+      "email": null,
+      "photo": "/images/people/karolina-smolanczuk.jpg"
+    },
+    {
+      "id": "admin-008",
+      "name": "Renata Rudnicka",
+      "role": { "pl": "Administracja", "de": "Verwaltung", "en": "Administration" },
+      "email": null,
+      "photo": "/images/people/renata-rudnicka.jpg"
+    },
+    {
+      "id": "admin-009",
+      "name": "Anna Kutys",
+      "role": { "pl": "Pielęgniarka szkolna", "de": "Schulkrankenschwester", "en": "School Nurse" },
+      "email": null,
+      "photo": "/images/people/anna-kutys.jpg"
+    },
+    {
+      "id": "admin-010",
+      "name": "Andrzej Bocianowski",
+      "role": { "pl": "Administracja budynku", "de": "Hausverwaltung", "en": "Building Administration" },
+      "email": null,
+      "photo": "/images/people/andrzej-bocianowski.jpg"
     }
   ]
 }

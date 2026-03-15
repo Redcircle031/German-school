@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "source": "https://wbs.pl/projekte-1545.html",
+    "extractedDate": "2026-03-15",
+    "totalProjects": 13
+  },
+  "projects": [
+    {
+      "id": "jugend-musiziert",
+      "title": {
+        "pl": "Jugend musiziert",
+        "de": "Jugend musiziert",
+        "en": "Youth Makes Music"
+      },
+      "description": {
+        "pl": "Prestiżowy konkurs muzyczny dla młodych talentów. Uczniowie WBS regularnie kwalifikują się do etapów regionalnych i krajowych w Genewie.",
+        "de": "Renommierter Musikwettbewerb für junge Talente. WBS-Schüler qualifizieren sich regelmäßig für Regional- und Landeswettbewerbe in Genf.",
+        "en": "Prestigious music competition for young talents. WBS students regularly qualify for regional and national stages in Geneva."
+      },
+      "category": "music",
+      "status": "active",
+      "icon": "music"
+    },
+    {
+      "id": "klimapreis",
+      "title": {
+        "pl": "Niemiecka Nagroda Klimatyczna",
+        "de": "Deutscher Klimapreis",
+        "en": "German Climate Prize"
+      },
+      "description": {
+        "pl": "Projekt ekologiczny nagrodzony przez Allianz Foundation za inicjatywy klimatyczne w szkole.",
+        "de": "Umweltprojekt, ausgezeichnet von der Allianz-Stiftung für Klimainitiativen an der Schule.",
+        "en": "Environmental project awarded by Allianz Foundation for climate initiatives at school."
+      },
+      "category": "science",
+      "status": "completed",
+      "icon": "leaf"
+    },
+    {
+      "id": "literaturwettbewerb",
+      "title": {
+        "pl": "Konkurs Literacki",
+        "de": "Literaturwettbewerb",
+        "en": "Literature Competition"
+      },
+      "description": {
+        "pl": "Coroczny konkurs literacki promujący twórcze pisanie w języku polskim i niemieckim.",
+        "de": "Jährlicher Literaturwettbewerb zur Förderung des kreativen Schreibens in Polnisch und Deutsch.",
+        "en": "Annual literature competition promoting creative writing in Polish and German."
+      },
+      "category": "humanities",
+      "status": "active",
+      "icon": "book"
+    },
+    {
+      "id": "mint",
+      "title": {
+        "pl": "MINT — Nauki ścisłe i technologia",
+        "de": "MINT — Mathematik, Informatik, Naturwissenschaft, Technik",
+        "en": "STEM — Science, Technology, Engineering, Mathematics"
+      },
+      "description": {
+        "pl": "Projekty z zakresu nauk ścisłych, informatyki i technologii rozwijające umiejętności XXI wieku.",
+        "de": "Projekte in Naturwissenschaften, Informatik und Technik zur Entwicklung von Kompetenzen des 21. Jahrhunderts.",
+        "en": "Science, computing, and technology projects developing 21st-century skills."
+      },
+      "category": "science",
+      "status": "active",
+      "icon": "flask"
+    },
+    {
+      "id": "musicals",
+      "title": {
+        "pl": "Musicale i Teatr",
+        "de": "Musicals und Theateraufführungen",
+        "en": "Musicals and Theater"
+      },
+      "description": {
+        "pl": "Szkolne produkcje teatralne i musicale angażujące uczniów z różnych klas.",
+        "de": "Schulische Theater- und Musicalproduktionen mit Schülern aus verschiedenen Klassen.",
+        "en": "School theater and musical productions engaging students from various grades."
+      },
+      "category": "arts",
+      "status": "active",
+      "icon": "theater"
+    },
+    {
+      "id": "comenius",
+      "title": {
+        "pl": "Program Comenius",
+        "de": "Comenius-Programm",
+        "en": "Comenius Programme"
+      },
+      "description": {
+        "pl": "Europejski program współpracy międzyszkolnej promujący wymianę kulturową i edukacyjną.",
+        "de": "Europäisches Schulkooperationsprogramm zur Förderung des kulturellen und pädagogischen Austauschs.",
+        "en": "European school cooperation programme promoting cultural and educational exchange."
+      },
+      "category": "international",
+      "status": "completed",
+      "icon": "globe"
+    },
+    {
+      "id": "mun",
+      "title": {
+        "pl": "Model United Nations",
+        "de": "Model United Nations",
+        "en": "Model United Nations"
+      },
+      "description": {
+        "pl": "Symulacja obrad ONZ rozwijająca umiejętności dyplomatyczne, debaty i publicznego przemawiania.",
+        "de": "UN-Simulation zur Entwicklung diplomatischer Fähigkeiten, Debatte und öffentlichem Sprechen.",
+        "en": "UN simulation developing diplomatic skills, debate, and public speaking."
+      },
+      "category": "humanities",
+      "status": "active",
+      "icon": "landmark"
+    },
+    {
+      "id": "schulbruecke-weimar",
+      "title": {
+        "pl": "Schulbrücke Weimar",
+        "de": "Schulbrücke Weimar",
+        "en": "School Bridge Weimar"
+      },
+      "description": {
+        "pl": "Program wymiany z Weimarem łączący uczniów z różnych krajów europejskich w dialogu historyczno-kulturowym.",
+        "de": "Austauschprogramm mit Weimar, das Schüler verschiedener europäischer Länder im historisch-kulturellen Dialog verbindet.",
+        "en": "Exchange programme with Weimar connecting students from various European countries in historical-cultural dialogue."
+      },
+      "category": "international",
+      "status": "active",
+      "icon": "bridge"
+    },
+    {
+      "id": "freitagskonzerte",
+      "title": {
+        "pl": "Piątkowe Koncerty",
+        "de": "Freitagskonzerte",
+        "en": "Friday Concerts"
+      },
+      "description": {
+        "pl": "Regularne koncerty uczniów szkoły podstawowej prezentujące talenty muzyczne najmłodszych.",
+        "de": "Regelmäßige Konzerte der Grundschüler, die musikalische Talente der Jüngsten präsentieren.",
+        "en": "Regular primary school student concerts showcasing the youngest students' musical talents."
+      },
+      "category": "music",
+      "status": "active",
+      "icon": "music"
+    },
+    {
+      "id": "wosp",
+      "title": {
+        "pl": "WOŚP — Wielka Orkiestra Świątecznej Pomocy",
+        "de": "WOŚP — Großes Orchester der Weihnachtshilfe",
+        "en": "WOŚP — Great Orchestra of Christmas Charity"
+      },
+      "description": {
+        "pl": "Coroczna zbiórka charytatywna. W 2026 roku uczniowie zebrali 18 195,57 PLN na zakup sprzętu medycznego.",
+        "de": "Jährliche Wohltätigkeitsaktion. 2026 sammelten Schüler 18.195,57 PLN für medizinische Geräte.",
+        "en": "Annual charity fundraiser. In 2026, students raised 18,195.57 PLN for medical equipment."
+      },
+      "category": "charity",
+      "status": "active",
+      "icon": "heart"
+    },
+    {
+      "id": "schlingel",
+      "title": {
+        "pl": "SCHLINGEL",
+        "de": "SCHLINGEL",
+        "en": "SCHLINGEL"
+      },
+      "description": {
+        "pl": "Międzynarodowy festiwal filmowy dla dzieci i młodzieży, w którym uczniowie WBS biorą udział jako jurorzy.",
+        "de": "Internationales Kinder- und Jugendfilmfestival, bei dem WBS-Schüler als Juroren teilnehmen.",
+        "en": "International children's and youth film festival where WBS students participate as jury members."
+      },
+      "category": "arts",
+      "status": "active",
+      "icon": "film"
+    },
+    {
+      "id": "wettbewerbe",
+      "title": {
+        "pl": "Konkursy i Olimpiady",
+        "de": "Wettbewerbe und Olympiaden",
+        "en": "Competitions and Olympiads"
+      },
+      "description": {
+        "pl": "Uczniowie WBS uczestniczą w licznych konkursach przedmiotowych, olimpiadach i turniejach sportowych.",
+        "de": "WBS-Schüler nehmen an zahlreichen Fachwettbewerben, Olympiaden und Sportturnieren teil.",
+        "en": "WBS students participate in numerous subject competitions, olympiads, and sports tournaments."
+      },
+      "category": "academic",
+      "status": "active",
+      "icon": "trophy"
+    },
+    {
+      "id": "schuljubilaeum",
+      "title": {
+        "pl": "Jubileusz 40-lecia Szkoły",
+        "de": "40-jähriges Schuljubiläum",
+        "en": "40th School Anniversary"
+      },
+      "description": {
+        "pl": "Uroczystości z okazji 40-lecia WBS, łączące pokolenia uczniów, nauczycieli i rodziców.",
+        "de": "Feierlichkeiten zum 40-jährigen Bestehen der WBS, die Generationen von Schülern, Lehrern und Eltern verbinden.",
+        "en": "Celebrations of WBS's 40th anniversary, connecting generations of students, teachers, and parents."
+      },
+      "category": "community",
+      "status": "completed",
+      "icon": "cake"
+    }
+  ]
+}
