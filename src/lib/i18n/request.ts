@@ -5,7 +5,7 @@ export type Locale = 'pl' | 'de' | 'en';
 
 export const locales = ['pl', 'de', 'en'] as const;
 export type Locales = typeof locales;
-export const defaultLocale: Locale = 'pl';
+export const defaultLocale: Locale = 'de';
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = await requestLocale;

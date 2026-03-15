@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { containerVariants, slideUpVariants } from '@/lib/animations/variants';
 import { Quote } from 'lucide-react';
@@ -11,21 +12,21 @@ interface DirectorWelcomeProps {
 const content = {
   pl: {
     badge: 'Słowo Dyrektora',
-    name: 'Marzena Kowalska',
+    name: 'Rüdiger Bott',
     title: 'Dyrektor Szkoły',
     quote: 'W WBS wierzymy, że prawdziwa edukacja rodzi się na styku kultur. Nasze dwujęzyczne środowisko nie tylko uczy języków — buduje mosty między tradycjami, kształtuje otwartość na świat i przygotowuje uczniów do życia w globalnej społeczności.',
     message: 'Zapraszam Państwa do odkrywania naszej szkoły — miejsca, gdzie od 1978 roku polskie i niemieckie dziedzictwo łączą się, tworząc niepowtarzalną przestrzeń do nauki i rozwoju.',
   },
   de: {
-    badge: 'Wort der Direktorin',
-    name: 'Marzena Kowalska',
-    title: 'Schulleiterin',
+    badge: 'Wort des Schulleiters',
+    name: 'Rüdiger Bott',
+    title: 'Schulleiter',
     quote: 'An der WBS glauben wir, dass echte Bildung an der Schnittstelle von Kulturen entsteht. Unsere zweisprachige Umgebung lehrt nicht nur Sprachen — sie baut Brücken zwischen Traditionen, fördert Weltoffenheit und bereitet Schüler auf das Leben in einer globalen Gemeinschaft vor.',
     message: 'Ich lade Sie ein, unsere Schule zu entdecken — einen Ort, an dem seit 1978 polnisches und deutsches Erbe zusammenfließen und einen einzigartigen Raum zum Lernen und Wachsen schaffen.',
   },
   en: {
     badge: "Director's Welcome",
-    name: 'Marzena Kowalska',
+    name: 'Rüdiger Bott',
     title: 'School Director',
     quote: 'At WBS, we believe true education is born where cultures meet. Our bilingual environment does more than teach languages — it builds bridges between traditions, nurtures global awareness, and prepares students for life in a connected world.',
     message: 'I invite you to discover our school — a place where since 1978, Polish and German heritage come together to create a unique space for learning and growing.',
@@ -45,16 +46,16 @@ export default function DirectorWelcome({ lang }: DirectorWelcomeProps) {
           variants={containerVariants}
           className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
         >
-          {/* Left: Photo area */}
+          {/* Left: Director photo */}
           <motion.div variants={slideUpVariants} className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-neutral-100">
-              {/* Placeholder — replace with director's photo */}
-              <div className="flex size-full flex-col items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100 p-8">
-                <div className="mb-6 flex size-32 items-center justify-center rounded-full bg-neutral-200">
-                  <span className="text-4xl font-bold text-neutral-400">MK</span>
-                </div>
-                <p className="text-sm text-neutral-400">Director&apos;s photo</p>
-              </div>
+              <Image
+                src="/images/people/ruediger-bott.jpg"
+                alt="Rüdiger Bott — Schulleiter / School Director"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
 
               {/* Decorative accent */}
               <div className="absolute -bottom-4 -right-4 -z-10 size-full rounded-3xl bg-accent-100" />
@@ -94,8 +95,14 @@ export default function DirectorWelcome({ lang }: DirectorWelcomeProps) {
 
             {/* Director info */}
             <div className="flex items-center gap-4 border-t border-neutral-200 pt-6">
-              <div className="flex size-14 items-center justify-center rounded-full bg-red-600 text-lg font-bold text-white">
-                MK
+              <div className="relative size-14 overflow-hidden rounded-full">
+                <Image
+                  src="/images/people/ruediger-bott.jpg"
+                  alt="Rüdiger Bott"
+                  fill
+                  className="object-cover object-top"
+                  sizes="56px"
+                />
               </div>
               <div>
                 <p className="text-lg font-semibold text-neutral-900">{c.name}</p>

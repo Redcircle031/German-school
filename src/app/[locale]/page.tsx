@@ -27,7 +27,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations();
 
-  const articles = getRecentArticles(3, locale);
+  const articles = getRecentArticles(5, locale);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -179,14 +179,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </div>
                 </article>
 
-                {/* Secondary articles — stacked */}
-                <div className="flex flex-col gap-8">
-                  {articles.slice(1).map((article) => (
-                    <article
+                {/* Secondary articles — 4 stacked compactly */}
+                <div className="flex flex-col gap-4">
+                  {articles.slice(1, 5).map((article) => (
+                    <Link
                       key={article.slug}
-                      className="group flex overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:shadow-xl hover:shadow-red-900/5"
+                      href={`/${locale}/news/${article.slug}`}
+                      className="group flex gap-4 rounded-xl border border-neutral-200 bg-white p-4 transition-all duration-300 hover:border-red-200 hover:shadow-lg hover:shadow-red-900/5"
                     >
-                      <Link href={`/${locale}/news/${article.slug}`} className="relative block w-2/5 shrink-0 overflow-hidden bg-neutral-100">
+                      <div className="relative size-20 shrink-0 overflow-hidden rounded-lg bg-neutral-100">
                         {article.featuredImage ? (
                           <Image
                             src={article.featuredImage}
@@ -194,36 +195,31 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                             fill
                             className={`${
                               article.featuredImage.includes('logo') || article.featuredImage.includes('wbs')
-                                ? 'object-contain p-6'
-                                : 'object-cover transition-transform duration-700 group-hover:scale-105'
+                                ? 'object-contain p-2'
+                                : 'object-cover'
                             }`}
-                            sizes="(max-width: 1024px) 40vw, 20vw"
+                            sizes="80px"
                           />
                         ) : (
-                          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100">
-                            <Lightbulb className="size-10 text-neutral-200" />
+                          <div className="flex size-full items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100">
+                            <Lightbulb className="size-6 text-neutral-200" />
                           </div>
                         )}
-                      </Link>
-                      <div className="flex flex-col justify-center p-6">
-                        <div className="mb-3 flex items-center gap-2">
-                          <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-700">
+                      </div>
+                      <div className="flex min-w-0 flex-col justify-center">
+                        <div className="mb-1.5 flex items-center gap-2">
+                          <span className="rounded-full bg-accent-50 px-2 py-0.5 text-[11px] font-medium text-accent-700">
                             {getCategoryLabel(article.category)}
                           </span>
-                          <span className="text-xs text-neutral-400">
+                          <span className="text-[11px] text-neutral-400">
                             {formatDate(article.date)}
                           </span>
                         </div>
-                        <Link href={`/${locale}/news/${article.slug}`}>
-                          <h3 className="mb-2 line-clamp-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-red-600">
-                            {article.title}
-                          </h3>
-                        </Link>
-                        <p className="line-clamp-2 text-sm leading-relaxed text-neutral-500">
-                          {article.excerpt}
-                        </p>
+                        <h3 className="line-clamp-2 text-sm font-bold leading-snug text-neutral-900 transition-colors group-hover:text-red-600">
+                          {article.title}
+                        </h3>
                       </div>
-                    </article>
+                    </Link>
                   ))}
                 </div>
               </div>
