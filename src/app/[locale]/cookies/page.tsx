@@ -1,14 +1,23 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import CookieConsent from '@/components/features/CookieConsent';
 import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+
+  const titles: Record<string, string> = {
+    pl: 'Polityka cookies | WBS',
+    de: 'Cookie-Richtlinie | WBS',
+    en: 'Cookie Policy | WBS',
+  };
+  const descriptions: Record<string, string> = {
+    pl: 'Informacje o plikach cookies na stronie WBS',
+    de: 'Informationen zu Cookies auf der WBS-Website',
+    en: 'Information about cookies on the WBS website',
+  };
+
   return {
-    title: 'Cookie Policy',
-    description: 'Information about our use of cookies',
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
   };
 }
 
@@ -18,29 +27,27 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
   const t = await getTranslations();
 
   return (
-    <>
-      <Header lang={locale} />
-      <main className="pt-18 md:pt-20 min-h-screen bg-neutral-50">
+      <div className="min-h-screen bg-neutral-50 pt-18 md:pt-20">
         <div className="container-custom py-12 md:py-16">
-          <div className="max-w-4xl mx-auto">
-            <nav className="flex items-center space-x-2 text-sm mb-8">
-              <Link href={`/${locale}`} className="text-neutral-500 hover:text-primary-600">
+          <div className="mx-auto max-w-4xl">
+            <nav className="mb-8 flex items-center space-x-2 text-sm">
+              <Link href={`/${locale}`} className="text-neutral-500 hover:text-red-600">
                 {t('navigation.home')}
               </Link>
               <span className="text-neutral-400">/</span>
-              <span className="text-neutral-900 font-medium">
+              <span className="font-medium text-neutral-900">
                 {locale === 'pl' ? 'Polityka Cookies' : locale === 'de' ? 'Cookie-Richtlinie' : 'Cookie Policy'}
               </span>
             </nav>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-8">
+            <h1 className="mb-8 text-3xl font-bold text-neutral-900 md:text-4xl">
               {locale === 'pl' ? 'Polityka Cookies' : locale === 'de' ? 'Cookie-Richtlinie' : 'Cookie Policy'}
             </h1>
 
-            <div className="bg-white rounded-2xl shadow-sm p-6 md:p-10 prose prose-custom max-w-none">
+            <div className="prose-custom prose max-w-none rounded-2xl bg-white p-6 shadow-sm md:p-10">
               {/* Section 1 */}
               <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">
+                <h2 className="mb-4 text-2xl font-semibold">
                   {locale === 'pl' ? '1. Czym są pliki cookies?' : locale === 'de' ? '1. Was sind Cookies?' : '1. What are Cookies?'}
                 </h2>
                 <p>
@@ -54,16 +61,16 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
 
               {/* Section 2 */}
               <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">
+                <h2 className="mb-4 text-2xl font-semibold">
                   {locale === 'pl' ? '2. Jakich cookies używamy?' : locale === 'de' ? '2. Welche Cookies verwenden wir?' : '2. What Cookies Do We Use?'}
                 </h2>
                 
                 {/* Necessary */}
-                <div className="border border-neutral-200 rounded-lg p-6 mb-4">
-                  <h3 className="text-xl font-semibold mb-2">
+                <div className="mb-4 rounded-lg border border-neutral-200 p-6">
+                  <h3 className="mb-2 text-xl font-semibold">
                     {locale === 'pl' ? 'Cookies Niezbędne' : locale === 'de' ? 'Erforderliche Cookies' : 'Necessary Cookies'}
                   </h3>
-                  <p className="text-neutral-600 mb-3">
+                  <p className="mb-3 text-neutral-600">
                     {locale === 'pl'
                       ? 'Te pliki są niezbędne do działania strony internetowej i nie można ich wyłączyćć. Są używane tylko w odpowiedzi na Twoje działania, takie jak ustawienie preferencji prywatności, logowanie lub wypełnianie formularzy.'
                       : locale === 'de'
@@ -76,11 +83,11 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
                 </div>
 
                 {/* Statistics */}
-                <div className="border border-neutral-200 rounded-lg p-6 mb-4">
-                  <h3 className="text-xl font-semibold mb-2">
+                <div className="mb-4 rounded-lg border border-neutral-200 p-6">
+                  <h3 className="mb-2 text-xl font-semibold">
                     {locale === 'pl' ? 'Cookies Statystyczne' : locale === 'de' ? 'Statistik-Cookies' : 'Statistics Cookies'}
                   </h3>
-                  <p className="text-neutral-600 mb-3">
+                  <p className="mb-3 text-neutral-600">
                     {locale === 'pl'
                       ? 'Pomagają nam zrozumieć, jak odwiedzający korzystają z naszej strony, zbierając i raportując informacje anonimowo. Używamy Google Analytics do analizy ruchu na stronie.'
                       : locale === 'de'
@@ -93,11 +100,11 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
                 </div>
 
                 {/* Marketing */}
-                <div className="border border-neutral-200 rounded-lg p-6 mb-4">
-                  <h3 className="text-xl font-semibold mb-2">
+                <div className="mb-4 rounded-lg border border-neutral-200 p-6">
+                  <h3 className="mb-2 text-xl font-semibold">
                     {locale === 'pl' ? 'Cookies Marketingowe' : locale === 'de' ? 'Marketing-Cookies' : 'Marketing Cookies'}
                   </h3>
-                  <p className="text-neutral-600 mb-3">
+                  <p className="mb-3 text-neutral-600">
                     {locale === 'pl'
                       ? 'Mogą być używane do śledzenia aktywności użytkownika na różnych stronach internetowych w celu wyświetlania odpowiednich reklam.'
                       : locale === 'de'
@@ -110,11 +117,11 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
                 </div>
 
                 {/* Social */}
-                <div className="border border-neutral-200 rounded-lg p-6 mb-4">
-                  <h3 className="text-xl font-semibold mb-2">
+                <div className="mb-4 rounded-lg border border-neutral-200 p-6">
+                  <h3 className="mb-2 text-xl font-semibold">
                     {locale === 'pl' ? 'Cookies Mediów Społecznościowych' : locale === 'de' ? 'Social-Media-Cookies' : 'Social Media Cookies'}
                   </h3>
-                  <p className="text-neutral-600 mb-3">
+                  <p className="mb-3 text-neutral-600">
                     {locale === 'pl'
                       ? 'Umożliwiają udostępnianie treści w mediach społecznościowych i mogą śledzić Twoją aktywność na innych stronach.'
                       : locale === 'de'
@@ -129,7 +136,7 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
 
               {/* Section 3 */}
               <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">
+                <h2 className="mb-4 text-2xl font-semibold">
                   {locale === 'pl' ? '3. Jak zarządzać cookies?' : locale === 'de' ? '3. Wie verwalten Sie Cookies?' : '3. How to Manage Cookies?'}
                 </h2>
                 <p className="mb-4">
@@ -146,53 +153,53 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
                     ? 'Um Cookie-Einstellungen zu verwalten, verwenden Sie unseren Cookie-Manager auf der Website oder konfigurieren Sie Ihre Browsereinstellungen:'
                     : 'To manage cookie settings, use our cookie manager available on the website or configure your browser settings:'}
                 </p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Google Chrome</a></li>
-                  <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Mozilla Firefox</a></li>
-                  <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Safari</a></li>
-                  <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Microsoft Edge</a></li>
+                <ul className="list-disc space-y-2 pl-6">
+                  <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Google Chrome</a></li>
+                  <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Mozilla Firefox</a></li>
+                  <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Safari</a></li>
+                  <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Microsoft Edge</a></li>
                 </ul>
               </section>
 
               {/* Section 4 */}
               <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">
+                <h2 className="mb-4 text-2xl font-semibold">
                   {locale === 'pl' ? '4. Szczegóły używanych cookies' : locale === 'de' ? '4. Details der verwendeten Cookies' : '4. Details of Cookies Used'}
                 </h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-neutral-200">
-                        <th className="text-left py-3 px-4 font-semibold">{locale === 'pl' ? 'Nazwa' : locale === 'de' ? 'Name' : 'Name'}</th>
-                        <th className="text-left py-3 px-4 font-semibold">{locale === 'pl' ? 'Dostawca' : locale === 'de' ? 'Anbieter' : 'Provider'}</th>
-                        <th className="text-left py-3 px-4 font-semibold">{locale === 'pl' ? 'Cel' : locale === 'de' ? 'Zweck' : 'Purpose'}</th>
-                        <th className="text-left py-3 px-4 font-semibold">{locale === 'pl' ? 'Wygaśnięcie' : locale === 'de' ? 'Ablauf' : 'Expiry'}</th>
+                        <th className="px-4 py-3 text-left font-semibold">{locale === 'pl' ? 'Nazwa' : locale === 'de' ? 'Name' : 'Name'}</th>
+                        <th className="px-4 py-3 text-left font-semibold">{locale === 'pl' ? 'Dostawca' : locale === 'de' ? 'Anbieter' : 'Provider'}</th>
+                        <th className="px-4 py-3 text-left font-semibold">{locale === 'pl' ? 'Cel' : locale === 'de' ? 'Zweck' : 'Purpose'}</th>
+                        <th className="px-4 py-3 text-left font-semibold">{locale === 'pl' ? 'Wygaśnięcie' : locale === 'de' ? 'Ablauf' : 'Expiry'}</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-neutral-100">
-                        <td className="py-3 px-4 font-mono">session_id</td>
-                        <td className="py-3 px-4">WBS</td>
-                        <td className="py-3 px-4">{locale === 'pl' ? 'Utrzymanie sesji' : locale === 'de' ? 'Sitzung aufrechterhalten' : 'Maintain session'}</td>
-                        <td className="py-3 px-4">{locale === 'pl' ? 'Koniec sesji' : locale === 'de' ? 'Sitzungsende' : 'End of session'}</td>
+                        <td className="px-4 py-3 font-mono">session_id</td>
+                        <td className="px-4 py-3">WBS</td>
+                        <td className="px-4 py-3">{locale === 'pl' ? 'Utrzymanie sesji' : locale === 'de' ? 'Sitzung aufrechterhalten' : 'Maintain session'}</td>
+                        <td className="px-4 py-3">{locale === 'pl' ? 'Koniec sesji' : locale === 'de' ? 'Sitzungsende' : 'End of session'}</td>
                       </tr>
                       <tr className="border-b border-neutral-100">
-                        <td className="py-3 px-4 font-mono">cookie_consent</td>
-                        <td className="py-3 px-4">WBS</td>
-                        <td className="py-3 px-4">{locale === 'pl' ? 'Zapamiętanie zgody' : locale === 'de' ? 'Einwilligung speichern' : 'Remember consent'}</td>
-                        <td className="py-3 px-4">1 rok</td>
+                        <td className="px-4 py-3 font-mono">cookie_consent</td>
+                        <td className="px-4 py-3">WBS</td>
+                        <td className="px-4 py-3">{locale === 'pl' ? 'Zapamiętanie zgody' : locale === 'de' ? 'Einwilligung speichern' : 'Remember consent'}</td>
+                        <td className="px-4 py-3">1 rok</td>
                       </tr>
                       <tr className="border-b border-neutral-100">
-                        <td className="py-3 px-4 font-mono">_ga</td>
-                        <td className="py-3 px-4">Google Analytics</td>
-                        <td className="py-3 px-4">{locale === 'pl' ? 'Analityka' : locale === 'de' ? 'Analytik' : 'Analytics'}</td>
-                        <td className="py-3 px-4">2 lata</td>
+                        <td className="px-4 py-3 font-mono">_ga</td>
+                        <td className="px-4 py-3">Google Analytics</td>
+                        <td className="px-4 py-3">{locale === 'pl' ? 'Analityka' : locale === 'de' ? 'Analytik' : 'Analytics'}</td>
+                        <td className="px-4 py-3">2 lata</td>
                       </tr>
                       <tr className="border-b border-neutral-100">
-                        <td className="py-3 px-4 font-mono">_gid</td>
-                        <td className="py-3 px-4">Google Analytics</td>
-                        <td className="py-3 px-4">{locale === 'pl' ? 'Analityka' : locale === 'de' ? 'Analytik' : 'Analytics'}</td>
-                        <td className="py-3 px-4">24 godziny</td>
+                        <td className="px-4 py-3 font-mono">_gid</td>
+                        <td className="px-4 py-3">Google Analytics</td>
+                        <td className="px-4 py-3">{locale === 'pl' ? 'Analityka' : locale === 'de' ? 'Analytik' : 'Analytics'}</td>
+                        <td className="px-4 py-3">24 godziny</td>
                       </tr>
                     </tbody>
                   </table>
@@ -201,7 +208,7 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
 
               {/* Section 5 */}
               <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">
+                <h2 className="mb-4 text-2xl font-semibold">
                   {locale === 'pl' ? '5. Kontakt' : locale === 'de' ? '5. Kontakt' : '5. Contact'}
                 </h2>
                 <p>
@@ -217,7 +224,7 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
               </section>
 
               {/* Last Updated */}
-              <div className="mt-12 pt-8 border-t border-neutral-200">
+              <div className="mt-12 border-t border-neutral-200 pt-8">
                 <p className="text-sm text-neutral-500">
                   {t('legal.lastUpdated')}: <time dateTime="2026-03-13">13.03.2026</time>
                 </p>
@@ -225,9 +232,6 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
             </div>
           </div>
         </div>
-      </main>
-      <Footer lang={locale} />
-      <CookieConsent lang={locale} />
-    </>
+      </div>
   );
 }

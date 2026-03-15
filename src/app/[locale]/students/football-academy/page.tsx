@@ -41,36 +41,36 @@ export default async function FootballAcademyPage({ params }: { params: Promise<
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="mb-16 grid items-center gap-12 md:grid-cols-2">
             <div>
-              <p className="text-xl text-neutral-600 leading-relaxed">{t.intro}</p>
+              <p className="text-xl leading-relaxed text-neutral-600">{t.intro}</p>
             </div>
-            <div className="aspect-video bg-neutral-100 rounded-2xl flex items-center justify-center">
+            <div className="aspect-video flex items-center justify-center rounded-2xl bg-neutral-100">
               <span className="text-6xl">⚽</span>
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-neutral-900 mb-8">
+          <h2 className="mb-8 text-2xl font-bold text-neutral-900">
             {locale === 'pl' ? 'Co oferujemy' : locale === 'de' ? 'Was wir bieten' : 'What we offer'}
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {t.features.map((feature, i) => (
-              <div key={i} className="bg-neutral-50 rounded-xl p-6 text-center">
-                <Trophy className="w-8 h-8 text-primary-600 mx-auto mb-3" />
+              <div key={i} className="rounded-xl bg-neutral-50 p-6 text-center">
+                <Trophy className="mx-auto mb-3 size-8 text-red-600" />
                 <p className="font-medium text-neutral-900">{feature}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-primary-600 text-white rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-6">{t.contact}</h2>
-            <div className="grid md:grid-cols-2 gap-6">
+          <div className="rounded-2xl bg-red-600 p-8 text-white">
+            <h2 className="mb-6 text-2xl font-bold">{t.contact}</h2>
+            <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-4">
-                <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-primary-200" /><span>{t.phone}</span></div>
-                <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-primary-200" /><span>{t.email}</span></div>
+                <div className="flex items-center gap-3"><Phone className="size-5 text-red-200" /><span>{t.phone}</span></div>
+                <div className="flex items-center gap-3"><Mail className="size-5 text-red-200" /><span>{t.email}</span></div>
               </div>
               <div className="flex items-center gap-3">
-                <Users className="w-5 h-5 text-primary-200" /><span>{t.director}</span>
+                <Users className="size-5 text-red-200" /><span>{t.director}</span>
               </div>
             </div>
           </div>

@@ -1,10 +1,26 @@
+import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllArticles, getRecentArticles } from '@/lib/cms';
 import { Calendar, ArrowRight } from 'lucide-react';
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const titles: Record<string, string> = { pl: 'Aktualności | WBS', de: 'Nachrichten | WBS', en: 'News | WBS' };
+  const descriptions: Record<string, string> = {
+    pl: 'Najnowsze wiadomości i wydarzenia z życia szkoły WBS',
+    de: 'Neueste Nachrichten und Veranstaltungen aus dem Schulleben der WBS',
+    en: 'Latest news and events from WBS school life',
+  };
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
 }
 
 export default async function NewsPage({ params }: Props) {
@@ -46,21 +62,21 @@ export default async function NewsPage({ params }: Props) {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] bg-gradient-to-br from-secondary-600 via-secondary-700 to-secondary-800 text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <section className="relative min-h-[50vh] overflow-hidden bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white">
+        <div className="absolute right-0 top-0 size-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 size-64 -translate-x-1/2 translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
 
         <div className="container-custom relative z-10">
-          <div className="max-w-4xl pt-32 pb-16">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <div className="max-w-4xl pb-16 pt-32">
+            <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
               {locale === 'pl' ? 'Aktualności' : locale === 'de' ? 'Aktuelles' : 'News'}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+            <p className="text-xl leading-relaxed text-white/90 md:text-2xl">
               {locale === 'pl'
                 ? 'Bądź na bieżąco z wydarzeniami, osiągnięciami i wiadomościami ze szkoły WBS.'
                 : locale === 'de'
-                ? 'Bleiben Sie auf dem Laufenden mit Ereignissen, Erfolgen und Nachrichten der WBS Schule.'
-                : 'Stay up to date with events, achievements, and news from WBS School.'}
+                  ? 'Bleiben Sie auf dem Laufenden mit Ereignissen, Erfolgen und Nachrichten der WBS Schule.'
+                  : 'Stay up to date with events, achievements, and news from WBS School.'}
             </p>
           </div>
         </div>
@@ -71,64 +87,70 @@ export default async function NewsPage({ params }: Props) {
         if (categoryArticles.length === 0) return null;
 
         return (
-          <section key={category} className="py-16 bg-white">
+          <section key={category} className="bg-white py-16">
             <div className="container-custom">
               <div className="mb-12">
-                <span className="inline-block px-4 py-1.5 bg-secondary-50 text-secondary-700 text-sm font-medium rounded-full mb-4">
+                <span className="mb-4 inline-block rounded-full bg-accent-50 px-4 py-1.5 text-sm font-medium text-accent-700">
                   {getCategoryLabel(category)}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900">
+                <h2 className="text-3xl font-medium text-neutral-900 md:text-4xl">
                   {getCategoryLabel(category)}
                 </h2>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {categoryArticles.map((article) => (
                   <article
                     key={article.slug}
-                    className="group bg-white rounded-2xl overflow-hidden border border-neutral-200 hover:border-secondary-200 hover:shadow-xl transition-all duration-300"
+                    className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-accent-200 hover:shadow-xl"
                   >
                     {/* Featured Image */}
                     {article.featuredImage ? (
-                      <Link href={`/${locale}/news/${article.slug}`} className="block aspect-video overflow-hidden bg-neutral-100">
-                        <img
-                          src={article.featuredImage}
+                      <Link href={`/${locale}/news/${article.slug}`} className="aspect-video relative block overflow-hidden bg-neutral-50">
+                        <Image
+                          src={article.featuredImage || ''}
                           alt={article.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          fill
+                          className={`${
+                            article.featuredImage?.includes('logo') || article.featuredImage?.includes('wbs') 
+                              ? 'object-contain p-8' 
+                              : 'object-cover group-hover:scale-105'
+                          } transition-all duration-300`}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </Link>
                     ) : (
-                      <Link href={`/${locale}/news/${article.slug}`} className="block aspect-video overflow-hidden bg-gradient-to-br from-secondary-100 to-secondary-200 flex items-center justify-center">
-                        <div className="text-center p-6">
-                          <Calendar className="w-12 h-12 text-secondary-400 mx-auto mb-2" />
-                          <p className="text-sm text-secondary-600">{getCategoryLabel(category)}</p>
+                      <Link href={`/${locale}/news/${article.slug}`} className="aspect-video flex items-center justify-center overflow-hidden bg-gradient-to-br from-accent-50 to-accent-100">
+                        <div className="p-6 text-center">
+                          <Calendar className="mx-auto mb-2 size-12 text-accent-400" />
+                          <p className="text-sm text-accent-600">{getCategoryLabel(category)}</p>
                         </div>
                       </Link>
                     )}
 
                     {/* Content */}
                     <div className="p-6">
-                      <div className="flex items-center gap-2 text-sm text-neutral-500 mb-3">
-                        <Calendar className="w-4 h-4" />
+                      <div className="mb-3 flex items-center gap-2 text-sm text-neutral-500">
+                        <Calendar className="size-4" />
                         <time dateTime={article.date}>{formatDate(article.date)}</time>
                       </div>
 
                       <Link href={`/${locale}/news/${article.slug}`}>
-                        <h3 className="text-xl font-bold text-neutral-900 mb-3 line-clamp-2 group-hover:text-secondary-600 transition-colors">
+                        <h3 className="mb-3 line-clamp-2 text-xl font-bold text-neutral-900 transition-colors group-hover:text-red-600">
                           {article.title}
                         </h3>
                       </Link>
 
-                      <p className="text-neutral-600 mb-4 line-clamp-3 leading-relaxed">
+                      <p className="mb-4 line-clamp-3 leading-relaxed text-neutral-600">
                         {article.excerpt}
                       </p>
 
                       <Link
                         href={`/${locale}/news/${article.slug}`}
-                        className="inline-flex items-center text-secondary-600 font-semibold group-hover:translate-x-2 transition-transform"
+                        className="inline-flex items-center font-semibold text-red-600 transition-transform group-hover:translate-x-2"
                       >
                         {locale === 'pl' ? 'Czytaj dalej' : locale === 'de' ? 'Weiterlesen' : 'Read more'}
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                        <ArrowRight className="ml-2 size-4" />
                       </Link>
                     </div>
                   </article>
@@ -141,27 +163,27 @@ export default async function NewsPage({ params }: Props) {
 
       {/* Empty State */}
       {articles.length === 0 && (
-        <section className="py-24 bg-neutral-50">
+        <section className="bg-neutral-50 py-24">
           <div className="container-custom">
-            <div className="max-w-2xl mx-auto text-center">
-              <Calendar className="w-16 h-16 text-neutral-300 mx-auto mb-6" />
-              <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+            <div className="mx-auto max-w-2xl text-center">
+              <Calendar className="mx-auto mb-6 size-16 text-neutral-300" />
+              <h2 className="mb-4 text-2xl font-bold text-neutral-900">
                 {locale === 'pl'
                   ? 'Brak aktualności'
                   : locale === 'de'
-                  ? 'Keine Nachrichten'
-                  : 'No news available'}
+                    ? 'Keine Nachrichten'
+                    : 'No news available'}
               </h2>
-              <p className="text-neutral-600 mb-8">
+              <p className="mb-8 text-neutral-600">
                 {locale === 'pl'
                   ? 'Sprawdź później, aby zobaczyć najnowsze wiadomości ze szkoły.'
                   : locale === 'de'
-                  ? 'Schauen Sie später vorbei für die neuesten Nachrichten der Schule.'
-                  : 'Check back later for the latest news from the school.'}
+                    ? 'Schauen Sie später vorbei für die neuesten Nachrichten der Schule.'
+                    : 'Check back later for the latest news from the school.'}
               </p>
               <Link
                 href={`/${locale}`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary-600 text-white font-semibold rounded-full hover:bg-secondary-700 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-red-700"
               >
                 {locale === 'pl' ? 'Powrót do strony głównej' : locale === 'de' ? 'Zurück zur Startseite' : 'Back to Home'}
               </Link>

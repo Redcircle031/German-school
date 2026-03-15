@@ -32,12 +32,12 @@ export default async function AchievementsPage({ params }: { params: Promise<{ l
         <div className="container-custom max-w-3xl">
           <div className="space-y-6">
             {achievements.map((a, i) => (
-              <div key={i} className="flex items-center gap-6 p-6 bg-neutral-50 rounded-xl">
-                <div className="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <a.icon className="w-8 h-8 text-primary-600" />
+              <div key={i} className="flex items-center gap-6 rounded-xl bg-neutral-50 p-6">
+                <div className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-red-100">
+                  <a.icon className="size-8 text-red-600" />
                 </div>
                 <div>
-                  <span className="text-sm text-primary-600 font-semibold">{a.year}</span>
+                  <span className="text-sm font-semibold text-red-600">{a.year}</span>
                   <h3 className="text-xl font-semibold text-neutral-900">{a.title}</h3>
                 </div>
               </div>

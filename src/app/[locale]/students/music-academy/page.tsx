@@ -40,19 +40,19 @@ export default async function MusicAcademyPage({ params }: { params: Promise<{ l
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-xl text-neutral-600 leading-relaxed">{t.intro}</p>
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <p className="text-xl leading-relaxed text-neutral-600">{t.intro}</p>
           </div>
 
-          <h2 className="text-2xl font-bold text-neutral-900 text-center mb-8">
+          <h2 className="mb-8 text-center text-2xl font-bold text-neutral-900">
             {locale === 'pl' ? 'Oferta instrumentalna' : locale === 'de' ? 'Instrumentenangebot' : 'Instrumental Offer'}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
             {t.instruments.map((instrument, i) => {
               const Icon = icons[i];
               return (
-                <div key={i} className="bg-neutral-50 rounded-xl p-6 text-center hover:bg-primary-50 transition-colors">
-                  <Icon className="w-10 h-10 text-primary-600 mx-auto mb-3" />
+                <div key={i} className="rounded-xl bg-neutral-50 p-6 text-center transition-colors hover:bg-red-50">
+                  <Icon className="mx-auto mb-3 size-10 text-red-600" />
                   <p className="font-semibold text-neutral-900">{instrument}</p>
                 </div>
               );

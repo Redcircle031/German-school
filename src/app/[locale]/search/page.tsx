@@ -1,99 +1,189 @@
 'use client';
 
-import { useState } from 'react';
-import { Search, FileText, Users, Calendar, Newspaper, ArrowRight } from 'lucide-react';
-import PageHeader from '@/components/features/PageHeader';
+import { useState, useEffect } from 'react';
+import { Search, FileText, Users, Calendar, Newspaper, ArrowRight, Loader2 } from 'lucide-react';
+import Link from 'next/link';
 
 interface SearchResult {
   id: string;
   title: string;
   excerpt: string;
-  type: 'page' | 'news' | 'staff' | 'event';
+  type: 'article' | 'staff' | 'event' | 'page';
   url: string;
+  date?: string;
+  category?: string;
 }
 
-const mockResults: SearchResult[] = [
-  { id: '1', title: 'Rekrutacja', excerpt: 'Informacje o procesie rekrutacji do szkoły...', type: 'page', url: '/parents/recruitment' },
-  { id: '2', title: 'Stołówka szkolna', excerpt: 'Menu i godziny otwarcia stołówki...', type: 'page', url: '/parents/canteen' },
-  { id: '3', title: 'Zakończenie roku szkolnego', excerpt: 'Uroczyste zakończenie roku szkolnego 2024/2025...', type: 'news', url: '/news/1' },
-  { id: '4', title: 'Jan Kowalski', excerpt: 'Nauczyciel matematyki, klasy 7-12...', type: 'staff', url: '/about/staff' },
-  { id: '5', title: 'Dzień Otwarty', excerpt: 'Zapraszamy na dzień otwarty szkoły...', type: 'event', url: '/events' },
-];
-
-const typeIcons = { page: FileText, news: Newspaper, staff: Users, event: Calendar };
-
-const translations = {
-  pl: { title: 'Szukaj', placeholder: 'Wpisz szukaną frazę...', noResults: 'Brak wyników', results: 'wyników' },
-  de: { title: 'Suchen', placeholder: 'Suchbegriff eingeben...', noResults: 'Keine Ergebnisse', results: 'Ergebnisse' },
-  en: { title: 'Search', placeholder: 'Enter search term...', noResults: 'No results', results: 'results' },
+const typeIcons = { article: Newspaper, staff: Users, event: Calendar, page: FileText };
+const typeColors = {
+  article: 'bg-red-50 text-red-700',
+  staff: 'bg-neutral-100 text-neutral-700',
+  event: 'bg-red-50 text-red-700',
+  page: 'bg-neutral-100 text-neutral-700',
 };
 
-export default function SearchPage({ params: { locale } }: { params: { locale: string } }) {
+const translations = {
+  pl: {
+    title: 'Szukaj',
+    placeholder: 'Wpisz szukaną frazę (min. 2 znaki)...',
+    noResults: 'Brak wyników dla',
+    results: 'wyników',
+    searching: 'Szukam...',
+    searchTip: 'Wyszukaj artykuły, pracowników, wydarzenia i strony',
+    article: 'Artykuł',
+    staff: 'Pracownik',
+    event: 'Wydarzenie',
+    page: 'Strona',
+  },
+  de: {
+    title: 'Suchen',
+    placeholder: 'Suchbegriff eingeben (min. 2 Zeichen)...',
+    noResults: 'Keine Ergebnisse für',
+    results: 'Ergebnisse',
+    searching: 'Suche...',
+    searchTip: 'Suchen Sie nach Artikeln, Mitarbeitern, Veranstaltungen und Seiten',
+    article: 'Artikel',
+    staff: 'Mitarbeiter',
+    event: 'Veranstaltung',
+    page: 'Seite',
+  },
+  en: {
+    title: 'Search',
+    placeholder: 'Enter search term (min. 2 characters)...',
+    noResults: 'No results for',
+    results: 'results',
+    searching: 'Searching...',
+    searchTip: 'Search articles, staff, events and pages',
+    article: 'Article',
+    staff: 'Staff',
+    event: 'Event',
+    page: 'Page',
+  },
+};
+
+export default function SearchPage({ params }: { params: Promise<{ locale: string }> }) {
+  const [locale, setLocale] = useState('pl');
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    setHasSearched(true);
-    const filtered = mockResults.filter(r => 
-      r.title.toLowerCase().includes(query.toLowerCase()) ||
-      r.excerpt.toLowerCase().includes(query.toLowerCase())
-    );
-    setResults(filtered);
-  };
+  useEffect(() => {
+    params.then(p => setLocale(p.locale));
+  }, [params]);
 
   const t = translations[locale as keyof typeof translations] || translations.en;
 
-  return (
-    <>
-      <PageHeader lang={locale} title={t.title} />
-      <section className="section bg-white">
-        <div className="container-custom max-w-3xl">
-          <form onSubmit={handleSearch} className="relative mb-12">
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={t.placeholder}
-              className="w-full px-6 py-4 pr-14 text-lg border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500"
-            />
-            <button type="submit" className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-neutral-400 hover:text-primary-600">
-              <Search className="w-6 h-6" />
-            </button>
-          </form>
+  useEffect(() => {
+    if (query.length < 2) {
+      setResults([]);
+      setHasSearched(false);
+      return;
+    }
 
-          {hasSearched && (
-            <div>
-              {results.length > 0 ? (
-                <div className="space-y-4">
-                  <p className="text-neutral-500 mb-4">{results.length} {t.results}</p>
-                  {results.map((result) => {
-                    const Icon = typeIcons[result.type];
-                    return (
-                      <a key={result.id} href={`/${locale}${result.url}`} className="flex items-start gap-4 p-4 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors">
-                        <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-6 h-6 text-primary-600" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-neutral-900">{result.title}</h3>
-                          <p className="text-neutral-600 text-sm">{result.excerpt}</p>
-                        </div>
-                        <ArrowRight className="w-5 h-5 text-neutral-400 flex-shrink-0 mt-2" />
-                      </a>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <Search className="w-16 h-16 text-neutral-300 mx-auto mb-4" />
-                  <p className="text-neutral-500">{t.noResults}</p>
-                </div>
-              )}
+    const debounce = setTimeout(async () => {
+      setIsSearching(true);
+      setHasSearched(true);
+
+      try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&locale=${locale}`);
+        const data = await res.json();
+        if (data.success) {
+          setResults(data.data.results);
+        }
+      } catch {
+        setResults([]);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 300);
+
+    return () => clearTimeout(debounce);
+  }, [query, locale]);
+
+  return (
+      <div className="min-h-screen bg-neutral-50 pt-18 md:pt-20">
+        <section className="bg-gradient-to-br from-red-600 to-red-800 py-16 text-white">
+          <div className="container-custom max-w-3xl text-center">
+            <h1 className="mb-6 text-4xl font-bold">{t.title}</h1>
+            <div className="relative">
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={t.placeholder}
+                autoFocus
+                className="w-full rounded-xl border-0 bg-white px-6 py-4 pr-14 text-lg text-neutral-900 shadow-lg focus:outline-none focus:ring-4 focus:ring-white/30"
+              />
+              <div className="absolute right-4 top-1/2 -translate-y-1/2">
+                {isSearching ? (
+                  <Loader2 className="size-6 animate-spin text-red-500" />
+                ) : (
+                  <Search className="size-6 text-neutral-400" />
+                )}
+              </div>
             </div>
-          )}
-        </div>
-      </section>
-    </>
+            <p className="mt-3 text-sm text-white/70">{t.searchTip}</p>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container-custom max-w-3xl">
+            {hasSearched && !isSearching && (
+              <div>
+                {results.length > 0 ? (
+                  <div className="space-y-4">
+                    <p className="mb-6 text-neutral-500">
+                      {results.length} {t.results}
+                    </p>
+                    {results.map((result) => {
+                      const Icon = typeIcons[result.type];
+                      const colorClass = typeColors[result.type];
+                      return (
+                        <Link
+                          key={result.id}
+                          href={`/${locale}${result.url}`}
+                          className="flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5 transition-all hover:border-red-200 hover:shadow-md"
+                        >
+                          <div className={`size-12 ${colorClass} flex shrink-0 items-center justify-center rounded-lg`}>
+                            <Icon className="size-6" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="mb-1 flex items-center gap-2">
+                              <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${colorClass}`}>
+                                {t[result.type as keyof typeof t]}
+                              </span>
+                              {result.date && (
+                                <span className="text-xs text-neutral-400">{result.date}</span>
+                              )}
+                            </div>
+                            <h3 className="truncate font-semibold text-neutral-900">{result.title}</h3>
+                            <p className="mt-1 line-clamp-2 text-sm text-neutral-600">{result.excerpt}</p>
+                          </div>
+                          <ArrowRight className="mt-3 size-5 shrink-0 text-neutral-400" />
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="py-16 text-center">
+                    <Search className="mx-auto mb-4 size-16 text-neutral-300" />
+                    <p className="text-lg text-neutral-500">
+                      {t.noResults} &ldquo;{query}&rdquo;
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {!hasSearched && (
+              <div className="py-16 text-center">
+                <Search className="mx-auto mb-4 size-20 text-neutral-200" />
+                <p className="text-neutral-400">{t.searchTip}</p>
+              </div>
+            )}
+          </div>
+        </section>
+      </div>
   );
 }

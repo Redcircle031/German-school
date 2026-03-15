@@ -47,22 +47,22 @@ export default async function AdminDashboardPage() {
       {/* Page Header */}
       <div>
         <h1 className="text-3xl font-bold text-neutral-900">Dashboard</h1>
-        <p className="text-neutral-600 mt-2">
+        <p className="mt-2 text-neutral-600">
           Welcome to the WBS content management system
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
-          <div key={stat.name} className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm">
+          <div key={stat.name} className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-neutral-600">{stat.name}</p>
-                <p className="text-3xl font-bold text-neutral-900 mt-2">{stat.value}</p>
+                <p className="mt-2 text-3xl font-bold text-neutral-900">{stat.value}</p>
               </div>
-              <div className="w-12 h-12 bg-secondary-50 rounded-lg flex items-center justify-center">
-                <stat.icon className="w-6 h-6 text-secondary-600" />
+              <div className="flex size-12 items-center justify-center rounded-lg bg-red-50">
+                <stat.icon className="size-6 text-red-600" />
               </div>
             </div>
             <div className="mt-4 flex items-center gap-2">
@@ -78,15 +78,15 @@ export default async function AdminDashboardPage() {
       </div>
 
       {/* Recent Articles */}
-      <div className="bg-white rounded-xl border border-neutral-200 shadow-sm">
-        <div className="p-6 border-b border-neutral-200 flex items-center justify-between">
+      <div className="rounded-xl border border-neutral-200 bg-white shadow-sm">
+        <div className="flex items-center justify-between border-b border-neutral-200 p-6">
           <div>
             <h2 className="text-lg font-semibold text-neutral-900">Recent Articles</h2>
-            <p className="text-sm text-neutral-600 mt-1">Latest content added to the system</p>
+            <p className="mt-1 text-sm text-neutral-600">Latest content added to the system</p>
           </div>
           <Link
             href="/admin/articles"
-            className="text-sm font-medium text-secondary-600 hover:text-secondary-700"
+            className="text-sm font-medium text-red-600 hover:text-red-700"
           >
             View all →
           </Link>
@@ -95,19 +95,19 @@ export default async function AdminDashboardPage() {
         <div className="divide-y divide-neutral-200">
           {recentArticles.length > 0 ? (
             recentArticles.map((article) => (
-              <div key={article.slug} className="p-6 hover:bg-neutral-50 transition-colors">
+              <div key={article.slug} className="p-6 transition-colors hover:bg-neutral-50">
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="px-2.5 py-0.5 bg-secondary-50 text-secondary-700 text-xs font-medium rounded-full">
+                  <div className="min-w-0 flex-1">
+                    <div className="mb-2 flex items-center gap-3">
+                      <span className="rounded-full bg-red-50 px-2.5 py-0.5 text-xs font-medium text-red-700">
                         {article.category}
                       </span>
                       <span className="text-sm text-neutral-500">{article.date}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 truncate">
+                    <h3 className="truncate text-lg font-semibold text-neutral-900">
                       {article.title}
                     </h3>
-                    <p className="text-sm text-neutral-600 mt-1 line-clamp-2">
+                    <p className="mt-1 line-clamp-2 text-sm text-neutral-600">
                       {article.excerpt}
                     </p>
                   </div>
@@ -122,7 +122,7 @@ export default async function AdminDashboardPage() {
             ))
           ) : (
             <div className="p-12 text-center">
-              <FileText className="w-12 h-12 text-neutral-300 mx-auto mb-4" />
+              <FileText className="mx-auto mb-4 size-12 text-neutral-300" />
               <p className="text-neutral-600">No articles yet</p>
             </div>
           )}
@@ -130,36 +130,36 @@ export default async function AdminDashboardPage() {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid gap-6 md:grid-cols-3">
         <Link
           href="/admin/articles"
-          className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow"
+          className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
         >
-          <FileText className="w-8 h-8 text-secondary-600 mb-4" />
+          <FileText className="mb-4 size-8 text-red-600" />
           <h3 className="text-lg font-semibold text-neutral-900">Manage Articles</h3>
-          <p className="text-neutral-600 mt-2 text-sm">
+          <p className="mt-2 text-sm text-neutral-600">
             Add, edit, or delete articles and news
           </p>
         </Link>
 
         <Link
           href="/admin/downloads"
-          className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow"
+          className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
         >
-          <Download className="w-8 h-8 text-secondary-600 mb-4" />
+          <Download className="mb-4 size-8 text-red-600" />
           <h3 className="text-lg font-semibold text-neutral-900">Manage Downloads</h3>
-          <p className="text-neutral-600 mt-2 text-sm">
+          <p className="mt-2 text-sm text-neutral-600">
             Upload and organize PDF documents
           </p>
         </Link>
 
         <Link
           href="/admin/settings"
-          className="bg-white rounded-xl p-6 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow"
+          className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
         >
-          <Settings className="w-8 h-8 text-secondary-600 mb-4" />
+          <Settings className="mb-4 size-8 text-red-600" />
           <h3 className="text-lg font-semibold text-neutral-900">Settings</h3>
-          <p className="text-neutral-600 mt-2 text-sm">
+          <p className="mt-2 text-sm text-neutral-600">
             Configure system settings and preferences
           </p>
         </Link>

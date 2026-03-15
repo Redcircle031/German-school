@@ -4,6 +4,10 @@ import '../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { defaultLocale } from '@/lib/i18n';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import CookieConsent from '@/components/features/CookieConsent';
+import SkipLink from '@/components/features/SkipLink';
 
 const inter = Inter({
   subsets: ['latin', 'latin-ext'],
@@ -101,7 +105,13 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-white font-sans antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <SkipLink text="Skip to content" />
+          <Header lang={locale} />
+          <main id="main-content">
+            {children}
+          </main>
+          <Footer lang={locale} />
+          <CookieConsent lang={locale} />
         </NextIntlClientProvider>
       </body>
     </html>

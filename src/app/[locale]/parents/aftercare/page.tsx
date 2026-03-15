@@ -38,9 +38,9 @@ export default async function AftercarePage({ params }: { params: Promise<{ loca
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
       <section className="section bg-white">
         <div className="container-custom max-w-3xl">
-          <p className="text-xl text-neutral-600 text-center mb-8">{t.intro}</p>
-          <div className="flex items-center justify-center gap-3 text-primary-600 font-semibold">
-            <Clock className="w-5 h-5" />
+          <p className="mb-8 text-center text-xl text-neutral-600">{t.intro}</p>
+          <div className="flex items-center justify-center gap-3 font-semibold text-red-600">
+            <Clock className="size-5" />
             <span>{t.hours}</span>
           </div>
         </div>

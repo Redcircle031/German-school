@@ -106,8 +106,8 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
       {/* Backdrop */}
       <div
         className={cn(
-          'fixed inset-0 bg-black/50 z-[9998] transition-opacity',
-          isCustomizing ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          'fixed inset-0 z-[9998] bg-black/50 transition-opacity',
+          isCustomizing ? 'opacity-100' : 'pointer-events-none opacity-0'
         )}
         onClick={() => setIsCustomizing(false)}
       />
@@ -117,23 +117,23 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
         className={cn(
           'fixed z-[9999] transition-all duration-300',
           isCustomizing
-            ? 'inset-0 m-4 md:m-8 rounded-2xl overflow-hidden'
-            : 'bottom-0 left-0 right-0 md:bottom-4 md:left-4 md:right-auto md:max-w-md'
+            ? 'inset-0 m-4 overflow-hidden rounded-2xl md:m-8'
+            : 'inset-x-0 bottom-0 md:bottom-4 md:left-4 md:right-auto md:max-w-md'
         )}
       >
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden h-full flex flex-col">
+        <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-2xl">
           {/* Header */}
-          <div className="bg-primary-600 px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center justify-between bg-red-600 px-6 py-4">
             <h2 className="text-lg font-semibold text-white">
               {t('cookieConsent.title')}
             </h2>
             {!isCustomizing && (
               <button
                 onClick={() => setIsVisible(false)}
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 transition-colors hover:text-white"
                 aria-label={t('common.close')}
               >
-                <X className="w-5 h-5" />
+                <X className="size-5" />
               </button>
             )}
           </div>
@@ -142,11 +142,11 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
           <div className="flex-1 overflow-y-auto p-6">
             {!isCustomizing ? (
               <>
-                <p className="text-neutral-600 mb-6">
+                <p className="mb-6 text-neutral-600">
                   {t('cookieConsent.description')}{' '}
                   <a
                     href={`/${lang}/cookies`}
-                    className="text-primary-600 hover:underline"
+                    className="text-red-600 hover:underline"
                     target="_blank"
                   >
                     {t('cookieConsent.learnMore')}
@@ -157,22 +157,22 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
                 <div className="space-y-3">
                   <button
                     onClick={handleAcceptAll}
-                    className="w-full btn-primary py-3"
+                    className="btn-primary w-full py-3"
                   >
-                    <Check className="w-5 h-5 mr-2" />
+                    <Check className="mr-2 size-5" />
                     {t('cookieConsent.acceptAll')}
                   </button>
                   <button
                     onClick={handleRejectAll}
-                    className="w-full btn-outline py-3"
+                    className="btn-outline w-full py-3"
                   >
                     {t('cookieConsent.rejectAll')}
                   </button>
                   <button
                     onClick={() => setIsCustomizing(true)}
-                    className="w-full btn-ghost py-3"
+                    className="btn-ghost w-full py-3"
                   >
-                    <Settings className="w-5 h-5 mr-2" />
+                    <Settings className="mr-2 size-5" />
                     {t('cookieConsent.customize')}
                   </button>
                 </div>
@@ -182,12 +182,12 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
                 {/* Customization View */}
                 <div className="space-y-4">
                   {/* Necessary Cookies */}
-                  <div className="border border-neutral-200 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
+                  <div className="rounded-lg border border-neutral-200 p-4">
+                    <div className="mb-2 flex items-center justify-between">
                       <h3 className="font-medium text-neutral-900">
                         {t('cookieConsent.categories.necessary.title')}
                       </h3>
-                      <span className="text-xs bg-primary-100 text-primary-800 px-2 py-1 rounded-full">
+                      <span className="rounded-full bg-red-100 px-2 py-1 text-xs text-red-800">
                         {t('cookieConsent.categories.necessary.alwaysActive')}
                       </span>
                     </div>
@@ -197,23 +197,23 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
                   </div>
 
                   {/* Statistics Cookies */}
-                  <div className="border border-neutral-200 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
+                  <div className="rounded-lg border border-neutral-200 p-4">
+                    <div className="mb-2 flex items-center justify-between">
                       <h3 className="font-medium text-neutral-900">
                         {t('cookieConsent.categories.statistics.title')}
                       </h3>
                       <button
                         onClick={() => togglePreference('statistics')}
                         className={cn(
-                          'relative w-11 h-6 rounded-full transition-colors',
-                          preferences.statistics ? 'bg-primary-600' : 'bg-neutral-300'
+                          'relative h-6 w-11 rounded-full transition-colors',
+                          preferences.statistics ? 'bg-red-600' : 'bg-neutral-300'
                         )}
                         role="switch"
                         aria-checked={preferences.statistics}
                       >
                         <span
                           className={cn(
-                            'absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform',
+                            'absolute left-0.5 top-0.5 size-5 rounded-full bg-white transition-transform',
                             preferences.statistics ? 'translate-x-5' : 'translate-x-0'
                           )}
                         />
@@ -225,23 +225,23 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
                   </div>
 
                   {/* Marketing Cookies */}
-                  <div className="border border-neutral-200 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
+                  <div className="rounded-lg border border-neutral-200 p-4">
+                    <div className="mb-2 flex items-center justify-between">
                       <h3 className="font-medium text-neutral-900">
                         {t('cookieConsent.categories.marketing.title')}
                       </h3>
                       <button
                         onClick={() => togglePreference('marketing')}
                         className={cn(
-                          'relative w-11 h-6 rounded-full transition-colors',
-                          preferences.marketing ? 'bg-primary-600' : 'bg-neutral-300'
+                          'relative h-6 w-11 rounded-full transition-colors',
+                          preferences.marketing ? 'bg-red-600' : 'bg-neutral-300'
                         )}
                         role="switch"
                         aria-checked={preferences.marketing}
                       >
                         <span
                           className={cn(
-                            'absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform',
+                            'absolute left-0.5 top-0.5 size-5 rounded-full bg-white transition-transform',
                             preferences.marketing ? 'translate-x-5' : 'translate-x-0'
                           )}
                         />
@@ -253,23 +253,23 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
                   </div>
 
                   {/* Social Cookies */}
-                  <div className="border border-neutral-200 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
+                  <div className="rounded-lg border border-neutral-200 p-4">
+                    <div className="mb-2 flex items-center justify-between">
                       <h3 className="font-medium text-neutral-900">
                         {t('cookieConsent.categories.social.title')}
                       </h3>
                       <button
                         onClick={() => togglePreference('social')}
                         className={cn(
-                          'relative w-11 h-6 rounded-full transition-colors',
-                          preferences.social ? 'bg-primary-600' : 'bg-neutral-300'
+                          'relative h-6 w-11 rounded-full transition-colors',
+                          preferences.social ? 'bg-red-600' : 'bg-neutral-300'
                         )}
                         role="switch"
                         aria-checked={preferences.social}
                       >
                         <span
                           className={cn(
-                            'absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform',
+                            'absolute left-0.5 top-0.5 size-5 rounded-full bg-white transition-transform',
                             preferences.social ? 'translate-x-5' : 'translate-x-0'
                           )}
                         />
@@ -286,7 +286,7 @@ export default function CookieConsent({ lang }: CookieConsentProps) {
 
           {/* Footer */}
           {isCustomizing && (
-            <div className="border-t border-neutral-200 px-6 py-4 flex justify-end space-x-3">
+            <div className="flex justify-end space-x-3 border-t border-neutral-200 px-6 py-4">
               <button
                 onClick={() => setIsCustomizing(false)}
                 className="btn-ghost px-4 py-2"

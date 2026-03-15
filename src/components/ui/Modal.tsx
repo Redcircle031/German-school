@@ -136,7 +136,7 @@ export default function Modal({
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -156,7 +156,7 @@ export default function Modal({
             <motion.div
               ref={modalRef}
               className={cn(
-                'bg-white rounded-2xl shadow-2xl w-full',
+                'w-full rounded-2xl bg-white shadow-2xl',
                 sizeClasses[size],
                 'focus:outline-none'
               )}
@@ -169,7 +169,7 @@ export default function Modal({
             >
               {/* Header */}
               {(title || showCloseButton) && (
-                <div className="flex items-start justify-between p-6 border-b border-neutral-200">
+                <div className="flex items-start justify-between border-b border-neutral-200 p-6">
                   <div>
                     {title && (
                       <h2
@@ -182,7 +182,7 @@ export default function Modal({
                     {description && (
                       <p
                         id="modal-description"
-                        className="text-neutral-600 mt-1"
+                        className="mt-1 text-neutral-600"
                       >
                         {description}
                       </p>
@@ -191,10 +191,10 @@ export default function Modal({
                   {showCloseButton && (
                     <button
                       onClick={onClose}
-                      className="p-2 rounded-lg hover:bg-neutral-100 transition-colors"
+                      className="rounded-lg p-2 transition-colors hover:bg-neutral-100"
                       aria-label="Close modal"
                     >
-                      <X className="w-5 h-5 text-neutral-500" />
+                      <X className="size-5 text-neutral-500" />
                     </button>
                   )}
                 </div>

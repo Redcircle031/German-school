@@ -1,10 +1,10 @@
 export default function Loading() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="flex min-h-screen items-center justify-center bg-white">
       <div className="text-center">
-        <div className="relative w-16 h-16 mx-auto mb-4">
-          <div className="absolute inset-0 border-4 border-primary-200 rounded-full"></div>
-          <div className="absolute inset-0 border-4 border-primary-600 rounded-full border-t-transparent animate-spin"></div>
+        <div className="relative mx-auto mb-4 size-16">
+          <div className="absolute inset-0 rounded-full border-4 border-red-200"></div>
+          <div className="absolute inset-0 animate-spin rounded-full border-4 border-red-600 border-t-transparent"></div>
         </div>
         <p className="text-neutral-500">Loading...</p>
       </div>

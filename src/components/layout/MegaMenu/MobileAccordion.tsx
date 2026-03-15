@@ -62,7 +62,7 @@ function AccordionItem({ section, lang, isOpen, onToggle, onLinkClick }: Accordi
       <button
         onClick={onToggle}
         className={cn(
-          'w-full flex items-center justify-between px-6 py-4',
+          'flex w-full items-center justify-between px-6 py-4',
           'text-left transition-colors duration-200',
           'hover:bg-neutral-50 focus:outline-none focus-visible:bg-neutral-50',
           isOpen && 'bg-neutral-50'
@@ -72,14 +72,14 @@ function AccordionItem({ section, lang, isOpen, onToggle, onLinkClick }: Accordi
       >
         <span className={cn(
           'text-sm font-semibold transition-colors',
-          isOpen ? 'text-primary-700' : 'text-neutral-900'
+          isOpen ? 'text-red-700' : 'text-neutral-900'
         )}>
           {title}
         </span>
         
         <ChevronRight className={cn(
-          'w-5 h-5 text-neutral-400 transition-transform duration-300',
-          isOpen && 'rotate-90 text-primary-500'
+          'size-5 text-neutral-400 transition-transform duration-300',
+          isOpen && 'rotate-90 text-red-500'
         )} />
       </button>
 
@@ -94,7 +94,7 @@ function AccordionItem({ section, lang, isOpen, onToggle, onLinkClick }: Accordi
             exit="hidden"
             className="overflow-hidden bg-neutral-50/50"
           >
-            <ul className="px-6 py-3 space-y-1">
+            <ul className="space-y-1 px-6 py-3">
               {section.links.map((link, index) => {
                 const label = link.label[lang] || link.label.pl;
                 const href = link.external ? link.href : `/${lang}${link.href}`;
@@ -115,17 +115,17 @@ function AccordionItem({ section, lang, isOpen, onToggle, onLinkClick }: Accordi
                       className={cn(
                         'flex items-center py-2.5 pl-4 pr-2',
                         'text-[15px] text-neutral-700',
-                        'hover:text-primary-600 hover:bg-primary-50/50',
+                        'hover:bg-red-50/50 hover:text-red-600',
                         'rounded-lg transition-all duration-200',
-                        'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500'
+                        'focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500'
                       )}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 mr-3 group-hover:bg-primary-400" />
+                      <span className="mr-3 size-1.5 rounded-full bg-neutral-300 group-hover:bg-red-400" />
                       <span className="flex-1">{label}</span>
                       
                       {link.external && (
                         <svg
-                          className="w-4 h-4 text-neutral-400 ml-2"
+                          className="ml-2 size-4 text-neutral-400"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"

@@ -65,40 +65,40 @@ export default function Header({ lang }: HeaderProps) {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
-          isScrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+          'fixed inset-x-0 top-0 z-40 transition-all duration-300',
+          isScrolled
+            ? 'border-b border-neutral-100 bg-white/95 shadow-sm backdrop-blur-md'
             : 'bg-white'
         )}
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
-            <Link href={`/${lang}`} className="flex items-center gap-3 group">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-600 rounded-lg flex items-center justify-center group-hover:bg-primary-700 transition-colors">
-                <GraduationCap className="w-6 h-6 md:w-7 md:h-7 text-white" />
+            <Link href={`/${lang}`} className="group flex items-center gap-3">
+              <div className="flex size-10 items-center justify-center rounded-xl bg-red-600 transition-colors group-hover:bg-red-700 md:size-12">
+                <span className="text-sm font-extrabold tracking-tight text-white md:text-base">WBS</span>
               </div>
               <div className="hidden md:block">
-                <p className="font-heading font-semibold text-neutral-900 text-sm leading-tight group-hover:text-primary-600 transition-colors">
+                <p className="font-heading text-sm font-bold leading-tight text-neutral-900 transition-colors group-hover:text-red-600">
                   Willy Brandt School
                 </p>
-                <p className="text-xs text-neutral-500">Warsaw</p>
+                <p className="text-xs tracking-wide text-neutral-400">Warsaw</p>
               </div>
             </Link>
 
             {/* Desktop Navigation - Simplified with Mega Menu Trigger */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden items-center gap-1 lg:flex">
               {/* Quick Links */}
               <Link
                 href={`/${lang}/news`}
-                className="px-4 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+                className="rounded-lg px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:text-red-600"
               >
                 {lang === 'pl' ? 'Aktualności' : lang === 'de' ? 'Aktuelles' : 'News'}
               </Link>
-              
+
               <Link
                 href={`/${lang}/events`}
-                className="px-4 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+                className="rounded-lg px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:text-red-600"
               >
                 {lang === 'pl' ? 'Wydarzenia' : lang === 'de' ? 'Veranstaltungen' : 'Events'}
               </Link>
@@ -107,18 +107,18 @@ export default function Header({ lang }: HeaderProps) {
               <button
                 onClick={() => setIsMenuOpen(true)}
                 className={cn(
-                  'flex items-center gap-2 px-4 py-2 ml-2',
-                  'text-sm font-medium rounded-lg',
+                  'ml-2 flex items-center gap-2 px-4 py-2',
+                  'rounded-lg text-sm font-medium',
                   'transition-all duration-200',
                   isMenuOpen
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-neutral-100 text-neutral-700 hover:bg-primary-50 hover:text-primary-600'
+                    ? 'bg-red-600 text-white'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-red-50 hover:text-red-600'
                 )}
                 aria-expanded={isMenuOpen}
                 aria-controls="mega-menu"
                 aria-label={menuLabel}
               >
-                <Menu className="w-4 h-4" />
+                <Menu className="size-4" />
                 <span>{menuLabel}</span>
               </button>
             </nav>
@@ -128,38 +128,38 @@ export default function Header({ lang }: HeaderProps) {
               {/* Search - Desktop */}
               <Link
                 href={`/${lang}/search`}
-                className="hidden sm:flex items-center justify-center w-10 h-10 rounded-lg hover:bg-neutral-100 transition-colors"
+                className="hidden size-10 items-center justify-center rounded-lg transition-colors hover:bg-neutral-100 sm:flex"
                 aria-label={searchLabel}
               >
-                <Search className="w-5 h-5 text-neutral-600" />
+                <Search className="size-5 text-neutral-600" />
               </Link>
 
               {/* Language Switcher */}
-              <div className="relative language-switcher">
+              <div className="language-switcher relative">
                 <button
                   onClick={() => setIsLanguageOpen(!isLanguageOpen)}
                   className={cn(
-                    'flex items-center gap-2 px-3 py-2 rounded-lg',
+                    'flex items-center gap-2 rounded-lg px-3 py-2',
                     'transition-colors duration-200',
-                    isLanguageOpen ? 'bg-primary-50 text-primary-700' : 'hover:bg-neutral-100'
+                    isLanguageOpen ? 'bg-red-50 text-red-700' : 'hover:bg-neutral-100'
                   )}
                   aria-label={t('header.language')}
                   aria-expanded={isLanguageOpen}
                   aria-haspopup="true"
                 >
-                  <Globe className="w-5 h-5 text-neutral-600" />
-                  <span className="hidden sm:inline-flex text-sm font-medium text-neutral-700">
+                  <Globe className="size-5 text-neutral-600" />
+                  <span className="hidden text-sm font-medium text-neutral-700 sm:inline-flex">
                     {currentLanguage.flag}
                   </span>
                   <ChevronDown className={cn(
-                    'w-4 h-4 text-neutral-400 transition-transform duration-200',
+                    'size-4 text-neutral-400 transition-transform duration-200',
                     isLanguageOpen && 'rotate-180'
                   )} />
                 </button>
 
                 {/* Language Dropdown */}
                 {isLanguageOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-neutral-200 py-2 animate-fade-in-up z-50">
+                  <div className="absolute right-0 z-50 mt-2 w-48 animate-fade-in-up rounded-xl border border-neutral-200 bg-white py-2 shadow-lg">
                     {languages.map((language) => (
                       <Link
                         key={language.code}
@@ -167,7 +167,7 @@ export default function Header({ lang }: HeaderProps) {
                         className={cn(
                           'flex items-center gap-3 px-4 py-2.5 text-sm transition-colors',
                           lang === language.code
-                            ? 'bg-primary-50 text-primary-700'
+                            ? 'bg-red-50 text-red-700'
                             : 'text-neutral-700 hover:bg-neutral-50'
                         )}
                         onClick={() => setIsLanguageOpen(false)}
@@ -175,7 +175,7 @@ export default function Header({ lang }: HeaderProps) {
                         <span className="text-xl">{language.flag}</span>
                         <span>{language.label}</span>
                         {lang === language.code && (
-                          <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary-500" />
+                          <span className="ml-auto size-1.5 rounded-full bg-red-500" />
                         )}
                       </Link>
                     ))}
@@ -187,15 +187,15 @@ export default function Header({ lang }: HeaderProps) {
               <button
                 onClick={() => setIsMenuOpen(true)}
                 className={cn(
-                  'lg:hidden p-2 rounded-lg transition-colors',
-                  isMenuOpen 
-                    ? 'bg-primary-600 text-white' 
-                    : 'hover:bg-neutral-100 text-neutral-600'
+                  'rounded-lg p-2 transition-colors lg:hidden',
+                  isMenuOpen
+                    ? 'bg-red-600 text-white'
+                    : 'text-neutral-600 hover:bg-neutral-100'
                 )}
                 aria-label={menuLabel}
                 aria-expanded={isMenuOpen}
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="size-6" />
               </button>
             </div>
           </div>

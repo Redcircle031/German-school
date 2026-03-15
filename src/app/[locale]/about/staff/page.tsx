@@ -1,16 +1,25 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import CookieConsent from '@/components/features/CookieConsent';
 import Link from 'next/link';
 import { ChevronRight, Search, Filter, Mail, BookOpen } from 'lucide-react';
 import staffData from '@/data/extracted/staff.json';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+
+  const titles: Record<string, string> = {
+    pl: 'Kadra | WBS',
+    de: 'Kollegium | WBS',
+    en: 'Staff | WBS',
+  };
+  const descriptions: Record<string, string> = {
+    pl: 'Poznaj naszą kadrę pedagogiczną w szkole WBS',
+    de: 'Lernen Sie unser Kollegium an der WBS-Schule kennen',
+    en: 'Meet our teaching staff at WBS school',
+  };
+
   return {
-    title: 'Staff Directory',
-    description: 'Meet our teachers and staff',
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
   };
 }
 
@@ -32,25 +41,23 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
   const staff = staffData.staff || [];
 
   return (
-    <>
-      <Header lang={locale} />
-      <main className="pt-18 md:pt-20 min-h-screen bg-neutral-50">
+      <div className="min-h-screen bg-neutral-50 pt-18 md:pt-20">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 md:py-24">
+        <section className="bg-gradient-to-br from-red-600 to-red-800 py-16 text-white md:py-24">
           <div className="container-custom">
             <div className="max-w-3xl">
-              <nav className="flex items-center space-x-2 text-sm mb-6 text-white/80">
-                <Link href={`/${locale}`} className="hover:text-white transition-colors">
+              <nav className="mb-6 flex items-center space-x-2 text-sm text-white/80">
+                <Link href={`/${locale}`} className="transition-colors hover:text-white">
                   {t('navigation.home')}
                 </Link>
-                <ChevronRight className="w-4 h-4" />
-                <Link href={`/${locale}/about`} className="hover:text-white transition-colors">
+                <ChevronRight className="size-4" />
+                <Link href={`/${locale}/about`} className="transition-colors hover:text-white">
                   {t('navigation.about')}
                 </Link>
-                <ChevronRight className="w-4 h-4" />
-                <span className="text-white font-medium">{t('staff.title')}</span>
+                <ChevronRight className="size-4" />
+                <span className="font-medium text-white">{t('staff.title')}</span>
               </nav>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="mb-4 text-4xl font-bold md:text-5xl">
                 {t('staff.title')}
               </h1>
               <p className="text-xl text-white/90">
@@ -61,36 +68,36 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
         </section>
 
         {/* Search & Filter Bar */}
-        <div className="bg-white border-b border-neutral-200 sticky top-18 md:top-20 z-40">
+        <div className="sticky top-18 z-40 border-b border-neutral-200 bg-white md:top-20">
           <div className="container-custom">
-            <div className="flex flex-col md:flex-row gap-4 py-4">
+            <div className="flex flex-col gap-4 py-4 md:flex-row">
               {/* Search */}
               <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
+                <Search className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-neutral-400" />
                 <input
                   type="text"
                   placeholder={t('staff.search')}
-                  className="w-full pl-12 pr-4 py-3 bg-neutral-100 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full rounded-lg border-0 bg-neutral-100 py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
               </div>
 
               {/* Filter Dropdown */}
               <div className="relative">
-                <select className="appearance-none pl-4 pr-10 py-3 bg-neutral-100 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary-500 cursor-pointer">
+                <select className="cursor-pointer appearance-none rounded-lg border-0 bg-neutral-100 py-3 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-red-500">
                   {departments.map((dept) => (
                     <option key={dept.key} value={dept.key}>
                       {dept.label}
                     </option>
                   ))}
                 </select>
-                <Filter className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400 pointer-events-none" />
+                <Filter className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-neutral-400" />
               </div>
             </div>
           </div>
         </div>
 
         {/* Stats Bar */}
-        <div className="bg-white border-b border-neutral-200">
+        <div className="border-b border-neutral-200 bg-white">
           <div className="container-custom">
             <div className="flex flex-wrap gap-6 py-4 text-sm text-neutral-600">
               <span>
@@ -112,7 +119,7 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
         {/* Staff Grid */}
         <section className="py-12">
           <div className="container-custom">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {staff.map((teacher, index) => {
                 const subjects = teacher.subjects || [];
                 const grades = teacher.grades || [];
@@ -121,36 +128,36 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
                 return (
                   <div
                     key={teacher.id}
-                    className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 cursor-pointer group"
+                    className="group cursor-pointer rounded-xl bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {/* Avatar */}
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    <div className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full bg-gradient-to-br from-red-400 to-red-600 text-2xl font-bold text-white transition-transform group-hover:scale-110">
                       {teacher.name.charAt(0)}
                     </div>
 
                     {/* Info */}
                     <div className="text-center">
-                      <h3 className="font-semibold text-neutral-900 mb-1">
+                      <h3 className="mb-1 font-semibold text-neutral-900">
                         {teacher.name}
                       </h3>
-                      <p className="text-sm text-neutral-500 mb-3">
+                      <p className="mb-3 text-sm text-neutral-500">
                         {role}
                       </p>
 
                       {/* Subjects */}
                       {subjects.length > 0 && (
-                        <div className="flex flex-wrap justify-center gap-1 mb-3">
+                        <div className="mb-3 flex flex-wrap justify-center gap-1">
                           {subjects.slice(0, 3).map((subject, i) => (
                             <span
                               key={i}
-                              className="px-2 py-1 bg-primary-50 text-primary-700 text-xs rounded"
+                              className="rounded bg-red-50 px-2 py-1 text-xs text-red-700"
                             >
                               {subject}
                             </span>
                           ))}
                           {subjects.length > 3 && (
-                            <span className="px-2 py-1 bg-neutral-100 text-neutral-600 text-xs rounded">
+                            <span className="rounded bg-neutral-100 px-2 py-1 text-xs text-neutral-600">
                               +{subjects.length - 3}
                             </span>
                           )}
@@ -159,8 +166,8 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
 
                       {/* Grades */}
                       {grades.length > 0 && (
-                        <div className="flex items-center justify-center gap-1 text-xs text-neutral-500 mb-4">
-                          <BookOpen className="w-3 h-3" />
+                        <div className="mb-4 flex items-center justify-center gap-1 text-xs text-neutral-500">
+                          <BookOpen className="size-3" />
                           <span>{grades.join(', ')}</span>
                         </div>
                       )}
@@ -169,9 +176,9 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
                       {teacher.email && (
                         <a
                           href={`mailto:${teacher.email}`}
-                          className="inline-flex items-center justify-center px-4 py-2 text-sm text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+                          className="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm text-red-600 transition-colors hover:bg-red-50"
                         >
-                          <Mail className="w-4 h-4 mr-2" />
+                          <Mail className="mr-2 size-4" />
                           {locale === 'pl' ? 'Email' : locale === 'de' ? 'E-Mail' : 'Email'}
                         </a>
                       )}
@@ -183,7 +190,7 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
 
             {/* Load More */}
             {staff.length > 12 && (
-              <div className="text-center mt-12">
+              <div className="mt-12 text-center">
                 <button className="btn-outline px-8 py-3">
                   {locale === 'pl' ? 'Załaduj więcej' : locale === 'de' ? 'Mehr laden' : 'Load more'}
                 </button>
@@ -193,16 +200,16 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
         </section>
 
         {/* Join Our Team CTA */}
-        <section className="py-16 bg-accent-500">
+        <section className="bg-accent-500 py-16">
           <div className="container-custom text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">
+            <h2 className="mb-4 text-2xl font-bold text-neutral-900 md:text-3xl">
               {locale === 'pl'
                 ? 'Dołącz do naszego zespołu'
                 : locale === 'de'
                 ? 'Werden Sie Teil unseres Teams'
                 : 'Join Our Team'}
             </h2>
-            <p className="text-neutral-800 mb-8 max-w-xl mx-auto">
+            <p className="mx-auto mb-8 max-w-xl text-neutral-800">
               {locale === 'pl'
                 ? 'Szukamy wykwalifikowanych nauczycieli. Sprawdź nasze oferty pracy.'
                 : locale === 'de'
@@ -214,9 +221,6 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
             </Link>
           </div>
         </section>
-      </main>
-      <Footer lang={locale} />
-      <CookieConsent lang={locale} />
-    </>
+      </div>
   );
 }

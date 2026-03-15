@@ -41,11 +41,11 @@ export default async function StudentCouncilPage({ params }: { params: Promise<{
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
       <section className="section bg-white">
         <div className="container-custom max-w-3xl">
-          <p className="text-xl text-neutral-600 text-center mb-12">{t.intro}</p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <p className="mb-12 text-center text-xl text-neutral-600">{t.intro}</p>
+          <div className="grid gap-6 md:grid-cols-3">
             {activities.map((a, i) => (
-              <div key={i} className="bg-neutral-50 rounded-xl p-6 text-center">
-                <a.icon className="w-10 h-10 text-primary-600 mx-auto mb-3" />
+              <div key={i} className="rounded-xl bg-neutral-50 p-6 text-center">
+                <a.icon className="mx-auto mb-3 size-10 text-red-600" />
                 <p className="font-medium text-neutral-900">{a.text}</p>
               </div>
             ))}

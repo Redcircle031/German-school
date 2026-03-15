@@ -9,6 +9,98 @@ import { cache } from 'react';
 
 const CMS_DATA_DIR = path.join(process.cwd(), 'src', 'data', 'cms');
 const CONTENT_DIR = path.join(process.cwd(), 'src', 'content', 'articles');
+const PUBLIC_DIR = path.join(process.cwd(), 'public');
+
+// Filenames that are NOT genuine article content images
+// (logos, sponsor images, UI assets present on every page)
+const BRANDING_FILENAMES = [
+  'wbs-logo-white.png', 'wbs-logo.png', 'wbs-przedszkole-logo.jpg',
+  'ambasada-logo.png', '4_logotypy-kopia.jpg', 'de.png', 'lang_pl.gif',
+  // site-wide sponsor/partner images
+  'artis-beactive.jpg', 'db.jpg', 'messer_claim.jpg', 'polish_diary2.jpg',
+  'rr_o.o.male.jpg', 'sponsor.jpg', 'sponsor2.jpg', 'sponsor3.jpg', 'sponsor4.jpg',
+  'vbl.jpg', 'arrow-up.png', 'ece_logo_www.jpg', 'lidl_logo_4c_ol_small.jpg',
+  'logo_westminster_unternehme.jpg', 'logockw_jpg_copy_hp.png',
+  'promedica24_logo.jpg',
+];
+
+/**
+ * Check if a filename looks like a logo/sponsor image by heuristics.
+ * Even filenames not in BRANDING_FILENAMES can be detected this way.
+ */
+function looksLikeLogo(filename: string): boolean {
+  const lower = filename.toLowerCase();
+  return BRANDING_FILENAMES.includes(filename) ||
+    lower.includes('logo') ||
+    lower.includes('sponsor') ||
+    lower.includes('claim') ||
+    lower.startsWith('de.') ||
+    lower === 'arrow-up.png';
+}
+
+/**
+ * Find the best featured image for an article.
+ * 1. Checks if the frontmatter image exists and is a real photo.
+ * 2. If it's a logo or missing, searches the article directory for any real photo.
+ * 3. Falls back to the healthiest available logo if no photos exist.
+ */
+function resolveFeaturedImage(featuredImage: string | null, slug: string): string | null {
+  const articleImgDir = path.join(PUBLIC_DIR, 'images', 'articles', slug);
+  const exists = (p: string) => fs.existsSync(path.join(PUBLIC_DIR, p));
+
+  // 1. If we have a featured image from frontmatter, check if it's valid and on disk
+  if (featuredImage) {
+    const filename = path.basename(featuredImage);
+    const isBranding = BRANDING_FILENAMES.includes(filename);
+    
+    // If it's a real content image AND it exists on disk, use it!
+    if (!isBranding && exists(featuredImage)) {
+      return featuredImage;
+    }
+  }
+
+  // 2. Either no image, or the image was a logo/missing. 
+  // Look for ANY real content image in the article's folder as a better choice.
+  if (fs.existsSync(articleImgDir)) {
+    try {
+      const files = fs.readdirSync(articleImgDir);
+      
+      // Sort: prefer files that don't look like logos, then by file size (largest = most likely a photo)
+      const sortedByBest = files
+        .filter(f => ['.jpg', '.jpeg', '.png', '.webp'].includes(path.extname(f).toLowerCase()))
+        .sort((a, b) => {
+          const aLogo = looksLikeLogo(a);
+          const bLogo = looksLikeLogo(b);
+          if (aLogo !== bLogo) return aLogo ? 1 : -1; // non-logos first
+          // Among same type, prefer larger files
+          const sizeA = fs.statSync(path.join(articleImgDir, a)).size;
+          const sizeB = fs.statSync(path.join(articleImgDir, b)).size;
+          return sizeB - sizeA;
+        });
+      
+      // Find the first file that is a real photo (not a logo)
+      const contentImage = sortedByBest.find(f => !looksLikeLogo(f));
+      
+      if (contentImage) {
+        return `/images/articles/${slug}/${contentImage}`;
+      }
+      
+      // 3. Last fallback: Use whatever we have (likely a logo) if it's better than nothing
+      // If the original featuredImage exists (even if it's a logo), use it.
+      if (featuredImage && exists(featuredImage)) {
+        return featuredImage;
+      }
+      
+      // Otherwise, best available image from sort (might be a logo but better than nothing)
+      if (sortedByBest.length > 0) {
+        return `/images/articles/${slug}/${sortedByBest[0]}`;
+      }
+    } catch { /* ignore */ }
+  }
+
+  // Truly nothing found
+  return featuredImage && exists(featuredImage) ? featuredImage : null;
+}
 
 export interface Article {
   slug: string;
@@ -144,7 +236,7 @@ export const getAllArticles = cache((lang: string = 'pl'): Article[] => {
       category: frontmatter.category || 'other',
       tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
       author: frontmatter.author || 'WBS',
-      featuredImage: frontmatter.featuredImage,
+      featuredImage: resolveFeaturedImage(frontmatter.featuredImage, slug),
       excerpt,
       content: body,
       lang: lang as 'pl' | 'de' | 'en',
@@ -208,7 +300,7 @@ export const getArticleBySlug = cache((slug: string, lang: string = 'pl'): Artic
     category: frontmatter.category || 'other',
     tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
     author: frontmatter.author || 'WBS',
-    featuredImage: frontmatter.featuredImage,
+    featuredImage: resolveFeaturedImage(frontmatter.featuredImage, slug),
     excerpt,
     content: body,
     lang: lang as 'pl' | 'de' | 'en',

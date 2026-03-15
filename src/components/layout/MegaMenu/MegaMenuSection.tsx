@@ -30,8 +30,8 @@ export default function MegaMenuSection({ section, lang, onLinkClick }: MegaMenu
   return (
     <div className="space-y-4">
       {/* Section Header */}
-      <div className="border-b-2 border-primary-200 pb-2">
-        <h2 className="text-xs font-bold uppercase tracking-wider text-primary-800">
+      <div className="border-b-2 border-red-200 pb-2">
+        <h2 className="text-xs font-bold uppercase tracking-wider text-red-800">
           {title}
         </h2>
       </div>
@@ -57,17 +57,17 @@ export default function MegaMenuSection({ section, lang, onLinkClick }: MegaMenu
                 onClick={onLinkClick}
                 className={cn(
                   'group flex items-center py-1.5 text-[15px] text-neutral-700',
-                  'hover:text-primary-600 transition-all duration-200',
-                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded'
+                  'transition-all duration-200 hover:text-red-600',
+                  'rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2'
                 )}
               >
                 <span className="relative">
                   {label}
-                  <span className="absolute left-0 bottom-0 w-0 h-px bg-primary-500 transition-all duration-200 group-hover:w-full" />
+                  <span className="absolute bottom-0 left-0 h-px w-0 bg-red-500 transition-all duration-200 group-hover:w-full" />
                 </span>
                 {link.external && (
                   <svg
-                    className="ml-1.5 w-3.5 h-3.5 text-neutral-400 group-hover:text-primary-500 transition-colors"
+                    className="ml-1.5 size-3.5 text-neutral-400 transition-colors group-hover:text-red-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

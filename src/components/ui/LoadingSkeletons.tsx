@@ -11,27 +11,27 @@ import { cn } from '@/lib/utils';
 
 export function NewsCardSkeleton() {
   return (
-    <div className="bg-white rounded-xl overflow-hidden animate-pulse">
+    <div className="animate-pulse overflow-hidden rounded-xl bg-white">
       {/* Image placeholder */}
       <div className="aspect-[4/3] bg-neutral-200" />
       
       {/* Content */}
       <div className="p-6">
         {/* Category badge */}
-        <div className="w-20 h-6 bg-neutral-200 rounded-full mb-4" />
+        <div className="mb-4 h-6 w-20 rounded-full bg-neutral-200" />
         
         {/* Title */}
-        <div className="h-6 bg-neutral-200 rounded mb-3 w-3/4" />
-        <div className="h-6 bg-neutral-200 rounded mb-4 w-1/2" />
+        <div className="mb-3 h-6 w-3/4 rounded bg-neutral-200" />
+        <div className="mb-4 h-6 w-1/2 rounded bg-neutral-200" />
         
         {/* Excerpt */}
-        <div className="space-y-2 mb-4">
-          <div className="h-4 bg-neutral-200 rounded w-full" />
-          <div className="h-4 bg-neutral-200 rounded w-5/6" />
+        <div className="mb-4 space-y-2">
+          <div className="h-4 w-full rounded bg-neutral-200" />
+          <div className="h-4 w-5/6 rounded bg-neutral-200" />
         </div>
         
         {/* Date */}
-        <div className="h-4 bg-neutral-200 rounded w-1/3" />
+        <div className="h-4 w-1/3 rounded bg-neutral-200" />
       </div>
     </div>
   );
@@ -43,24 +43,24 @@ export function NewsCardSkeleton() {
 
 export function StaffCardSkeleton() {
   return (
-    <div className="bg-white rounded-xl p-6 animate-pulse">
+    <div className="animate-pulse rounded-xl bg-white p-6">
       {/* Avatar */}
-      <div className="w-20 h-20 bg-neutral-200 rounded-full mx-auto mb-4" />
+      <div className="mx-auto mb-4 size-20 rounded-full bg-neutral-200" />
       
       {/* Name */}
-      <div className="h-5 bg-neutral-200 rounded mb-2 w-3/4 mx-auto" />
+      <div className="mx-auto mb-2 h-5 w-3/4 rounded bg-neutral-200" />
       
       {/* Role */}
-      <div className="h-4 bg-neutral-200 rounded mb-4 w-1/2 mx-auto" />
+      <div className="mx-auto mb-4 h-4 w-1/2 rounded bg-neutral-200" />
       
       {/* Subject badges */}
-      <div className="flex justify-center gap-2 mb-4">
-        <div className="h-6 w-16 bg-neutral-200 rounded" />
-        <div className="h-6 w-16 bg-neutral-200 rounded" />
+      <div className="mb-4 flex justify-center gap-2">
+        <div className="h-6 w-16 rounded bg-neutral-200" />
+        <div className="h-6 w-16 rounded bg-neutral-200" />
       </div>
       
       {/* Email button */}
-      <div className="h-9 bg-neutral-200 rounded w-24 mx-auto" />
+      <div className="mx-auto h-9 w-24 rounded bg-neutral-200" />
     </div>
   );
 }
@@ -71,23 +71,23 @@ export function StaffCardSkeleton() {
 
 export function EventCardSkeleton() {
   return (
-    <div className="bg-white rounded-xl p-6 animate-pulse">
+    <div className="animate-pulse rounded-xl bg-white p-6">
       <div className="flex gap-4">
         {/* Date box */}
-        <div className="w-16 h-16 bg-neutral-200 rounded-xl flex-shrink-0" />
+        <div className="size-16 shrink-0 rounded-xl bg-neutral-200" />
         
         {/* Content */}
         <div className="flex-1">
           {/* Category badge */}
-          <div className="w-24 h-6 bg-neutral-200 rounded-full mb-3" />
+          <div className="mb-3 h-6 w-24 rounded-full bg-neutral-200" />
           
           {/* Title */}
-          <div className="h-6 bg-neutral-200 rounded mb-2 w-3/4" />
+          <div className="mb-2 h-6 w-3/4 rounded bg-neutral-200" />
           
           {/* Description */}
           <div className="space-y-2">
-            <div className="h-4 bg-neutral-200 rounded w-full" />
-            <div className="h-4 bg-neutral-200 rounded w-5/6" />
+            <div className="h-4 w-full rounded bg-neutral-200" />
+            <div className="h-4 w-5/6 rounded bg-neutral-200" />
           </div>
         </div>
       </div>
@@ -101,21 +101,21 @@ export function EventCardSkeleton() {
 
 export function ProgramCardSkeleton() {
   return (
-    <div className="bg-white rounded-2xl p-8 border border-neutral-200 animate-pulse">
+    <div className="animate-pulse rounded-2xl border border-neutral-200 bg-white p-8">
       {/* Icon placeholder */}
-      <div className="w-16 h-16 bg-neutral-200 rounded-2xl mb-6" />
+      <div className="mb-6 size-16 rounded-2xl bg-neutral-200" />
       
       {/* Title */}
-      <div className="h-6 bg-neutral-200 rounded mb-3 w-3/4" />
+      <div className="mb-3 h-6 w-3/4 rounded bg-neutral-200" />
       
       {/* Description */}
-      <div className="space-y-2 mb-4">
-        <div className="h-4 bg-neutral-200 rounded w-full" />
-        <div className="h-4 bg-neutral-200 rounded w-5/6" />
+      <div className="mb-4 space-y-2">
+        <div className="h-4 w-full rounded bg-neutral-200" />
+        <div className="h-4 w-5/6 rounded bg-neutral-200" />
       </div>
       
       {/* Link */}
-      <div className="h-5 bg-neutral-200 rounded w-1/3" />
+      <div className="h-5 w-1/3 rounded bg-neutral-200" />
     </div>
   );
 }
@@ -126,20 +126,20 @@ export function ProgramCardSkeleton() {
 
 export function PageHeaderSkeleton() {
   return (
-    <section className="pt-32 pb-16 bg-gradient-to-br from-primary-600 to-primary-700 text-white">
+    <section className="bg-gradient-to-br from-red-600 to-red-700 pb-16 pt-32 text-white">
       <div className="container-custom">
         {/* Breadcrumbs */}
-        <div className="flex items-center gap-2 text-sm mb-6">
-          <div className="w-32 h-4 bg-white/20 rounded" />
-          <div className="w-4 h-4 bg-white/20 rounded" />
-          <div className="w-24 h-4 bg-white/20 rounded" />
+        <div className="mb-6 flex items-center gap-2 text-sm">
+          <div className="h-4 w-32 rounded bg-white/20" />
+          <div className="size-4 rounded bg-white/20" />
+          <div className="h-4 w-24 rounded bg-white/20" />
         </div>
         
         {/* Title */}
-        <div className="h-12 bg-white/20 rounded w-1/2 mb-4" />
+        <div className="mb-4 h-12 w-1/2 rounded bg-white/20" />
         
         {/* Description */}
-        <div className="h-6 bg-white/20 rounded w-2/3" />
+        <div className="h-6 w-2/3 rounded bg-white/20" />
       </div>
     </section>
   );
@@ -151,38 +151,38 @@ export function PageHeaderSkeleton() {
 
 export function HeroSkeleton() {
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-white">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center pt-32">
+        <div className="grid items-center gap-12 pt-32 lg:grid-cols-2">
           {/* Content side */}
-          <div className="space-y-6 animate-pulse">
+          <div className="animate-pulse space-y-6">
             {/* Badge */}
-            <div className="w-48 h-8 bg-neutral-200 rounded-full" />
+            <div className="h-8 w-48 rounded-full bg-neutral-200" />
             
             {/* Headline */}
             <div className="space-y-3">
-              <div className="h-16 bg-neutral-200 rounded w-3/4" />
-              <div className="h-16 bg-neutral-200 rounded w-1/2" />
+              <div className="h-16 w-3/4 rounded bg-neutral-200" />
+              <div className="h-16 w-1/2 rounded bg-neutral-200" />
             </div>
             
             {/* Description */}
             <div className="space-y-2">
-              <div className="h-5 bg-neutral-200 rounded w-full" />
-              <div className="h-5 bg-neutral-200 rounded w-5/6" />
+              <div className="h-5 w-full rounded bg-neutral-200" />
+              <div className="h-5 w-5/6 rounded bg-neutral-200" />
             </div>
             
             {/* CTAs */}
             <div className="flex gap-4">
-              <div className="w-40 h-12 bg-neutral-200 rounded-full" />
-              <div className="w-40 h-12 bg-neutral-200 rounded-full" />
+              <div className="h-12 w-40 rounded-full bg-neutral-200" />
+              <div className="h-12 w-40 rounded-full bg-neutral-200" />
             </div>
             
             {/* Stats */}
-            <div className="flex gap-8 pt-8 border-t border-neutral-200">
+            <div className="flex gap-8 border-t border-neutral-200 pt-8">
               {[...Array(3)].map((_, i) => (
                 <div key={i} className="space-y-2">
-                  <div className="h-8 bg-neutral-200 rounded w-16" />
-                  <div className="h-4 bg-neutral-200 rounded w-20" />
+                  <div className="h-8 w-16 rounded bg-neutral-200" />
+                  <div className="h-4 w-20 rounded bg-neutral-200" />
                 </div>
               ))}
             </div>
@@ -190,9 +190,9 @@ export function HeroSkeleton() {
           
           {/* Image side */}
           <div className="relative h-[500px] animate-pulse">
-            <div className="absolute top-0 right-0 w-[85%] h-[70%] bg-neutral-200 rounded-3xl" />
-            <div className="absolute bottom-0 left-0 w-[60%] h-[45%] bg-neutral-200 rounded-2xl" />
-            <div className="absolute bottom-20 right-10 w-[35%] h-[30%] bg-neutral-200 rounded-xl" />
+            <div className="absolute right-0 top-0 h-[70%] w-[85%] rounded-3xl bg-neutral-200" />
+            <div className="absolute bottom-0 left-0 h-[45%] w-3/5 rounded-2xl bg-neutral-200" />
+            <div className="absolute bottom-20 right-10 h-[30%] w-[35%] rounded-xl bg-neutral-200" />
           </div>
         </div>
       </div>
@@ -262,12 +262,12 @@ export function ContentSkeleton({
   };
 
   return (
-    <div className={cn('space-y-2 animate-pulse', className)}>
+    <div className={cn('animate-pulse space-y-2', className)}>
       {[...Array(lines)].map((_, i) => (
         <div
           key={i}
           className={cn(
-            'h-4 bg-neutral-200 rounded',
+            'h-4 rounded bg-neutral-200',
             widthClasses[width],
             i === lines - 1 && 'w-5/6'
           )}

@@ -1,6 +1,8 @@
+import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getArticleBySlug, getAllArticles, getRecentArticles } from '@/lib/cms';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 
@@ -8,10 +10,22 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const article = getArticleBySlug(slug, locale);
+  if (!article) {
+    return { title: 'Article Not Found | WBS' };
+  }
+  return {
+    title: `${article.title} | WBS`,
+    description: article.excerpt,
+  };
+}
+
 export async function generateStaticParams({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const articles = getAllArticles(locale);
-  
+
   return articles.map((article) => ({
     slug: article.slug,
   }));
@@ -59,13 +73,13 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <>
       {/* Back Link */}
-      <div className="bg-neutral-50 border-b border-neutral-200">
+      <div className="border-b border-neutral-200 bg-neutral-50 pt-24">
         <div className="container-custom">
           <Link
             href={`/${locale}/news`}
-            className="inline-flex items-center gap-2 py-4 text-secondary-600 font-medium hover:text-secondary-700 transition-colors"
+            className="inline-flex items-center gap-2 py-4 font-medium text-red-600 transition-colors hover:text-red-700"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="size-4" />
             {locale === 'pl' ? 'Powrót do aktualności' : locale === 'de' ? 'Zurück zu den Nachrichten' : 'Back to News'}
           </Link>
         </div>
@@ -74,23 +88,23 @@ export default async function ArticlePage({ params }: Props) {
       {/* Article Header */}
       <header className="bg-white py-16">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto max-w-4xl">
             {/* Category Badge */}
             <div className="mb-6">
-              <span className="inline-block px-4 py-1.5 bg-secondary-50 text-secondary-700 text-sm font-medium rounded-full">
+              <span className="inline-block rounded-full bg-accent-50 px-4 py-1.5 text-sm font-medium text-accent-700">
                 {getCategoryLabel(article.category)}
               </span>
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-8 leading-tight">
+            <h1 className="mb-8 text-4xl font-bold leading-tight text-neutral-900 md:text-5xl lg:text-6xl">
               {article.title}
             </h1>
 
             {/* Meta Information */}
             <div className="flex flex-wrap items-center gap-6 text-neutral-600">
               <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-secondary-600" />
+                <Calendar className="size-5 text-red-600" />
                 <time dateTime={article.date} className="font-medium">
                   {formatDate(article.date)}
                 </time>
@@ -98,16 +112,16 @@ export default async function ArticlePage({ params }: Props) {
 
               {article.author && (
                 <div className="flex items-center gap-2">
-                  <User className="w-5 h-5 text-secondary-600" />
+                  <User className="size-5 text-red-600" />
                   <span className="font-medium">{article.author}</span>
                 </div>
               )}
 
               {article.tags && article.tags.length > 0 && (
-                <div className="flex items-center gap-2 flex-wrap">
-                  <Tag className="w-5 h-5 text-secondary-600" />
+                <div className="flex flex-wrap items-center gap-2">
+                  <Tag className="size-5 text-red-600" />
                   {article.tags.map((tag, index) => (
-                    <span key={index} className="text-sm bg-neutral-100 px-3 py-1 rounded-full">
+                    <span key={index} className="rounded-full bg-neutral-100 px-3 py-1 text-sm">
                       {tag}
                     </span>
                   ))}
@@ -120,87 +134,96 @@ export default async function ArticlePage({ params }: Props) {
 
       {/* Featured Image */}
       {article.featuredImage && (
-        <div className="w-full aspect-video bg-neutral-100 overflow-hidden">
-          <img
+        <div className="relative aspect-[21/9] w-full overflow-hidden border-y border-neutral-100 bg-neutral-50">
+          <Image
             src={article.featuredImage}
             alt={article.title}
-            className="w-full h-full object-cover"
+            fill
+            className={
+              article.featuredImage.includes('logo') || article.featuredImage.includes('wbs')
+                ? 'object-contain p-12'
+                : 'object-cover'
+            }
+            priority
+            sizes="100vw"
           />
         </div>
       )}
 
       {/* Article Content */}
-      <main className="py-16 bg-white">
+      <section className="bg-white py-16">
         <div className="container-custom">
-          <article className="max-w-4xl mx-auto">
-            <div 
-              className="prose prose-lg max-w-none
+          <article className="mx-auto max-w-4xl">
+            <div
+              className="article-content prose prose-lg max-w-none
                 prose-headings:font-bold prose-headings:text-neutral-900
                 prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl
-                prose-p:text-neutral-700 prose-p:leading-relaxed
-                prose-a:text-secondary-600 prose-a:no-underline hover:prose-a:underline
-                prose-img:rounded-xl prose-img:shadow-lg
-                prose-ul:list-disc prose-ol:list-decimal
+                prose-p:leading-relaxed prose-p:text-neutral-700
+                prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline
+                prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic
+                prose-ol:list-decimal prose-ul:list-disc
                 prose-li:text-neutral-700
-                prose-blockquote:border-l-4 prose-blockquote:border-secondary-600 prose-blockquote:pl-6 prose-blockquote:italic
+                prose-img:h-auto prose-img:max-w-full prose-img:rounded-xl prose-img:shadow-lg
               "
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
           </article>
 
           {/* Article Footer */}
-          <div className="max-w-4xl mx-auto mt-16 pt-8 border-t border-neutral-200">
+          <div className="mx-auto mt-16 max-w-4xl border-t border-neutral-200 pt-8">
             <div className="flex items-center justify-between">
               <Link
                 href={`/${locale}/news`}
-                className="inline-flex items-center gap-2 text-secondary-600 font-medium hover:text-secondary-700 transition-colors"
+                className="inline-flex items-center gap-2 font-medium text-red-600 transition-colors hover:text-red-700"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="size-4" />
                 {locale === 'pl' ? 'Wszystkie aktualności' : locale === 'de' ? 'Alle Nachrichten' : 'All News'}
               </Link>
 
               <div className="text-sm text-neutral-500">
                 {locale === 'pl' ? 'Źródło:' : locale === 'de' ? 'Quelle:' : 'Source:'}{' '}
-                <a href={article.originalUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-secondary-600">
+                <a href={article.originalUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">
                   wbs.pl
                 </a>
               </div>
             </div>
           </div>
         </div>
-      </main>
+      </section>
 
       {/* Related Articles */}
       {relatedArticles.length > 0 && (
-        <section className="py-16 bg-neutral-50">
+        <section className="bg-neutral-50 py-16">
           <div className="container-custom">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-8">
+            <h2 className="mb-8 text-3xl font-medium text-neutral-900">
               {locale === 'pl' ? 'Powiązane artykuły' : locale === 'de' ? 'Ähnliche Artikel' : 'Related Articles'}
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid gap-8 md:grid-cols-3">
               {relatedArticles.map((related) => (
                 <article key={related.slug} className="group">
                   <Link href={`/${locale}/news/${related.slug}`} className="block">
                     {related.featuredImage ? (
-                      <div className="aspect-video overflow-hidden rounded-xl bg-neutral-100 mb-4">
-                        <img
+                      <div className="aspect-video relative mb-4 overflow-hidden rounded-xl bg-neutral-100">
+                        <Image
                           src={related.featuredImage}
                           alt={related.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                     ) : (
-                      <div className="aspect-video overflow-hidden rounded-xl bg-gradient-to-br from-secondary-100 to-secondary-200 mb-4 flex items-center justify-center">
-                        <Calendar className="w-12 h-12 text-secondary-400" />
+                      <div className="aspect-video mb-4 flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-accent-50 to-accent-100">
+                        <Calendar className="size-12 text-accent-400" />
                       </div>
                     )}
 
-                    <h3 className="text-lg font-bold text-neutral-900 group-hover:text-secondary-600 transition-colors line-clamp-2">
+                    <h3 className="line-clamp-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-red-600">
                       {related.title}
                     </h3>
 
-                    <p className="text-neutral-600 text-sm mt-2 line-clamp-2">
+                    <p className="mt-2 line-clamp-2 text-sm text-neutral-600">
                       {related.excerpt}
                     </p>
                   </Link>

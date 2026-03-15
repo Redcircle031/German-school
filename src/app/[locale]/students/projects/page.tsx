@@ -30,11 +30,11 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             {projects.map((p, i) => (
-              <div key={i} className="p-6 bg-neutral-50 rounded-xl">
-                <p.icon className="w-10 h-10 text-primary-600 mb-4" />
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2">{p.title}</h3>
+              <div key={i} className="rounded-xl bg-neutral-50 p-6">
+                <p.icon className="mb-4 size-10 text-red-600" />
+                <h3 className="mb-2 text-xl font-semibold text-neutral-900">{p.title}</h3>
                 <p className="text-neutral-600">{p.desc}</p>
               </div>
             ))}

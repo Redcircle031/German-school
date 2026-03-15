@@ -53,21 +53,21 @@ export default async function LibraryPage({ params }: { params: Promise<{ locale
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <p className="text-xl text-neutral-600 leading-relaxed">{t.intro}</p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="text-xl leading-relaxed text-neutral-600">{t.intro}</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="mb-12 grid gap-6 md:grid-cols-3">
             {t.stats.map((stat, i) => (
-              <div key={i} className="bg-primary-600 text-white rounded-xl p-6 text-center">
-                <p className="text-4xl font-bold mb-2">{stat.value}</p>
-                <p className="text-primary-100">{stat.label}</p>
+              <div key={i} className="rounded-xl bg-red-600 p-6 text-center text-white">
+                <p className="mb-2 text-4xl font-bold">{stat.value}</p>
+                <p className="text-red-100">{stat.label}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-neutral-50 rounded-xl p-6 flex items-center justify-center gap-3">
-            <Clock className="w-5 h-5 text-primary-600" />
+          <div className="flex items-center justify-center gap-3 rounded-xl bg-neutral-50 p-6">
+            <Clock className="size-5 text-red-600" />
             <p className="text-neutral-700">{t.hours}</p>
           </div>
         </div>

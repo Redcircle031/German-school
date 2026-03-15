@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Quote, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -44,12 +45,12 @@ export default function TestimonialCard({
     if (rating === 0) return null;
     
     return (
-      <div className="flex gap-1 mb-4">
+      <div className="mb-4 flex gap-1">
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
             className={cn(
-              'w-5 h-5',
+              'size-5',
               i < rating
                 ? 'fill-accent-500 text-accent-500'
                 : 'fill-neutral-200 text-neutral-200'
@@ -64,8 +65,8 @@ export default function TestimonialCard({
     return (
       <motion.div
         className={cn(
-          'relative bg-gradient-to-br from-secondary-600 to-secondary-700 text-white',
-          'rounded-3xl p-8 md:p-12 overflow-hidden',
+          'relative bg-gradient-to-br from-red-600 to-red-700 text-white',
+          'overflow-hidden rounded-3xl p-8 md:p-12',
           className
         )}
         initial={{ opacity: 0, y: 40 }}
@@ -74,36 +75,38 @@ export default function TestimonialCard({
         transition={{ delay: index * 0.1, duration: 0.6 }}
       >
         {/* Decorative quote mark */}
-        <Quote className="absolute top-8 left-8 w-16 h-16 text-white/10" />
+        <Quote className="absolute left-8 top-8 size-16 text-white/10" />
         
         <div className="relative z-10">
           {renderStars()}
           
-          <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed mb-8">
+          <blockquote className="mb-8 text-2xl font-medium leading-relaxed md:text-3xl">
             "{quote}"
           </blockquote>
           
           <div className="flex items-center gap-4">
             {author.avatar ? (
-              <img
+              <Image
                 src={author.avatar}
                 alt={author.name}
-                className="w-14 h-14 rounded-full object-cover border-2 border-white/30"
+                width={56}
+                height={56}
+                className="size-14 rounded-full border-2 border-white/30 object-cover"
               />
             ) : (
-              <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center text-xl font-bold">
+              <div className="flex size-14 items-center justify-center rounded-full bg-white/20 text-xl font-bold">
                 {author.name.charAt(0)}
               </div>
             )}
             <div>
-              <p className="font-semibold text-lg">{author.name}</p>
+              <p className="text-lg font-semibold">{author.name}</p>
               <p className="text-white/80">{author.role}</p>
             </div>
           </div>
         </div>
         
         {/* Decorative element */}
-        <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-white/5 rounded-full" />
+        <div className="absolute -bottom-16 -right-16 size-48 rounded-full bg-white/5" />
       </motion.div>
     );
   }
@@ -112,7 +115,7 @@ export default function TestimonialCard({
     return (
       <motion.div
         className={cn(
-          'bg-white rounded-xl p-6 border border-neutral-200',
+          'rounded-xl border border-neutral-200 bg-white p-6',
           className
         )}
         initial={{ opacity: 0, y: 30 }}
@@ -123,9 +126,9 @@ export default function TestimonialCard({
         {renderStars()}
         
         <div className="flex items-start gap-4">
-          <Quote className="w-6 h-6 text-secondary-600 flex-shrink-0 mt-1" />
+          <Quote className="mt-1 size-6 shrink-0 text-red-600" />
           <div>
-            <blockquote className="text-neutral-700 leading-relaxed mb-4">
+            <blockquote className="mb-4 leading-relaxed text-neutral-700">
               {quote}
             </blockquote>
             <div>
@@ -142,7 +145,7 @@ export default function TestimonialCard({
   return (
     <motion.div
       className={cn(
-        'bg-white rounded-2xl p-8 border border-neutral-200 hover:border-secondary-200 hover:shadow-xl transition-all duration-300',
+        'rounded-2xl border border-neutral-200 bg-white p-8 transition-all duration-300 hover:border-red-200 hover:shadow-xl',
         className
       )}
       initial={{ opacity: 0, y: 40 }}
@@ -152,27 +155,29 @@ export default function TestimonialCard({
       whileHover={{ y: -4 }}
     >
       {/* Quote icon */}
-      <div className="w-12 h-12 bg-secondary-50 rounded-xl flex items-center justify-center mb-6">
-        <Quote className="w-6 h-6 text-secondary-600" />
+      <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-red-50">
+        <Quote className="size-6 text-red-600" />
       </div>
       
       {renderStars()}
       
       {/* Quote */}
-      <blockquote className="text-lg text-neutral-700 leading-relaxed mb-6">
+      <blockquote className="mb-6 text-lg leading-relaxed text-neutral-700">
         "{quote}"
       </blockquote>
       
       {/* Author */}
       <div className="flex items-center gap-4">
         {author.avatar ? (
-          <img
+          <Image
             src={author.avatar}
             alt={author.name}
-            className="w-12 h-12 rounded-full object-cover"
+            width={48}
+            height={48}
+            className="size-12 rounded-full object-cover"
           />
         ) : (
-          <div className="w-12 h-12 rounded-full bg-secondary-100 flex items-center justify-center text-lg font-semibold text-secondary-700">
+          <div className="flex size-12 items-center justify-center rounded-full bg-red-100 text-lg font-semibold text-red-700">
             {author.name.charAt(0)}
           </div>
         )}

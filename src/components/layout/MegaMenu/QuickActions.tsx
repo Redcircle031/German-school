@@ -57,37 +57,37 @@ export default function QuickActions({ actions, lang, onActionClick }: QuickActi
                 rel={action.external ? 'noopener noreferrer' : undefined}
                 onClick={onActionClick}
                 className={cn(
-                  'group flex items-center gap-2 px-4 py-2.5 rounded-lg',
+                  'group flex items-center gap-2 rounded-lg px-4 py-2.5',
                   'text-sm font-medium',
                   'transition-all duration-200',
-                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
+                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2',
                   
                   // Primary variant
                   isPrimary && [
-                    'bg-primary-600 text-white',
-                    'hover:bg-primary-700 hover:shadow-md hover:-translate-y-0.5',
+                    'bg-red-600 text-white',
+                    'hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-md',
                     'shadow-sm',
                   ],
                   
                   // Outline variant
                   !isPrimary && [
-                    'bg-white text-neutral-700 border border-neutral-300',
-                    'hover:border-primary-300 hover:text-primary-700 hover:bg-primary-50',
-                    'hover:shadow-sm hover:-translate-y-0.5',
+                    'border border-neutral-300 bg-white text-neutral-700',
+                    'hover:border-red-300 hover:bg-red-50 hover:text-red-700',
+                    'hover:-translate-y-0.5 hover:shadow-sm',
                   ]
                 )}
               >
                 <Icon className={cn(
-                  'w-4 h-4 transition-colors',
-                  isPrimary ? 'text-white' : 'text-neutral-500 group-hover:text-primary-600'
+                  'size-4 transition-colors',
+                  isPrimary ? 'text-white' : 'text-neutral-500 group-hover:text-red-600'
                 )} />
                 
                 <span>{label}</span>
                 
                 {action.external && (
                   <ExternalLink className={cn(
-                    'w-3 h-3 ml-1 transition-colors',
-                    isPrimary ? 'text-white/70' : 'text-neutral-400 group-hover:text-primary-500'
+                    'ml-1 size-3 transition-colors',
+                    isPrimary ? 'text-white/70' : 'text-neutral-400 group-hover:text-red-500'
                   )} />
                 )}
               </Link>

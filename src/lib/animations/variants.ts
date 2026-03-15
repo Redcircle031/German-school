@@ -417,7 +417,7 @@ export const scrollScaleVariants: Variants = {
 // Exports
 // ========================================
 
-export default {
+const animations = {
   // Easing
   easeOutExpo,
   easeInOut,
@@ -459,3 +459,5 @@ export default {
   scrollReveal: scrollRevealVariants,
   scrollScale: scrollScaleVariants,
 };
+
+export default animations;

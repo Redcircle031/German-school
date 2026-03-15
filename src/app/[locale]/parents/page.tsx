@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Calendar, FileText, Utensils, Clock, Bell, Download, Users, Shield } from 'lucide-react';
+import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -64,7 +65,7 @@ export default async function ParentsPage({ params }: { params: Promise<{ locale
         en: 'Applications, consents, declarations. Download necessary documents.',
       },
       href: `/${locale}/parents/forms`,
-      color: 'bg-blue-500',
+      color: 'bg-red-600',
     },
     {
       icon: Calendar,
@@ -75,7 +76,7 @@ export default async function ParentsPage({ params }: { params: Promise<{ locale
         en: 'Admission process, deadlines, required documents.',
       },
       href: `/${locale}/parents/recruitment`,
-      color: 'bg-green-500',
+      color: 'bg-neutral-900',
     },
     {
       icon: Shield,
@@ -86,7 +87,7 @@ export default async function ParentsPage({ params }: { params: Promise<{ locale
         en: 'School statutes, regulations, procedures.',
       },
       href: `/${locale}/parents/regulations`,
-      color: 'bg-purple-500',
+      color: 'bg-red-600',
     },
     {
       icon: Download,
@@ -98,7 +99,7 @@ export default async function ParentsPage({ params }: { params: Promise<{ locale
       },
       href: `/${locale}/parent-portal`,
       external: true,
-      color: 'bg-orange-500',
+      color: 'bg-neutral-900',
     },
   ];
 
@@ -123,7 +124,7 @@ export default async function ParentsPage({ params }: { params: Promise<{ locale
         en: 'Afternoon activities, hours, registration.',
       },
       href: `/${locale}/parents/aftercare`,
-      accent: 'bg-blue-50 border-blue-100',
+      accent: 'bg-red-50 border-red-100',
     },
     {
       icon: Bell,
@@ -134,7 +135,7 @@ export default async function ParentsPage({ params }: { params: Promise<{ locale
         en: 'Class times, bells, breaks.',
       },
       href: `/${locale}/parents/bell-schedule`,
-      accent: 'bg-green-50 border-green-100',
+      accent: 'bg-neutral-50 border-neutral-100',
     },
     {
       icon: Calendar,
@@ -145,39 +146,38 @@ export default async function ParentsPage({ params }: { params: Promise<{ locale
         en: 'Days off, holidays, vacations.',
       },
       href: `/${locale}/parents/holidays`,
-      accent: 'bg-purple-50 border-purple-100',
+      accent: 'bg-red-50 border-red-100',
     },
   ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <section className="relative min-h-[60vh] overflow-hidden bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white">
+        <div className="absolute right-0 top-0 size-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 size-64 -translate-x-1/2 translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
 
         <div className="container-custom relative z-10">
-          <div className="max-w-4xl pt-32 pb-16">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <div className="max-w-4xl pb-16 pt-32">
+            <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
               {c.heroTitle}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+            <p className="mb-8 text-xl leading-relaxed text-white/90 md:text-2xl">
               {c.heroDescription}
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href={`/${locale}/parents/recruitment`}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 font-semibold rounded-full hover:bg-neutral-100 transition-all hover:shadow-lg hover:scale-105"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-red-700 transition-all hover:scale-105 hover:bg-neutral-100 hover:shadow-lg"
               >
-                <Calendar className="w-5 h-5" />
+                <Calendar className="size-5" />
                 {locale === 'pl' ? 'Rekrutacja 2026/2027' : locale === 'de' ? 'Aufnahme 2026/2027' : 'Admissions 2026/2027'}
               </a>
               <a
                 href={`/${locale}/parents/forms`}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary-500 text-white font-semibold rounded-full hover:bg-primary-400 transition-all border border-primary-400"
+                className="inline-flex items-center gap-2 rounded-full border border-red-400 bg-red-500 px-8 py-4 font-semibold text-white transition-all hover:bg-red-400"
               >
-                <Download className="w-5 h-5" />
+                <Download className="size-5" />
                 {locale === 'pl' ? 'Pobierz formularze' : locale === 'de' ? 'Formulare herunterladen' : 'Download Forms'}
               </a>
             </div>
@@ -186,235 +186,253 @@ export default async function ParentsPage({ params }: { params: Promise<{ locale
       </section>
 
       {/* Quick Access Section */}
-      <section className="py-24 bg-white">
+      <section className="bg-white py-24">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary-700 text-sm font-medium rounded-full mb-6">
-              {c.quickAccessTitle}
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-              {c.quickAccessTitle}
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              {c.quickAccessDescription}
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="mb-16 text-center">
+              <span className="mb-6 inline-block rounded-full bg-red-50 px-4 py-1.5 text-sm font-medium text-red-700">
+                {c.quickAccessTitle}
+              </span>
+              <h2 className="mb-6 text-4xl font-bold text-neutral-900 md:text-5xl">
+                {c.quickAccessTitle}
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-neutral-600">
+                {c.quickAccessDescription}
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {quickAccessItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? '_blank' : undefined}
-                className="group bg-white rounded-2xl p-8 border border-neutral-200 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-900/5 transition-all duration-300"
-              >
-                <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <item.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                  {item.title[locale as keyof typeof item.title] || item.title.en}
-                </h3>
-                <p className="text-neutral-600 leading-relaxed mb-4">
-                  {item.description[locale as keyof typeof item.description] || item.description.en}
-                </p>
-                <span className="inline-flex items-center text-primary-600 font-semibold group-hover:translate-x-2 transition-transform">
-                  {locale === 'pl' ? 'Przejdź' : locale === 'de' ? 'Gehen' : 'Go'}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </span>
-              </Link>
+              <StaggerItem key={index}>
+                <Link
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? '_blank' : undefined}
+                  className="group block h-full rounded-2xl border border-neutral-200 bg-white p-8 transition-all duration-300 hover:border-red-200 hover:shadow-xl hover:shadow-red-900/5"
+                >
+                  <div className={`size-16 ${item.color} mb-6 flex items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110`}>
+                    <item.icon className="size-8 text-white" />
+                  </div>
+                  <h3 className="mb-3 text-xl font-bold text-neutral-900">
+                    {item.title[locale as keyof typeof item.title] || item.title.en}
+                  </h3>
+                  <p className="mb-4 leading-relaxed text-neutral-600">
+                    {item.description[locale as keyof typeof item.description] || item.description.en}
+                  </p>
+                  <span className="inline-flex items-center font-semibold text-red-600 transition-transform group-hover:translate-x-2">
+                    {locale === 'pl' ? 'Przejdź' : locale === 'de' ? 'Gehen' : 'Go'}
+                    <ArrowRight className="ml-2 size-4" />
+                  </span>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Practical Information Section */}
-      <section className="py-24 bg-neutral-50">
+      <section className="bg-neutral-50 py-24">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-white text-primary-700 text-sm font-medium rounded-full border border-primary-100 mb-6">
-              {c.infoTitle}
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-              {c.infoTitle}
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              {c.infoDescription}
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="mb-16 text-center">
+              <span className="mb-6 inline-block rounded-full border border-red-100 bg-white px-4 py-1.5 text-sm font-medium text-red-700">
+                {c.infoTitle}
+              </span>
+              <h2 className="mb-6 text-4xl font-bold text-neutral-900 md:text-5xl">
+                {c.infoTitle}
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-neutral-600">
+                {c.infoDescription}
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {infoItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className={`group ${item.accent} rounded-2xl p-8 border hover:shadow-xl transition-all duration-300`}
-              >
-                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                  <item.icon className="w-7 h-7 text-neutral-700" />
-                </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                  {item.title[locale as keyof typeof item.title] || item.title.en}
-                </h3>
-                <p className="text-neutral-600 leading-relaxed">
-                  {item.description[locale as keyof typeof item.description] || item.description.en}
-                </p>
-              </Link>
+              <StaggerItem key={index}>
+                <Link
+                  href={item.href}
+                  className={`group ${item.accent} block h-full rounded-2xl border p-8 transition-all duration-300 hover:shadow-xl`}
+                >
+                  <div className="mb-6 flex size-14 items-center justify-center rounded-xl bg-white shadow-sm transition-transform duration-300 group-hover:scale-110">
+                    <item.icon className="size-7 text-neutral-700" />
+                  </div>
+                  <h3 className="mb-3 text-xl font-bold text-neutral-900">
+                    {item.title[locale as keyof typeof item.title] || item.title.en}
+                  </h3>
+                  <p className="leading-relaxed text-neutral-600">
+                    {item.description[locale as keyof typeof item.description] || item.description.en}
+                  </p>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Important Notices Section */}
-      <section className="py-24 bg-white">
+      <section className="bg-white py-24">
         <div className="container-custom">
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 md:p-12 border border-amber-200">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="inline-block px-4 py-1.5 bg-amber-100 text-amber-800 text-sm font-medium rounded-full mb-6">
-                  {locale === 'pl' ? 'Ważne informacje' : locale === 'de' ? 'Wichtige Informationen' : 'Important Notices'}
-                </span>
-                <h3 className="text-3xl font-bold text-neutral-900 mb-4">
-                  {locale === 'pl'
-                    ? 'Rok Szkolny 2026/2027'
-                    : locale === 'de'
-                    ? 'Schuljahr 2026/2027'
-                    : 'School Year 2026/2027'}
-                </h3>
-                <p className="text-lg text-neutral-700 mb-6">
-                  {locale === 'pl'
-                    ? 'Rozpoczęcie roku szkolnego: 1 września 2026. Zapoznaj się z organizacją pierwszego tygodnia i harmonogramem spotkań z wychowawcami.'
-                    : locale === 'de'
-                    ? 'Beginn des Schuljahres: 1. September 2026. Informieren Sie sich über die Organisation der ersten Woche und den Zeitplan für Treffen mit Klassenlehrern.'
-                    : 'School year begins: September 1, 2026. Learn about the first week\'s organization and schedule for meetings with homeroom teachers.'}
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    href={`/${locale}/parents/recruitment`}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 text-white font-semibold rounded-full hover:bg-amber-600 transition-all"
-                  >
-                    {locale === 'pl' ? 'Sprawdź terminy' : locale === 'de' ? 'Termine prüfen' : 'Check Dates'}
-                  </Link>
-                  <Link
-                    href={`/${locale}/parents/forms`}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-amber-700 font-semibold rounded-full hover:bg-amber-50 transition-all border border-amber-300"
-                  >
-                    <Download className="w-4 h-4" />
-                    {locale === 'pl' ? 'Dokumenty' : locale === 'de' ? 'Dokumente' : 'Documents'}
-                  </Link>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="aspect-video bg-white rounded-2xl overflow-hidden shadow-lg">
-                  <div className="absolute inset-0 flex items-center justify-center text-neutral-400">
-                    <div className="text-center">
-                      <Calendar className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                      <p className="text-sm">School calendar placeholder</p>
-                    </div>
+          <ScrollReveal>
+            <div className="rounded-3xl border border-red-200 bg-gradient-to-br from-red-50 to-neutral-50 p-8 md:p-12">
+              <div className="grid items-center gap-12 lg:grid-cols-2">
+                <div>
+                  <span className="mb-6 inline-block rounded-full bg-red-100 px-4 py-1.5 text-sm font-medium text-red-800">
+                    {locale === 'pl' ? 'Ważne informacje' : locale === 'de' ? 'Wichtige Informationen' : 'Important Notices'}
+                  </span>
+                  <h3 className="mb-4 text-3xl font-bold text-neutral-900">
+                    {locale === 'pl'
+                      ? 'Rok Szkolny 2026/2027'
+                      : locale === 'de'
+                      ? 'Schuljahr 2026/2027'
+                      : 'School Year 2026/2027'}
+                  </h3>
+                  <p className="mb-6 text-lg text-neutral-700">
+                    {locale === 'pl'
+                      ? 'Rozpoczęcie roku szkolnego: 1 września 2026. Zapoznaj się z organizacją pierwszego tygodnia i harmonogramem spotkań z wychowawcami.'
+                      : locale === 'de'
+                      ? 'Beginn des Schuljahres: 1. September 2026. Informieren Sie sich über die Organisation der ersten Woche und den Zeitplan für Treffen mit Klassenlehrern.'
+                      : 'School year begins: September 1, 2026. Learn about the first week\'s organization and schedule for meetings with homeroom teachers.'}
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <Link
+                      href={`/${locale}/parents/recruitment`}
+                      className="inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 font-semibold text-white transition-all hover:bg-red-700"
+                    >
+                      {locale === 'pl' ? 'Sprawdź terminy' : locale === 'de' ? 'Termine prüfen' : 'Check Dates'}
+                    </Link>
+                    <Link
+                      href={`/${locale}/parents/forms`}
+                      className="inline-flex items-center gap-2 rounded-full border border-red-300 bg-white px-6 py-3 font-semibold text-red-700 transition-all hover:bg-red-50"
+                    >
+                      <Download className="size-4" />
+                      {locale === 'pl' ? 'Dokumenty' : locale === 'de' ? 'Dokumente' : 'Documents'}
+                    </Link>
                   </div>
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-amber-400 rounded-2xl -z-10" />
+                <div className="relative">
+                  <div className="aspect-video overflow-hidden rounded-2xl bg-white shadow-lg">
+                    <div className="absolute inset-0 flex items-center justify-center text-neutral-400">
+                      <div className="text-center">
+                        <Calendar className="mx-auto mb-4 size-16 opacity-50" />
+                        <p className="text-sm">School calendar placeholder</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 -z-10 size-32 rounded-2xl bg-red-600" />
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Parent Community Section */}
-      <section className="py-24 bg-neutral-50">
+      <section className="bg-neutral-50 py-24">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-white text-primary-700 text-sm font-medium rounded-full border border-primary-100 mb-6">
-              {locale === 'pl' ? 'Społeczność Rodziców' : locale === 'de' ? 'Elterngemeinschaft' : 'Parent Community'}
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-              {locale === 'pl' ? 'Zaangażuj się' : locale === 'de' ? 'Engagieren Sie sich' : 'Get Involved'}
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              {locale === 'pl'
-                ? 'Dołącz do Rady Rodziców, uczestnicz w wydarzeniach szkolnych, wspieraj inicjatywy uczniów.'
-                : locale === 'de'
-                ? 'Treten Sie dem Elternrat bei, nehmen Sie an Schulveranstaltungen teil, unterstützen Sie Schülerinitiativen.'
-                : 'Join the Parent Council, participate in school events, support student initiatives.'}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 border border-neutral-200">
-              <Users className="w-12 h-12 text-primary-600 mb-6" />
-              <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                {locale === 'pl' ? 'Rada Rodziców' : locale === 'de' ? 'Elternrat' : 'Parent Council'}
-              </h3>
-              <p className="text-neutral-600 mb-4">
+          <ScrollReveal>
+            <div className="mb-16 text-center">
+              <span className="mb-6 inline-block rounded-full border border-red-100 bg-white px-4 py-1.5 text-sm font-medium text-red-700">
+                {locale === 'pl' ? 'Społeczność Rodziców' : locale === 'de' ? 'Elterngemeinschaft' : 'Parent Community'}
+              </span>
+              <h2 className="mb-6 text-4xl font-bold text-neutral-900 md:text-5xl">
+                {locale === 'pl' ? 'Zaangażuj się' : locale === 'de' ? 'Engagieren Sie sich' : 'Get Involved'}
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-neutral-600">
                 {locale === 'pl'
-                  ? 'Reprezentacja rodziców, wpływ na decyzje szkoły, organizacja wydarzeń.'
+                  ? 'Dołącz do Rady Rodziców, uczestnicz w wydarzeniach szkolnych, wspieraj inicjatywy uczniów.'
                   : locale === 'de'
-                  ? 'Elternvertretung, Einfluss auf Schulentscheidungen, Veranstaltung von Events.'
-                  : 'Parent representation, influence on school decisions, event organization.'}
+                  ? 'Treten Sie dem Elternrat bei, nehmen Sie an Schulveranstaltungen teil, unterstützen Sie Schülerinitiativen.'
+                  : 'Join the Parent Council, participate in school events, support student initiatives.'}
               </p>
-              <Link href={`/${locale}/parents/council`} className="text-primary-600 font-semibold hover:text-primary-700">
-                {locale === 'pl' ? 'Dowiedz się więcej →' : locale === 'de' ? 'Mehr erfahren →' : 'Learn more →'}
-              </Link>
             </div>
+          </ScrollReveal>
 
-            <div className="bg-white rounded-2xl p-8 border border-neutral-200">
-              <Calendar className="w-12 h-12 text-green-600 mb-6" />
-              <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                {locale === 'pl' ? 'Wydarzenia dla Rodziców' : locale === 'de' ? 'Elternveranstaltungen' : 'Parent Events'}
-              </h3>
-              <p className="text-neutral-600 mb-4">
-                {locale === 'pl'
-                  ? 'Spotkania z nauczycielami, warsztaty, wykłady, integracje.'
-                  : locale === 'de'
-                  ? 'Treffen mit Lehrern, Workshops, Vorträge, Integration.'
-                  : 'Teacher meetings, workshops, lectures, social events.'}
-              </p>
-              <Link href={`/${locale}/events`} className="text-green-600 font-semibold hover:text-green-700">
-                {locale === 'pl' ? 'Zobacz kalendarz →' : locale === 'de' ? 'Kalender ansehen →' : 'View calendar →'}
-              </Link>
-            </div>
+          <StaggerContainer className="grid gap-8 md:grid-cols-3">
+            <StaggerItem>
+              <div className="h-full rounded-2xl border border-neutral-200 bg-white p-8">
+                <Users className="mb-6 size-12 text-red-600" />
+                <h3 className="mb-3 text-xl font-bold text-neutral-900">
+                  {locale === 'pl' ? 'Rada Rodziców' : locale === 'de' ? 'Elternrat' : 'Parent Council'}
+                </h3>
+                <p className="mb-4 text-neutral-600">
+                  {locale === 'pl'
+                    ? 'Reprezentacja rodziców, wpływ na decyzje szkoły, organizacja wydarzeń.'
+                    : locale === 'de'
+                    ? 'Elternvertretung, Einfluss auf Schulentscheidungen, Veranstaltung von Events.'
+                    : 'Parent representation, influence on school decisions, event organization.'}
+                </p>
+                <Link href={`/${locale}/parents/council`} className="font-semibold text-red-600 hover:text-red-700">
+                  {locale === 'pl' ? 'Dowiedz się więcej →' : locale === 'de' ? 'Mehr erfahren →' : 'Learn more →'}
+                </Link>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-white rounded-2xl p-8 border border-neutral-200">
-              <FileText className="w-12 h-12 text-purple-600 mb-6" />
-              <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                {locale === 'pl' ? 'Wolontariat' : locale === 'de' ? 'Freiwilligenarbeit' : 'Volunteering'}
-              </h3>
-              <p className="text-neutral-600 mb-4">
-                {locale === 'pl'
-                  ? 'Pomoc przy wydarzeniach, wycieczkach, projektach szkolnych.'
-                  : locale === 'de'
-                  ? 'Hilfe bei Veranstaltungen, Ausflügen, Schulprojekten.'
-                  : 'Help with events, trips, school projects.'}
-              </p>
-              <Link href={`/${locale}/parents/volunteering`} className="text-purple-600 font-semibold hover:text-purple-700">
-                {locale === 'pl' ? 'Zostań wolontariuszem →' : locale === 'de' ? 'Freiwilliger werden →' : 'Become a volunteer →'}
-              </Link>
-            </div>
-          </div>
+            <StaggerItem>
+              <div className="h-full rounded-2xl border border-neutral-200 bg-white p-8">
+                <Calendar className="mb-6 size-12 text-neutral-700" />
+                <h3 className="mb-3 text-xl font-bold text-neutral-900">
+                  {locale === 'pl' ? 'Wydarzenia dla Rodziców' : locale === 'de' ? 'Elternveranstaltungen' : 'Parent Events'}
+                </h3>
+                <p className="mb-4 text-neutral-600">
+                  {locale === 'pl'
+                    ? 'Spotkania z nauczycielami, warsztaty, wykłady, integracje.'
+                    : locale === 'de'
+                    ? 'Treffen mit Lehrern, Workshops, Vorträge, Integration.'
+                    : 'Teacher meetings, workshops, lectures, social events.'}
+                </p>
+                <Link href={`/${locale}/events`} className="font-semibold text-red-600 hover:text-red-700">
+                  {locale === 'pl' ? 'Zobacz kalendarz →' : locale === 'de' ? 'Kalender ansehen →' : 'View calendar →'}
+                </Link>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="h-full rounded-2xl border border-neutral-200 bg-white p-8">
+                <FileText className="mb-6 size-12 text-red-600" />
+                <h3 className="mb-3 text-xl font-bold text-neutral-900">
+                  {locale === 'pl' ? 'Wolontariat' : locale === 'de' ? 'Freiwilligenarbeit' : 'Volunteering'}
+                </h3>
+                <p className="mb-4 text-neutral-600">
+                  {locale === 'pl'
+                    ? 'Pomoc przy wydarzeniach, wycieczkach, projektach szkolnych.'
+                    : locale === 'de'
+                    ? 'Hilfe bei Veranstaltungen, Ausflügen, Schulprojekten.'
+                    : 'Help with events, trips, school projects.'}
+                </p>
+                <Link href={`/${locale}/parents/volunteering`} className="font-semibold text-red-600 hover:text-red-700">
+                  {locale === 'pl' ? 'Zostań wolontariuszem →' : locale === 'de' ? 'Freiwilliger werden →' : 'Become a volunteer →'}
+                </Link>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary-600 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-primary-500 rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-700 rounded-full translate-x-1/3 translate-y-1/3" />
+      <section className="relative overflow-hidden bg-red-600 py-24 text-white">
+        <div className="absolute left-0 top-0 size-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500" />
+        <div className="absolute bottom-0 right-0 size-96 translate-x-1/3 translate-y-1/3 rounded-full bg-red-700" />
 
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              {c.ctaTitle}
-            </h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              {c.ctaDescription}
-            </p>
-            <a
-              href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-600 font-semibold rounded-full hover:bg-neutral-100 transition-all hover:shadow-lg hover:scale-105"
-            >
-              {c.ctaButton}
-              <ArrowRight className="w-5 h-5" />
-            </a>
-          </div>
+          <ScrollReveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="mb-6 text-4xl font-bold md:text-5xl">
+                {c.ctaTitle}
+              </h2>
+              <p className="mb-10 text-xl leading-relaxed text-white/90">
+                {c.ctaDescription}
+              </p>
+              <a
+                href={`/${locale}/contact`}
+                className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-red-600 transition-all hover:scale-105 hover:bg-neutral-100 hover:shadow-lg"
+              >
+                {c.ctaButton}
+                <ArrowRight className="size-5" />
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

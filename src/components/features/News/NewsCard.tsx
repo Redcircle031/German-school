@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
 
@@ -12,6 +13,7 @@ interface NewsCardProps {
     date: string | null;
     excerpt: Record<string, string>;
     category?: string;
+    featuredImage?: string | null;
   };
   lang: string;
   index?: number;
@@ -22,10 +24,10 @@ export default function NewsCard({ news, lang, index = 0 }: NewsCardProps) {
   const excerpt = news.excerpt[lang as keyof typeof news.excerpt] || news.excerpt.pl;
   
   const categoryColors: Record<string, string> = {
-    'aktualne-wydarzenia': 'bg-blue-100 text-blue-800',
-    'nadchodzace-wydarzenia': 'bg-green-100 text-green-800',
+    'aktualne-wydarzenia': 'bg-red-50 text-red-800',
+    'nadchodzace-wydarzenia': 'bg-neutral-100 text-neutral-800',
     'osiagniecia': 'bg-yellow-100 text-yellow-800',
-    'ogloszenia': 'bg-purple-100 text-purple-800',
+    'ogloszenia': 'bg-red-50 text-red-800',
     'ogolne': 'bg-neutral-100 text-neutral-800',
   };
 
@@ -41,16 +43,29 @@ export default function NewsCard({ news, lang, index = 0 }: NewsCardProps) {
 
   return (
     <article
-      className="card-interactive bg-white rounded-xl overflow-hidden shadow-md"
+      className="card-interactive overflow-hidden rounded-xl bg-white shadow-md"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Image */}
-      <div className="relative h-48 bg-neutral-200 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-neutral-400">
-          <span className="text-sm">News {news.id}</span>
-        </div>
+      <div className="relative h-48 overflow-hidden bg-neutral-50">
+        {news.featuredImage ? (
+          <Image
+            src={news.featuredImage}
+            alt={title}
+            fill
+            className={
+              news.featuredImage.includes('logo') || news.featuredImage.includes('wbs')
+                ? 'object-contain p-8'
+                : 'object-cover group-hover:scale-110'
+            }
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-neutral-400">
+            <span className="text-sm">News {news.id}</span>
+          </div>
+        )}
         {category && (
-          <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium ${categoryColors[category] || categoryColors.ogolne}`}>
+          <span className={`absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-xs font-medium ${categoryColors[category] || categoryColors.ogolne}`}>
             {categoryNames[category] || categoryNames.ogolne}
           </span>
         )}
@@ -60,31 +75,31 @@ export default function NewsCard({ news, lang, index = 0 }: NewsCardProps) {
       <div className="p-6">
         {/* Date */}
         {news.date && (
-          <div className="flex items-center space-x-2 text-sm text-neutral-500 mb-3">
-            <Calendar className="w-4 h-4" />
+          <div className="mb-3 flex items-center space-x-2 text-sm text-neutral-500">
+            <Calendar className="size-4" />
             <time dateTime={news.date}>{formatDate(news.date, lang)}</time>
           </div>
         )}
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-neutral-900 mb-3 line-clamp-2 hover:text-primary-600 transition-colors">
+        <h3 className="mb-3 line-clamp-2 text-xl font-bold text-neutral-900 transition-colors hover:text-red-600">
           <Link href={`/${lang}/news/${news.id}`}>
             {title}
           </Link>
         </h3>
 
         {/* Excerpt */}
-        <p className="text-neutral-600 mb-4 line-clamp-3">
+        <p className="mb-4 line-clamp-3 text-neutral-600">
           {excerpt}
         </p>
 
         {/* Read More Link */}
         <Link
           href={`/${lang}/news/${news.id}`}
-          className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+          className="inline-flex items-center text-sm font-medium text-red-600 transition-colors hover:text-red-700"
         >
           {lang === 'pl' ? 'Czytaj więcej' : lang === 'de' ? 'Mehr lesen' : 'Read more'}
-          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="ml-1 size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </Link>

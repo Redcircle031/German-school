@@ -16,27 +16,32 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-neutral-50 py-20">
+    <div className="flex min-h-screen items-center justify-center bg-neutral-50 py-20">
       <div className="container-custom max-w-2xl text-center">
-        <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <AlertTriangle className="w-10 h-10 text-red-600" />
+        <div className="mx-auto mb-6 flex size-20 items-center justify-center rounded-full bg-red-100">
+          <AlertTriangle className="size-10 text-red-600" />
         </div>
-        <h1 className="text-3xl font-bold text-neutral-900 mb-4">Something went wrong!</h1>
-        <p className="text-neutral-600 mb-8">
-          We apologize for the inconvenience. Please try again or contact support if the problem persists.
+        <h1 className="mb-4 text-3xl font-bold text-neutral-900">
+          Coś poszło nie tak / Etwas ist schiefgelaufen / Something went wrong
+        </h1>
+        <p className="mb-8 text-neutral-600">
+          Przepraszamy za niedogodności. / Wir entschuldigen uns für die Unannehmlichkeiten. / We apologize for the inconvenience.
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <button
             onClick={reset}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3 text-white transition-colors hover:bg-red-700"
           >
-            <RefreshCw className="w-5 h-5" />
-            Try Again
+            <RefreshCw className="size-5" />
+            Spróbuj ponownie / Erneut versuchen / Try Again
           </button>
-          <Link href="/" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-neutral-700 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
-            <Home className="w-5 h-5" />
-            Go Home
+          <Link
+            href="/"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-white px-6 py-3 text-neutral-700 transition-colors hover:bg-neutral-50"
+          >
+            <Home className="size-5" />
+            Strona główna / Startseite / Home
           </Link>
         </div>
       </div>

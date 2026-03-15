@@ -58,18 +58,18 @@ export default async function FormsPage({ params }: { params: Promise<{ locale: 
     <>
       <PageHeader lang={locale} title={data.title} description="" />
       <section className="section bg-white">
-        <div className="container-custom max-w-4xl mx-auto space-y-12">
+        <div className="container-custom mx-auto max-w-4xl space-y-12">
           {data.categories.map((cat, i) => (
             <div key={i}>
-              <h2 className="text-2xl font-semibold text-neutral-900 mb-6 pb-2 border-b border-neutral-200">{cat.title}</h2>
+              <h2 className="mb-6 border-b border-neutral-200 pb-2 text-2xl font-semibold text-neutral-900">{cat.title}</h2>
               <div className="grid gap-4">
                 {cat.forms.map((form, j) => (
-                  <div key={j} className="flex items-center justify-between p-4 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors">
+                  <div key={j} className="flex items-center justify-between rounded-xl bg-neutral-50 p-4 transition-colors hover:bg-neutral-100">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center"><form.icon className="w-6 h-6 text-primary-600" /></div>
+                      <div className="flex size-12 items-center justify-center rounded-lg bg-red-100"><form.icon className="size-6 text-red-600" /></div>
                       <div><h3 className="font-semibold text-neutral-900">{form.name}</h3><p className="text-sm text-neutral-500">{form.format} • {form.size}</p></div>
                     </div>
-                    <button className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"><Download className="w-4 h-4" /></button>
+                    <button className="flex items-center gap-2 rounded-lg bg-red-600 px-4 py-2 text-white transition-colors hover:bg-red-700"><Download className="size-4" /></button>
                   </div>
                 ))}
               </div>

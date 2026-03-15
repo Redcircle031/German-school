@@ -45,10 +45,10 @@ export default function MegaMenuSearch({ placeholder, lang, className }: MegaMen
         )}
       >
         {/* Search Icon */}
-        <div className="absolute left-4 pointer-events-none">
+        <div className="pointer-events-none absolute left-4">
           <Search className={cn(
-            'w-5 h-5 transition-colors duration-200',
-            isFocused ? 'text-primary-500' : 'text-neutral-400'
+            'size-5 transition-colors duration-200',
+            isFocused ? 'text-red-500' : 'text-neutral-400'
           )} />
         </div>
 
@@ -63,10 +63,10 @@ export default function MegaMenuSearch({ placeholder, lang, className }: MegaMen
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
           className={cn(
-            'w-full pl-12 pr-12 py-3 rounded-xl',
-            'bg-neutral-100 text-neutral-900 placeholder-neutral-400',
+            'w-full rounded-xl px-12 py-3',
+            'bg-neutral-100 text-neutral-900 placeholder:text-neutral-400',
             'border-2 border-transparent',
-            'focus:bg-white focus:border-primary-300 focus:outline-none',
+            'focus:border-red-300 focus:bg-white focus:outline-none',
             'transition-all duration-200',
             'text-base'
           )}
@@ -79,13 +79,13 @@ export default function MegaMenuSearch({ placeholder, lang, className }: MegaMen
             type="button"
             onClick={clearSearch}
             className={cn(
-              'absolute right-4 p-1 rounded-full',
-              'text-neutral-400 hover:text-neutral-600 hover:bg-neutral-200',
-              'transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500'
+              'absolute right-4 rounded-full p-1',
+              'text-neutral-400 hover:bg-neutral-200 hover:text-neutral-600',
+              'transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500'
             )}
             aria-label="Clear search"
           >
-            <X className="w-4 h-4" />
+            <X className="size-4" />
           </button>
         )}
 
@@ -102,7 +102,7 @@ export default function MegaMenuSearch({ placeholder, lang, className }: MegaMen
       {/* Focus Indicator */}
       <div
         className={cn(
-          'absolute inset-0 -z-10 rounded-xl bg-primary-100 transition-opacity duration-200',
+          'absolute inset-0 -z-10 rounded-xl bg-red-100 transition-opacity duration-200',
           isFocused ? 'opacity-100' : 'opacity-0'
         )}
         aria-hidden="true"

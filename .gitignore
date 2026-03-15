@@ -48,21 +48,15 @@ next-env.d.ts
 # OS
 Thumbs.db
 
-# Uploads
+# Uploads & temp images
 src/assets/uploads/
 src/assets/images/temp/
 
 # Backup files
 *.bak
 
-# Image files (keep specific ones if needed, but generally exclude)
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-# Uncomment below if you need to track specific images
-# !src/assets/images/logo.png
-
 # Build
 tsconfig.tsbuildinfo
+
+# Newsletter subscriber data
+src/data/newsletter-subscribers.json

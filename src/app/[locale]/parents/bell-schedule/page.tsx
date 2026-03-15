@@ -34,9 +34,9 @@ export default async function BellSchedulePage({ params }: { params: Promise<{ l
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
       <section className="section bg-white">
         <div className="container-custom max-w-2xl">
-          <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden">
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white">
             <table className="w-full">
-              <thead className="bg-primary-600 text-white">
+              <thead className="bg-red-600 text-white">
                 <tr>
                   <th className="p-4 text-left">{locale === 'pl' ? 'Lekcja' : locale === 'de' ? 'Stunde' : 'Lesson'}</th>
                   <th className="p-4 text-left">{locale === 'pl' ? 'Rozpoczęcie' : locale === 'de' ? 'Beginn' : 'Start'}</th>

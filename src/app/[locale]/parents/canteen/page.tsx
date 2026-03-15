@@ -49,32 +49,32 @@ export default async function CanteenPage({ params }: { params: Promise<{ locale
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
       <section className="section bg-white">
         <div className="container-custom">
-          <p className="text-xl text-neutral-600 text-center max-w-3xl mx-auto mb-12">{t.intro}</p>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-neutral-50 rounded-xl p-6 text-center">
-              <Clock className="w-8 h-8 text-primary-600 mx-auto mb-3" />
+          <p className="mx-auto mb-12 max-w-3xl text-center text-xl text-neutral-600">{t.intro}</p>
+          <div className="mb-12 grid gap-6 md:grid-cols-3">
+            <div className="rounded-xl bg-neutral-50 p-6 text-center">
+              <Clock className="mx-auto mb-3 size-8 text-red-600" />
               <h3 className="font-semibold text-neutral-900">{t.hours}</h3>
               <p className="text-neutral-600">{t.hoursTime}</p>
             </div>
-            <div className="bg-neutral-50 rounded-xl p-6 text-center">
-              <Utensils className="w-8 h-8 text-primary-600 mx-auto mb-3" />
+            <div className="rounded-xl bg-neutral-50 p-6 text-center">
+              <Utensils className="mx-auto mb-3 size-8 text-red-600" />
               <h3 className="font-semibold text-neutral-900">{t.lunch}</h3>
               <p className="text-neutral-600">{t.lunchTime}</p>
             </div>
-            <div className="bg-neutral-50 rounded-xl p-6 text-center">
-              <Calendar className="w-8 h-8 text-primary-600 mx-auto mb-3" />
+            <div className="rounded-xl bg-neutral-50 p-6 text-center">
+              <Calendar className="mx-auto mb-3 size-8 text-red-600" />
               <h3 className="font-semibold text-neutral-900">{t.snack}</h3>
               <p className="text-neutral-600">{t.snackTime}</p>
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">{t.menuTitle}</h2>
-          <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden">
+          <h2 className="mb-6 text-2xl font-bold text-neutral-900">{t.menuTitle}</h2>
+          <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white">
             <table className="w-full">
               <thead className="bg-neutral-50">
                 <tr>
-                  <th className="text-left p-4 font-semibold text-neutral-900">{locale === 'pl' ? 'Dzień' : locale === 'de' ? 'Tag' : 'Day'}</th>
-                  <th className="text-left p-4 font-semibold text-neutral-900">{locale === 'pl' ? 'Zupa' : locale === 'de' ? 'Suppe' : 'Soup'}</th>
-                  <th className="text-left p-4 font-semibold text-neutral-900">{locale === 'pl' ? 'Danie główne' : locale === 'de' ? 'Hauptgericht' : 'Main Course'}</th>
+                  <th className="p-4 text-left font-semibold text-neutral-900">{locale === 'pl' ? 'Dzień' : locale === 'de' ? 'Tag' : 'Day'}</th>
+                  <th className="p-4 text-left font-semibold text-neutral-900">{locale === 'pl' ? 'Zupa' : locale === 'de' ? 'Suppe' : 'Soup'}</th>
+                  <th className="p-4 text-left font-semibold text-neutral-900">{locale === 'pl' ? 'Danie główne' : locale === 'de' ? 'Hauptgericht' : 'Main Course'}</th>
                 </tr>
               </thead>
               <tbody>

@@ -42,10 +42,10 @@ export default function QuickLinks({ lang }: QuickLinksProps) {
   ];
 
   return (
-    <section className="bg-neutral-50 py-8 border-y border-neutral-100">
+    <section className="border-y border-neutral-100 bg-neutral-50 py-8">
       <div className="container-custom">
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-2 gap-4 md:grid-cols-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,20 +61,20 @@ export default function QuickLinks({ lang }: QuickLinksProps) {
             >
               <Link
                 href={link.href}
-                className="group flex items-center gap-4 p-4 bg-white rounded-2xl border border-neutral-200 hover:border-red-200 hover:shadow-lg hover:shadow-red-900/5 transition-all duration-300"
+                className="group flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-4 transition-all duration-300 hover:border-accent-200 hover:shadow-lg hover:shadow-accent-900/5"
               >
-                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-red-600 transition-colors duration-300">
-                  <link.icon className="w-5 h-5 text-red-600 group-hover:text-white transition-colors duration-300" />
+                <div className="flex size-12 items-center justify-center rounded-xl bg-accent-50 transition-colors duration-300 group-hover:bg-red-600">
+                  <link.icon className="size-5 text-accent-600 transition-colors duration-300 group-hover:text-white" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-neutral-900 text-sm md:text-base truncate">
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-semibold text-neutral-900 md:text-base">
                     {link.label}
                   </p>
-                  <p className="text-xs text-neutral-500 hidden md:block">
+                  <p className="hidden text-xs text-neutral-500 md:block">
                     {link.description}
                   </p>
                 </div>
-                <ArrowRight className="w-4 h-4 text-neutral-300 group-hover:text-red-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+                <ArrowRight className="size-4 shrink-0 text-neutral-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent-600" />
               </Link>
             </motion.div>
           ))}

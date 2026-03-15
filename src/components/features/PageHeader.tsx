@@ -16,25 +16,25 @@ export default function PageHeader({ lang, title, description, breadcrumbs }: Pa
   const items = breadcrumbs || defaultBreadcrumbs;
 
   return (
-    <section className="pt-32 pb-16 bg-gradient-to-br from-primary-600 to-primary-700 text-white">
+    <section className="bg-gradient-to-br from-red-600 via-red-700 to-red-800 pb-16 pt-32 text-white">
       <div className="container-custom">
         {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 text-sm text-primary-100 mb-6">
+        <nav className="mb-6 flex items-center gap-2 text-sm text-red-100">
           {items.map((item, index) => (
             <div key={index} className="flex items-center gap-2">
-              {index > 0 && <ChevronRight className="w-4 h-4" />}
-              <Link href={item.href} className="hover:text-white transition-colors">
-                {index === 0 ? <Home className="w-4 h-4" /> : item.label}
+              {index > 0 && <ChevronRight className="size-4" />}
+              <Link href={item.href} className="transition-colors hover:text-white">
+                {index === 0 ? <Home className="size-4" /> : item.label}
               </Link>
             </div>
           ))}
-          <ChevronRight className="w-4 h-4" />
-          <span className="text-white font-medium">{title}</span>
+          <ChevronRight className="size-4" />
+          <span className="font-medium text-white">{title}</span>
         </nav>
 
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
-        {description && <p className="text-xl text-primary-100 max-w-2xl">{description}</p>}
+        <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">{title}</h1>
+        {description && <p className="max-w-2xl text-xl text-red-100">{description}</p>}
       </div>
     </section>
   );

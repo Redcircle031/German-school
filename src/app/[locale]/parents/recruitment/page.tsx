@@ -61,35 +61,35 @@ export default async function RecruitmentPage({ params }: { params: Promise<{ lo
   return (
     <>
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
-      <section className="section bg-white"><div className="container-custom max-w-4xl"><p className="text-xl text-neutral-600 text-center">{t.intro}</p></div></section>
+      <section className="section bg-white"><div className="container-custom max-w-4xl"><p className="text-center text-xl text-neutral-600">{t.intro}</p></div></section>
       <section className="section bg-neutral-50">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-center text-neutral-900 mb-12">{t.processTitle}</h2>
-          <div className="max-w-4xl mx-auto space-y-8">
+          <h2 className="mb-12 text-center text-3xl font-bold text-neutral-900">{t.processTitle}</h2>
+          <div className="mx-auto max-w-4xl space-y-8">
             {t.steps.map((step, i) => (
               <div key={i} className="flex gap-6">
-                <div className="flex-shrink-0 w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center"><step.icon className="w-7 h-7 text-white" /></div>
-                <div><h3 className="text-xl font-semibold text-neutral-900 mb-2">{step.title}</h3><p className="text-neutral-600">{step.desc}</p></div>
+                <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-red-600"><step.icon className="size-7 text-white" /></div>
+                <div><h3 className="mb-2 text-xl font-semibold text-neutral-900">{step.title}</h3><p className="text-neutral-600">{step.desc}</p></div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="section bg-primary-600 text-white">
+      <section className="section bg-red-600 text-white">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-12 md:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold mb-6">{locale === 'pl' ? 'Wymagania' : locale === 'de' ? 'Anforderungen' : 'Requirements'}</h2>
+              <h2 className="mb-6 text-3xl font-bold">{locale === 'pl' ? 'Wymagania' : locale === 'de' ? 'Anforderungen' : 'Requirements'}</h2>
               <ul className="space-y-4">
-                {t.requirements.map((r, i) => <li key={i} className="flex items-start gap-3"><CheckCircle className="w-6 h-6 text-primary-200 flex-shrink-0" /><span className="text-lg">{r}</span></li>)}
+                {t.requirements.map((r, i) => <li key={i} className="flex items-start gap-3"><CheckCircle className="size-6 shrink-0 text-red-200" /><span className="text-lg">{r}</span></li>)}
               </ul>
             </div>
-            <div className="bg-white/10 rounded-2xl p-8">
-              <h3 className="text-xl font-semibold mb-6">{t.contactTitle}</h3>
+            <div className="rounded-2xl bg-white/10 p-8">
+              <h3 className="mb-6 text-xl font-semibold">{t.contactTitle}</h3>
               <div className="space-y-4">
-                <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-primary-200" /><span>{t.phone}</span></div>
-                <div className="flex items-center gap-3"><svg className="w-5 h-5 text-primary-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg><span>{t.email}</span></div>
-                <div className="flex items-center gap-3"><Clock className="w-5 h-5 text-primary-200" /><span>{t.hours}</span></div>
+                <div className="flex items-center gap-3"><Phone className="size-5 text-red-200" /><span>{t.phone}</span></div>
+                <div className="flex items-center gap-3"><svg className="size-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg><span>{t.email}</span></div>
+                <div className="flex items-center gap-3"><Clock className="size-5 text-red-200" /><span>{t.hours}</span></div>
               </div>
             </div>
           </div>

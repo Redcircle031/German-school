@@ -38,31 +38,31 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-secondary-600 via-secondary-700 to-secondary-800 flex items-center justify-center p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-red-600 via-red-700 to-red-800 p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">WBS Admin</h1>
-          <p className="text-secondary-100">
+        <div className="mb-8 text-center">
+          <h1 className="mb-2 text-4xl font-bold text-white">WBS Admin</h1>
+          <p className="text-red-100">
             Polsko-Niemiecka Szkoła Spotkań i Dialogu
           </p>
         </div>
 
         {/* Login Form */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">
+        <div className="rounded-2xl bg-white p-8 shadow-xl">
+          <h2 className="mb-6 text-center text-2xl font-bold text-neutral-900">
             Sign In
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
+              <label htmlFor="email" className="mb-2 block text-sm font-medium text-neutral-700">
                 Email
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-neutral-400" />
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <Mail className="size-5 text-neutral-400" />
                 </div>
                 <input
                   id="email"
@@ -70,7 +70,7 @@ export default function LoginForm() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="block w-full pl-10 pr-3 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-secondary-600 focus:border-transparent transition-colors"
+                  className="block w-full rounded-lg border border-neutral-300 py-3 pl-10 pr-3 transition-colors focus:border-transparent focus:ring-2 focus:ring-red-600"
                   placeholder="admin@wbs.pl"
                 />
               </div>
@@ -78,12 +78,12 @@ export default function LoginForm() {
 
             {/* Password Field */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-neutral-700 mb-2">
+              <label htmlFor="password" className="mb-2 block text-sm font-medium text-neutral-700">
                 Password
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-neutral-400" />
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <Lock className="size-5 text-neutral-400" />
                 </div>
                 <input
                   id="password"
@@ -91,7 +91,7 @@ export default function LoginForm() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="block w-full pl-10 pr-3 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-secondary-600 focus:border-transparent transition-colors"
+                  className="block w-full rounded-lg border border-neutral-300 py-3 pl-10 pr-3 transition-colors focus:border-transparent focus:ring-2 focus:ring-red-600"
                   placeholder="••••••••"
                 />
               </div>
@@ -99,7 +99,7 @@ export default function LoginForm() {
 
             {/* Error Message */}
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+              <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
                 {error}
               </div>
             )}
@@ -108,34 +108,20 @@ export default function LoginForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-secondary-600 text-white font-semibold rounded-lg hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-red-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {loading && <Loader2 className="w-5 h-5 animate-spin" />}
+              {loading && <Loader2 className="size-5 animate-spin" />}
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
 
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-neutral-50 rounded-lg border border-neutral-200">
-            <p className="text-sm font-medium text-neutral-700 mb-2">Demo Credentials:</p>
-            <div className="text-sm text-neutral-600 space-y-1">
-              <div className="flex justify-between">
-                <span>Email:</span>
-                <code className="bg-white px-2 py-0.5 rounded">admin@wbs.pl</code>
-              </div>
-              <div className="flex justify-between">
-                <span>Password:</span>
-                <code className="bg-white px-2 py-0.5 rounded">admin123</code>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Back to Site */}
-        <div className="text-center mt-6">
+        <div className="mt-6 text-center">
           <a
-            href="/pl"
-            className="text-secondary-100 hover:text-white text-sm font-medium transition-colors"
+            href="/"
+            className="text-sm font-medium text-red-100 transition-colors hover:text-white"
           >
             ← Back to Website
           </a>

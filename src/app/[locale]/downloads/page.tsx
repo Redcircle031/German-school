@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { getAllPdfs, formatFileSize } from '@/lib/cms';
 import { FileText, Download, Filter } from 'lucide-react';
@@ -5,6 +6,20 @@ import Link from 'next/link';
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const titles: Record<string, string> = { pl: 'Dokumenty do pobrania | WBS', de: 'Downloads | WBS', en: 'Downloads | WBS' };
+  const descriptions: Record<string, string> = {
+    pl: 'Pobierz formularze, regulaminy i dokumenty szkolne',
+    de: 'Formulare, Vorschriften und Schuldokumente herunterladen',
+    en: 'Download school forms, regulations and documents',
+  };
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
 }
 
 export default async function PdfDownloadsPage({ params }: Props) {
@@ -53,16 +68,16 @@ export default async function PdfDownloadsPage({ params }: Props) {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] bg-gradient-to-br from-secondary-600 via-secondary-700 to-secondary-800 text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <section className="relative min-h-[40vh] overflow-hidden bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white">
+        <div className="absolute right-0 top-0 size-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 size-64 -translate-x-1/2 translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
 
         <div className="container-custom relative z-10">
-          <div className="max-w-4xl pt-32 pb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <div className="max-w-4xl pb-16 pt-32">
+            <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl">
               {locale === 'pl' ? 'Centrum Pobierania' : locale === 'de' ? 'Download-Center' : 'Download Center'}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+            <p className="text-xl leading-relaxed text-white/90 md:text-2xl">
               {locale === 'pl'
                 ? 'Pobierz formularze, regulaminy i inne dokumenty szkolne.'
                 : locale === 'de'
@@ -78,10 +93,10 @@ export default async function PdfDownloadsPage({ params }: Props) {
         if (categoryPdfs.length === 0) return null;
 
         return (
-          <section key={category} className="py-16 bg-white border-b border-neutral-200">
+          <section key={category} className="border-b border-neutral-200 bg-white py-16">
             <div className="container-custom">
               <div className="mb-8">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="mb-4 flex items-center gap-3">
                   <span className="text-3xl">{getCategoryIcon(category)}</span>
                   <h2 className="text-3xl font-bold text-neutral-900">
                     {getCategoryLabel(category)}
@@ -97,27 +112,27 @@ export default async function PdfDownloadsPage({ params }: Props) {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {categoryPdfs.map((pdf) => (
                   <a
                     key={pdf.filename}
                     href={pdf.url}
                     download
-                    className="group bg-neutral-50 rounded-xl p-6 border border-neutral-200 hover:border-secondary-200 hover:shadow-lg transition-all duration-300"
+                    className="group rounded-xl border border-neutral-200 bg-neutral-50 p-6 transition-all duration-300 hover:border-red-200 hover:shadow-lg"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-secondary-600 transition-colors">
-                        <FileText className="w-6 h-6 text-secondary-600 group-hover:text-white transition-colors" />
+                      <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-red-100 transition-colors group-hover:bg-red-600">
+                        <FileText className="size-6 text-red-600 transition-colors group-hover:text-white" />
                       </div>
 
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-semibold text-neutral-900 mb-2 line-clamp-2 group-hover:text-secondary-600 transition-colors">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="mb-2 line-clamp-2 font-semibold text-neutral-900 transition-colors group-hover:text-red-600">
                           {pdf.title}
                         </h3>
 
                         <div className="flex items-center gap-4 text-sm text-neutral-500">
                           <span className="flex items-center gap-1">
-                            <Download className="w-3 h-3" />
+                            <Download className="size-3" />
                             PDF
                           </span>
                           <span>{formatFileSize(pdf.size)}</span>
@@ -134,18 +149,18 @@ export default async function PdfDownloadsPage({ params }: Props) {
 
       {/* Empty State */}
       {pdfs.length === 0 && (
-        <section className="py-24 bg-neutral-50">
+        <section className="bg-neutral-50 py-24">
           <div className="container-custom">
-            <div className="max-w-2xl mx-auto text-center">
-              <FileText className="w-16 h-16 text-neutral-300 mx-auto mb-6" />
-              <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+            <div className="mx-auto max-w-2xl text-center">
+              <FileText className="mx-auto mb-6 size-16 text-neutral-300" />
+              <h2 className="mb-4 text-2xl font-bold text-neutral-900">
                 {locale === 'pl'
                   ? 'Brak dokumentów'
                   : locale === 'de'
                   ? 'Keine Dokumente'
                   : 'No documents available'}
               </h2>
-              <p className="text-neutral-600 mb-8">
+              <p className="mb-8 text-neutral-600">
                 {locale === 'pl'
                   ? 'Sprawdź później, aby zobaczyć nowe dokumenty.'
                   : locale === 'de'
@@ -154,7 +169,7 @@ export default async function PdfDownloadsPage({ params }: Props) {
               </p>
               <Link
                 href={`/${locale}`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary-600 text-white font-semibold rounded-full hover:bg-secondary-700 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-red-700"
               >
                 {locale === 'pl' ? 'Powrót do strony głównej' : locale === 'de' ? 'Zurück zur Startseite' : 'Back to Home'}
               </Link>
@@ -165,28 +180,28 @@ export default async function PdfDownloadsPage({ params }: Props) {
 
       {/* Stats Section */}
       {pdfs.length > 0 && (
-        <section className="py-16 bg-secondary-600 text-white">
+        <section className="bg-red-600 py-16 text-white">
           <div className="container-custom">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="grid gap-8 text-center md:grid-cols-3">
               <div>
-                <div className="text-4xl font-bold mb-2">{pdfs.length}</div>
-                <div className="text-secondary-100">
+                <div className="mb-2 text-4xl font-bold">{pdfs.length}</div>
+                <div className="text-red-100">
                   {locale === 'pl' ? 'Dokumentów' : locale === 'de' ? 'Dokumente' : 'Documents'}
                 </div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2">
+                <div className="mb-2 text-4xl font-bold">
                   {Object.keys(categories).filter(k => categories[k as keyof typeof categories].length > 0).length}
                 </div>
-                <div className="text-secondary-100">
+                <div className="text-red-100">
                   {locale === 'pl' ? 'Kategorii' : locale === 'de' ? 'Kategorien' : 'Categories'}
                 </div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2">
+                <div className="mb-2 text-4xl font-bold">
                   {formatFileSize(pdfs.reduce((sum, pdf) => sum + pdf.size, 0))}
                 </div>
-                <div className="text-secondary-100">
+                <div className="text-red-100">
                   {locale === 'pl' ? 'Łącznie' : locale === 'de' ? 'Insgesamt' : 'Total'}
                 </div>
               </div>

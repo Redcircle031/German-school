@@ -43,27 +43,27 @@ export default function TestimonialsSection({ testimonials, locale }: Testimonia
   }
 
   return (
-    <section className="py-24 lg:py-32 bg-neutral-50">
+    <section className="bg-neutral-50/80 py-24 lg:py-32">
       <div className="container-custom">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <motion.span variants={slideUpVariants} className="inline-block px-4 py-1.5 bg-white text-red-700 text-sm font-medium rounded-full border border-red-100 mb-6">
+          <motion.span variants={slideUpVariants} className="mb-6 inline-block rounded-full border border-accent-200 bg-white px-4 py-1.5 text-sm font-medium text-accent-700">
             {getLabel('badge')}
           </motion.span>
-          <motion.h2 variants={slideUpVariants} className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
+          <motion.h2 variants={slideUpVariants} className="mb-6 text-4xl font-medium text-neutral-900 md:text-5xl">
             {getLabel('title')}
           </motion.h2>
-          <motion.p variants={slideUpVariants} className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <motion.p variants={slideUpVariants} className="mx-auto max-w-2xl text-lg text-neutral-600">
             {getLabel('description')}
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -71,14 +71,14 @@ export default function TestimonialsSection({ testimonials, locale }: Testimonia
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-white rounded-2xl p-8 border border-neutral-200 hover:border-red-200 hover:shadow-xl transition-all duration-300"
+              className="rounded-2xl border border-neutral-200 bg-white p-8 transition-all duration-300 hover:border-accent-300 hover:shadow-xl"
             >
-              <Quote className="w-10 h-10 text-red-600 mb-6 opacity-50" />
-              <blockquote className="text-neutral-700 leading-relaxed mb-6">
+              <Quote className="mb-6 size-10 text-accent-400" />
+              <blockquote className="mb-6 leading-relaxed text-neutral-700">
                 "{testimonial.quote}"
               </blockquote>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-lg font-semibold text-red-700">
+                <div className="flex size-12 items-center justify-center rounded-full bg-accent-100 text-lg font-semibold text-accent-700">
                   {testimonial.author.charAt(0)}
                 </div>
                 <div>

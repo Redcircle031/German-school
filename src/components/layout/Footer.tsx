@@ -12,10 +12,39 @@ interface FooterProps {
 export default function Footer({ lang }: FooterProps) {
   const t = useTranslations();
   const [currentYear, setCurrentYear] = useState(2026);
-  
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [newsletterMsg, setNewsletterMsg] = useState('');
+
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
   }, []);
+
+  const handleNewsletter = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    setNewsletterStatus('loading');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: newsletterEmail, locale: lang }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setNewsletterStatus('success');
+        setNewsletterMsg(data.data.message);
+        setNewsletterEmail('');
+      } else {
+        setNewsletterStatus('error');
+        setNewsletterMsg(data.error || 'Error');
+      }
+    } catch {
+      setNewsletterStatus('error');
+      setNewsletterMsg('Network error');
+    }
+    setTimeout(() => setNewsletterStatus('idle'), 4000);
+  };
 
   const content = {
     pl: {
@@ -71,16 +100,16 @@ export default function Footer({ lang }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200">
+    <footer className="border-t border-neutral-200 bg-neutral-50">
       {/* Main Footer */}
       <div className="container-custom py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           
           {/* Brand & Contact - Takes 5 columns */}
           <div className="lg:col-span-5">
-            <Link href={`/${lang}`} className="inline-flex items-center gap-3 mb-6 group">
-              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center group-hover:bg-red-700 transition-colors">
-                <span className="text-white font-bold text-xl">WBS</span>
+            <Link href={`/${lang}`} className="group mb-6 inline-flex items-center gap-3">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-red-600 transition-colors group-hover:bg-red-700">
+                <span className="text-xl font-bold text-white">WBS</span>
               </div>
               <div>
                 <p className="font-heading font-bold text-black">WBS School</p>
@@ -88,7 +117,7 @@ export default function Footer({ lang }: FooterProps) {
               </div>
             </Link>
             
-            <p className="text-neutral-600 mb-8 max-w-sm leading-relaxed">
+            <p className="mb-8 max-w-sm leading-relaxed text-neutral-600">
               {lang === 'pl'
                 ? 'Polsko-Niemiecka Szkoła Spotkań i Dialogu im. Willy\'ego Brandta w Warszawie'
                 : lang === 'de'
@@ -99,26 +128,26 @@ export default function Footer({ lang }: FooterProps) {
             {/* Contact Info */}
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-white rounded-lg border border-neutral-200 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-red-600" />
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-neutral-200 bg-white">
+                  <MapPin className="size-5 text-red-600" />
                 </div>
-                <div className="text-neutral-600 text-sm whitespace-pre-line pt-2">
+                <div className="whitespace-pre-line pt-2 text-sm text-neutral-600">
                   {c.address}
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white rounded-lg border border-neutral-200 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5 text-red-600" />
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-neutral-200 bg-white">
+                  <Phone className="size-5 text-red-600" />
                 </div>
-                <a href="tel:+48226422705" className="text-neutral-600 text-sm hover:text-red-600 transition-colors">
+                <a href="tel:+48226422705" className="text-sm text-neutral-600 transition-colors hover:text-red-600">
                   +48 22 642 27 05
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white rounded-lg border border-neutral-200 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-red-600" />
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-neutral-200 bg-white">
+                  <Mail className="size-5 text-red-600" />
                 </div>
-                <a href="mailto:sekretariat@wbs.pl" className="text-neutral-600 text-sm hover:text-red-600 transition-colors">
+                <a href="mailto:sekretariat@wbs.pl" className="text-sm text-neutral-600 transition-colors hover:text-red-600">
                   sekretariat@wbs.pl
                 </a>
               </div>
@@ -126,10 +155,10 @@ export default function Footer({ lang }: FooterProps) {
           </div>
 
           {/* Links Grid - Takes 4 columns */}
-          <div className="lg:col-span-4 grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-6 lg:col-span-4">
             {/* Quick Links */}
             <div>
-              <h3 className="font-semibold text-black mb-4 text-sm">
+              <h3 className="mb-4 text-sm font-semibold text-black">
                 {c.quickLinksTitle}
               </h3>
               <ul className="space-y-3">
@@ -137,10 +166,10 @@ export default function Footer({ lang }: FooterProps) {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-neutral-600 hover:text-red-600 transition-colors inline-flex items-center gap-1 group"
+                      className="group inline-flex items-center gap-1 text-sm text-neutral-600 transition-colors hover:text-red-600"
                     >
                       {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
+                      <ArrowUpRight className="size-3 -translate-y-1 translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
                     </Link>
                   </li>
                 ))}
@@ -149,7 +178,7 @@ export default function Footer({ lang }: FooterProps) {
 
             {/* Parent Zone */}
             <div>
-              <h3 className="font-semibold text-black mb-4 text-sm">
+              <h3 className="mb-4 text-sm font-semibold text-black">
                 {c.parentZoneTitle}
               </h3>
               <ul className="space-y-3">
@@ -157,10 +186,10 @@ export default function Footer({ lang }: FooterProps) {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-neutral-600 hover:text-red-600 transition-colors inline-flex items-center gap-1 group"
+                      className="group inline-flex items-center gap-1 text-sm text-neutral-600 transition-colors hover:text-red-600"
                     >
                       {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
+                      <ArrowUpRight className="size-3 -translate-y-1 translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
                     </Link>
                   </li>
                 ))}
@@ -169,7 +198,7 @@ export default function Footer({ lang }: FooterProps) {
 
             {/* Student Zone */}
             <div>
-              <h3 className="font-semibold text-black mb-4 text-sm">
+              <h3 className="mb-4 text-sm font-semibold text-black">
                 {c.studentZoneTitle}
               </h3>
               <ul className="space-y-3">
@@ -177,10 +206,10 @@ export default function Footer({ lang }: FooterProps) {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-neutral-600 hover:text-red-600 transition-colors inline-flex items-center gap-1 group"
+                      className="group inline-flex items-center gap-1 text-sm text-neutral-600 transition-colors hover:text-red-600"
                     >
                       {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
+                      <ArrowUpRight className="size-3 -translate-y-1 translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
                     </Link>
                   </li>
                 ))}
@@ -190,28 +219,42 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Newsletter - Takes 3 columns */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl p-6 border border-neutral-200">
-              <h3 className="font-semibold text-black mb-2">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+              <h3 className="mb-2 font-semibold text-black">
                 {c.newsletterTitle}
               </h3>
-              <p className="text-sm text-neutral-600 mb-4">
+              <p className="mb-4 text-sm text-neutral-600">
                 {c.newsletterDesc}
               </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="flex-1 px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent"
-                />
-                <button className="px-4 py-2.5 bg-red-600 text-white rounded-xl text-sm font-medium hover:bg-red-700 transition-colors">
-                  {c.newsletterButton}
-                </button>
-              </div>
+              {newsletterStatus === 'success' ? (
+                <p className="py-2 text-sm font-medium text-green-600">{newsletterMsg}</p>
+              ) : (
+                <form onSubmit={handleNewsletter} className="flex gap-2">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    required
+                    className="flex-1 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-red-600"
+                  />
+                  <button
+                    type="submit"
+                    disabled={newsletterStatus === 'loading'}
+                    className="rounded-xl bg-red-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-red-700 disabled:opacity-50"
+                  >
+                    {newsletterStatus === 'loading' ? '...' : c.newsletterButton}
+                  </button>
+                </form>
+              )}
+              {newsletterStatus === 'error' && (
+                <p className="mt-1 text-xs text-red-500">{newsletterMsg}</p>
+              )}
             </div>
 
             {/* Social Media */}
             <div className="mt-6">
-              <p className="text-sm text-neutral-500 mb-3">
+              <p className="mb-3 text-sm text-neutral-500">
                 {lang === 'pl' ? 'Obserwuj nas' : lang === 'de' ? 'Folgen Sie uns' : 'Follow us'}
               </p>
               <div className="flex gap-3">
@@ -219,28 +262,28 @@ export default function Footer({ lang }: FooterProps) {
                   href="https://facebook.com/wbswarschau"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white border border-neutral-200 rounded-xl flex items-center justify-center hover:border-red-200 hover:bg-red-50 transition-all group"
+                  className="group flex size-10 items-center justify-center rounded-xl border border-neutral-200 bg-white transition-all hover:border-red-200 hover:bg-red-50"
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-4 h-4 text-neutral-600 group-hover:text-red-600 transition-colors" />
+                  <Facebook className="size-4 text-neutral-600 transition-colors group-hover:text-red-600" />
                 </a>
                 <a
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white border border-neutral-200 rounded-xl flex items-center justify-center hover:border-red-200 hover:bg-red-50 transition-all group"
+                  className="group flex size-10 items-center justify-center rounded-xl border border-neutral-200 bg-white transition-all hover:border-red-200 hover:bg-red-50"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-4 h-4 text-neutral-600 group-hover:text-red-600 transition-colors" />
+                  <Instagram className="size-4 text-neutral-600 transition-colors group-hover:text-red-600" />
                 </a>
                 <a
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white border border-neutral-200 rounded-xl flex items-center justify-center hover:border-red-200 hover:bg-red-50 transition-all group"
+                  className="group flex size-10 items-center justify-center rounded-xl border border-neutral-200 bg-white transition-all hover:border-red-200 hover:bg-red-50"
                   aria-label="YouTube"
                 >
-                  <Youtube className="w-4 h-4 text-neutral-600 group-hover:text-red-600 transition-colors" />
+                  <Youtube className="size-4 text-neutral-600 transition-colors group-hover:text-red-600" />
                 </a>
               </div>
             </div>
@@ -251,7 +294,7 @@ export default function Footer({ lang }: FooterProps) {
       {/* Bottom Bar */}
       <div className="border-t border-neutral-200">
         <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             {/* Copyright */}
             <p className="text-sm text-neutral-500">
               © {currentYear} WBS School. {lang === 'pl' ? 'Wszelkie prawa zastrzeżone.' : lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
@@ -261,25 +304,25 @@ export default function Footer({ lang }: FooterProps) {
             <div className="flex flex-wrap justify-center gap-6">
               <Link
                 href={`/${lang}/privacy`}
-                className="text-sm text-neutral-500 hover:text-red-600 transition-colors"
+                className="text-sm text-neutral-500 transition-colors hover:text-red-600"
               >
                 {t('footer.legalLinks.privacy')}
               </Link>
               <Link
                 href={`/${lang}/cookies`}
-                className="text-sm text-neutral-500 hover:text-red-600 transition-colors"
+                className="text-sm text-neutral-500 transition-colors hover:text-red-600"
               >
                 {t('footer.legalLinks.cookies')}
               </Link>
               <Link
                 href={`/${lang}/accessibility`}
-                className="text-sm text-neutral-500 hover:text-red-600 transition-colors"
+                className="text-sm text-neutral-500 transition-colors hover:text-red-600"
               >
                 {t('footer.legalLinks.accessibility')}
               </Link>
               <Link
                 href={`/${lang}/impressum`}
-                className="text-sm text-neutral-500 hover:text-red-600 transition-colors"
+                className="text-sm text-neutral-500 transition-colors hover:text-red-600"
               >
                 {t('footer.legalLinks.impressum')}
               </Link>
