@@ -71,7 +71,7 @@ export default function Header({ lang }: HeaderProps) {
       )}>
         <div className="container-custom flex h-9 items-center justify-end gap-5">
           <a href="https://bvbwbswarsaw.pl" target="_blank" rel="noopener noreferrer" className="opacity-60 transition-opacity hover:opacity-100">
-            <Image src="/images/logos/standalone-wbs-logo.png" alt="WBS Fussball Akademie" width={70} height={22} className="h-5 w-auto object-contain" />
+            <Image src="/images/logos/wbs-logo.webp" alt="WBS Fussball Akademie" width={70} height={22} className="h-5 w-auto object-contain" />
           </a>
           <a href="https://deutscherkindergarten.pl" target="_blank" rel="noopener noreferrer" className="opacity-60 transition-opacity hover:opacity-100">
             <Image src="/images/logos/standalone-wbs-przedszkole-logo.jpg" alt="WBS Deutscher Kindergarten" width={70} height={22} className="h-5 w-auto object-contain" />
@@ -96,16 +96,15 @@ export default function Header({ lang }: HeaderProps) {
         <div className="container-custom">
           <div className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
-            <Link href={`/${lang}`} className="group flex items-center gap-3">
-              <div className="flex size-10 items-center justify-center rounded-xl bg-red-600 transition-colors group-hover:bg-red-700 md:size-12">
-                <span className="text-sm font-extrabold tracking-tight text-white md:text-base">WBS</span>
-              </div>
-              <div className="hidden md:block">
-                <p className="font-heading text-sm font-bold leading-tight text-neutral-900 transition-colors group-hover:text-red-600">
-                  Willy Brandt School
-                </p>
-                <p className="text-xs tracking-wide text-neutral-400">Warsaw</p>
-              </div>
+            <Link href={`/${lang}`} className="group flex items-center">
+              <Image
+                src="/images/logos/wbs-logo.webp"
+                alt="WBS — Willy Brandt Schule Warschau"
+                width={140}
+                height={48}
+                className="h-10 w-auto object-contain transition-opacity group-hover:opacity-80 md:h-12"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation - Simplified with Mega Menu Trigger */}

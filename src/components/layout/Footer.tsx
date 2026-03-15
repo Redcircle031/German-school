@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, ArrowUpRight } from 'lucide-react';
 
@@ -107,14 +108,14 @@ export default function Footer({ lang }: FooterProps) {
           
           {/* Brand & Contact - Takes 5 columns */}
           <div className="lg:col-span-5">
-            <Link href={`/${lang}`} className="group mb-6 inline-flex items-center gap-3">
-              <div className="flex size-12 items-center justify-center rounded-xl bg-red-600 transition-colors group-hover:bg-red-700">
-                <span className="text-xl font-bold text-white">WBS</span>
-              </div>
-              <div>
-                <p className="font-heading font-bold text-black">WBS School</p>
-                <p className="text-xs text-neutral-500">Willy Brandt Schule</p>
-              </div>
+            <Link href={`/${lang}`} className="group mb-6 inline-block">
+              <Image
+                src="/images/logos/wbs-logo.webp"
+                alt="WBS — Willy Brandt Schule Warschau"
+                width={140}
+                height={104}
+                className="h-14 w-auto object-contain transition-opacity group-hover:opacity-80"
+              />
             </Link>
             
             <p className="mb-8 max-w-sm leading-relaxed text-neutral-600">
