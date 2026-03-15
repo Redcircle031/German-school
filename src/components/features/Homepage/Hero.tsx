@@ -113,13 +113,20 @@ export default function Hero({ lang }: HeroProps) {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image area — ready for campus photo */}
+      {/* Background image area */}
       <div className="absolute inset-0">
-        {/* Placeholder: rich gradient simulating a photo backdrop — swap with <Image> when campus photo is available */}
-        <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900" />
+        <Image
+          src="/images/hero/campus-hero.webp"
+          alt="WBS Campus Willy Brandt Schule Warschau"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+          quality={85}
+        />
 
         {/* Warm overlay tint */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/30" />
 
         {/* Decorative: subtle school crest watermark */}
         <motion.div
