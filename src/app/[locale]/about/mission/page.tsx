@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import PageHeader from '@/components/features/PageHeader';
 import { Target, Heart, Star, Users } from 'lucide-react';
 
@@ -186,6 +187,18 @@ export default async function MissionPage({ params }: { params: Promise<{ locale
       <section className="section bg-white">
         <div className="container-custom max-w-4xl">
           <p className="mb-12 text-center text-xl leading-relaxed text-neutral-600">{t.intro}</p>
+
+          {/* Mission Image */}
+          <div className="mb-16 overflow-hidden rounded-2xl">
+            <Image
+              src="/images/about/mission-leitbild.jpg"
+              alt={t.missionTitle}
+              width={900}
+              height={400}
+              className="w-full object-cover"
+              sizes="(max-width: 768px) 100vw, 900px"
+            />
+          </div>
 
           {/* Mission Statement */}
           <div className="mb-16 rounded-2xl border-l-4 border-red-600 bg-red-50 p-8">
