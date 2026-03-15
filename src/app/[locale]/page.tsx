@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import Hero from '@/components/features/Homepage/Hero';
 import QuickLinks from '@/components/features/Homepage/QuickLinks';
 import AnimatedStats from '@/components/features/Homepage/AnimatedStats';
+import DirectorWelcome from '@/components/features/Homepage/DirectorWelcome';
 import AudienceCards from '@/components/features/Homepage/AudienceCards';
 import TestimonialsSection from '@/components/features/Homepage/TestimonialsSection';
 import Link from 'next/link';
@@ -98,93 +99,139 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         {/* Animated Stats Strip */}
         <AnimatedStats stats={stats} />
 
+        {/* Director's Welcome */}
+        <DirectorWelcome lang={locale} />
+
         {/* Audience Pathway Cards */}
         <AudienceCards lang={locale} />
 
-        {/* News Section */}
-        <section className="bg-neutral-50 py-24">
+        {/* News Section — Editorial magazine layout */}
+        <section className="bg-neutral-50 py-24 lg:py-32">
           <div className="container-custom">
-            <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent-500">
-                  {locale === 'pl' ? 'Zycie szkoly' : locale === 'de' ? 'Schulleben' : 'School life'}
+                  {locale === 'pl' ? 'Życie szkoły' : locale === 'de' ? 'Schulleben' : 'School life'}
                 </p>
                 <h2 className="text-3xl font-medium text-neutral-900 md:text-4xl">
-                  {locale === 'pl' ? 'Co nowego w naszej spolecznosci?' : locale === 'de' ? 'Was passiert in unserer Gemeinschaft?' : 'What\'s happening in our community?'}
+                  {locale === 'pl' ? 'Co nowego w naszej społeczności?' : locale === 'de' ? 'Was passiert in unserer Gemeinschaft?' : 'What\'s happening in our community?'}
                 </h2>
               </div>
               <Link
                 href={`/${locale}/news`}
-                className="group inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-colors hover:text-red-700"
+                className="group inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-all hover:border-red-200 hover:text-red-600"
               >
-                {locale === 'pl' ? 'Wszystkie aktualnosci' : locale === 'de' ? 'Alle Nachrichten' : 'All news'}
+                {locale === 'pl' ? 'Wszystkie aktualności' : locale === 'de' ? 'Alle Nachrichten' : 'All news'}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
             {articles.length > 0 ? (
-              <div className="grid gap-8 md:grid-cols-3">
-                {articles.map((article) => (
-                  <article
-                    key={article.slug}
-                    className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-red-200 hover:shadow-xl"
-                  >
-                    <Link href={`/${locale}/news/${article.slug}`} className="aspect-video relative block overflow-hidden bg-neutral-50">
-                      {article.featuredImage ? (
-                        <Image
-                          src={article.featuredImage}
-                          alt={article.title}
-                          fill
-                          className={`${
-                            article.featuredImage.includes('logo') || article.featuredImage.includes('wbs')
-                              ? 'object-contain p-8'
-                              : 'object-cover group-hover:scale-105'
-                          } transition-all duration-500`}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-100 to-neutral-200">
-                          <Lightbulb className="size-12 text-neutral-300" />
-                        </div>
-                      )}
-                    </Link>
-
-                    <div className="p-6">
-                      <div className="mb-3 flex items-center gap-2 text-sm text-neutral-500">
-                        <Calendar className="size-4" />
-                        <time dateTime={article.date}>{formatDate(article.date)}</time>
-                        <span className="text-neutral-300">|</span>
-                        <span className="rounded-full bg-red-50 px-2 py-0.5 text-xs font-medium text-red-700">
-                          {getCategoryLabel(article.category)}
-                        </span>
+              <div className="grid gap-8 lg:grid-cols-2">
+                {/* Featured article — large */}
+                <article className="group overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-all duration-500 hover:shadow-2xl hover:shadow-red-900/5">
+                  <Link href={`/${locale}/news/${articles[0].slug}`} className="relative block aspect-[16/10] overflow-hidden bg-neutral-100">
+                    {articles[0].featuredImage ? (
+                      <Image
+                        src={articles[0].featuredImage}
+                        alt={articles[0].title}
+                        fill
+                        className={`${
+                          articles[0].featuredImage.includes('logo') || articles[0].featuredImage.includes('wbs')
+                            ? 'object-contain p-12'
+                            : 'object-cover transition-transform duration-700 group-hover:scale-105'
+                        }`}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100">
+                        <Lightbulb className="size-16 text-neutral-200" />
                       </div>
-
-                      <Link href={`/${locale}/news/${article.slug}`}>
-                        <h3 className="mb-2 line-clamp-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-red-600">
-                          {article.title}
-                        </h3>
-                      </Link>
-
-                      <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-neutral-600">
-                        {article.excerpt}
-                      </p>
-
-                      <Link
-                        href={`/${locale}/news/${article.slug}`}
-                        className="inline-flex items-center gap-1 text-sm font-semibold text-red-600 transition-all group-hover:gap-2"
-                      >
-                        {locale === 'pl' ? 'Czytaj dalej' : locale === 'de' ? 'Weiterlesen' : 'Read more'}
-                        <ArrowUpRight className="size-4" />
-                      </Link>
+                    )}
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  </Link>
+                  <div className="p-8">
+                    <div className="mb-4 flex items-center gap-3">
+                      <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white">
+                        {getCategoryLabel(articles[0].category)}
+                      </span>
+                      <span className="flex items-center gap-1.5 text-sm text-neutral-400">
+                        <Calendar className="size-3.5" />
+                        <time dateTime={articles[0].date}>{formatDate(articles[0].date)}</time>
+                      </span>
                     </div>
-                  </article>
-                ))}
+                    <Link href={`/${locale}/news/${articles[0].slug}`}>
+                      <h3 className="mb-3 text-2xl font-bold text-neutral-900 transition-colors group-hover:text-red-600">
+                        {articles[0].title}
+                      </h3>
+                    </Link>
+                    <p className="mb-6 line-clamp-3 text-base leading-relaxed text-neutral-600">
+                      {articles[0].excerpt}
+                    </p>
+                    <Link
+                      href={`/${locale}/news/${articles[0].slug}`}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition-all group-hover:gap-3"
+                    >
+                      {locale === 'pl' ? 'Czytaj dalej' : locale === 'de' ? 'Weiterlesen' : 'Read more'}
+                      <ArrowUpRight className="size-4" />
+                    </Link>
+                  </div>
+                </article>
+
+                {/* Secondary articles — stacked */}
+                <div className="flex flex-col gap-8">
+                  {articles.slice(1).map((article) => (
+                    <article
+                      key={article.slug}
+                      className="group flex overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:shadow-xl hover:shadow-red-900/5"
+                    >
+                      <Link href={`/${locale}/news/${article.slug}`} className="relative block w-2/5 shrink-0 overflow-hidden bg-neutral-100">
+                        {article.featuredImage ? (
+                          <Image
+                            src={article.featuredImage}
+                            alt={article.title}
+                            fill
+                            className={`${
+                              article.featuredImage.includes('logo') || article.featuredImage.includes('wbs')
+                                ? 'object-contain p-6'
+                                : 'object-cover transition-transform duration-700 group-hover:scale-105'
+                            }`}
+                            sizes="(max-width: 1024px) 40vw, 20vw"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100">
+                            <Lightbulb className="size-10 text-neutral-200" />
+                          </div>
+                        )}
+                      </Link>
+                      <div className="flex flex-col justify-center p-6">
+                        <div className="mb-3 flex items-center gap-2">
+                          <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-700">
+                            {getCategoryLabel(article.category)}
+                          </span>
+                          <span className="text-xs text-neutral-400">
+                            {formatDate(article.date)}
+                          </span>
+                        </div>
+                        <Link href={`/${locale}/news/${article.slug}`}>
+                          <h3 className="mb-2 line-clamp-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-red-600">
+                            {article.title}
+                          </h3>
+                        </Link>
+                        <p className="line-clamp-2 text-sm leading-relaxed text-neutral-500">
+                          {article.excerpt}
+                        </p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             ) : (
               <div className="rounded-2xl border border-neutral-200 bg-white py-12 text-center">
                 <Lightbulb className="mx-auto mb-4 size-12 text-neutral-300" />
                 <p className="text-neutral-600">
-                  {locale === 'pl' ? 'Brak aktualnosci' : locale === 'de' ? 'Keine Nachrichten' : 'No news available'}
+                  {locale === 'pl' ? 'Brak aktualności' : locale === 'de' ? 'Keine Nachrichten' : 'No news available'}
                 </p>
               </div>
             )}
