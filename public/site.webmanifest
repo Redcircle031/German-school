@@ -1,0 +1,21 @@
+{
+  "name": "WBS - Polsko-Niemiecka Szkoła im. Willy'ego Brandta",
+  "short_name": "WBS School",
+  "description": "Polsko-Niemiecka Szkoła Spotkań i Dialogu im. Willy'ego Brandta w Warszawie",
+  "start_url": "/pl",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "/images/logos/standalone-wbs-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logos/standalone-wbs-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
