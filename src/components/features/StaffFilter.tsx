@@ -75,7 +75,7 @@ export default function StaffFilter({
   return (
     <>
       {/* Search & Filter Bar */}
-      <div className="sticky top-18 z-40 border-b border-neutral-200 bg-white md:top-20">
+      <div className="sticky top-16z-40 border-b border-neutral-200 bg-white md:top-20">
         <div className="container-custom">
           <div className="flex flex-col gap-4 py-4 md:flex-row">
             <div className="relative flex-1">

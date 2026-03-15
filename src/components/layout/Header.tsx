@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Menu, X, Globe, ChevronDown, Search, GraduationCap } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -63,12 +64,33 @@ export default function Header({ lang }: HeaderProps) {
 
   return (
     <>
+      {/* Partner Logos Top Bar */}
+      <div className={cn(
+        'fixed inset-x-0 top-0 z-40 border-b border-neutral-100 bg-neutral-50 transition-all duration-300',
+        isScrolled ? 'h-0 overflow-hidden opacity-0' : 'h-9'
+      )}>
+        <div className="container-custom flex h-9 items-center justify-end gap-5">
+          <a href="https://bvbwbswarsaw.pl" target="_blank" rel="noopener noreferrer" className="opacity-60 transition-opacity hover:opacity-100">
+            <Image src="/images/logos/standalone-wbs-logo.png" alt="WBS Fussball Akademie" width={70} height={22} className="h-5 w-auto object-contain" />
+          </a>
+          <a href="https://deutscherkindergarten.pl" target="_blank" rel="noopener noreferrer" className="opacity-60 transition-opacity hover:opacity-100">
+            <Image src="/images/logos/standalone-wbs-przedszkole-logo.jpg" alt="WBS Deutscher Kindergarten" width={70} height={22} className="h-5 w-auto object-contain" />
+          </a>
+          <a href="https://polen.diplo.de" target="_blank" rel="noopener noreferrer" className="opacity-60 transition-opacity hover:opacity-100">
+            <Image src="/images/logos/standalone-ambasada-logo.png" alt="Botschaft der Bundesrepublik Deutschland" width={70} height={22} className="h-5 w-auto object-contain" />
+          </a>
+          <a href="https://facebook.com/wbswarschau" target="_blank" rel="noopener noreferrer" className="opacity-60 transition-opacity hover:opacity-100" aria-label="Facebook">
+            <svg className="size-4 text-neutral-600" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-40 transition-all duration-300',
+          'fixed inset-x-0 z-40 transition-all duration-300',
           isScrolled
-            ? 'border-b border-neutral-100 bg-white/95 shadow-sm backdrop-blur-md'
-            : 'bg-white'
+            ? 'top-0 border-b border-neutral-100 bg-white/95 shadow-sm backdrop-blur-md'
+            : 'top-9 bg-white'
         )}
       >
         <div className="container-custom">

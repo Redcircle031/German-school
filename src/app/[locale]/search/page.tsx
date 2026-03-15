@@ -102,7 +102,7 @@ export default function SearchPage({ params }: { params: Promise<{ locale: strin
   }, [query, locale]);
 
   return (
-      <div className="min-h-screen bg-neutral-50 pt-18 md:pt-20">
+      <div className="min-h-screen bg-neutral-50 pt-28 md:pt-30">
         <section className="bg-gradient-to-br from-red-600 to-red-800 py-16 text-white">
           <div className="container-custom max-w-3xl text-center">
             <h1 className="mb-6 text-4xl font-bold">{t.title}</h1>

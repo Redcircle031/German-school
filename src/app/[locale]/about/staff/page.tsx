@@ -70,7 +70,7 @@ export default async function StaffPage({ params }: { params: Promise<{ locale: 
   };
 
   return (
-      <div className="min-h-screen bg-neutral-50 pt-18 md:pt-20">
+      <div className="min-h-screen bg-neutral-50 pt-28 md:pt-30">
         {/* Hero with group photo */}
         <section className="relative overflow-hidden bg-neutral-900 py-16 text-white md:py-24">
           <div className="absolute inset-0">

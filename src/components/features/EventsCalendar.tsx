@@ -115,7 +115,7 @@ export default function EventsCalendar({ events, locale, labels }: EventsCalenda
   return (
     <>
       {/* View Controls */}
-      <div className="sticky top-18 z-40 border-b border-neutral-200 bg-white md:top-20">
+      <div className="sticky top-16z-40 border-b border-neutral-200 bg-white md:top-20">
         <div className="container-custom">
           <div className="flex flex-col justify-between gap-4 py-4 md:flex-row md:items-center">
             {/* View Toggle */}

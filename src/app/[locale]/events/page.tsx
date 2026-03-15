@@ -40,7 +40,7 @@ export default async function EventsPage({ params }: { params: Promise<{ locale:
   };
 
   return (
-      <div className="min-h-screen bg-neutral-50 pt-18 md:pt-20">
+      <div className="min-h-screen bg-neutral-50 pt-28 md:pt-30">
         {/* Hero */}
         <section className="bg-gradient-to-br from-accent-400 to-accent-600 py-16 text-white md:py-24">
           <div className="container-custom">

@@ -27,7 +27,7 @@ export default async function CookiePolicy({ params }: { params: Promise<{ local
   const t = await getTranslations();
 
   return (
-      <div className="min-h-screen bg-neutral-50 pt-18 md:pt-20">
+      <div className="min-h-screen bg-neutral-50 pt-28 md:pt-30">
         <div className="container-custom py-12 md:py-16">
           <div className="mx-auto max-w-4xl">
             <nav className="mb-8 flex items-center space-x-2 text-sm">
