@@ -34,12 +34,13 @@ export default async function Impressum({ params }: { params: Promise<{ locale: 
       en: 'Polish-German School of Meetings and Dialogue named after Willy Brandt',
     },
     address: 'ul. Św. Urszuli Ledóchowskiej 3, 02-972 Warszawa, Poland',
-    regon: '000000000',
-    nip: '0000000000',
+    regon: '011823389',
+    nip: 'PL9512099288',
+    krs: '0000150334',
     phone: '+48 22 642 27 05',
     fax: '+48 22 395 86 51',
     mobile: '+48 512 072 576',
-    email: 'sekretariat@wbs.pl',
+    email: 'sekretariat1@wbs.pl',
     website: 'www.wbs.pl',
   };
 
@@ -100,8 +101,9 @@ export default async function Impressum({ params }: { params: Promise<{ locale: 
                     </div>
                   </div>
                   <div className="mt-4 border-t border-neutral-200 pt-4">
-                    <p><strong>REGON:</strong> {schoolInfo.regon}</p>
+                    <p><strong>KRS:</strong> {schoolInfo.krs}</p>
                     <p><strong>NIP:</strong> {schoolInfo.nip}</p>
+                    <p><strong>REGON:</strong> {schoolInfo.regon}</p>
                   </div>
                 </div>
               </section>
@@ -116,7 +118,7 @@ export default async function Impressum({ params }: { params: Promise<{ locale: 
                     <strong>
                       {locale === 'pl' ? 'Dyrektor:' : locale === 'de' ? 'Schulleiter:' : 'Headmaster:'}
                     </strong>{' '}
-                    [Name]
+                    Rüdiger Bott
                   </p>
                   <p className="mt-2">
                     Email: <a href="mailto:schulleitung@wbs.pl" className="text-red-600 hover:underline">schulleitung@wbs.pl</a>
@@ -164,7 +166,7 @@ export default async function Impressum({ params }: { params: Promise<{ locale: 
                       : 'German-Polish School Society in Warsaw'}
                   </p>
                   <p className="mt-2">
-                    {locale === 'pl' ? 'Reprezentowany przez:' : locale === 'de' ? 'Vertreten durch:' : 'Represented by:'} [Name]
+                    {locale === 'pl' ? 'Reprezentowany przez:' : locale === 'de' ? 'Vertreten durch:' : 'Represented by:'} Zarząd NTS
                   </p>
                 </div>
               </section>

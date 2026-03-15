@@ -51,7 +51,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   // Stats data
   const stats = [
-    { value: 300, suffix: '+', label: locale === 'pl' ? 'Uczniow' : locale === 'de' ? 'Schuler' : 'Students' },
+    { value: 400, suffix: '+', label: locale === 'pl' ? 'Uczniow' : locale === 'de' ? 'Schüler' : 'Students' },
     { value: 47, label: locale === 'pl' ? 'Lat tradycji' : locale === 'de' ? 'Jahre Tradition' : 'Years of tradition' },
     { value: 2, label: locale === 'pl' ? 'Dyplomy' : locale === 'de' ? 'Abschlusse' : 'Diplomas' },
     { value: 15, suffix: '+', label: locale === 'pl' ? 'Narodowosci' : locale === 'de' ? 'Nationalitaten' : 'Nationalities' },

@@ -43,12 +43,12 @@ const translations = {
     ],
     membersTitle: 'Prezydium Rady Rodziców',
     members: [
-      { role: 'Przewodnicząca', name: 'Anna Kowalska', class: 'Rodzic ucznia kl. 5a' },
-      { role: 'Zastępca', name: 'Thomas Müller', class: 'Rodzic ucznia kl. 3b' },
-      { role: 'Skarbnik', name: 'Magdalena Wiśniewska', class: 'Rodzic ucznia kl. 7a' },
-      { role: 'Sekretarz', name: 'Katarzyna Nowak', class: 'Rodzic ucznia kl. 1c' },
+      { role: 'Przewodniczący/a', name: '', class: 'Wybierany/a na początku roku szkolnego' },
+      { role: 'Zastępca', name: '', class: 'Wybierany/a na początku roku szkolnego' },
+      { role: 'Skarbnik', name: '', class: 'Wybierany/a na początku roku szkolnego' },
+      { role: 'Sekretarz', name: '', class: 'Wybierany/a na początku roku szkolnego' },
     ],
-    contactNote: 'Kontakt z Radą Rodziców: rada.rodzicow@wbs.edu.pl',
+    contactNote: 'Kontakt z Radą Rodziców: rada.rodzicow@wbs.pl',
     eventLabel: 'Wydarzenie',
     dateLabel: 'Data',
   },
@@ -81,12 +81,12 @@ const translations = {
     ],
     membersTitle: 'Vorstand des Elternrats',
     members: [
-      { role: 'Vorsitzende', name: 'Anna Kowalska', class: 'Elternteil, Klasse 5a' },
-      { role: 'Stellvertreter', name: 'Thomas Müller', class: 'Elternteil, Klasse 3b' },
-      { role: 'Schatzmeister', name: 'Magdalena Wiśniewska', class: 'Elternteil, Klasse 7a' },
-      { role: 'Sekretär', name: 'Katarzyna Nowak', class: 'Elternteil, Klasse 1c' },
+      { role: 'Vorsitzende/r', name: '', class: 'Wird zu Beginn des Schuljahres gewählt' },
+      { role: 'Stellvertreter/in', name: '', class: 'Wird zu Beginn des Schuljahres gewählt' },
+      { role: 'Schatzmeister/in', name: '', class: 'Wird zu Beginn des Schuljahres gewählt' },
+      { role: 'Sekretär/in', name: '', class: 'Wird zu Beginn des Schuljahres gewählt' },
     ],
-    contactNote: 'Kontakt zum Elternrat: rada.rodzicow@wbs.edu.pl',
+    contactNote: 'Kontakt zum Elternrat: rada.rodzicow@wbs.pl',
     eventLabel: 'Veranstaltung',
     dateLabel: 'Datum',
   },
@@ -119,12 +119,12 @@ const translations = {
     ],
     membersTitle: 'Council Board Members',
     members: [
-      { role: 'Chairperson', name: 'Anna Kowalska', class: 'Parent, Class 5a' },
-      { role: 'Vice Chair', name: 'Thomas Müller', class: 'Parent, Class 3b' },
-      { role: 'Treasurer', name: 'Magdalena Wiśniewska', class: 'Parent, Class 7a' },
-      { role: 'Secretary', name: 'Katarzyna Nowak', class: 'Parent, Class 1c' },
+      { role: 'Chairperson', name: '', class: 'Elected at the start of each school year' },
+      { role: 'Vice Chair', name: '', class: 'Elected at the start of each school year' },
+      { role: 'Treasurer', name: '', class: 'Elected at the start of each school year' },
+      { role: 'Secretary', name: '', class: 'Elected at the start of each school year' },
     ],
-    contactNote: 'Contact the Parent Council: rada.rodzicow@wbs.edu.pl',
+    contactNote: 'Contact the Parent Council: rada.rodzicow@wbs.pl',
     eventLabel: 'Event',
     dateLabel: 'Date',
   },
@@ -210,8 +210,8 @@ export default async function CouncilPage({ params }: { params: Promise<{ locale
             {t.members.map((member, i) => (
               <div key={i} className="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
                 <p className="text-sm font-medium uppercase tracking-wide text-red-600">{member.role}</p>
-                <p className="mt-1 text-lg font-semibold text-neutral-900">{member.name}</p>
-                <p className="text-sm text-neutral-500">{member.class}</p>
+                {member.name && <p className="mt-1 text-lg font-semibold text-neutral-900">{member.name}</p>}
+                <p className={`text-sm text-neutral-500 ${!member.name ? 'mt-1' : ''}`}>{member.class}</p>
               </div>
             ))}
           </div>

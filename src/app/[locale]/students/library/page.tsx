@@ -12,35 +12,35 @@ const translations = {
   pl: {
     title: 'Biblioteka Szkolna',
     subtitle: 'Świat książek w dwóch językach',
-    intro: 'Nasza biblioteka posiada bogaty zbiór literatury polskiej i niemieckiej. Oferujemy dostęp do książek, czasopism i zasobów cyfrowych wspierających naukę i rozwój czytelniczy.',
+    intro: 'Nasza biblioteka posiada bogaty zbiór literatury polskiej i niemieckiej. Oferujemy dostęp do książek, czasopism i zasobów cyfrowych wspierających naukę i rozwój czytelniczy. Bibliotekarka: Joanna Koszykowska (biblioteka@wbs.pl).',
     stats: [
-      { value: '15,000+', label: 'Książek' },
+      { value: '18,000+', label: 'Książek' },
       { value: '50+', label: 'Czasopism' },
       { value: '100+', label: 'Miejsc' },
     ],
-    hours: 'Godziny otwarcia: Poniedziałek - Piątek: 8:00 - 16:00',
+    hours: 'Godziny otwarcia: Poniedziałek - Czwartek: 8:00 - 15:00, Piątek: 8:00 - 14:00',
   },
   de: {
     title: 'Schulbibliothek',
     subtitle: 'Die Welt der Bücher in zwei Sprachen',
-    intro: 'Unsere Bibliothek verfügt über einen reichen Bestand an polnischer und deutscher Literatur. Wir bieten Zugang zu Büchern, Zeitschriften und digitalen Ressourcen.',
+    intro: 'Unsere Bibliothek verfügt über einen reichen Bestand an polnischer und deutscher Literatur. Wir bieten Zugang zu Büchern, Zeitschriften und digitalen Ressourcen. Bibliothekarin: Joanna Koszykowska (biblioteka@wbs.pl).',
     stats: [
-      { value: '15,000+', label: 'Bücher' },
+      { value: '18,000+', label: 'Bücher' },
       { value: '50+', label: 'Zeitschriften' },
       { value: '100+', label: 'Plätze' },
     ],
-    hours: 'Öffnungszeiten: Montag - Freitag: 8:00 - 16:00',
+    hours: 'Öffnungszeiten: Montag - Donnerstag: 8:00 - 15:00, Freitag: 8:00 - 14:00',
   },
   en: {
     title: 'School Library',
     subtitle: 'World of books in two languages',
-    intro: 'Our library has a rich collection of Polish and German literature. We offer access to books, magazines, and digital resources supporting learning and reading development.',
+    intro: 'Our library has a rich collection of Polish and German literature. We offer access to books, magazines, and digital resources supporting learning and reading development. Librarian: Joanna Koszykowska (biblioteka@wbs.pl).',
     stats: [
-      { value: '15,000+', label: 'Books' },
+      { value: '18,000+', label: 'Books' },
       { value: '50+', label: 'Magazines' },
       { value: '100+', label: 'Seats' },
     ],
-    hours: 'Opening Hours: Monday - Friday: 8:00 - 16:00',
+    hours: 'Opening Hours: Mon-Thu: 8:00-15:00, Fri: 8:00-14:00',
   },
 };
 

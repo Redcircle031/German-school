@@ -20,8 +20,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   const stats = [
     { value: '1978', label: locale === 'pl' ? 'Rok założenia' : locale === 'de' ? 'Gründungsjahr' : 'Founded' },
-    { value: '300+', label: locale === 'pl' ? 'Uczniów' : locale === 'de' ? 'Schüler' : 'Students' },
-    { value: '59', label: locale === 'pl' ? 'Nauczycieli' : locale === 'de' ? 'Lehrer' : 'Teachers' },
+    { value: '400+', label: locale === 'pl' ? 'Uczniów' : locale === 'de' ? 'Schüler' : 'Students' },
+    { value: '60+', label: locale === 'pl' ? 'Nauczycieli' : locale === 'de' ? 'Lehrkräfte' : 'Teachers' },
     { value: '45+', label: locale === 'pl' ? 'Lat doświadczenia' : locale === 'de' ? 'Jahre Erfahrung' : 'Years of Experience' },
   ];
 
