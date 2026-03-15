@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import PageHeader from '@/components/features/PageHeader';
-import { Trophy, Users, Calendar, MapPin, Phone, Mail } from 'lucide-react';
+import { Trophy, Users, Globe, Calendar, Phone, Mail, ExternalLink } from 'lucide-react';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -12,25 +13,79 @@ const translations = {
   pl: {
     title: 'Akademia Piłkarska WBS',
     subtitle: 'Profesjonalny trening dla młodych piłkarzy',
-    intro: 'Akademia Piłkarska WBS oferuje profesjonalne treningi dla uczniów wszystkich klas. Pod okiem wykwalifikowanych trenerów nasi uczniowie rozwijają swoje umiejętności sportowe i uczestniczą w turniejach.',
-    features: ['Treningi 3x w tygodniu', 'Udział w ligach i turniejach', 'Opieka wykwalifikowanych trenerów', 'Nowoczesne boiska sportowe'],
-    contact: 'Kontakt', phone: '+48 733 572 514', email: 'akademia.pilkarska@wbs.pl', director: 'Dyrektor: Wojciech Wieczorkiewicz',
+    intro: 'Akademia Piłkarska WBS to jeden z najstarszych i najbardziej uznanych programów sportowych szkoły. Od ponad 25 lat kształcimy młodych piłkarzy, łącząc trening z edukacją dwujęzyczną. Ponad 300 zawodników z 30 krajów trenowało w naszej akademii.',
+    stats: [
+      { value: '300+', label: 'Zawodników' },
+      { value: '30', label: 'Krajów' },
+      { value: '25+', label: 'Lat tradycji' },
+    ],
+    features: [
+      'Treningi 3x w tygodniu',
+      'Udział w ligach i turniejach międzynarodowych',
+      'Opieka wykwalifikowanych trenerów UEFA',
+      'Współpraca z BVB Borussia Dortmund',
+    ],
+    galleryTitle: 'Galeria',
+    contactTitle: 'Kontakt',
+    websiteLabel: 'Strona akademii',
+    director: 'Dyrektor: Wojciech Wieczorkiewicz',
+    partnerTitle: 'Partner',
+    partnerDesc: 'Akademia współpracuje z Borussia Dortmund (BVB) w ramach programu szkoleniowego dla młodzieży.',
   },
   de: {
     title: 'WBS Fußballakademie',
     subtitle: 'Professionelles Training für junge Fußballer',
-    intro: 'Die WBS Fußballakademie bietet professionelles Training für Schüler aller Klassen. Unter der Aufsicht qualifizierter Trainer entwickeln unsere Schüler ihre sportlichen Fähigkeiten und nehmen an Turnieren teil.',
-    features: ['Training 3x pro Woche', 'Teilnahme an Ligen und Turnieren', 'Betreuung durch qualifizierte Trainer', 'Moderne Sportplätze'],
-    contact: 'Kontakt', phone: '+48 733 572 514', email: 'akademia.pilkarska@wbs.pl', director: 'Direktor: Wojciech Wieczorkiewicz',
+    intro: 'Die WBS Fußballakademie ist eines der ältesten und angesehensten Sportprogramme der Schule. Seit über 25 Jahren bilden wir junge Fußballer aus und verbinden Training mit zweisprachiger Bildung. Über 300 Spieler aus 30 Ländern haben in unserer Akademie trainiert.',
+    stats: [
+      { value: '300+', label: 'Spieler' },
+      { value: '30', label: 'Länder' },
+      { value: '25+', label: 'Jahre Tradition' },
+    ],
+    features: [
+      'Training 3x pro Woche',
+      'Teilnahme an internationalen Ligen und Turnieren',
+      'Betreuung durch UEFA-lizenzierte Trainer',
+      'Kooperation mit BVB Borussia Dortmund',
+    ],
+    galleryTitle: 'Galerie',
+    contactTitle: 'Kontakt',
+    websiteLabel: 'Akademie-Website',
+    director: 'Direktor: Wojciech Wieczorkiewicz',
+    partnerTitle: 'Partner',
+    partnerDesc: 'Die Akademie kooperiert mit Borussia Dortmund (BVB) im Rahmen eines Jugendtrainingsprogramms.',
   },
   en: {
     title: 'WBS Football Academy',
     subtitle: 'Professional training for young footballers',
-    intro: 'The WBS Football Academy offers professional training for students of all grades. Under the supervision of qualified coaches, our students develop their sports skills and participate in tournaments.',
-    features: ['Training 3x per week', 'Participation in leagues and tournaments', 'Supervision by qualified coaches', 'Modern sports facilities'],
-    contact: 'Contact', phone: '+48 733 572 514', email: 'akademia.pilkarska@wbs.pl', director: 'Director: Wojciech Wieczorkiewicz',
+    intro: 'The WBS Football Academy is one of the school\'s oldest and most respected sports programmes. For over 25 years, we have been training young footballers, combining athletics with bilingual education. Over 300 players from 30 countries have trained at our academy.',
+    stats: [
+      { value: '300+', label: 'Players' },
+      { value: '30', label: 'Countries' },
+      { value: '25+', label: 'Years of tradition' },
+    ],
+    features: [
+      'Training 3x per week',
+      'Participation in international leagues and tournaments',
+      'Supervision by UEFA-licensed coaches',
+      'Partnership with BVB Borussia Dortmund',
+    ],
+    galleryTitle: 'Gallery',
+    contactTitle: 'Contact',
+    websiteLabel: 'Academy website',
+    director: 'Director: Wojciech Wieczorkiewicz',
+    partnerTitle: 'Partner',
+    partnerDesc: 'The academy cooperates with Borussia Dortmund (BVB) as part of a youth training programme.',
   },
 };
+
+const galleryImages = [
+  { src: '/images/football-academy/football-01.jpg', alt: 'Football training' },
+  { src: '/images/football-academy/football-02.jpg', alt: 'Match day' },
+  { src: '/images/football-academy/football-03.jpg', alt: 'Team photo' },
+  { src: '/images/football-academy/football-04.jpg', alt: 'Training session' },
+  { src: '/images/football-academy/football-05.jpg', alt: 'Tournament' },
+  { src: '/images/football-academy/football-06.jpg', alt: 'Academy event' },
+];
 
 export default async function FootballAcademyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -39,39 +94,75 @@ export default async function FootballAcademyPage({ params }: { params: Promise<
   return (
     <>
       <PageHeader lang={locale} title={t.title} description={t.subtitle} />
+
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="mb-16 grid items-center gap-12 md:grid-cols-2">
-            <div>
-              <p className="text-xl leading-relaxed text-neutral-600">{t.intro}</p>
-            </div>
-            <div className="aspect-video flex items-center justify-center rounded-2xl bg-neutral-100">
-              <span className="text-6xl">⚽</span>
-            </div>
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <p className="text-xl leading-relaxed text-neutral-600">{t.intro}</p>
           </div>
 
-          <h2 className="mb-8 text-2xl font-bold text-neutral-900">
-            {locale === 'pl' ? 'Co oferujemy' : locale === 'de' ? 'Was wir bieten' : 'What we offer'}
-          </h2>
+          <div className="mb-16 grid gap-6 md:grid-cols-3">
+            {t.stats.map((stat, i) => (
+              <div key={i} className="rounded-xl bg-red-600 p-6 text-center text-white">
+                <p className="mb-2 text-4xl font-bold">{stat.value}</p>
+                <p className="text-red-100">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {t.features.map((feature, i) => (
-              <div key={i} className="rounded-xl bg-neutral-50 p-6 text-center">
-                <Trophy className="mx-auto mb-3 size-8 text-red-600" />
-                <p className="font-medium text-neutral-900">{feature}</p>
+            {t.features.map((feature, i) => {
+              const icons = [Calendar, Trophy, Users, Globe];
+              const Icon = icons[i];
+              return (
+                <div key={i} className="rounded-xl bg-neutral-50 p-6 text-center">
+                  <Icon className="mx-auto mb-3 size-8 text-red-600" />
+                  <p className="font-medium text-neutral-900">{feature}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mb-16 rounded-2xl border border-neutral-200 bg-neutral-50 p-8">
+            <h2 className="mb-4 text-2xl font-bold text-neutral-900">{t.partnerTitle}</h2>
+            <p className="text-lg text-neutral-600">{t.partnerDesc}</p>
+          </div>
+
+          <h2 className="mb-8 text-2xl font-bold text-neutral-900">{t.galleryTitle}</h2>
+          <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {galleryImages.map((img, i) => (
+              <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
               </div>
             ))}
           </div>
 
           <div className="rounded-2xl bg-red-600 p-8 text-white">
-            <h2 className="mb-6 text-2xl font-bold">{t.contact}</h2>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3"><Phone className="size-5 text-red-200" /><span>{t.phone}</span></div>
-                <div className="flex items-center gap-3"><Mail className="size-5 text-red-200" /><span>{t.email}</span></div>
+            <h2 className="mb-6 text-2xl font-bold">{t.contactTitle}</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="flex items-center gap-3">
+                <Phone className="size-5 text-red-200" />
+                <span>+48 733 572 514</span>
               </div>
               <div className="flex items-center gap-3">
-                <Users className="size-5 text-red-200" /><span>{t.director}</span>
+                <Mail className="size-5 text-red-200" />
+                <span>akademia.pilkarska@wbs.pl</span>
               </div>
+              <div className="flex items-center gap-3">
+                <Users className="size-5 text-red-200" />
+                <span>{t.director}</span>
+              </div>
+            </div>
+            <div className="mt-6">
+              <a
+                href="https://www.wbs-akademia.pl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-red-600 transition-colors hover:bg-red-50"
+              >
+                <ExternalLink className="size-4" />
+                {t.websiteLabel}: www.wbs-akademia.pl
+              </a>
             </div>
           </div>
         </div>
