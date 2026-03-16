@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Search, ArrowRight, Calendar, Users, BookOpen, GraduationCap, FileText, MapPin, ChevronRight } from 'lucide-react';
+import { X, Search, ArrowRight, Calendar, Users, BookOpen, MapPin, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import newsData from '@/data/extracted/news.json';
+import Image from 'next/image';
 
 interface MegaMenuProps {
   isOpen: boolean;
@@ -14,7 +14,6 @@ interface MegaMenuProps {
 
 const easeOutExpo = [0.16, 1, 0.3, 1];
 
-// All menu items organized by category
 const menuData = {
   about: {
     pl: { title: 'O szkole', subtitle: 'Poznaj WBS' },
@@ -45,7 +44,7 @@ const menuData = {
     en: { title: 'For Students', subtitle: 'Student zone' },
     links: [
       { pl: 'Projekty', de: 'Projekte', en: 'Projects', href: '/students/projects', desc: { pl: 'Inicjatywy uczniów', de: 'Schülerprojekte', en: 'Student projects' } },
-      { pl: 'Akademie Piłkarska', de: 'Fußballakademie', en: 'Football Academy', href: '/students/football-academy', desc: { pl: 'Sport i rozwój', de: 'Sport & Entwicklung', en: 'Sports & development' } },
+      { pl: 'Akademia Piłkarska', de: 'Fußballakademie', en: 'Football Academy', href: '/students/football-academy', desc: { pl: 'Sport i rozwój', de: 'Sport & Entwicklung', en: 'Sports & development' } },
       { pl: 'Akademia Muzyczna', de: 'Musikakademie', en: 'Music Academy', href: '/students/music-academy', desc: { pl: 'Muzyka i sztuka', de: 'Musik & Kunst', en: 'Music & arts' } },
       { pl: 'Biblioteka', de: 'Bibliothek', en: 'Library', href: '/students/library', desc: { pl: 'Zasoby i czytelnia', de: 'Bibliotheksbestand', en: 'Resources & reading' } },
       { pl: 'Samorząd', de: 'Schülerrat', en: 'Student Council', href: '/students/student-council', desc: { pl: 'Współdecydowanie', de: 'Mitbestimmung', en: 'Student voice' } },
@@ -63,35 +62,62 @@ const menuData = {
   },
 };
 
-// Quick action cards
 const quickActions = [
-  { 
-    icon: GraduationCap, 
-    label: { pl: 'Rekrutacja', de: 'Rekrutierung', en: 'Admissions' },
-    href: '/parents/recruitment',
-    color: 'bg-red-600',
+  {
+    icon: BookOpen,
+    label: { pl: 'Aktualności', de: 'Aktuelles', en: 'News' },
+    href: '/news',
+    iconClass: 'bg-red-50 text-red-600',
+    hoverClass: 'hover:bg-red-50 hover:border-red-200',
   },
-  { 
-    icon: Users, 
-    label: { pl: 'Portal Rodzica', de: 'Elternportal', en: 'Parent Portal' },
-    href: '/parent-portal',
-    color: 'bg-neutral-800',
-  },
-  { 
-    icon: BookOpen, 
-    label: { pl: 'Portal Ucznia', de: 'Schülerportal', en: 'Student Portal' },
-    href: '/student-portal',
-    color: 'bg-neutral-800',
-  },
-  { 
-    icon: Calendar, 
+  {
+    icon: Calendar,
     label: { pl: 'Kalendarz', de: 'Kalender', en: 'Calendar' },
     href: '/events',
-    color: 'bg-neutral-800',
+    iconClass: 'bg-accent-50 text-accent-600',
+    hoverClass: 'hover:bg-amber-50 hover:border-amber-200',
+  },
+  {
+    icon: MapPin,
+    label: { pl: 'Kontakt', de: 'Kontakt', en: 'Contact' },
+    href: '/contact',
+    iconClass: 'bg-blue-50 text-blue-600',
+    hoverClass: 'hover:bg-blue-50 hover:border-blue-200',
+  },
+  {
+    icon: Users,
+    label: { pl: 'Portal Rodzica', de: 'Elternportal', en: 'Parent Portal' },
+    href: '/parent-portal',
+    iconClass: 'bg-green-50 text-green-600',
+    hoverClass: 'hover:bg-green-50 hover:border-green-200',
   },
 ];
 
-// Animation variants
+// Photo slides for the right panel
+const photoSlides = [
+  {
+    photo: '/images/campus/campus-02.jpg',
+    tag: { pl: 'Kampus WBS', de: 'WBS Campus', en: 'WBS Campus' },
+    title: { pl: 'Dwie kultury.\nJedna szkoła.', de: 'Zwei Kulturen.\nEine Schule.', en: 'Two cultures.\nOne school.' },
+    href: '/about',
+    cta: { pl: 'Odkryj WBS', de: 'WBS entdecken', en: 'Discover WBS' },
+  },
+  {
+    photo: '/images/football-academy/football-01.jpg',
+    tag: { pl: 'Akademia Piłkarska', de: 'Fußballakademie', en: 'Football Academy' },
+    title: { pl: 'Sport i\nrozwój charakteru', de: 'Sport und\nPersönlichkeit', en: 'Sport &\ncharacter building' },
+    href: '/students/football-academy',
+    cta: { pl: 'Poznaj akademię', de: 'Mehr erfahren', en: 'Learn more' },
+  },
+  {
+    photo: '/images/music-academy/music-01.jpg',
+    tag: { pl: 'Akademia Muzyczna', de: 'Musikakademie', en: 'Music Academy' },
+    title: { pl: 'Muzyka w\nsercu szkoły', de: 'Musik im\nHerzen der Schule', en: 'Music at the\nheart of school' },
+    href: '/students/music-academy',
+    cta: { pl: 'Poznaj akademię', de: 'Mehr erfahren', en: 'Learn more' },
+  },
+];
+
 const backdropVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.3 } },
@@ -100,34 +126,34 @@ const backdropVariants = {
 
 const menuVariants = {
   hidden: { opacity: 0, y: -20, scale: 0.98 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
+  visible: {
+    opacity: 1,
+    y: 0,
     scale: 1,
-    transition: { duration: 0.4, ease: easeOutExpo }
+    transition: { duration: 0.4, ease: easeOutExpo },
   },
-  exit: { 
-    opacity: 0, 
-    y: -20, 
+  exit: {
+    opacity: 0,
+    y: -20,
     scale: 0.98,
-    transition: { duration: 0.2 }
+    transition: { duration: 0.2 },
   },
 };
 
-const slideVariants = {
+const photoSlideVariants = {
   enter: (direction: number) => ({
-    x: direction > 0 ? 300 : -300,
+    x: direction > 0 ? '100%' : '-100%',
     opacity: 0,
   }),
   center: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.4, ease: easeOutExpo },
+    transition: { duration: 0.5, ease: easeOutExpo },
   },
   exit: (direction: number) => ({
-    x: direction < 0 ? 300 : -300,
+    x: direction < 0 ? '100%' : '-100%',
     opacity: 0,
-    transition: { duration: 0.3 },
+    transition: { duration: 0.4 },
   }),
 };
 
@@ -144,12 +170,11 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
     if (!isOpen) return;
     const interval = setInterval(() => {
       setSlideDirection(1);
-      setActiveSlide((prev) => (prev + 1) % 3);
+      setActiveSlide((prev) => (prev + 1) % photoSlides.length);
     }, 5000);
     return () => clearInterval(interval);
   }, [isOpen]);
 
-  // Handle escape key
   const handleEscape = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose();
   }, [onClose]);
@@ -165,119 +190,13 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
     };
   }, [isOpen, handleEscape]);
 
-  // Get news for slides
-  const news = newsData.articles.slice(0, 3);
-
-  const slides = [
-    // Slide 1: Welcome
-    <div key="welcome" className="flex h-full flex-col justify-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-      >
-        <span className="mb-4 inline-block rounded-full bg-red-100 px-3 py-1 text-sm font-medium text-red-700">
-          {lang === 'pl' ? 'Witamy w WBS' : lang === 'de' ? 'Willkommen bei WBS' : 'Welcome to WBS'}
-        </span>
-        <h3 className="mb-4 text-3xl font-bold text-black">
-          {lang === 'pl' ? 'Dwie kultury. Jedna szkoła.' : lang === 'de' ? 'Zwei Kulturen. Eine Schule.' : 'Two cultures. One school.'}
-        </h3>
-        <p className="mb-6 max-w-sm text-neutral-600">
-          {lang === 'pl' 
-            ? 'Odkryj wyjątkową atmosferę naszej polsko-niemieckiej szkoły.' 
-            : lang === 'de' 
-            ? 'Entdecken Sie die einzigartige Atmosphäre unserer deutsch-polnischen Schule.'
-            : 'Discover the unique atmosphere of our Polish-German school.'}
-        </p>
-        <div className="flex gap-3">
-          <Link 
-            href={`/${lang}/about`} 
-            onClick={onClose}
-            className="inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-red-700"
-          >
-            {lang === 'pl' ? 'Odkryj WBS' : lang === 'de' ? 'Entdecken Sie WBS' : 'Discover WBS'}
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>
-      </motion.div>
-    </div>,
-
-    // Slide 2: Latest News
-    <div key="news" className="flex h-full flex-col">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="mb-4"
-      >
-        <span className="text-sm font-medium text-red-600">
-          {lang === 'pl' ? 'Najnowsze wiadomości' : lang === 'de' ? 'Neueste Nachrichten' : 'Latest news'}
-        </span>
-      </motion.div>
-      <div className="space-y-3">
-        {news.map((article, i) => (
-          <motion.div
-            key={article.id}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 * i }}
-          >
-            <Link 
-              href={`/${lang}/news/${article.id}`}
-              onClick={onClose}
-              className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-neutral-50"
-            >
-              <div className="flex size-16 shrink-0 items-center justify-center rounded-lg bg-red-100">
-                <FileText className="size-6 text-red-600" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="line-clamp-2 text-sm font-medium text-black transition-colors group-hover:text-red-600">
-                  {article.title[lang] || article.title.pl}
-                </p>
-                <p className="mt-1 text-xs text-neutral-500">{article.date}</p>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
-      </div>
-    </div>,
-
-    // Slide 3: Quick Stats
-    <div key="stats" className="flex h-full flex-col justify-center">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2 }}
-        className="text-center"
-      >
-        <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-2xl bg-red-50 p-4">
-            <p className="text-3xl font-bold text-red-600">300+</p>
-            <p className="text-sm text-neutral-600">{lang === 'pl' ? 'Uczniów' : lang === 'de' ? 'Schüler' : 'Students'}</p>
-          </div>
-          <div className="rounded-2xl bg-neutral-100 p-4">
-            <p className="text-3xl font-bold text-black">47</p>
-            <p className="text-sm text-neutral-600">{lang === 'pl' ? 'Lat tradycji' : lang === 'de' ? 'Jahre Tradition' : 'Years of tradition'}</p>
-          </div>
-          <div className="rounded-2xl bg-neutral-100 p-4">
-            <p className="text-3xl font-bold text-black">59</p>
-            <p className="text-sm text-neutral-600">{lang === 'pl' ? 'Nauczycieli' : lang === 'de' ? 'Lehrer' : 'Teachers'}</p>
-          </div>
-          <div className="rounded-2xl bg-red-50 p-4">
-            <p className="text-3xl font-bold text-red-600">2</p>
-            <p className="text-sm text-neutral-600">{lang === 'pl' ? 'Kampusy' : lang === 'de' ? 'Campusse' : 'Campuses'}</p>
-          </div>
-        </div>
-      </motion.div>
-    </div>,
-  ];
-
   return (
     <AnimatePresence>
       {isOpen && (
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
             variants={backdropVariants}
             initial="hidden"
             animate="visible"
@@ -285,7 +204,7 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
             onClick={onClose}
           />
 
-          {/* Menu Container - Full screen, no scroll */}
+          {/* Menu Container */}
           <motion.div
             ref={menuRef}
             className="fixed inset-4 z-50 flex flex-col overflow-hidden rounded-3xl bg-white shadow-2xl lg:inset-8"
@@ -295,10 +214,10 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
             exit="exit"
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-neutral-100 px-6 py-5 lg:px-10">
+            <div className="flex items-center justify-between border-b border-neutral-100 px-6 py-4 lg:px-10">
               <Link href={`/${lang}`} onClick={onClose} className="flex items-center gap-3">
                 <div className="flex size-10 items-center justify-center rounded-xl bg-red-600">
-                  <span className="font-bold text-white">WBS</span>
+                  <span className="text-sm font-bold text-white">WBS</span>
                 </div>
                 <div>
                   <p className="text-sm font-bold text-black">Willy Brandt School</p>
@@ -318,7 +237,7 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
                 </div>
               </div>
 
-              {/* Close Button */}
+              {/* Close */}
               <button
                 onClick={onClose}
                 className="group flex size-10 items-center justify-center rounded-full bg-neutral-100 transition-colors hover:bg-red-50"
@@ -327,15 +246,13 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
               </button>
             </div>
 
-            {/* Main Content - Grid layout, no scroll */}
+            {/* Main Content */}
             <div className="grid flex-1 overflow-hidden lg:grid-cols-12">
-              
-              {/* Left: Category Navigation */}
-              <div className="grid grid-cols-2 content-start gap-6 p-6 lg:col-span-8 lg:grid-cols-4 lg:p-10">
+
+              {/* Left: Nav columns + quick actions */}
+              <div className="grid grid-cols-2 content-start gap-6 overflow-y-auto p-6 lg:col-span-8 lg:grid-cols-4 lg:p-10">
                 {categories.map((category, catIndex) => {
                   const data = menuData[category];
-                  const isHovered = hoveredCategory === category;
-                  
                   return (
                     <motion.div
                       key={category}
@@ -347,7 +264,7 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
                       className="group"
                     >
                       <div className="mb-4">
-                        <h3 className="text-lg font-bold text-black transition-colors group-hover:text-red-600">
+                        <h3 className="text-base font-bold text-black transition-colors group-hover:text-red-600">
                           {data[lang].title}
                         </h3>
                         <p className="text-xs text-neutral-500">{data[lang].subtitle}</p>
@@ -376,30 +293,33 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
                   );
                 })}
 
-                {/* Quick Actions Row */}
-                <motion.div 
-                  className="col-span-2 mt-8 border-t border-neutral-100 pt-6 lg:col-span-4"
+                {/* Quick Links Bar */}
+                <motion.div
+                  className="col-span-2 mt-6 border-t-2 border-neutral-100 pt-6 lg:col-span-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+                  <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                    {lang === 'pl' ? 'Szybki dostęp' : lang === 'de' ? 'Schnellzugriff' : 'Quick access'}
+                  </p>
+                  <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
                     {quickActions.map((action, index) => (
                       <motion.div
                         key={action.href}
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 + index * 0.05 }}
+                        transition={{ delay: 0.35 + index * 0.05 }}
                       >
                         <Link
                           href={`/${lang}${action.href}`}
                           onClick={onClose}
-                          className="group flex items-center gap-3 rounded-2xl border border-transparent bg-neutral-50 p-4 transition-all hover:border-red-100 hover:bg-red-50"
+                          className={`group flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-neutral-100 bg-white p-4 text-center transition-all duration-200 ${action.hoverClass}`}
                         >
-                          <div className={`size-10 ${action.color} flex items-center justify-center rounded-xl transition-transform group-hover:scale-110`}>
-                            <action.icon className="size-5 text-white" />
+                          <div className={`flex size-10 items-center justify-center rounded-xl transition-all duration-200 ${action.iconClass}`}>
+                            <action.icon className="size-5" />
                           </div>
-                          <span className="text-sm font-medium text-neutral-800 transition-colors group-hover:text-red-700">
+                          <span className="text-sm font-semibold leading-tight text-neutral-800">
                             {action.label[lang]}
                           </span>
                         </Link>
@@ -409,66 +329,98 @@ export default function MegaMenu({ isOpen, onClose, lang }: MegaMenuProps) {
                 </motion.div>
               </div>
 
-              {/* Right: Animated Slides */}
-              <div className="relative hidden overflow-hidden border-l border-neutral-100 bg-neutral-50 p-10 lg:col-span-4 lg:block">
+              {/* Right: Photo Slider */}
+              <div className="relative hidden overflow-hidden lg:col-span-4 lg:block">
                 <AnimatePresence mode="wait" custom={slideDirection}>
                   <motion.div
                     key={activeSlide}
                     custom={slideDirection}
-                    variants={slideVariants}
+                    variants={photoSlideVariants}
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    className="h-full"
+                    className="absolute inset-0"
                   >
-                    {slides[activeSlide]}
+                    {/* Background Photo */}
+                    <Image
+                      src={photoSlides[activeSlide].photo}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="33vw"
+                      priority={activeSlide === 0}
+                    />
+                    {/* Gradient overlay — dark at bottom, subtle at top */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10" />
+
+                    {/* Content */}
+                    <div className="absolute inset-0 flex flex-col justify-end p-8">
+                      <motion.div
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.4 }}
+                      >
+                        <span className="mb-3 inline-block rounded-full bg-red-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+                          {photoSlides[activeSlide].tag[lang]}
+                        </span>
+                        <h3 className="mb-5 whitespace-pre-line text-2xl font-bold leading-tight text-white lg:text-3xl">
+                          {photoSlides[activeSlide].title[lang]}
+                        </h3>
+                        <Link
+                          href={`/${lang}${photoSlides[activeSlide].href}`}
+                          onClick={onClose}
+                          className="inline-flex items-center gap-2 rounded-full bg-white/20 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/30"
+                        >
+                          {photoSlides[activeSlide].cta[lang]}
+                          <ArrowRight className="size-4" />
+                        </Link>
+                      </motion.div>
+                    </div>
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Slide Indicators */}
-                <div className="absolute bottom-10 left-10 flex gap-2">
-                  {[0, 1, 2].map((i) => (
+                {/* Slide indicators */}
+                <div className="absolute bottom-8 right-8 flex items-center gap-2">
+                  {photoSlides.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => {
                         setSlideDirection(i > activeSlide ? 1 : -1);
                         setActiveSlide(i);
                       }}
-                      className={`size-2 rounded-full transition-all ${
-                        i === activeSlide ? 'w-8 bg-red-600' : 'bg-neutral-300 hover:bg-neutral-400'
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        i === activeSlide ? 'w-8 bg-white' : 'w-2 bg-white/40 hover:bg-white/70'
                       }`}
+                      aria-label={`Slide ${i + 1}`}
                     />
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Bottom Bar - Contact Info */}
-            <div className="border-t border-neutral-100 bg-neutral-50 px-6 py-4 lg:px-10">
+            {/* Bottom Bar */}
+            <div className="border-t border-neutral-100 bg-neutral-50 px-6 py-3.5 lg:px-10">
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-6 text-sm text-neutral-600">
+                <div className="flex items-center gap-6 text-sm text-neutral-500">
                   <div className="flex items-center gap-2">
-                    <MapPin className="size-4 text-red-600" />
+                    <MapPin className="size-4 text-red-500" />
                     <span>ul. Św. Urszuli Ledóchowskiej 3, Warszawa</span>
                   </div>
-                  <div className="hidden items-center gap-2 md:flex">
-                    <span className="size-1 rounded-full bg-neutral-300" />
-                    <span>+48 22 642 27 05</span>
-                  </div>
+                  <span className="hidden md:block">+48 22 642 27 05</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-neutral-500">
+                  <span className="text-xs text-neutral-400">
                     {lang === 'pl' ? 'Język:' : lang === 'de' ? 'Sprache:' : 'Language:'}
                   </span>
                   <div className="flex gap-1">
-                    {['pl', 'de', 'en'].map((l) => (
+                    {(['pl', 'de', 'en'] as const).map((l) => (
                       <Link
                         key={l}
                         href={`/${l}`}
                         onClick={onClose}
-                        className={`flex size-8 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
-                          lang === l 
-                            ? 'bg-red-600 text-white' 
+                        className={`flex size-8 items-center justify-center rounded-lg text-xs font-semibold transition-colors ${
+                          lang === l
+                            ? 'bg-red-600 text-white'
                             : 'bg-white text-neutral-600 hover:bg-neutral-100'
                         }`}
                       >

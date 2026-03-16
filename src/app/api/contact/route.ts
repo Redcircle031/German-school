@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { Resend } from 'resend';
 
 // --- Zod schema for contact form ---
 const ContactFormSchema = z.object({
@@ -102,9 +103,33 @@ export async function POST(request: NextRequest) {
       ip,
     };
 
-    // TODO: Integrate email service (Nodemailer, Resend, SendGrid) when ready
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Contact form submission:', { email: sanitizedData.email, subject: sanitizedData.subject });
+    // Send email via Resend if API key is configured
+    if (process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      const toEmail = process.env.CONTACT_FORM_EMAIL || 'kontakt@wbs.pl';
+      await resend.emails.send({
+        from: 'WBS Formularz <noreply@wbs.pl>',
+        to: toEmail,
+        replyTo: sanitizedData.email,
+        subject: `[Formularz WBS] ${sanitizedData.subject}`,
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #dc2626;">Nowa wiadomość z formularza WBS</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 8px 0; font-weight: bold; color: #555;">Imię i nazwisko:</td><td style="padding: 8px 0;">${sanitizedData.name}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold; color: #555;">Email:</td><td style="padding: 8px 0;">${sanitizedData.email}</td></tr>
+              ${sanitizedData.phone ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #555;">Telefon:</td><td style="padding: 8px 0;">${sanitizedData.phone}</td></tr>` : ''}
+              <tr><td style="padding: 8px 0; font-weight: bold; color: #555;">Temat:</td><td style="padding: 8px 0;">${sanitizedData.subject}</td></tr>
+            </table>
+            <hr style="margin: 16px 0; border: none; border-top: 1px solid #eee;" />
+            <p style="white-space: pre-wrap; color: #333;">${sanitizedData.message}</p>
+            <hr style="margin: 16px 0; border: none; border-top: 1px solid #eee;" />
+            <p style="font-size: 12px; color: #999;">Wysłano: ${sanitizedData.submittedAt} | IP: ${sanitizedData.ip}</p>
+          </div>
+        `,
+      });
+    } else if (process.env.NODE_ENV === 'development') {
+      console.log('Contact form submission (no RESEND_API_KEY):', { email: sanitizedData.email, subject: sanitizedData.subject });
     }
 
     return NextResponse.json({

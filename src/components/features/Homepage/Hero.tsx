@@ -2,9 +2,8 @@
 
 import { ArrowRight, Play, GraduationCap, Award, Globe } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 interface HeroProps {
   lang: string;
@@ -55,12 +54,29 @@ const greetings = [
 export default function Hero({ lang }: HeroProps) {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [greetingIndex, setGreetingIndex] = useState(0);
+  const [videoFading, setVideoFading] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setGreetingIndex((prev) => (prev + 1) % greetings.length);
     }, 2500);
     return () => clearInterval(timer);
+  }, []);
+
+  // Smooth loop: fade out near end, fade back in on restart
+  const handleTimeUpdate = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const timeLeft = video.duration - video.currentTime;
+    if (timeLeft < 1.2 && !videoFading) {
+      setVideoFading(true);
+    }
+  }, [videoFading]);
+
+  const handleSeeked = useCallback(() => {
+    // Video looped back to start — fade back in
+    setTimeout(() => setVideoFading(false), 50);
   }, []);
 
   const content = {
@@ -113,20 +129,27 @@ export default function Hero({ lang }: HeroProps) {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background image area */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero/campus-hero.webp"
-          alt="WBS Campus Willy Brandt Schule Warschau"
-          fill
-          className="object-cover"
-          sizes="100vw"
-          priority
-          quality={85}
-        />
+      {/* Background video */}
+      <div className="absolute inset-0 bg-white">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero/campus-hero.webp"
+          className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ${videoFading ? 'opacity-0' : 'opacity-100'}`}
+          onTimeUpdate={handleTimeUpdate}
+          onSeeked={handleSeeked}
+        >
+          <source src="/images/hero/school-movie.mp4" type="video/mp4" />
+        </video>
+      </div>
 
-        {/* Warm overlay tint */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/30" />
+      {/* Overlay + decorations (stays solid, never fades) */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Light overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
 
         {/* Decorative: subtle school crest watermark */}
         <motion.div
@@ -202,7 +225,7 @@ export default function Hero({ lang }: HeroProps) {
             </motion.h1>
             <motion.h1
               variants={slideUpVariants}
-              className="mb-8 text-5xl font-bold leading-[0.95] tracking-tight text-red-400 md:text-7xl lg:text-8xl"
+              className="mb-8 text-5xl font-bold leading-[0.95] tracking-tight text-red-600 md:text-7xl lg:text-8xl"
             >
               {c.headlineAccent}
             </motion.h1>

@@ -20,61 +20,65 @@ export default function QuickLinks({ lang }: QuickLinksProps) {
       label: t('homepage.quickLinks.calendar'),
       href: `/${lang}/events`,
       description: lang === 'pl' ? 'Terminy i wydarzenia' : lang === 'de' ? 'Termine & Events' : 'Dates & events',
+      color: 'bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white',
     },
     {
       icon: User,
       label: t('homepage.quickLinks.parentPortal'),
       href: `/${lang}/parent-portal`,
       description: lang === 'pl' ? 'Dla rodziców' : lang === 'de' ? 'Für Eltern' : 'For parents',
+      color: 'bg-accent-50 text-accent-600 group-hover:bg-accent-500 group-hover:text-white',
     },
     {
       icon: Users,
       label: t('homepage.quickLinks.studentPortal'),
       href: `/${lang}/student-portal`,
       description: lang === 'pl' ? 'Dla uczniów' : lang === 'de' ? 'Für Schüler' : 'For students',
+      color: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
     },
     {
       icon: Utensils,
       label: t('homepage.quickLinks.canteen'),
       href: `/${lang}/parents/canteen`,
       description: lang === 'pl' ? 'Menu i obiady' : lang === 'de' ? 'Menü & Mittagessen' : 'Menu & lunch',
+      color: 'bg-green-50 text-green-600 group-hover:bg-green-600 group-hover:text-white',
     },
   ];
 
   return (
-    <section className="border-y border-neutral-100 bg-neutral-50 py-8">
+    <section className="border-b border-neutral-100 bg-white py-6">
       <div className="container-custom">
-        <motion.div 
-          className="grid grid-cols-2 gap-4 md:grid-cols-4"
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          className="grid grid-cols-2 gap-3 md:grid-cols-4"
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: easeOutExpo }}
+          transition={{ duration: 0.5, ease: easeOutExpo }}
         >
           {links.map((link, index) => (
             <motion.div
               key={link.href}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5, ease: easeOutExpo }}
+              transition={{ delay: index * 0.08, duration: 0.4, ease: easeOutExpo }}
             >
               <Link
                 href={link.href}
-                className="group flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-4 transition-all duration-300 hover:border-accent-200 hover:shadow-lg hover:shadow-accent-900/5"
+                className="group flex items-center gap-3 rounded-xl border border-neutral-100 bg-neutral-50 p-4 transition-all duration-300 hover:border-neutral-200 hover:bg-white hover:shadow-md"
               >
-                <div className="flex size-12 items-center justify-center rounded-xl bg-accent-50 transition-colors duration-300 group-hover:bg-red-600">
-                  <link.icon className="size-5 text-accent-600 transition-colors duration-300 group-hover:text-white" />
+                <div className={`flex size-10 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${link.color}`}>
+                  <link.icon className="size-5" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-semibold text-neutral-900 md:text-base">
+                  <p className="truncate text-sm font-semibold text-neutral-800 md:text-base">
                     {link.label}
                   </p>
-                  <p className="hidden text-xs text-neutral-500 md:block">
+                  <p className="hidden text-xs text-neutral-400 md:block">
                     {link.description}
                   </p>
                 </div>
-                <ArrowRight className="size-4 shrink-0 text-neutral-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent-600" />
+                <ArrowRight className="size-4 shrink-0 text-neutral-300 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-neutral-500" />
               </Link>
             </motion.div>
           ))}

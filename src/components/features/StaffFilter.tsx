@@ -4,6 +4,15 @@ import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Search, Filter, Mail, BookOpen } from 'lucide-react';
 
+const deptColors: Record<string, { badge: string; filter: string }> = {
+  Grundschule:    { badge: 'bg-green-100 text-green-700',  filter: 'bg-green-100 text-green-700 border-green-200' },
+  Sekundarstufe:  { badge: 'bg-blue-100 text-blue-700',    filter: 'bg-blue-100 text-blue-700 border-blue-200' },
+  Oberstufe:      { badge: 'bg-amber-100 text-amber-700',  filter: 'bg-amber-100 text-amber-700 border-amber-200' },
+  DaF:            { badge: 'bg-purple-100 text-purple-700',filter: 'bg-purple-100 text-purple-700 border-purple-200' },
+  Sport:          { badge: 'bg-orange-100 text-orange-700',filter: 'bg-orange-100 text-orange-700 border-orange-200' },
+  Förderung:      { badge: 'bg-teal-100 text-teal-700',    filter: 'bg-teal-100 text-teal-700 border-teal-200' },
+};
+
 interface StaffMember {
   id: string;
   name: string;
@@ -88,19 +97,31 @@ export default function StaffFilter({
                 className="w-full rounded-lg border-0 bg-neutral-100 py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
-            <div className="relative">
-              <select
-                value={selectedDept}
-                onChange={(e) => setSelectedDept(e.target.value)}
-                className="cursor-pointer appearance-none rounded-lg border-0 bg-neutral-100 py-3 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-red-500"
-              >
-                {departments.map((dept) => (
-                  <option key={dept.key} value={dept.key}>
+            <div className="flex flex-wrap items-center gap-2">
+              <Filter className="size-4 shrink-0 text-neutral-400" />
+              {departments.map((dept) => {
+                const colors = deptColors[dept.key];
+                const isActive = selectedDept === dept.key;
+                return (
+                  <button
+                    key={dept.key}
+                    onClick={() => setSelectedDept(dept.key)}
+                    className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all ${
+                      dept.key === 'all'
+                        ? isActive
+                          ? 'border-neutral-900 bg-neutral-900 text-white'
+                          : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400'
+                        : isActive && colors
+                        ? `${colors.filter} border opacity-100 ring-2 ring-offset-1`
+                        : colors
+                        ? `border-transparent bg-neutral-100 text-neutral-500 hover:${colors.filter}`
+                        : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400'
+                    }`}
+                  >
                     {dept.label}
-                  </option>
-                ))}
-              </select>
-              <Filter className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-neutral-400" />
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -159,7 +180,7 @@ export default function StaffFilter({
                           <span className="text-4xl font-bold text-neutral-300">{initials}</span>
                         </div>
                       )}
-                      <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-0.5 text-[11px] font-medium text-neutral-600 backdrop-blur-sm">
+                      <span className={`absolute right-3 top-3 rounded-full px-2.5 py-0.5 text-[11px] font-semibold backdrop-blur-sm ${deptColors[teacher.department]?.badge || 'bg-white/90 text-neutral-600'}`}>
                         {teacher.department}
                       </span>
                     </div>
