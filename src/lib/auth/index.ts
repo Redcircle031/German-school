@@ -97,10 +97,6 @@ export async function getSession(): Promise<AdminUser | null> {
     // Verify HMAC signature using timing-safe comparison
     const expectedSignature = signToken(payload);
 
-    // DEBUG: Log signature lengths for debugging
-    console.log('[Auth Debug] Input signature length:', signature.length, 'hex:', Buffer.from(signature, 'hex').length);
-    console.log('[Auth Debug] Expected signature length:', expectedSignature.length, 'hex:', Buffer.from(expectedSignature, 'hex').length);
-    console.log('[Auth Debug] Signatures match (string):', signature === expectedSignature);
 
     const sigBuffer = Buffer.from(signature, 'hex');
     const expectedBuffer = Buffer.from(expectedSignature, 'hex');

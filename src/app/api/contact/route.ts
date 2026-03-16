@@ -92,21 +92,24 @@ export async function POST(request: NextRequest) {
 
     const { name, email, phone, subject, message } = result.data;
 
-    // HTML encode to prevent XSS
-    const encodeHtml = (str: string) =>
-      str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
+    // HTML encode to prevent XSS (single-pass for efficiency)
+    const escapeHtml = (str: string): string => {
+      if (typeof str !== 'string') return '';
+      return str.replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      })[char]!);
+    };
 
     const sanitizedData = {
-      name: encodeHtml(name),
-      email,
-      phone: phone || null,
-      subject: encodeHtml(subject),
-      message: encodeHtml(message),
+      name: escapeHtml(name),
+      email: escapeHtml(email),
+      phone: phone ? escapeHtml(phone) : null,
+      subject: escapeHtml(subject),
+      message: escapeHtml(message),
       consent: true,
       submittedAt: new Date().toISOString(),
       ip,
