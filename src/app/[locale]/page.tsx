@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import Hero from '@/components/features/Homepage/Hero';
 import QuickLinks from '@/components/features/Homepage/QuickLinks';
 import AnimatedStats from '@/components/features/Homepage/AnimatedStats';
@@ -12,7 +12,7 @@ import { getRecentArticles } from '@/lib/cms';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
   return {
     title: locale === 'pl' ? 'WBS - Polsko-Niemiecka Szkola' : locale === 'de' ? 'WBS - Deutsch-Polnische Schule' : 'WBS - Polish-German School',
     description: locale === 'pl'
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
 
   const articles = getRecentArticles(6, locale);
 

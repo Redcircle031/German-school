@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllArticles, getRecentArticles } from '@/lib/cms';
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function NewsPage({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
 
   // Get all articles for this locale
   const articles = getAllArticles(locale);

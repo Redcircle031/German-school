@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import Link from 'next/link';
 import { CheckCircle2, XCircle } from 'lucide-react';
 
@@ -28,8 +28,7 @@ const getComplianceStatus = (): ComplianceStatus => 'partially';
 
 export default async function AccessibilityStatement({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
 
   const complianceStatus = getComplianceStatus();
 

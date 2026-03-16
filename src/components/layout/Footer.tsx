@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/useTranslations';
 import { MapPin, Phone, Mail, Facebook, ArrowUpRight } from 'lucide-react';
 
 interface FooterProps {
@@ -11,7 +11,7 @@ interface FooterProps {
 }
 
 export default function Footer({ lang }: FooterProps) {
-  const t = useTranslations();
+  const t = useTranslations(lang as any);
   const [currentYear, setCurrentYear] = useState(2026);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');

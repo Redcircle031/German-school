@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/useTranslations';
 import { Menu, Globe, ChevronDown, Search, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { MegaMenu } from './MegaMenu';
@@ -46,7 +46,7 @@ const announcements = [
 ];
 
 export default function Header({ lang }: HeaderProps) {
-  const t = useTranslations();
+  const t = useTranslations(lang as any);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);

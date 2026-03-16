@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import { getAllPdfs, formatFileSize } from '@/lib/cms';
 import { FileText, Download, Filter } from 'lucide-react';
 import Link from 'next/link';
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function PdfDownloadsPage({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
 
   const pdfs = getAllPdfs();
 

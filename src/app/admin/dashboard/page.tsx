@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import { getAllArticles, getAllPdfs } from '@/lib/cms';
 import { FileText, Download, Calendar, Users, TrendingUp, Settings } from 'lucide-react';
 import Link from 'next/link';

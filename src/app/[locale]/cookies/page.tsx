@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -23,8 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function CookiePolicy({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
 
   return (
       <div className="min-h-screen bg-neutral-50 pt-28 md:pt-30">

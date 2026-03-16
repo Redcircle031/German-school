@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker volume:*)",
+      "Bash(docker ps:*)",
+      "Bash(which cloudflare:*)",
+      "Bash(printenv | grep CF_)",
+      "Bash(/root/scripts/cf-dns.sh list:*)",
+      "Bash(openssl x509:*)",
+      "Bash(cp /root/certs/n8n.brandsparkle.eu.crt /root/certs/docker.brandsparkle.eu.crt && cp /root/certs/n8n.brandsparkle.eu.key /root/certs/docker.brandsparkle.eu.key && rm /tmp/docker.brandsparkle.eu.csr /root/certs/docker.brandsparkle.eu.key.bak 2>/dev/null; echo \"Done\")",
+      "Bash(docker exec:*)",
+      "Bash(curl -sk https://docker.brandsparkle.eu -o /dev/null -w \"%{http_code}\" 2>&1)",
+      "Bash(docker restart:*)",
+      "Bash(docker compose:*)",
+      "Bash(curl -sk https://docker.brandsparkle.eu/api/stacks -H \"Content-Type: application/json\" 2>&1 | head -5)",
+      "Bash(curl -sk -X POST https://docker.brandsparkle.eu/api/auth \\\\\n  -H \"Content-Type: application/json\" \\\\\n  -d '{\"username\":\"Roberto\",\"password\":\"TgbYhnUjm!23\"}' | python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('jwt','ERROR: '+json.dumps\\(d\\)\\)\\)\")",
+      "Bash(python3 -c \"\nimport urllib.request, json, ssl\nctx = ssl._create_unverified_context\\(\\)\ndata = json.dumps\\({'username': 'Roberto', 'password': 'TgbYhnUjm!23'}\\).encode\\(\\)\nreq = urllib.request.Request\\('https://docker.brandsparkle.eu/api/auth', data=data, headers={'Content-Type': 'application/json'}\\)\nresp = urllib.request.urlopen\\(req, context=ctx\\)\nd = json.loads\\(resp.read\\(\\)\\)\nprint\\(d['jwt']\\)\n\")",
+      "Bash(curl -sk https://www.brandsparkle.eu -o /dev/null -w \"%{http_code}\" 2>&1)",
+      "Bash(curl -sk https://www.brandsparkle.eu 2>&1 | head -100)",
+      "Bash(apt update:*)",
+      "Bash(apt list:*)",
+      "Bash(apt upgrade:*)",
+      "Bash(ls:*)",
+      "Bash(git clone:*)",
+      "Bash(docker:*)",
+      "Bash(cat:*)",
+      "Bash(sleep:*)",
+      "Bash(which nginx:*)",
+      "Bash(apt-get update:*)",
+      "Bash(ln:*)",
+      "Bash(systemctl start:*)",
+      "Bash(journalctl:*)",
+      "Bash(docker inspect:*)"
+    ]
+  }
+}

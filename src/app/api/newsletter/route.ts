@@ -67,7 +67,7 @@ function checkRateLimit(ip: string): { allowed: boolean } {
 
 export async function POST(request: NextRequest) {
   try {
-    const ip = request.ip || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
 
     if (!checkRateLimit(ip).allowed) {
       return NextResponse.json(

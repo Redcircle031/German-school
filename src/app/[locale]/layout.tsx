@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import '../globals.css';
-import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
-import { defaultLocale } from '@/lib/i18n';
+import { getTranslations } from '@/lib/i18n';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CookieConsent from '@/components/features/CookieConsent';
@@ -78,17 +76,6 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
-  alternates: {
-    canonical: 'https://wbs.pl/pl',
-    languages: {
-      pl: 'https://wbs.pl/pl',
-      de: 'https://wbs.pl/de',
-      en: 'https://wbs.pl/en',
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-  },
 };
 
 const organizationJsonLd = {
@@ -125,10 +112,10 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const messages = await getMessages();
+  const validLocale = ['pl', 'de', 'en'].includes(locale) ? locale : 'pl';
 
   return (
-    <html lang={locale} className={`${inter.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
+    <html lang={validLocale} className={`${inter.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -136,15 +123,13 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="min-h-screen bg-white font-sans antialiased" suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages}>
-          <SkipLink text="Skip to content" />
-          <Header lang={locale} />
-          <main id="main-content">
-            {children}
-          </main>
-          <Footer lang={locale} />
-          <CookieConsent lang={locale} />
-        </NextIntlClientProvider>
+        <SkipLink text="Skip to content" />
+        <Header lang={validLocale} />
+        <main id="main-content">
+          {children}
+        </main>
+        <Footer lang={validLocale} />
+        <CookieConsent lang={validLocale} />
       </body>
     </html>
   );

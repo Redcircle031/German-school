@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Trophy, Music, Users, Lightbulb, Calendar } from 'lucide-react';
@@ -6,7 +6,7 @@ import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/ui/Scr
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale: locale, namespace: 'students' });
+  const t = getTranslations(locale as any, 'students');
 
   return {
     title: t('meta.title'),

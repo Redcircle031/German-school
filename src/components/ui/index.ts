@@ -1,22 +1,11 @@
-/**
- * UI Components Export
- * Reusable UI components for WBS website
- */
-
-// Modal
+export { default as Breadcrumb } from './Breadcrumb';
+export * from './LoadingSkeletons';
 export { default as Modal } from './Modal';
-
-// Cards
+export { default as ScrollReveal } from './ScrollReveal';
+export { StaggerContainer, StaggerItem } from './ScrollReveal';
 export { default as TestimonialCard } from './TestimonialCard';
-
-// Loading Skeletons
-export {
-  NewsCardSkeleton,
-  StaffCardSkeleton,
-  EventCardSkeleton,
-  ProgramCardSkeleton,
-  PageHeaderSkeleton,
-  HeroSkeleton,
-  GridSkeleton,
-  ContentSkeleton,
-} from './LoadingSkeletons';
+export { default as ContentSection } from './ContentSection';
+export { default as FeatureGrid } from './FeatureGrid';
+export { default as ImageTextBlock } from './ImageTextBlock';
+export { default as CallToAction } from './CallToAction';
+export { default as PageHero } from './PageHero';

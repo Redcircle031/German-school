@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export async function generateStaticParams({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
+export async function generateStaticParams({ params }: { params: { locale: string } }) {
+  const { locale } = params;
   const articles = getAllArticles(locale);
 
   return articles.map((article) => ({
@@ -33,7 +33,7 @@ export async function generateStaticParams({ params }: { params: Promise<{ local
 
 export default async function ArticlePage({ params }: Props) {
   const { locale, slug } = await params;
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
 
   // Get the article
   const article = getArticleBySlug(slug, locale);

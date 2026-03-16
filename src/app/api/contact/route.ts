@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const ip = request.ip || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
 
     const rateLimit = checkRateLimit(ip);
     if (!rateLimit.allowed) {

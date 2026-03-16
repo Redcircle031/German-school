@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import { Metadata } from 'next';
 import PageHeader from '@/components/features/PageHeader';
 import { CheckCircle, Calendar, FileText, Users, Phone, Clock, GraduationCap } from 'lucide-react';

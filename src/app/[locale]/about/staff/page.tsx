@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight, Mail } from 'lucide-react';
@@ -34,8 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function StaffPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
 
   const departments = [
     { key: 'all', label: locale === 'pl' ? 'Wszyscy' : locale === 'de' ? 'Alle' : 'All' },

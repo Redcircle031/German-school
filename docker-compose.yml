@@ -1,0 +1,23 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: school-brandsparkle
+    restart: unless-stopped
+    expose:
+      - "3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      - VIRTUAL_HOST=school.brandsparkle.eu
+      - VIRTUAL_PORT=3000
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true

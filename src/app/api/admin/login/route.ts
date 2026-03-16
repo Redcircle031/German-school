@@ -3,7 +3,7 @@ import { verifyCredentials, createSession, checkLoginRateLimit } from '@/lib/aut
 
 export async function POST(request: NextRequest) {
   try {
-    const ip = request.ip || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
 
     // Rate limiting: 5 attempts per 15 minutes
     const rateLimit = checkLoginRateLimit(ip);

@@ -1,25 +1,6 @@
-import { getRequestConfig } from 'next-intl/server';
-import translations from './translations.json';
+// Re-export from central config for next-intl compatibility
+import { locales, defaultLocale } from '../../../i18n';
 
-export type Locale = 'pl' | 'de' | 'en';
-
-export const locales = ['pl', 'de', 'en'] as const;
-export type Locales = typeof locales;
-export const defaultLocale: Locale = 'de';
-
-export default getRequestConfig(async ({ requestLocale }) => {
-  const locale = await requestLocale;
-
-  // Validate that the incoming `locale` parameter is valid
-  if (!locale || !locales.includes(locale as Locale)) {
-    return {
-      locale: defaultLocale,
-      messages: translations[defaultLocale],
-    };
-  }
-
-  return {
-    locale,
-    messages: translations[locale as Locale],
-  };
-});
+export { locales, defaultLocale };
+export type { Locale } from '../../../i18n';
+export const Locales = locales;

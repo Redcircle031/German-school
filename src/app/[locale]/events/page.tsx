@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from '@/lib/i18n';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import eventsData from '@/data/extracted/events.json';
@@ -26,8 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function EventsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations();
+  const t = getTranslations(locale as any);
 
   const upcomingEvents = eventsData.upcomingEvents || [];
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/useTranslations';
 import { X, Check, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -17,7 +17,7 @@ interface CookiePreferences {
 }
 
 export default function CookieConsent({ lang }: CookieConsentProps) {
-  const t = useTranslations();
+  const t = useTranslations(lang as any);
   const [isVisible, setIsVisible] = useState(false);
   const [isCustomizing, setIsCustomizing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);

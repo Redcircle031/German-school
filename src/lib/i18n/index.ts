@@ -1,4 +1,3 @@
-export { default as requestConfig } from './request';
-export { locales, defaultLocale } from './request';
-export type { Locale, Locales } from './request';
+export { locales, defaultLocale, getMessages, getTranslations } from '../../../i18n';
+export type { Locale } from '../../../i18n';
 export { default as translations } from './translations.json';

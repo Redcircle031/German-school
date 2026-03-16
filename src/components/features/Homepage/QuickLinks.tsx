@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/useTranslations';
 import { Calendar, User, Users, Utensils, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -12,7 +12,7 @@ interface QuickLinksProps {
 const easeOutExpo = [0.16, 1, 0.3, 1];
 
 export default function QuickLinks({ lang }: QuickLinksProps) {
-  const t = useTranslations();
+  const t = useTranslations(lang as any);
 
   const links = [
     {
