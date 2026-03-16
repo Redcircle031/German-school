@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Calendar, ChevronLeft, ChevronRight, List } from 'lucide-react';
+import Link from 'next/link';
+import { Calendar, ChevronLeft, ChevronRight, List, ArrowRight } from 'lucide-react';
 
 interface EventItem {
   id: string;
@@ -221,13 +222,14 @@ export default function EventsCalendar({ events, locale, labels }: EventsCalenda
                       {dayEvents.length > 0 && (
                         <div className="mt-1 space-y-1">
                           {dayEvents.slice(0, 2).map((evt) => (
-                            <div
+                            <Link
                               key={evt.id}
-                              className="truncate rounded bg-red-100 px-1.5 py-0.5 text-[11px] text-red-800"
+                              href={`/${locale}/events/${evt.id}`}
+                              className="block truncate rounded bg-red-100 px-1.5 py-0.5 text-[11px] text-red-800 transition-colors hover:bg-red-200"
                               title={evt.title[locale] || evt.title.pl}
                             >
                               {evt.title[locale] || evt.title.pl}
-                            </div>
+                            </Link>
                           ))}
                           {dayEvents.length > 2 && (
                             <div className="text-[11px] text-neutral-500">
@@ -265,9 +267,10 @@ export default function EventsCalendar({ events, locale, labels }: EventsCalenda
                   const category = event.category[locale] || event.category.pl;
 
                   return (
-                    <div
+                    <Link
                       key={event.id}
-                      className="rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                      href={`/${locale}/events/${event.id}`}
+                      className="group block rounded-xl bg-white p-6 shadow-sm transition-all hover:shadow-md hover:ring-2 hover:ring-red-200"
                     >
                       <div className="flex flex-col gap-4 md:flex-row md:items-center">
                         <div className="flex size-16 shrink-0 flex-col items-center justify-center rounded-xl bg-red-100 text-red-700">
@@ -283,8 +286,9 @@ export default function EventsCalendar({ events, locale, labels }: EventsCalenda
                           <h3 className="mb-1 text-lg font-semibold text-neutral-900">{title}</h3>
                           <p className="text-sm text-neutral-600">{description}</p>
                         </div>
+                        <ArrowRight className="size-5 shrink-0 text-neutral-300 transition-colors group-hover:text-red-500" />
                       </div>
-                    </div>
+                    </Link>
                   );
                 })
               ) : (

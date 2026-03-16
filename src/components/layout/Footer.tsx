@@ -94,13 +94,17 @@ export default function Footer({ lang }: FooterProps) {
             </Link>
 
             {/* Identity tagline */}
-            <p className="mb-6 text-sm text-neutral-400">
+            <p className="mb-3 text-sm text-neutral-400">
               {lang === 'pl'
                 ? 'Polsko-Niemiecka Szkoła Spotkań i Dialogu'
                 : lang === 'de'
                 ? 'Deutsch-Polnische Begegnungsschule'
                 : 'Polish-German School of Meetings and Dialogue'}
             </p>
+            <span className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-red-900/40 bg-red-900/20 px-2.5 py-0.5 text-xs font-medium text-red-400">
+              <span className="size-1.5 rounded-full bg-red-500" />
+              {lang === 'pl' ? 'Od 1978 roku' : lang === 'de' ? 'Seit 1978' : 'Since 1978'}
+            </span>
 
             {/* Campus addresses */}
             <div className="space-y-5">
@@ -250,11 +254,16 @@ export default function Footer({ lang }: FooterProps) {
       {/* Bottom bar */}
       <div className="border-t border-neutral-800">
         <div className="container-custom py-5">
-          <div className="flex flex-col items-center justify-between gap-3 text-xs text-neutral-500 md:flex-row">
-            <p>
-              © {currentYear} Willy-Brandt-Schule Warschau.{' '}
-              {lang === 'pl' ? 'Wszelkie prawa zastrzeżone.' : lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
-            </p>
+          <div className="flex flex-col items-center justify-between gap-4 text-xs text-neutral-500 md:flex-row">
+            <div className="flex flex-col items-center gap-1 md:items-start">
+              <p>
+                © {currentYear} Willy-Brandt-Schule Warschau.{' '}
+                {lang === 'pl' ? 'Wszelkie prawa zastrzeżone.' : lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+              </p>
+              <p className="text-neutral-600">
+                NIP: PL9512099288 · REGON: 011823389 · KRS: 0000150334
+              </p>
+            </div>
             <div className="flex flex-wrap justify-center gap-5">
               <Link href={`/${lang}/privacy`} className="transition-colors hover:text-white">{t('footer.legalLinks.privacy')}</Link>
               <Link href={`/${lang}/cookies`} className="transition-colors hover:text-white">{t('footer.legalLinks.cookies')}</Link>

@@ -1,9 +1,9 @@
 'use client';
 
-import { useMemo } from 'react';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { usePathname, useParams } from 'next/navigation';
 import { ChevronRight, Home } from 'lucide-react';
+import { useMemo } from 'react';
 
 const SEGMENT_LABELS: Record<string, Record<string, string>> = {
   about: { pl: 'O szkole', de: 'Über uns', en: 'About' },
@@ -37,55 +37,61 @@ const SEGMENT_LABELS: Record<string, Record<string, string>> = {
   'e-id': { pl: 'e-Legitymacja', de: 'e-Ausweis', en: 'e-ID Card' },
   'mobile-id': { pl: 'mLegitymacja', de: 'mLegitimation', en: 'Mobile ID' },
   volunteering: { pl: 'Wolontariat', de: 'Ehrenamt', en: 'Volunteering' },
+  'parent-portal': { pl: 'Portal rodzica', de: 'Elternportal', en: 'Parent portal' },
+  'student-portal': { pl: 'Portal ucznia', de: 'Schülerportal', en: 'Student portal' },
 };
 
-interface PageHeaderProps {
-  lang: string;
-  title: string;
-  description?: string;
-  breadcrumbs?: { label: string; href: string }[];
+interface BreadcrumbProps {
+  className?: string;
 }
 
-export default function PageHeader({ lang, title, description, breadcrumbs }: PageHeaderProps) {
+export default function Breadcrumb({ className = '' }: BreadcrumbProps) {
   const pathname = usePathname();
+  const params = useParams();
+  const locale = (params.locale as string) || 'pl';
 
-  // Auto-compute intermediate breadcrumbs from pathname when not provided
-  const autoBreadcrumbs = useMemo(() => {
+  const crumbs = useMemo(() => {
     const parts = pathname.split('/').filter(Boolean);
-    const withoutLocale = parts.slice(1); // remove locale segment
-    // Build crumbs for all segments except the last (which is the current page title)
-    return withoutLocale.slice(0, -1).map((segment, i) => ({
-      label: SEGMENT_LABELS[segment]?.[lang] || segment,
-      href: `/${lang}/${withoutLocale.slice(0, i + 1).join('/')}`,
+    const withoutLocale = parts.slice(1);
+    if (withoutLocale.length === 0) return [];
+    return withoutLocale.map((segment, i) => ({
+      href: `/${locale}/${withoutLocale.slice(0, i + 1).join('/')}`,
+      label: SEGMENT_LABELS[segment]?.[locale] || segment,
+      isLast: i === withoutLocale.length - 1,
     }));
-  }, [pathname, lang]);
+  }, [pathname, locale]);
 
-  const items = breadcrumbs ?? autoBreadcrumbs;
+  if (crumbs.length === 0) return null;
 
   return (
-    <section className="bg-gradient-to-br from-red-600 via-red-700 to-red-800 pb-16 pt-32 text-white">
-      <div className="container-custom">
-        {/* Breadcrumbs */}
-        <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-red-100">
-          <Link href={`/${lang}`} className="transition-colors hover:text-white" aria-label="Home">
-            <Home className="size-4" />
-          </Link>
-          {items.map((item, index) => (
-            <span key={index} className="flex items-center gap-2">
-              <ChevronRight className="size-4 text-red-300" />
-              <Link href={item.href} className="transition-colors hover:text-white">
-                {item.label}
-              </Link>
+    <nav
+      aria-label="Breadcrumb"
+      className={`flex flex-wrap items-center gap-1.5 text-sm ${className}`}
+    >
+      <Link
+        href={`/${locale}`}
+        className="flex items-center text-neutral-400 transition-colors hover:text-neutral-700"
+        aria-label={locale === 'pl' ? 'Strona główna' : locale === 'de' ? 'Startseite' : 'Home'}
+      >
+        <Home className="size-3.5" />
+      </Link>
+      {crumbs.map((crumb) => (
+        <span key={crumb.href} className="flex items-center gap-1.5">
+          <ChevronRight className="size-3.5 text-neutral-300" />
+          {crumb.isLast ? (
+            <span className="font-medium text-neutral-700" aria-current="page">
+              {crumb.label}
             </span>
-          ))}
-          <ChevronRight className="size-4 text-red-300" />
-          <span className="font-medium text-white">{title}</span>
-        </nav>
-
-        {/* Title */}
-        <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">{title}</h1>
-        {description && <p className="max-w-2xl text-xl text-red-100">{description}</p>}
-      </div>
-    </section>
+          ) : (
+            <Link
+              href={crumb.href}
+              className="text-neutral-400 transition-colors hover:text-neutral-700"
+            >
+              {crumb.label}
+            </Link>
+          )}
+        </span>
+      ))}
+    </nav>
   );
 }

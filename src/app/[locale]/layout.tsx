@@ -91,6 +91,32 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: "Willy-Brandt-Schule Warschau",
+  alternateName: ['WBS', "Polsko-Niemiecka Szkoła Spotkań i Dialogu im. Willy'ego Brandta", 'Deutsch-Polnische Begegnungsschule'],
+  url: 'https://wbs.pl',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://wbs.pl/images/logos/wbs-logo.webp',
+  },
+  description: "Polsko-Niemiecka Szkoła Spotkań i Dialogu im. Willy'ego Brandta w Warszawie. Dwujęzyczna edukacja od 1978 roku.",
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'ul. Św. Urszuli Ledóchowskiej 3',
+    addressLocality: 'Warszawa',
+    postalCode: '02-972',
+    addressCountry: 'PL',
+  },
+  telephone: '+48226422705',
+  email: 'sekretariat@wbs.pl',
+  foundingDate: '1978',
+  sameAs: ['https://www.facebook.com/wbswarschau'],
+  hasMap: 'https://maps.google.com/?q=ul.+%C5%9Bw.+Urszuli+Led%C3%B3chowskiej+3+Warszawa',
+  numberOfEmployees: { '@type': 'QuantitativeValue', value: 60 },
+};
+
 export default async function LocaleLayout({
   children,
   params,
@@ -103,6 +129,12 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className="min-h-screen bg-white font-sans antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <SkipLink text="Skip to content" />

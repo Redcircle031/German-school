@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import fs from 'fs';
 import path from 'path';
+import { Resend } from 'resend';
 
 const SUBSCRIBERS_FILE = path.join(process.cwd(), 'src', 'data', 'newsletter-subscribers.json');
 
@@ -105,6 +106,55 @@ export async function POST(request: NextRequest) {
     });
 
     saveSubscribers(subscribers);
+
+    // Send welcome email via Resend if API key is configured
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        const subjects: Record<string, string> = {
+          pl: 'Witamy w newsletterze WBS!',
+          de: 'Willkommen beim WBS-Newsletter!',
+          en: 'Welcome to the WBS Newsletter!',
+        };
+        const welcomeHtml: Record<string, string> = {
+          pl: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#333">
+            <div style="background:#dc2626;padding:24px 32px"><img src="https://wbs.pl/images/logos/wbs-logo.webp" alt="WBS" style="height:48px;filter:brightness(0) invert(1)"></div>
+            <div style="padding:32px">
+              <h2 style="color:#dc2626;margin-top:0">Dziękujemy za zapis!</h2>
+              <p>Dołączyłeś/aś do newslettera Willy-Brandt-Schule Warschau. Będziemy Cię informować o aktualnych wydarzeniach, ważnych komunikatach i życiu szkoły.</p>
+              <p style="color:#666;font-size:14px">Polsko-Niemiecka Szkoła Spotkań i Dialogu im. Willy'ego Brandta<br>ul. Św. Urszuli Ledóchowskiej 3, 02-972 Warszawa</p>
+            </div>
+          </div>`,
+          de: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#333">
+            <div style="background:#dc2626;padding:24px 32px"><img src="https://wbs.pl/images/logos/wbs-logo.webp" alt="WBS" style="height:48px;filter:brightness(0) invert(1)"></div>
+            <div style="padding:32px">
+              <h2 style="color:#dc2626;margin-top:0">Vielen Dank für Ihre Anmeldung!</h2>
+              <p>Sie haben den Newsletter der Willy-Brandt-Schule Warschau abonniert. Wir werden Sie über aktuelle Veranstaltungen und das Schulleben informieren.</p>
+              <p style="color:#666;font-size:14px">Deutsch-Polnische Begegnungsschule<br>ul. Św. Urszuli Ledóchowskiej 3, 02-972 Warschau</p>
+            </div>
+          </div>`,
+          en: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#333">
+            <div style="background:#dc2626;padding:24px 32px"><img src="https://wbs.pl/images/logos/wbs-logo.webp" alt="WBS" style="height:48px;filter:brightness(0) invert(1)"></div>
+            <div style="padding:32px">
+              <h2 style="color:#dc2626;margin-top:0">Thank you for subscribing!</h2>
+              <p>You have joined the Willy-Brandt-Schule Warsaw newsletter. We will keep you informed about upcoming events, announcements and school life.</p>
+              <p style="color:#666;font-size:14px">Polish-German School of Meetings and Dialogue<br>ul. Św. Urszuli Ledóchowskiej 3, 02-972 Warsaw</p>
+            </div>
+          </div>`,
+        };
+        await resend.emails.send({
+          from: 'WBS Warschau <noreply@wbs.pl>',
+          to: normalizedEmail,
+          subject: subjects[locale] || subjects.pl,
+          html: welcomeHtml[locale] || welcomeHtml.pl,
+        });
+      } catch (emailErr) {
+        // Non-fatal — subscription already saved
+        console.error('Newsletter welcome email failed:', emailErr instanceof Error ? emailErr.message : 'Unknown');
+      }
+    } else if (process.env.NODE_ENV === 'development') {
+      console.log('Newsletter subscription (no RESEND_API_KEY):', { email: normalizedEmail, locale });
+    }
 
     return NextResponse.json({
       success: true,
