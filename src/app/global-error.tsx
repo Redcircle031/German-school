@@ -14,7 +14,7 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html>
+    <html lang="en" suppressHydrationWarning>
       <body>
         <div className="flex min-h-screen items-center justify-center bg-neutral-50 py-20">
           <div className="max-w-2xl px-4 text-center">
